@@ -9,6 +9,8 @@
     <p>Conexion a la base de datos:
     <?php 
      include 'backend/conexion.php';
+
+     include 'backend/desconexion.php';
     ?>
   </body>
 </html>
