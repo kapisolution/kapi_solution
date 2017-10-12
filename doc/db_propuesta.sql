@@ -15,14 +15,14 @@ CREATE TABLE `Insignias` (
 );
 
 CREATE TABLE `Modificaciones` (
-	`id_modificacion` varchar NOT NULL,
-	`votos_positivos` int NOT NULL DEFAULT '0',
-	`votos_negativos` int NOT NULL DEFAULT '0',
+	`id_modificacion` varchar(5) NOT NULL,
+	`votos_positivos` int DEFAULT 0,
+	`votos_negativos` int DEFAULT 0,
 	`id_user` varchar(20) NOT NULL,
 	PRIMARY KEY (`id_modificacion`)
 );
 
-CREATE TABLE `Exámenes` (
+CREATE TABLE `Examenes` (
 	`id_ex` INT NOT NULL AUTO_INCREMENT,
 	`nivel` INT NOT NULL,
 	`rol` varchar(20) NOT NULL,
@@ -31,15 +31,15 @@ CREATE TABLE `Exámenes` (
 
 CREATE TABLE `Realiza_Examen` (
 	`nick_usr` varchar(20) NOT NULL,
-	`id_examen` DATE NOT NULL AUTO_INCREMENT,
-	`nota` int NOT NULL DEFAULT '0',
+	`id_examen` INT NOT NULL,
+	`nota` int DEFAULT 0,
 	PRIMARY KEY (`nick_usr`,`id_examen`)
 );
 
 CREATE TABLE `Preguntas` (
-	`id_pregunta` varchar NOT NULL,
+	`id_pregunta` varchar(3) NOT NULL,
 	`nivel` INT NOT NULL,
-	`texto` TEXT(200) NOT NULL,
+	`texto` TEXT NOT NULL,
 	`rol` varchar(20) NOT NULL,
 	`A` TEXT NOT NULL,
 	`B` TEXT NOT NULL,
@@ -51,13 +51,13 @@ CREATE TABLE `Preguntas` (
 
 CREATE TABLE `Preguntas_Examen` (
 	`id_exam` INT NOT NULL,
-	`pregunta_id` varchar NOT NULL,
+	`pregunta_id` varchar(3) NOT NULL,
 	PRIMARY KEY (`id_exam`,`pregunta_id`)
 );
 
-CREATE TABLE `Artículos` (
+CREATE TABLE `Articulos` (
 	`Nivel_articulo` int NOT NULL,
-	`id_articulo` FLOAT NOT NULL AUTO_INCREMENT,
+	`id_articulo` FLOAT NOT NULL,
 	`Nombre_articulo` varchar(30) NOT NULL,
 	`rol_articulo` varchar(20) NOT NULL,
 	PRIMARY KEY (`Nivel_articulo`,`id_articulo`,`rol_articulo`)
@@ -72,9 +72,9 @@ CREATE TABLE `Insignias_Usuario` (
 
 CREATE TABLE `Modificacion_pregunta` (
 	`rol` varchar(20) NOT NULL,
-	`id_mod` varchar NOT NULL,
+	`id_mod` varchar(3) NOT NULL,
 	`nivel` INT NOT NULL,
-	`texto` TEXT(200) NOT NULL,
+	`texto` TEXT NOT NULL,
 	`A` TEXT NOT NULL,
 	`B` TEXT NOT NULL,
 	`C` TEXT NOT NULL,
@@ -84,13 +84,13 @@ CREATE TABLE `Modificacion_pregunta` (
 );
 
 CREATE TABLE `Modificacion_sugerencia` (
-	`id_mod` varchar NOT NULL,
+	`id_mod` varchar(3) NOT NULL,
 	`texto` TEXT NOT NULL,
 	PRIMARY KEY (`id_mod`)
 );
 
 CREATE TABLE `Modificacion_contenido` (
-	`id_mod` varchar NOT NULL,
+	`id_mod` varchar(3) NOT NULL,
 	`rol` varchar(20) NOT NULL,
 	`nivel` INT(20) NOT NULL,
 	PRIMARY KEY (`id_mod`)
@@ -100,17 +100,15 @@ ALTER TABLE `Modificaciones` ADD CONSTRAINT `Modificaciones_fk0` FOREIGN KEY (`i
 
 ALTER TABLE `Realiza_Examen` ADD CONSTRAINT `Realiza_Examen_fk0` FOREIGN KEY (`nick_usr`) REFERENCES `Usuarios`(`nick`);
 
-ALTER TABLE `Realiza_Examen` ADD CONSTRAINT `Realiza_Examen_fk1` FOREIGN KEY (`id_examen`) REFERENCES `Exámenes`(`id_ex`);
+ALTER TABLE `Realiza_Examen` ADD CONSTRAINT `Realiza_Examen_fk1` FOREIGN KEY (`id_examen`) REFERENCES `Examenes`(`id_ex`);
 
-ALTER TABLE `Preguntas_Examen` ADD CONSTRAINT `Preguntas_Examen_fk0` FOREIGN KEY (`id_exam`) REFERENCES `Exámenes`(`id_ex`);
+ALTER TABLE `Preguntas_Examen` ADD CONSTRAINT `Preguntas_Examen_fk0` FOREIGN KEY (`id_exam`) REFERENCES `Examenes`(`id_ex`);
 
 ALTER TABLE `Preguntas_Examen` ADD CONSTRAINT `Preguntas_Examen_fk1` FOREIGN KEY (`pregunta_id`) REFERENCES `Preguntas`(`id_pregunta`);
 
 ALTER TABLE `Insignias_Usuario` ADD CONSTRAINT `Insignias_Usuario_fk0` FOREIGN KEY (`usr_nickname`) REFERENCES `Usuarios`(`nick`);
 
 ALTER TABLE `Insignias_Usuario` ADD CONSTRAINT `Insignias_Usuario_fk1` FOREIGN KEY (`nivel_insignia`) REFERENCES `Insignias`(`nivel`);
-
-ALTER TABLE `Insignias_Usuario` ADD CONSTRAINT `Insignias_Usuario_fk2` FOREIGN KEY (`rol_insignia`) REFERENCES `Insignias`(`rol`);
 
 ALTER TABLE `Modificacion_pregunta` ADD CONSTRAINT `Modificacion_pregunta_fk0` FOREIGN KEY (`id_mod`) REFERENCES `Modificaciones`(`id_modificacion`);
 
