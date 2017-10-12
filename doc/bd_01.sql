@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 12-10-2017 a las 19:59:47
+-- Tiempo de generación: 12-10-2017 a las 20:42:37
 -- Versión del servidor: 10.0.31-MariaDB-0ubuntu0.16.04.2
 -- Versión de PHP: 7.0.22-0ubuntu0.16.04.1
 
@@ -30,7 +30,10 @@ CREATE TABLE `Articulos` (
   `Nivel_articulo` int(11) NOT NULL,
   `id_articulo` float NOT NULL,
   `Nombre_articulo` varchar(30) NOT NULL,
-  `rol_articulo` varchar(20) NOT NULL
+  `rol_articulo` varchar(20) NOT NULL,
+  `titulo` text NOT NULL,
+  `contenido` longtext NOT NULL,
+  `nick` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -85,13 +88,15 @@ CREATE TABLE `Modificaciones` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `Modificacion_contenido`
+-- Estructura de tabla para la tabla `Modificacion_articulo`
 --
 
-CREATE TABLE `Modificacion_contenido` (
+CREATE TABLE `Modificacion_articulo` (
   `id_mod` varchar(3) NOT NULL,
   `rol` varchar(20) NOT NULL,
-  `nivel` int(20) NOT NULL
+  `nivel` int(20) NOT NULL,
+  `titulo` text NOT NULL,
+  `contenido` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -186,7 +191,7 @@ CREATE TABLE `Usuarios` (
 -- Indices de la tabla `Articulos`
 --
 ALTER TABLE `Articulos`
-  ADD PRIMARY KEY (`Nivel_articulo`,`id_articulo`,`rol_articulo`);
+  ADD PRIMARY KEY (`nick`);
 
 --
 -- Indices de la tabla `Examenes`
@@ -215,9 +220,9 @@ ALTER TABLE `Modificaciones`
   ADD KEY `Modificaciones_fk0` (`id_user`);
 
 --
--- Indices de la tabla `Modificacion_contenido`
+-- Indices de la tabla `Modificacion_articulo`
 --
-ALTER TABLE `Modificacion_contenido`
+ALTER TABLE `Modificacion_articulo`
   ADD PRIMARY KEY (`id_mod`);
 
 --
@@ -272,6 +277,12 @@ ALTER TABLE `Examenes`
 --
 
 --
+-- Filtros para la tabla `Articulos`
+--
+ALTER TABLE `Articulos`
+  ADD CONSTRAINT `Articulos_ibfk_1` FOREIGN KEY (`nick`) REFERENCES `Usuarios` (`nick`);
+
+--
 -- Filtros para la tabla `Insignias_Usuario`
 --
 ALTER TABLE `Insignias_Usuario`
@@ -285,9 +296,9 @@ ALTER TABLE `Modificaciones`
   ADD CONSTRAINT `Modificaciones_fk0` FOREIGN KEY (`id_user`) REFERENCES `Usuarios` (`nick`);
 
 --
--- Filtros para la tabla `Modificacion_contenido`
+-- Filtros para la tabla `Modificacion_articulo`
 --
-ALTER TABLE `Modificacion_contenido`
+ALTER TABLE `Modificacion_articulo`
   ADD CONSTRAINT `Modificacion_contenido_fk0` FOREIGN KEY (`id_mod`) REFERENCES `Modificaciones` (`id_modificacion`);
 
 --
