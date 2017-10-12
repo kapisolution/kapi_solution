@@ -6,12 +6,12 @@
     <meta charset="utf-8">
   </head>
   <body>
-      <h1>Kapi solutions Home</h1>
-
-    <p>Esta es la pagina principal de Kapi Solutions </p>
-    <p>Conexion a la base de datos:
     <?php 
-     include 'backend/conexion.php';
+     require 'backend/conexion.php';
+     include 'frontend/topbar.php';
+     include 'frontend/leftbar.php';
+     include 'frontend/index.php';
+     include 'frontend/footer.php';
      include 'backend/desconexion.php';
     ?>
   </body>

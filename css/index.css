@@ -1,3 +1,35 @@
 * {
     font-family: serif;
 }
+
+/*Estilo del body*/
+body {
+    margin: 0; /*Quitamos los margenes para ocupar la ventana del navegador*/
+}
+
+/*Estilo de la barra superior*/
+#topbar{
+    background-color: lightgrey;
+    width: 100%;
+    float: left;
+}
+
+/*Estilo de la barra izqierda*/
+#leftbar{
+    background-color: grey;
+    width: 20%;
+    float: left;
+}
+
+/*Estilo del contenido central*/
+#content{
+    width: 80%;
+    float: right;
+    background-color: darkgrey;
+}
+
+/*Estilo del pie de pagina*/
+#footer{
+    clear: both;
+    background-color: lightgrey;
+}
