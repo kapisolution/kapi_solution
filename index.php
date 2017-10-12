@@ -10,6 +10,7 @@
      require 'backend/conexion.php';
      include 'frontend/topbar.php';
      include 'frontend/leftbar.php';
+     require 'backend/index.php';
      include 'frontend/index.php';
      include 'frontend/footer.php';
      include 'backend/desconexion.php';
