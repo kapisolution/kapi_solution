@@ -19,7 +19,7 @@ body {
 
 /*Estilo de la barra superior*/
 #topbar{
-    /*background-color: lightgrey;*/
+    /*background-color: #2050BD;*/
     width: 100%;
     float: left;
 }
@@ -35,11 +35,14 @@ body {
 #content{
     width: 80%;
     float: right;
-   /* background-color: darkgrey;*/
+    /*background-color: ;*/
 }
 
 /*Estilo del pie de pagina*/
 #footer{
+    text-align: center;
     clear: both;
-    background-color: lightgrey;
+    background-color: #B8CBF7;
+    box-shadow: 5px 5px 10px rgba(128, 128, 128, 0.3);
+    padding:10px;
 }
