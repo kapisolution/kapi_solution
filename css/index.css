@@ -19,14 +19,14 @@ body {
 
 /*Estilo de la barra superior*/
 #topbar{
-    background-color: lightgrey;
+    /*background-color: lightgrey;*/
     width: 100%;
     float: left;
 }
 
 /*Estilo de la barra izqierda*/
 #leftbar{
-    background-color: grey;
+    /*background-color: grey;*/
     width: 20%;
     float: left;
 }
@@ -35,7 +35,7 @@ body {
 #content{
     width: 80%;
     float: right;
-    background-color: darkgrey;
+   /* background-color: darkgrey;*/
 }
 
 /*Estilo del pie de pagina*/

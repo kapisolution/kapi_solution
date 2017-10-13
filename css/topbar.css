@@ -1,26 +1,26 @@
 #topbar{
  padding: 5px;
+ box-shadow: 5px 5px 10px rgba(128, 128, 128, 0.3);
 }
 
 #topbarbuttonlist li a img {
-    width: 30px;
+    width: 40px;
+    margin: 5px;
 }
 
 .botonmenu {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
 }
 
-
 .botonmenu:hover {
-    background-color: darkorchid;
+    background-color: lightgrey;
 }
 
 #topbartitulo {
     float: left;
     color: #bfbfbf;
     text-decoration: none;
-    margin-top: 8px;
     font-size: 50px;
     font-weight: bold;
     text-shadow: 0px 0px 2px black;
@@ -28,6 +28,7 @@
 }
 
 #topbarbuttonlist {
+    margin:0px;
     float: right;
     padding-right: 10px;
 }
