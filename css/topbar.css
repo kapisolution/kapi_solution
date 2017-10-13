@@ -1,0 +1,29 @@
+#topbar{
+ padding: 5px;
+}
+
+#topbarbuttonlist li a img {
+    width: 30px;
+}
+
+#topbartitulo {
+    float: left;
+    color: #bfbfbf;
+    text-decoration: none;
+    margin-top: 8px;
+    font-size: 50px;
+    font-weight: bold;
+    text-shadow: 0px 0px 2px black;
+    font-family: digitalt;    
+}
+
+#topbarbuttonlist {
+    float: right;
+    padding-right: 10px;
+}
+
+#topbarbuttonlist li {
+    list-style: none;
+    display: inline-block;
+    z-index: 6;
+}

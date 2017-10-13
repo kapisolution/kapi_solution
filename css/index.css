@@ -1,5 +1,15 @@
+@font-face {
+    font-family: digitalt;
+    src: url(../files/fonts/Digitalt.otf);
+}
+
+@font-face {
+    font-family: gravity;
+    src: url(../files/fonts/Gravity-Regular.otf);
+}
+
 * {
-    font-family: serif;
+    font-family: gravity;
 }
 
 /*Estilo del body*/
