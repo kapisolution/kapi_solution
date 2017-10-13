@@ -6,8 +6,10 @@
         </li>
         
         <li>
+			<div class="botonmenu">
 			<a href="/phpmyadmin"><img src="files/icon/svg/browser-visualization.svg" title="phpMyamin"></a>
-        </li>
+			</div>
+		</li>
         
         <li>
 			<a href="/"><img src="files/icon/svg/apps.svg" title="Inicio"></a>

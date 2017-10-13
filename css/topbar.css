@@ -6,6 +6,16 @@
     width: 30px;
 }
 
+.botonmenu {
+    width: 40px;
+    height: 40px;
+}
+
+
+.botonmenu:hover {
+    background-color: darkorchid;
+}
+
 #topbartitulo {
     float: left;
     color: #bfbfbf;
