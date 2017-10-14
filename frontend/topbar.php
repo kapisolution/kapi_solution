@@ -1,5 +1,8 @@
 <div id="topbar">
 <a id="topbartitulo" href="/">KAPI</a>
+<?php
+	include ('buscador.php');
+?>
 	<ul id="topbarbuttonlist">
 		<li>
 		<div class="botonmenu">
