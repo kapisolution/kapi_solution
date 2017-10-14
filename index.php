@@ -13,7 +13,6 @@
      include 'frontend/leftbar.php';
      require 'backend/index.php';
      include 'frontend/index.php';
-     include 'frontend/articulos.php';
      include 'frontend/footer.php';
      include 'backend/desconexion.php';
     ?>
