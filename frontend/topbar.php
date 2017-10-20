@@ -21,5 +21,10 @@
 			<a href="/"><img src="files/icon/svg/apps.svg" title="Inicio"></a>
 			</div>
 		</li>
+		<li>
+		<div class="botonmenu">
+			<a href="/sign_in"><img src="files/icon/svg/user.svg" title="Registro"></a>
+			</div>
+		</li>
         </ul>
 </div>
