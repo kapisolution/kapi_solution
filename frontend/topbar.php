@@ -23,7 +23,7 @@
 		</li>
 		<li>
 		<div class="botonmenu">
-			<a href="/sign_in"><img src="files/icon/svg/user.svg" title="Registro"></a>
+			<a href="/sign_in.php"><img src="files/icon/svg/user.svg" title="Registro"></a>
 			</div>
 		</li>
         </ul>
