@@ -1,6 +1,6 @@
 <!-- Accion que realiza el boton de sign in del formulario y que nos lleva al backend donde chequeamos datos-->
-<form action="/">
-  <div class="container">
+<div id="container">
+    <form action="/">
     <label><b>Email</b></label>
     <input type="text" placeholder="Enter Email" name="email" required>
 
@@ -16,5 +16,5 @@
       <button type="button"  class="cancelbtn">Cancel</button>
       <button type="submit" class="signupbtn">Sign Up</button>
     </div>
-  </div>
 </form>
+</div>
