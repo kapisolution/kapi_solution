@@ -1,6 +1,6 @@
 <!-- Accion que realiza el boton de sign in del formulario y que nos lleva al backend donde chequeamos datos-->
-<div id="container">
-    <form action="/backend/sign_in.php">
+<div id="content">
+    <form id="formularioRegistro"action="/backend/sign_in.php">
     <label><b>Email</b></label>
     <input type="text" placeholder="Enter Email" name="email" required>
 
