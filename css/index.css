@@ -15,18 +15,25 @@
 /*Estilo del body*/
 body {
     margin: 0; /*Quitamos los margenes para ocupar la ventana del navegador*/
+    background-color: #f4f8ff;
+    margin-top: 65px;
 }
 
 /*Estilo de la barra superior*/
 #topbar{
-    /*background-color: #2050BD;*/
+    background-color: white;
+    padding: 5px;
+    box-shadow: 5px 5px 10px rgba(128, 128, 128, 0.3);
+    z-index: 15;
     width: 100%;
     float: left;
+    position: fixed;
+    top:0px;
 }
 
 /*Estilo de la barra izqierda*/
 #leftbar{
-    /*background-color: grey;*/
+    background-color: #e8f0ff;
     width: 20%;
     float: left;
 }
@@ -42,7 +49,7 @@ body {
 #footer{
     text-align: center;
     clear: both;
-    background-color: #B8CBF7;
+    background-color: #dbedff;
     box-shadow: 5px 5px 10px rgba(128, 128, 128, 0.3);
     padding:10px;
 }
