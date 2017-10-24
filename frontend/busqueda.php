@@ -3,18 +3,49 @@
 ?>
 <div id="content">
     <h3> Resultados de: <?php echo $_GET["search"] ?> </h3>
+    
+    <h4>Usuarios:</h4>
+    <div class="usuarios">
     <?php
-        echo '<h4>Usuarios:</h4>';
         for ($i = 0; $i < sizeof($busquedaUsuarios) ; $i++){
-            echo  '<p>' . $busquedaUsuarios[$i]['nick'] . $busquedaUsuarios[$i]['nombre']. $busquedaUsuarios[$i]['apellidos'] . '</p>';
-        }
-        echo '<h4>Ejercicios:</h4>';
-        for ($i = 0; $i < sizeof($busquedaEjercicios) ; $i++){
-            echo  '<p>' . $busquedaEjercicios[$i]['enunciado'] . '</p>';
-        }
-        echo '<h4>Articulos:</h4>';
-        for ($i = 0; $i < sizeof($busquedaArticulos) ; $i++){
-                echo  '<p>' . $busquedaArticulos[$i]['nivel']. $busquedaArticulos[$i]['id']. $busquedaArticulos[$i]['Nombre']. $busquedaArticulos[$i]['rol']. $busquedaArticulos[$i]['titulo']. $busquedaArticulos[$i]['contenido'] . '</p>';
+            echo '<div class="usuario">';
+                echo '<p>' . $busquedaUsuarios[$i]['nick'] . '</p>';
+                echo '<p>' . $busquedaUsuarios[$i]['nombre'] . '</p>';
+                echo '<p>' . $busquedaUsuarios[$i]['apellidos'] . '</p>';
+            echo '</div>';
         }
     ?>
+    </div>
+
+    <h4>Ejercicios:</h4>
+    <div class="ejercicios">
+    <?php
+        for ($i = 0; $i < sizeof($busquedaEjercicios) ; $i++){
+            echo '<div class="ejercicio">';
+                echo  '<p>' . $busquedaEjercicios[$i]['enunciado'] . '</p>';
+            echo '</div>';
+        }
+    ?>
+    </div>
+
+    <h4>Articulos:</h4>
+    <div class="articulos">
+    <?php
+        for ($i = 0; $i < sizeof($busquedaArticulos) ; $i++){
+            echo '<div class="articulo">';
+                echo '<div class="infoArticulo">';
+                    echo  '<p> Lvl: ' . $busquedaArticulos[$i]['Nivel_articulo']. '</p>';
+                    echo  '<p> Chap: ' . $busquedaArticulos[$i]['capitulo']. '</p>';
+                    echo  '<p> Created by : ' . $busquedaArticulos[$i]['id_creador']. '</p>';
+                    echo  '<p> Img: ' . $busquedaArticulos[$i]['Imagen'] . '</p>';
+                    echo  '<p> Rol: ' . $busquedaArticulos[$i]['rol_articulo'] . '</p>';
+                echo '</div>';
+                echo '<div class="contenidoArticulo">';
+                    echo  '<p> Title: ' . $busquedaArticulos[$i]['titulo']. '</p>';
+                    echo  '<p> Contenido: ' . $busquedaArticulos[$i]['contenido'] . '</p>';
+                echo '</div>';
+            echo '</div>';
+        }
+    ?>
+    </div>
 </div>

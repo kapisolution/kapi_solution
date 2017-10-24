@@ -1,23 +1,31 @@
 .usuarios{
-
+    border: 1px solid grey;
 }
 
 .usuario{
-
+    border: 1px solid grey;
 }
 
 .ejercicios{
-
+    border: 1px solid grey;
 }
 
 .ejercicio{
-
+    border: 1px solid grey;
 }
 
 .articulos{
-
+    border: 1px solid grey;
 }
 
 .articulo{
-    
+    border: 1px solid grey;
+}
+
+.infoArticulo{
+    border: 1px solid grey;
+}
+
+.contenidoArticulo{
+    border: 1px solid grey;
 }
