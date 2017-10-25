@@ -26,13 +26,14 @@
 
 .articulo{
     text-decoration:none;  
-    border: 1px solid grey;
+   /* border: 1px solid grey;*/
+    border-radius: 5px;
     width: 200px;
     margin: 5px;
-    background-color: white;
 }
 
 .infoArticulo{    
+    border-radius: 5px;
     align-items: end;
     justify-content: space-between;
     background-image: url("/files/img/articulos/2.jpg");

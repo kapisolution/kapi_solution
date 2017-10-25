@@ -8,7 +8,7 @@
     <div class="articulos">
     <?php
         for ($i = 0; $i < sizeof($busquedaArticulos) ; $i++){
-            echo '<div class="articulo">';
+            echo '<div class="articulo primario-light">';
                 echo '<a href="/articulo.php?id='.$busquedaArticulos[$i]['Nivel_articulo'].'">';
                     echo '<div class="infoArticulo">';
                         echo  '<p> ' . $busquedaArticulos[$i]['Nivel_articulo']. '</p>';
