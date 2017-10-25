@@ -17,23 +17,24 @@
 .articulos, .infoArticulo{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     
 }
 
-.articulos{
+.articulos {
     /*border: 1px solid grey;*/
 }
 
 .articulo{
-   border: 1px solid grey;
+    text-decoration:none;  
+    border: 1px solid grey;
     width: 200px;
     margin: 5px;
-   background-color: white;
+    background-color: white;
 }
 
 .infoArticulo{    
     align-items: end;
+    justify-content: space-between;
     background-image: url("/files/img/articulos/2.jpg");
     background-size: 200px;
     height: 100px;
@@ -52,6 +53,7 @@
 .contenidoArticulo{
    /*border: 1px solid grey;*/
     width: 100%;
+    color: black;
 }
 
 .contenidoArticulo *{
