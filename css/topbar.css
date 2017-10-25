@@ -9,12 +9,12 @@
 }
 
 .botonmenu:hover {
-    background-color: lightgrey;
+    background-color:  #5df2d6;
 }
 
 #topbartitulo {
     float: left;
-    color: #44464A;
+    color: white;
     text-decoration: none;
     font-size: 50px;
     font-weight: bold;

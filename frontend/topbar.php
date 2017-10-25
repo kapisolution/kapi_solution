@@ -1,5 +1,5 @@
-<div id="topbar">
-<a id="topbartitulo" href="/">KAPI</a>
+<div id="topbar" class="primario">
+<a id="topbartitulo"  href="/">KAPI</a>
 <?php
 	include ('buscador.php');
 ?>

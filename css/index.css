@@ -19,9 +19,38 @@ body {
     margin-top: 65px;
 }
 
+.primario{
+    background-color: #00BFA5;
+    color: black;
+}
+
+.primario-light{
+    background-color: #5df2d6;
+    color: black;
+}
+
+.primario-dark{
+    background-color: #008e76;
+    color: black;
+}
+
+.secundario{
+    background-color: #FFCA28;
+    color: black;
+}
+
+.secundario-light{
+    background-color: #fffd61;
+    color: black;
+}
+
+.secundario-dark{
+    background-color: #c79a00;
+    color: black;
+}
+
 /*Estilo de la barra superior*/
 #topbar{
-    background-color: white;
     padding: 5px;
     box-shadow: 5px 5px 10px rgba(128, 128, 128, 0.3);
     z-index: 15;
@@ -49,7 +78,6 @@ body {
 #footer{
     text-align: center;
     clear: both;
-    background-color: #dbedff;
     box-shadow: 5px 5px 10px rgba(128, 128, 128, 0.3);
     padding:10px;
 }
