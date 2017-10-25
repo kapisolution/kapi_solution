@@ -34,15 +34,15 @@
         for ($i = 0; $i < sizeof($busquedaArticulos) ; $i++){
             echo '<div class="articulo">';
                 echo '<div class="infoArticulo">';
-                    echo  '<p> Lvl: ' . $busquedaArticulos[$i]['Nivel_articulo']. '</p>';
-                    echo  '<p> Chap: ' . $busquedaArticulos[$i]['capitulo']. '</p>';
-                    echo  '<p> Created by : ' . $busquedaArticulos[$i]['id_creador']. '</p>';
-                    echo  '<p> Img: ' . $busquedaArticulos[$i]['Imagen'] . '</p>';
-                    echo  '<p> Rol: ' . $busquedaArticulos[$i]['rol_articulo'] . '</p>';
+                    echo  '<p> ' . $busquedaArticulos[$i]['Nivel_articulo']. '</p>';
+                    echo  '<p> ' . $busquedaArticulos[$i]['capitulo']. '</p>';
+                    echo  '<p> ' . $busquedaArticulos[$i]['id_creador']. '</p>';
+                    echo  '<p> ' . $busquedaArticulos[$i]['Imagen'] . '</p>';
+                    echo  '<p> ' . $busquedaArticulos[$i]['rol_articulo'] . '</p>';
                 echo '</div>';
                 echo '<div class="contenidoArticulo">';
-                    echo  '<p> Title: ' . $busquedaArticulos[$i]['titulo']. '</p>';
-                    echo  '<p> Contenido: ' . $busquedaArticulos[$i]['contenido'] . '</p>';
+                    echo  '<p> ' . $busquedaArticulos[$i]['titulo']. '</p>';
+                   // echo  '<p> ' . $busquedaArticulos[$i]['contenido'] . '</p>';
                 echo '</div>';
             echo '</div>';
         }

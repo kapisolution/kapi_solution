@@ -14,18 +14,46 @@
     border: 1px solid grey;
 }
 
+.articulos, .infoArticulo{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+}
+
 .articulos{
-    border: 1px solid grey;
+    /*border: 1px solid grey;*/
 }
 
 .articulo{
-    border: 1px solid grey;
+   border: 1px solid grey;
+    width: 200px;
+    margin: 5px;
+   background-color: white;
 }
 
-.infoArticulo{
-    border: 1px solid grey;
+.infoArticulo{    
+    align-items: end;
+    background-image: url("/files/img/articulos/2.jpg");
+    background-size: 200px;
+    height: 100px;
+    display: flex;
+    /*border: 1px solid grey;*/
+    width: 100%;
+    color: white;
+    text-shadow: 0px 0px 2px black;
+
+}
+
+.infoArticulo *{
+    margin: 2px;
 }
 
 .contenidoArticulo{
-    border: 1px solid grey;
+   /*border: 1px solid grey;*/
+    width: 100%;
+}
+
+.contenidoArticulo *{
+    margin: 2px;
 }
