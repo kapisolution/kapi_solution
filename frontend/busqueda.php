@@ -3,30 +3,6 @@
 ?>
 <div id="content">
     <h3> Resultados de: <?php echo $_GET["search"] ?> </h3>
-    
-    <h4>Usuarios:</h4>
-    <div class="usuarios">
-    <?php
-        for ($i = 0; $i < sizeof($busquedaUsuarios) ; $i++){
-            echo '<div class="usuario">';
-                echo '<p>' . $busquedaUsuarios[$i]['nick'] . '</p>';
-                echo '<p>' . $busquedaUsuarios[$i]['nombre'] . '</p>';
-                echo '<p>' . $busquedaUsuarios[$i]['apellidos'] . '</p>';
-            echo '</div>';
-        }
-    ?>
-    </div>
-
-    <h4>Ejercicios:</h4>
-    <div class="ejercicios">
-    <?php
-        for ($i = 0; $i < sizeof($busquedaEjercicios) ; $i++){
-            echo '<div class="ejercicio">';
-                echo  '<p>' . $busquedaEjercicios[$i]['enunciado'] . '</p>';
-            echo '</div>';
-        }
-    ?>
-    </div>
 
     <h4>Articulos:</h4>
     <div class="articulos">
@@ -50,4 +26,33 @@
         }
     ?>
     </div>
+    <?php
+        if (isset($_SESSION["login"])){
+    ?>
+    <h4>Usuarios:</h4>
+    <div class="usuarios">
+    <?php
+        for ($i = 0; $i < sizeof($busquedaUsuarios) ; $i++){
+            echo '<div class="usuario">';
+                echo '<p>' . $busquedaUsuarios[$i]['nick'] . '</p>';
+                echo '<p>' . $busquedaUsuarios[$i]['nombre'] . '</p>';
+                echo '<p>' . $busquedaUsuarios[$i]['apellidos'] . '</p>';
+            echo '</div>';
+        }
+    ?>
+    </div>
+
+    <h4>Ejercicios:</h4>
+    <div class="ejercicios">
+    <?php
+        for ($i = 0; $i < sizeof($busquedaEjercicios) ; $i++){
+            echo '<div class="ejercicio">';
+                echo  '<p>' . $busquedaEjercicios[$i]['enunciado'] . '</p>';
+            echo '</div>';
+        }
+    ?>
+    </div>
+    <?php
+       }
+    ?>
 </div>
