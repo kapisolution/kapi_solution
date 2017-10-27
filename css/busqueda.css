@@ -24,9 +24,10 @@
     /*border: 1px solid grey;*/
 }
 
-.articulo{
+.sinSub{
     text-decoration:none;  
-   /* border: 1px solid grey;*/
+}
+.articulo{
     border-radius: 5px;
     width: 200px;
     margin: 5px;
@@ -41,7 +42,6 @@
     background-size: 200px;
     height: 100px;
     display: flex;
-    /*border: 1px solid grey;*/
     width: 100%;
     color: white;
     text-shadow: 0px 0px 2px black;
@@ -53,7 +53,6 @@
 }
 
 .contenidoArticulo{
-   /*border: 1px solid grey;*/
     width: 100%;
     color: black;
 }
@@ -62,13 +61,7 @@
     margin: 2px;
 }
 
-.botonVer{
-
-}
-
-svg{
+.iconoArticulo{
     width: 32px;
     height: 32px;
-    fill: white;
-    vertical-align: bottom;
 }
