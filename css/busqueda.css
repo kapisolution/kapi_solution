@@ -30,10 +30,11 @@
     border-radius: 5px;
     width: 200px;
     margin: 5px;
+    box-shadow: 5px 5px 10px rgba(128, 128, 128, 0.3);
 }
 
 .infoArticulo{    
-    border-radius: 5px;
+    border-radius: 5px 5px 0px 0px;
     align-items: end;
     justify-content: space-between;
     background-image: url("/files/img/articulos/2.jpg");
@@ -59,4 +60,15 @@
 
 .contenidoArticulo *{
     margin: 2px;
+}
+
+.botonVer{
+
+}
+
+svg{
+    width: 32px;
+    height: 32px;
+    fill: white;
+    vertical-align: bottom;
 }
