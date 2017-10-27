@@ -6,13 +6,13 @@
 	<ul id="topbarbuttonlist">
 		<li>
 		<div class="botonmenu">
-			<a href="/"><img src="files/icon/svg/upload-to-cloud.svg" title="Subir articulo"></a>
+			<a href="https://github.com/kapisolution/kapi_solution" target="_blank"><img src="files/icon/svg/upload-to-cloud.svg" title="Github"></a>
 			</div>
 		</li>
         
         <li>
 			<div class="botonmenu">
-			<a href="/phpmyadmin"><img src="files/icon/svg/browser-visualization.svg" title="phpMyamin"></a>
+			<a href="/phpmyadmin" target="_blank"><img src="files/icon/svg/browser-visualization.svg" title="phpMyamin"></a>
 			</div>
 		</li>
         
