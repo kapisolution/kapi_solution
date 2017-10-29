@@ -52,6 +52,8 @@ body {
 .SVGsecundario{
     fill: #FFCA28;
     filter: drop-shadow( 0px 0px 2px #000 );
+    stroke: black;
+    stroke-width: 1px;
 }
 
 .SVGsecundario:hover{
