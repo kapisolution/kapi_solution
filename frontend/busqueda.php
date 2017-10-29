@@ -3,10 +3,14 @@
 ?>
 <div id="content">
     <h3> Resultados de: <?php echo $_GET["search"] ?> </h3>
+    
+    <div class="tabs">
+  <button onclick="mostrarTarjetas('usuarios')">Usuarios</button>
+  <button onclick="mostrarTarjetas('articulos')">Artículos</button>
+  <button onclick="mostrarTarjetas('ejercicios')">Ejercicios</button>
+</div> 
 
-     
-    <h4>Usuarios:</h4>
-    <div class="tarjetas">
+    <div class="tarjetas" id="usuarios">
     <?php
         for ($i = 0; $i < sizeof($busquedaUsuarios) ; $i++){
             echo '<div class="tarjeta">';
@@ -49,8 +53,7 @@
     ?>
     </div>
 
-    <h4>Articulos:</h4>
-    <div class="tarjetas">
+    <div class="tarjetas" id="articulos" style="display:none">
     <?php
         for ($i = 0; $i < sizeof($busquedaArticulos) ; $i++){
             echo '<div class="tarjeta">';
@@ -110,11 +113,7 @@
     ?>
     </div>
 
-    <?php
-        if (isset($_SESSION["login"])){
-    ?>
-    <h4>Ejercicios:</h4>
-    <div class="ejercicios">
+    <div class="tarjetas" id="ejercicios" style="display:none">
     <?php
         for ($i = 0; $i < sizeof($busquedaEjercicios) ; $i++){
             echo '<div class="ejercicio">';
@@ -123,7 +122,23 @@
         }
     ?>
     </div>
+
+    <?php
+        if (isset($_SESSION["login"])){
+    ?>
     <?php
        }
     ?>
 </div>
+
+
+<script>
+    function mostrarTarjetas(tarjetero) {
+    var i;
+    var x = document.getElementsByClassName("tarjetas");
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+    }
+    document.getElementById(tarjetero).style.display = "flex";
+}
+</script>

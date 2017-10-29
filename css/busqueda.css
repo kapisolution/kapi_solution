@@ -14,6 +14,8 @@
 
 .tarjetas {
     /*border: 1px solid grey;*/
+    margin-top:20px;
+    margin-bottom: 20px;
 }
 
 .sinSub{
@@ -61,4 +63,12 @@
 .imgUser{
     border: 2px solid white;
     border-radius: 50px;
+}
+
+.tabs button{
+    background-color: #008e76;
+    font-family: gravity;
+    padding: 5px;
+    margin: 0px;
+    font-size: 18px;
 }
