@@ -44,6 +44,8 @@
     width: 100%;
     color: white;
     text-shadow: 0px 0px 2px black;
+    background-color: #008e76;
+    font-size: 30px;
 }
 
 .infoArticulo *{
@@ -60,8 +62,8 @@
 }
 
 .iconoArticulo{
-    width: 48px;
-    height: 48px;
+    width: 30px;
+    height: 30px;
     stroke: black;
     stroke-width: 1px;
 }

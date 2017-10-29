@@ -1,5 +1,5 @@
 <?php
-if(isset($_GET["search"])){ 
+if(isset($_GET["search"])&&$_GET["search"]!=""){ 
     $sql ='SELECT * FROM Articulos WHERE titulo LIKE "%'.$_GET["search"] .'%" OR contenido LIKE "%'.$_GET["search"] .'%";';
     $consulta = mysqli_query($con, $sql) or die("Error en consulta sobre la tabla articulos");
     $busquedaArticulos = array();

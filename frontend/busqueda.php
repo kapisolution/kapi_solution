@@ -10,7 +10,7 @@
         for ($i = 0; $i < sizeof($busquedaArticulos) ; $i++){
             echo '<div class="articulo">';
               
-                    echo '<div class="infoArticulo" style="background-image: url(&quot;/files/img/articulos/2.jpg&quot;);">';
+                    echo '<div class="infoArticulo" style="background-image: url(&quot;/files/img/articulos/' . $busquedaArticulos[$i]['capitulo']. '.jpg&quot;);">';
                     echo '<a class="sinSub" href="/articulo.php?id='.$busquedaArticulos[$i]['Nivel_articulo'].'">';
                      ?>
                       <svg class="SVGsecundario iconoArticulo" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
