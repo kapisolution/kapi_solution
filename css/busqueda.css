@@ -16,6 +16,7 @@
     /*border: 1px solid grey;*/
     margin-top:20px;
     margin-bottom: 20px;
+    transition: opacity .25s ease-in-out;
 }
 
 .sinSub{
@@ -34,11 +35,10 @@
     justify-content: space-between;
     background-size: 200px;
     height: 100px;
-    display: flex;
     width: 100%;
     color: white;
     text-shadow: 0px 0px 2px black;
-    background-color: #008e76;
+    background-color: var(--primario-dark);
     font-size: 20px;
 }
 
@@ -49,6 +49,12 @@
 .contenidoTarjeta{
     width: 100%;
     color: black;
+    transition-duration: 0.4s;
+
+}
+
+.contenidoTarjeta:hover{
+    color: var(--primario-dark);
 }
 
 .contenidoTarjeta *{
@@ -61,14 +67,40 @@
 }
 
 .imgUser{
+    width: 64px;
+    height: 64px;
     border: 2px solid white;
     border-radius: 50px;
 }
 
-.tabs button{
-    background-color: #008e76;
-    font-family: gravity;
-    padding: 5px;
-    margin: 0px;
-    font-size: 18px;
+.imgUser:hover{
+    border-color: var(--secundario);
 }
+
+.tabs {
+    width: 100%;
+    display: flex;    
+}
+.tabs button{
+    background-color: var(--primario-dark);
+    font-family: gravity;
+    border: none;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.4s;
+    border-radius: 0px;
+}
+
+.tabs button:hover{
+    background-color: var(--primario-light);
+    color:grey;
+
+}
+
+.tab-selected{
+   color: white;
+   opacity: 0.6;
+ }

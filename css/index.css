@@ -7,6 +7,14 @@
     font-family: gravity;
     src: url(../files/fonts/Gravity-Regular.otf);
 }
+:root{
+    --primario:#00BFA5;
+    --primario-light:#5df2d6;
+    --primario-dark:#008e76;
+    --secundario:#FFCA28;
+    --secundario-light:#fffd61;
+    --secundario-dark:#c79a00;
+}
 
 * {
     font-family: gravity;
@@ -19,45 +27,46 @@ body {
     margin-top: 65px;
 }
 
+
 .primario{
-    background-color: #00BFA5;
+    background-color:  var(--primario);
     color: black;
 }
 
 .primario-light{
-    background-color: #5df2d6;
+    background-color:  var(--primario-light);
     color: black;
 }
 
 .primario-dark{
-    background-color: #008e76;
+    background-color:  var(--primario-dark);
     color: black;
 }
 
 .secundario{
-    background-color: #FFCA28;
+    background-color:  var(--secundario);
     color: black;
 }
 
 .secundario-light{
-    background-color: #fffd61;
+    background-color:  var(--secundario-light);
     color: black;
 }
 
 .secundario-dark{
-    background-color: #c79a00;
+    background-color:  var(--secundario-dark);
     color: black;
 }
 
 .SVGsecundario{
-    fill: #FFCA28;
+    fill:  var(--secundario);
     filter: drop-shadow( 0px 0px 2px #000 );
     stroke: black;
     stroke-width: 1px;
 }
 
 .SVGsecundario:hover{
-    fill: #c79a00;
+    fill:  var(--secundario-dark);
     filter: drop-shadow( 0px 0px 2px #000 );
 }
 /*Estilo de la barra superior*/
