@@ -16,5 +16,6 @@
      include 'frontend/footer.php';
      include 'backend/desconexion.php';
     ?>
+    <script src="js/tabs.js"></script> 
   </body>
 </html>
