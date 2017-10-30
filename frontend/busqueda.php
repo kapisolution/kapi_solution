@@ -56,7 +56,7 @@
             echo '<div class="tarjeta">';
               
                     echo '<div class="infoTarjeta" style="background-image: url(&quot;/files/img/articulos/' . $busquedaArticulos[$i]['capitulo']. '.jpg&quot;);">';
-                    echo '<a class="sinSub" href="/articulo.php?id='.$busquedaArticulos[$i]['Nivel_articulo'].'">';
+                    echo '<a class="sinSub" href="/articulo.php?id='.$busquedaArticulos[$i]['id'].'">';
                      ?>
                       <svg class="SVGsecundario iconoTarjeta" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                             viewBox="0 0 294.774 294.774" style="enable-background:new 0 0 294.774 294.774;" xml:space="preserve">
@@ -79,7 +79,7 @@
                         echo  '<p> ' . $busquedaArticulos[$i]['Nivel_articulo']. '</p>';
                         echo  '<p> ' . $busquedaArticulos[$i]['capitulo']. '</p>';
                         //echo  '<p> ' . $busquedaArticulos[$i]['Imagen'] . '</p>';
-                        echo '<a class="sinSub" href="/articulo.php?id='.$busquedaArticulos[$i]['Nivel_articulo'].'">';
+                        echo '<a class="sinSub" href="/articulo.php?id='.$busquedaArticulos[$i]['id'].'">';
                        ?>
                       
                       <svg class="SVGsecundario iconoTarjeta" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -100,7 +100,7 @@
                     echo '</div>';
                     echo '<a class="sinSub" href="/articulo.php?id='.$busquedaArticulos[$i]['Nivel_articulo'].'">';
                     echo '<div class="contenidoTarjeta">';
-                        echo  '<p> ' . $busquedaArticulos[$i]['titulo']. '</p>';
+                       // echo  '<p> ' . $busquedaArticulos[$i]['titulo']. '</p>';
                         echo  '<p> ' . $busquedaArticulos[$i]['id_creador']. '</p>';
                         echo  '<p> ' . $busquedaArticulos[$i]['rol_articulo'] . '</p>';
                     // echo  '<p> ' . $busquedaArticulos[$i]['contenido'] . '</p>';
