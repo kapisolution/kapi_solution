@@ -1,3 +1,16 @@
+#bloque{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+   
+}
+
+#articulo{
+    max-width: 800px;
+    min-width: 300px;
+    width: 80%;
+}
+
 .imgInfoArticulo{
     width: 64px;
     height: 64px;
@@ -6,7 +19,6 @@
 }
 
 .imgArticulo{
-    max-width: 800px;
     width: 100%;
     border: 2px solid white;
     border-radius: 5px;
@@ -14,5 +26,18 @@
 
 #infoArticulo{
     display: flex;
+    justify-content: space-around;
     align-items: end;
+}
+
+#infoArticulo div{
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
+
+#articulosRelacionados{
+    min-width: 200px;                             
+    width: 20%;
+    border: 1px solid black;
 }
