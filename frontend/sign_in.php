@@ -1,27 +1,39 @@
-<!-- Accion que realiza el boton de sign in del formulario y que nos lleva al backend donde chequeamos datos-->
-<div id="content">
-  <!-- el id identifica al formulario -->
+<div id="content"> 
   <div id = "bloqueformRegistro"> 
     <form id="formularioRegistro"action="/backend/sign_in.php"method="post"onsubmit="return validarSignIn()">
       <label><b>Alias</b></label>
       <div id = "inputCheckAlias" class = "inputCheck">
-      <input id="nick" type="text" placeholder="Introduzca su alias" name="alias" required>
-        <div id="ok"style='display:none;'>
-           <img src="files/icon/svg/upload-to-cloud.svg">
+      <input id="nick" type="text" placeholder="Introduzca su alias" name="alias"required>
+        <div id="okAlias">
+           <img src="files/icon/svg/check-square.svg">
         </div>
-        <div id="incorrecto"style='display:none;'>
-           <img src="files/icon/svg/upload-to-cloud.svg">
+        <div id="incorrectoAlias">
+           <img src="files/icon/svg/close.svg">
         </div>
       </div> 
       <label><b>Email</b></label>
-        <input type="text" placeholder="Introduzca su email" name="email" required>
-
+      <div id = "inputCheckEmail" class = "inputCheck">
+        <input id="correo"type="text" placeholder="Introduzca su email" name="email" required>
+        <div id="okEmail">
+           <img src="files/icon/svg/check-square.svg">
+        </div>
+        <div id="incorrectoEmail">
+           <img src="files/icon/svg/close.svg">
+        </div>
+      </div> 
       <label><b>Password</b></label>
-      <input type="password" placeholder="Introduzca su contraseña" name="pass" required>
+      <input id = "psw" type="password" placeholder="Introduzca su contraseña" name="pass" required>
 
       <label><b>Repeat Password</b></label>
-      <input type="password" placeholder="Repita su contraseña" name="pass-repeat" required>
-      <input type="checkbox" checked="checked"> Recuerdame
+      <div id = "inputCheckPsw" class = "inputCheck">
+      <input id="rep-psw"type="password" placeholder="Repita su contraseña" name="pass-repeat" onkeyup="return checkPass()"required>
+        <div id="okPsw">
+           <img src="files/icon/svg/check-square.svg">
+        </div>
+        <div id="incorrectoPsw">
+           <img src="files/icon/svg/close.svg">
+        </div>
+      </div>
       <p>Al registrarte acceptas todos nuestros <a href="#">Términos y condiciones de uso</a>.</p>
       <div id="botones">
         <button class="button cancelbutton" type="button" >Cancelar</button>
@@ -31,25 +43,6 @@
   </div>
 </div>
 
-
-<script>
-  function validarSignIn() {
-    var x = document.forms["formularioRegistro"]["pass"].value;
-    var y = document.forms["formularioRegistro"]["pass-repeat"].value;
-    if (x != y) {
-        alert("Las contraseñas deben ser iguales");
-        return false;
-    }
-}
-
-
-  $("#nick").change(function(){ 
-    //if ($("#nick").value) != "a") { 
-      document.getElementById('ok').style.display = 'block';        
-    //} else { 
-      //document.getElementById('incorrecto').style.display = '';
-    //} 
-  });
-
-</script>
+<script src="../js/sign_in.js"></script>
+<script src="../js/conexion.js"></script>
 

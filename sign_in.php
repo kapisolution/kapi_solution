@@ -9,10 +9,12 @@
   </head>
   <body>
     <?php 
+     require 'backend/conexion.php';
      include 'frontend/topbar.php';
      include 'frontend/leftbar.php';
      include 'frontend/sign_in.php';
      include 'frontend/footer.php';
+     include 'backend/desconexion.php';
     ?>
   </body>
 </html>

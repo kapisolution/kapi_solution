@@ -28,13 +28,10 @@
     display:flex;
     flex-direction: row;
 }
-#ok{
+#okAlias,#incorrectoAlias,#okEmail,#incorrectoEmail,#okPsw, #incorrectoPsw{
     width: 30px;
     margin: 5px;
-}
-#incorrecto{
-    width: 30px;
-    margin: 5px;
+    display:none;
 }
 #botones{
    width:100%;
