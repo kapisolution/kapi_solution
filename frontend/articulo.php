@@ -8,10 +8,12 @@
         for ($i = 0; $i < sizeof($busquedaArticulos) ; $i++){
             ?>
             <div id="infoArticulo">
+            <div>
             <?php
-            echo  '<h1> Lvl:' . $busquedaArticulos[$i]['Nivel_articulo']. '</h1>';
-            echo  '<h1> Ch: ' . $busquedaArticulos[$i]['capitulo']. '</h1>';
+            echo  '<h2> Lvl:' . $busquedaArticulos[$i]['Nivel_articulo']. '</h2>';
+            echo  '<h2> Ch: ' . $busquedaArticulos[$i]['capitulo']. '</h2>';
             ?>
+            </div>
             <div>
             <img class="imgInfoArticulo" src="/files/img/usuario/<?php echo $busquedaArticulos[$i]['id_creador'].'.jpg';?>">
             <?php
