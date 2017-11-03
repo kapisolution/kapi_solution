@@ -8,6 +8,7 @@
     $nombre=$_POST["alias"]; 
     $email=$_POST["email"];
     $pass=$_POST["pass"];
+    $rol=$_POST["elegirRol"];
     
     $sqlNick = 'SELECT * FROM Usuarios WHERE nick LIKE "'.$nombre.'";';
     $sqlEmail = 'SELECT * FROM Usuarios WHERE email LIKE "'.$email.'";';
@@ -27,7 +28,7 @@
         echo ("</script>");
     }
     else {
-        $sqlInsert = "INSERT INTO Usuarios(nick,rol,password,email) VALUES('$nombre','NULL','$pass  ','$email')";
+        $sqlInsert = "INSERT INTO Usuarios(nick,rol,password,email) VALUES('$nombre','$rol','$pass  ','$email')";
         if (mysqli_query($con, $sqlInsert)) {   
             echo ("<script>");
             echo ("alertInsert()");
