@@ -1,32 +1,42 @@
 
 /* Full-width input fields */
 /*Al haber asignado un id al formulario, tenemos */
-
-
+#content{
+    background: rgba(212, 212, 212, 0.158);
+}
+#titulo{
+    text-align: center;
+    padding: 20px;
+    font-size: 80px;
+}
 #bloqueformRegistro{
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 #formularioRegistro {
-    margin-left: 300px;
     margin-bottom: 50px;
     padding: 20px 0;
     width:30%; 
 }
 #formularioRegistro input[type=text], #formularioRegistro input[type=password], #formularioRegistro input[type=email] {
-    width:350px;
+    border-radius: 5px;
+    width:300px;
     height: 20px;
-    margin-left: 40px;
-    display:flex;
     margin:10px;
 }
 #formularioRegistro input {
-    flex-direction:column;
+    margin-left: 100px;
     padding: 0px 5px;
     border: 0;
-    background: #eee;
+    background: rgba(224, 224, 224, 0.774);
     border-radius: 3px 0 0 3px;
 }
 .inputCheck{
+    justify-content: center;
+    align-items: center;
     width: 100%;
     display:flex;
     flex-direction: row;
@@ -103,7 +113,7 @@
     color:rgb(0, 0, 0);
 }
 .rol label:hover{
-    background: rgba(0,116,217,.2);
+    background: rgba(0, 194, 152, 0.2);
  }
 
 

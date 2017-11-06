@@ -1,10 +1,14 @@
 
-<div id="content"> 
+<div id="content">
+<div id="titulo">
+    <label><b> Registro</b></label>
+    </div>
   <div id = "bloqueformRegistro"> 
+  
     <form id="formularioRegistro"action="/backend/sign_in.php"method="post"onsubmit="return validarSignIn()">
-      <label><b> Introduce tu Alias</b></label>
+      <label><b><center> Introduce tu nick</center></b></label>
       <div id = "inputCheckAlias" class = "inputCheck">
-      <input id="nick" type="text" placeholder="Introduzca su alias" name="alias"required>
+      <input id="nick" type="text" placeholder="Nick" name="alias"required>
         <div id="okAlias">
            <img src="files/icon/svg/check-square.svg">
         </div>
@@ -12,9 +16,9 @@
            <img src="files/icon/svg/close.svg">
         </div>
       </div> 
-      <label><b>Introduce tu Email</b></label>
+      <label><b><center> Introduce tu email</center></b></label>
       <div id = "inputCheckEmail" class = "inputCheck">
-        <input id="correo"type="email" placeholder="Introduzca su email" name="email" required>
+        <input id="correo"type="email" placeholder="Email" name="email" required>
         <div id="okEmail">
            <img src="files/icon/svg/check-square.svg">
         </div>
@@ -22,11 +26,13 @@
            <img src="files/icon/svg/close.svg">
         </div>
       </div> 
-      <label><b>Introduce tu Contraseña</b></label>
-      <input id = "psw" type="password" placeholder="Introduzca su contraseña" name="pass" required>
-      <label><b>Repite tu contraseña</b></label>
+      <label><b><center> Introduce tu contraseña</center></b></label>
+      <div class = "inputCheck">
+      <input id = "psw" type="password" placeholder="Contraseña" name="pass" required>
+      </div>
+      <label><b><center> Repite tu contraseña</center></b></label>
       <div id = "inputCheckPsw" class = "inputCheck">
-      <input id="rep-psw"type="password" placeholder="Repita su contraseña" name="pass-repeat" onkeyup="return checkPass()"required>
+      <input id="rep-psw"type="password" placeholder="Contraseña" name="pass-repeat" onkeyup="return checkPass()"required>
         <div id="okPsw">
            <img src="files/icon/svg/check-square.svg">
         </div>
@@ -34,7 +40,7 @@
            <img src="files/icon/svg/close.svg">
         </div>
       </div>
-      <label><b>Elige tu Rol</b></label>
+      <label><b><center> Elige tu rol</center></b></label>
       <div id="ElegirRol" class="rol">
           
           <input type="radio"  name="elegirRol" id="abogado">
@@ -45,13 +51,14 @@
           
           <input type="radio" name="elegirRol" id="informatico">
           <label for="informatico"><img src="files/icon/svg/check-square.svg" class="rolImage">Informatico</label>
-</a>
+      </a>
       </div>
-      <p>Al registrarte acceptas todos nuestros <a href="#">Términos y condiciones de uso</a>.</p>
       <div id="botones">
         <button class="button cancelbutton" type="button" >Cancelar</button>
         <button class="button okbutton" type="submit" >Registrarse</button>
+        
       </div>
+      <p><center>Al registrarte acceptas todos nuestros <a href="#">Términos y condiciones de uso</a>.</center></p>
     </form>
   </div>
 </div>
