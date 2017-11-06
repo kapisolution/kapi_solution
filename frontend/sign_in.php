@@ -1,3 +1,4 @@
+
 <div id="content"> 
   <div id = "bloqueformRegistro"> 
     <form id="formularioRegistro"action="/backend/sign_in.php"method="post"onsubmit="return validarSignIn()">
@@ -23,7 +24,7 @@
       </div> 
       <label><b>Introduce tu Contraseña</b></label>
       <input id = "psw" type="password" placeholder="Introduzca su contraseña" name="pass" required>
-      <label><b>Repita su contraseña</b></label>
+      <label><b>Repite tu contraseña</b></label>
       <div id = "inputCheckPsw" class = "inputCheck">
       <input id="rep-psw"type="password" placeholder="Repita su contraseña" name="pass-repeat" onkeyup="return checkPass()"required>
         <div id="okPsw">
@@ -34,19 +35,17 @@
         </div>
       </div>
       <label><b>Elige tu Rol</b></label>
-      <div id="ElegirRol">
-        <div id="Abogado" class ="rol">
-          <img src="files/icon/svg/check-square.svg">
-          <input type="radio" name="elegirRol" class="checkbox" value="Abogado" /><b>Abogado</b>
-        </div>
-        <div id="Periodista" class ="rol">
-          <img src="files/icon/svg/close.svg">
-          <input type="radio"  name="elegirRol" class="checkbox" value="Periodista" /><b>Periodista</b>
-        </div>
-        <div id="Informatico" class ="rol">
-          <img src="files/icon/svg/check-square.svg">
-          <input type="radio"  name="elegirRol"  class="checkbox" value="Abogado" /><b>Informático</b>
-        </div>
+      <div id="ElegirRol" class="rol">
+          
+          <input type="radio"  name="elegirRol" id="abogado">
+          <label for="abogado"><img src="files/icon/svg/check-square.svg" class="rolImage">Abogado</label>
+
+          <input type="radio"  name="elegirRol" id="periodista">
+          <label for="periodista"><img src="files/icon/svg/close.svg" class="rolImage">Periodista</label>
+          
+          <input type="radio" name="elegirRol" id="informatico">
+          <label for="informatico"><img src="files/icon/svg/check-square.svg" class="rolImage">Informatico</label>
+</a>
       </div>
       <p>Al registrarte acceptas todos nuestros <a href="#">Términos y condiciones de uso</a>.</p>
       <div id="botones">

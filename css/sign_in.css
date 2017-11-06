@@ -1,6 +1,8 @@
 
 /* Full-width input fields */
 /*Al haber asignado un id al formulario, tenemos */
+
+
 #bloqueformRegistro{
     width: 100%;
 }
@@ -12,13 +14,13 @@
 }
 #formularioRegistro input[type=text], #formularioRegistro input[type=password], #formularioRegistro input[type=email] {
     width:350px;
+    height: 20px;
     margin-left: 40px;
     display:flex;
+    margin:10px;
 }
 #formularioRegistro input {
     flex-direction:column;
-    margin:10px;
-    height: 20px;
     padding: 0px 5px;
     border: 0;
     background: #eee;
@@ -54,28 +56,55 @@
     background-color: #f4511e;
   }
 .okbutton {
-    background-color: #247e00;
+    background-color: #18bd9c;
   } 
 #ElegirRol{
     width: 100%;
     display:flex;
     justify-content:center;
-    position:relative;
 }
 .rol{
     display: inline-block;
-    width: 50px;
-    margin: 20px;
+    width: 100px;
     flex-direction:row;
     border-radius: 4px;
     border: none;
-    padding: 10px;
+    padding: 20px 15px;
 }
-.checkbox{ 
-    bottom:-10px;
-    position: absolute;
-    width: 30px; 
+.rol input[type="radio"]{
+     display: none;
 }
+.rol label{
+   color:#18bd9c;
+   border: 20px;
+   padding:5px 15px 5px;
+   display: inline-block;
+   border-radius: 3px;
+   cursor: pointer;
+   position: relative;
+   margin-right:10px;
+   -o-transition: all 0.8s ease;
+   -webkit-transition: all 0.8s ease;
+   transition: all 0.5s ease;
+}
+.rolImage{
+    width: 100px;
+    flex-direction:row;
+    padding: 20px 15px;
+    cursor: pointer;
+}
+.rol label:hover{
+    background: rgba(0,116,217,.2);
+ }
+ .rol input[type="radio"]:checked + label{
+    padding: 5px 15px;
+    background-color:  #18bd9c;
+    border-radius: 2px;
+    color:rgb(0, 0, 0);
+}
+.rol label:hover{
+    background: rgba(0,116,217,.2);
+ }
 
 
 
