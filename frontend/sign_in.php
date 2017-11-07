@@ -4,7 +4,6 @@
     <label><b> Registro</b></label>
     </div>
   <div id = "bloqueformRegistro"> 
-  
     <form id="formularioRegistro"action="/backend/sign_in.php"method="post"onsubmit="return validarSignIn()">
       <label><b><center> Introduce tu nick</center></b></label>
       <div id = "inputCheckAlias" class = "inputCheck">
@@ -43,22 +42,22 @@
       <label><b><center> Elige tu rol</center></b></label>
       <div id="ElegirRol" class="rol">
           
-          <input type="radio"  name="elegirRol" id="abogado">
+          <input type="radio"  name="elegirRol" id="abogado" value="abogado">
           <label for="abogado"><img src="files/icon/svg/check-square.svg" class="rolImage">Abogado</label>
 
-          <input type="radio"  name="elegirRol" id="periodista">
+          <input type="radio"  name="elegirRol" id="periodista" value="periodista">
           <label for="periodista"><img src="files/icon/svg/close.svg" class="rolImage">Periodista</label>
           
-          <input type="radio" name="elegirRol" id="informatico">
+          <input type="radio" name="elegirRol" id="informatico" value="informatico">
           <label for="informatico"><img src="files/icon/svg/check-square.svg" class="rolImage">Informatico</label>
       </a>
       </div>
+      <p><center>Al registrarte acceptas todos nuestros <a href="#">Términos y condiciones de uso</a>.</center></p>
       <div id="botones">
         <button class="button cancelbutton" type="button" >Cancelar</button>
         <button class="button okbutton" type="submit" >Registrarse</button>
-        
       </div>
-      <p><center>Al registrarte acceptas todos nuestros <a href="#">Términos y condiciones de uso</a>.</center></p>
+      <p><center>¿Ya estás registrado? <a href="/login.php">Inicia sesión</a>.</center></p>
     </form>
   </div>
 </div>
