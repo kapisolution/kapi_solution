@@ -48,10 +48,16 @@
         //}
 
 ?>
-<input onclick='responsiveVoice.speak("<?php echo $busquedaArticulos[0]['contenido']?>", "Spanish Female");' type='button' value='🔊 Leer artículo' />
+<input onclick='responsiveVoice.speak("<?php echo $busquedaArticulos[$i]['contenido']?>", "Spanish Female");' type='button' value='🔊 Leer artículo' />
+<div id="ejercicios">
+<h2>Ejercicios:</h2>
+</div>
 <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
 </div>
 <div id="articulosRelacionados">
+<div id="modificacion">
+<h2>Crear modificación:</h2>
+</div>
     <p>Articulos relacionados</p>
     </div>
 </div>

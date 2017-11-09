@@ -46,6 +46,13 @@
     border: 1px solid black;
 }
 
-.sinSub{
-    text-decoration:none;  
+#modificacion{
+    width: 100%;
+    border: 1px solid black;
+}
+
+
+#ejercicios{
+    width: 100%;
+    border: 1px solid black;
 }
