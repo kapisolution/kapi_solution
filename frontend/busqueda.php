@@ -41,8 +41,8 @@
             echo '<a class="sinSub" href="/usuario.php?id='.$busquedaUsuarios[$i]['nick'].'">';
                 echo '<div class="contenidoTarjeta">';
                     echo '<p>' . $busquedaUsuarios[$i]['nick'] . '</p>';
-                    echo '<p>' . $busquedaUsuarios[$i]['Nombre'] . '</p>';
-                    echo '<p>' . $busquedaUsuarios[$i]['Apellidos'] . '</p>';
+                 //   echo '<p>' . $busquedaUsuarios[$i]['Nombre'] . '</p>';
+                  //  echo '<p>' . $busquedaUsuarios[$i]['Apellidos'] . '</p>';
                 echo '</div>';
             echo '</a>';
         echo '</div>';
@@ -55,14 +55,14 @@
         for ($i = 0; $i < sizeof($busquedaArticulos) ; $i++){
             echo '<div class="tarjeta">';
               
-                    echo '<div class="infoTarjeta" style="background-image: url(&quot;/files/img/articulos/' . $busquedaArticulos[$i]['Imagen']. '.jpg&quot;);">';
+                    echo '<div class="infoTarjeta" style="background-image: url(&quot;/files/img/articulos/' . $busquedaArticulos[$i]['img']. '.jpg&quot;);">';
                     echo '<a class="sinSub" href="/articulo.php?id='.$busquedaArticulos[$i]['id'].'">';
                     ?>
-                    <img class="imgUser" src="/files/img/rol/<?php echo $busquedaArticulos[$i]['rol_articulo'].'.jpg';?>">
+                    <img class="imgUser" src="/files/img/rol/<?php echo $busquedaArticulos[$i]['rol'].'.jpg';?>">
                     <?php
                        echo '</a>'; 
-                        echo  '<p> ' . $busquedaArticulos[$i]['Nivel_articulo']. '</p>';
-                        echo  '<p> ' . $busquedaArticulos[$i]['capitulo']. '</p>';
+                        echo  '<p> ' . $busquedaArticulos[$i]['nivel']. '</p>';
+                       // echo  '<p> ' . $busquedaArticulos[$i]['capitulo']. '</p>';
                         //echo  '<p> ' . $busquedaArticulos[$i]['Imagen'] . '</p>';
                         echo '<a class="sinSub" href="/articulo.php?id='.$busquedaArticulos[$i]['id'].'">';
                        ?>
@@ -86,7 +86,7 @@
                     echo '<a class="sinSub" href="/articulo.php?id='.$busquedaArticulos[$i]['id'].'">';
                     echo '<div class="contenidoTarjeta">';
                         echo  '<p> ' . $busquedaArticulos[$i]['titulo']. '</p>';
-                        echo  '<p> ' . $busquedaArticulos[$i]['id_creador']. '</p>';
+                        echo  '<p> ' . $busquedaArticulos[$i]['creador']. '</p>';
                     //    echo  '<p> ' . $busquedaArticulos[$i]['rol_articulo'] . '</p>';
                     // echo  '<p> ' . $busquedaArticulos[$i]['contenido'] . '</p>';
                     echo '</div>';

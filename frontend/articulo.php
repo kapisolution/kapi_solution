@@ -11,29 +11,29 @@
             <div id="infoArticulo">
             <div>
             <?php
-            echo  '<h2> Lvl:' . $busquedaArticulos[$i]['Nivel_articulo']. '</h2>';
+            echo  '<h2> Lvl:' . $busquedaArticulos[$i]['nivel']. '</h2>';
            // echo  '<h2> Ch: ' . $busquedaArticulos[$i]['capitulo']. '</h2>';
             ?>
             </div>
             <div>
-            <a class="sinSub" href="/usuario.php?id=<?php echo $busquedaArticulos[$i]['id_creador']; ?>">
-            <img class="imgInfoArticulo" src="/files/img/usuario/<?php echo $busquedaArticulos[$i]['id_creador'].'.jpg';?>">
+            <a class="sinSub" href="/usuario.php?id=<?php echo $busquedaArticulos[$i]['creador']; ?>">
+            <img class="imgInfoArticulo" src="/files/img/usuario/<?php echo $busquedaArticulos[$i]['creador'].'.jpg';?>">
             </a>
-            <a class="sinSub" href="/usuario.php?id=<?php echo $busquedaArticulos[$i]['id_creador']; ?>">
+            <a class="sinSub" href="/usuario.php?id=<?php echo $busquedaArticulos[$i]['creador']; ?>">
      
             <?php
-            echo  '<p>' . $busquedaArticulos[$i]['id_creador']. '</p>';
+            echo  '<p>' . $busquedaArticulos[$i]['creador']. '</p>';
             ?>
             <a/>
             </div>
             <div>
-            <a class="sinSub" href="/rol.php?rol=<?php echo $busquedaArticulos[$i]['rol_articulo']; ?>">
-            <img class="imgInfoArticulo" src="/files/img/rol/<?php echo $busquedaArticulos[$i]['rol_articulo']. '.jpg'?>">
+            <a class="sinSub" href="/rol.php?rol=<?php echo $busquedaArticulos[$i]['rol']; ?>">
+            <img class="imgInfoArticulo" src="/files/img/rol/<?php echo $busquedaArticulos[$i]['rol']. '.jpg'?>">
             </a>
-            <a class="sinSub" href="/rol.php?rol=<?php echo $busquedaArticulos[$i]['rol_articulo']; ?>">
+            <a class="sinSub" href="/rol.php?rol=<?php echo $busquedaArticulos[$i]['rol']; ?>">
            
            <?php
-            echo  '<p>' . $busquedaArticulos[$i]['rol_articulo'] . '</p>';
+            echo  '<p>' . $busquedaArticulos[$i]['rol'] . '</p>';
             ?>
             </a>
             </div>
@@ -41,9 +41,9 @@
             <?php
             echo  '<h2> ' . $busquedaArticulos[$i]['titulo']. '</h1>';
             ?>
-            <img class="imgArticulo" src="/files/img/articulos/<?php echo $busquedaArticulos[$i]['Imagen']. '.jpg'?>">
+            <img class="imgArticulo" src="/files/img/articulos/<?php echo $busquedaArticulos[$i]['img']. '.jpg'?>">
             <?php
-            echo  '<p> Img: ' . $busquedaArticulos[$i]['Imagen'] . '.jpg</p>';
+            echo  '<p> Img: ' . $busquedaArticulos[$i]['img'] . '.jpg</p>';
             echo  '<p> ' . $busquedaArticulos[$i]['contenido'] . '</p>';
         //}
 
