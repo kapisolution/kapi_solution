@@ -43,13 +43,13 @@
       <div id="ElegirRol" class="rol">
           
           <input type="radio"  name="elegirRol" id="abogado" value="abogado">
-          <label for="abogado"><img src="files/icon/svg/check-square.svg" class="rolImage">Abogado</label>
+          <label for="abogado"><img src="/files/img/rol/abogado.jpg" class="rolImage">Abogado</label>
 
           <input type="radio"  name="elegirRol" id="periodista" value="periodista">
-          <label for="periodista"><img src="files/icon/svg/close.svg" class="rolImage">Periodista</label>
+          <label for="periodista"><img src="files/img/rol/periodista.jpg" class="rolImage">Periodista</label>
           
           <input type="radio" name="elegirRol" id="informatico" value="informatico">
-          <label for="informatico"><img src="files/icon/svg/check-square.svg" class="rolImage">Informatico</label>
+          <label for="informatico"><img src="files/img/rol/informatico.jpg" class="rolImage">Informatico</label>
       </a>
       </div>
       <p><center>Al registrarte acceptas todos nuestros <a href="#">Términos y condiciones de uso</a>.</center></p>
