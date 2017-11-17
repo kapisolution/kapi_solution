@@ -30,9 +30,7 @@
     else {
         $sqlInsert = "INSERT INTO Usuarios(nick,rol,password,email) VALUES('$nombre','$rol','$pass  ','$email')";
         if (mysqli_query($con, $sqlInsert)) {   
-            echo ("<script>");
-            echo ("alertInsert()");
-            echo ("</script>");
+            header('Location: /?login=ok');
         } else {
             echo("Error en la consulta");
         }

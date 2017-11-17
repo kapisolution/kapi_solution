@@ -15,6 +15,12 @@
      include 'frontend/login.php';
      include 'frontend/footer.php';
      include 'backend/desconexion.php';
+     if($_GET['login']=='false'){
+      echo'<script src="js/sign_in.js"></script>'; 
+      echo ("<script>");
+      echo ("alertNick()");
+      echo ("</script>"); 
+     }
     ?>
   </body>
 </html>

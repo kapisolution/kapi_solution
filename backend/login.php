@@ -3,23 +3,21 @@
     require 'conexion.php';
     $nombre=$_POST["alias"]; 
     $pass=$_POST["pass"];
-    echo $pass;
-    //'" AND password LIKE "'.$pass.
-
-    $sql = 'SELECT nick,password FROM Usuarios WHERE nick LIKE "'.$nombre.'"AND password LIKE "'.$pass.'";';
+   
+    $sql = 'SELECT * FROM Usuarios WHERE nick="'.$nombre.'";';
     $resultado = mysqli_query($con, $sql) or die("Error por nick en consulta sobre la tabla Usuarios");
-    $numRegistros = $resultado->num_rows;
-        
-    if($numRegistros==0){
-        echo ("<script>");
-        echo ("alertNick()");
-        echo ("</script>"); 
-        
+    include 'desconexion.php';
+    $usuario = array();
+    while($fila = mysqli_fetch_array($resultado)){
+        $usuario[] = $fila;
+    }
+    echo $usuario[0]['password'];
+    echo $pass;
+    $passdb=$usuario[0]['password'];
+    if($pass == ($usuario[0]['password'])){  
+        header('Location:/');
     }
     else{
-        echo ("<script>");
-        echo ("alertCorrect()");
-        echo ("</script>");
-    }  
-    include 'desconexion.php';
+        header('Location:/login.php?login=false');
+    }
 ?>
