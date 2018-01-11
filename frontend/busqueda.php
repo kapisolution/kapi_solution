@@ -5,12 +5,12 @@
     <h3> Resultados de: <?php echo $_GET["search"] ?> </h3>
     
     <div class="tabs">
-        <button class="tablink tab-selected" onclick="mostrarTarjetas(event, 'usuarios')">Usuarios</button>
-        <button class="tablink" onclick="mostrarTarjetas(event, 'articulos')">Artículos</button>
+        <button class="tablink tab-selected" onclick="mostrarTarjetas(event, 'articulos')">Artículos</button>
+        <button class="tablink" onclick="mostrarTarjetas(event, 'usuarios')">Usuarios</button>
         <button class="tablink" onclick="mostrarTarjetas(event, 'ejercicios')">Ejercicios</button>
     </div> 
 
-    <div class="tarjetas" id="usuarios">
+    <div class="tarjetas" id="usuarios" style="display:none">
     <?php
         for ($i = 0; $i < sizeof($busquedaUsuarios) ; $i++){
             echo '<div class="tarjeta">';            
@@ -50,12 +50,12 @@
     ?>
     </div>
 
-    <div class="tarjetas" id="articulos" style="display:none">
+    <div class="tarjetas" id="articulos" >
     <?php
         for ($i = 0; $i < sizeof($busquedaArticulos) ; $i++){
             echo '<div class="tarjeta">';
               
-                    echo '<div class="infoTarjeta" style="background-image: url(&quot;/files/img/articulos/' . $busquedaArticulos[$i]['img']. '.jpg&quot;);">';
+                    echo '<div class="infoTarjeta" style="background-image: url(&quot;/files/img/articulos/' . $busquedaArticulos[$i]['img']. '&quot;);">';
                     echo '<a class="sinSub" href="/articulo.php?id='.$busquedaArticulos[$i]['id'].'">';
                     ?>
                     <img class="imgUser" src="/files/img/rol/<?php echo $busquedaArticulos[$i]['rol'].'.jpg';?>">

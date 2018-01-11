@@ -41,9 +41,9 @@
             <?php
             echo  '<h2> ' . $busquedaArticulos[$i]['titulo']. '</h1>';
             ?>
-            <img class="imgArticulo" src="/files/img/articulos/<?php echo $busquedaArticulos[$i]['img']. '.jpg'?>">
+            <img class="imgArticulo" src="/files/img/articulos/<?php echo $busquedaArticulos[$i]['img']?>">
             <?php
-            echo  '<p> Img: ' . $busquedaArticulos[$i]['img'] . '.jpg</p>';
+            echo  '<p> Img: ' . $busquedaArticulos[$i]['img'] . '</p>';
             echo  '<p> ' . $busquedaArticulos[$i]['contenido'] . '</p>';
         //}
 

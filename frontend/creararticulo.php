@@ -1,7 +1,7 @@
 <div id="content">
 <h2>Nuevo artículo:</h2>
 
-<form id="formularioArticulo" action="backend/creararticulo.php" method="POST">
+<form id="formularioArticulo" enctype="multipart/form-data" action="backend/creararticulo.php" method="POST">
  
   Rol:
   <select name="rol">
@@ -16,7 +16,7 @@
   Contenido<br>
   <textarea name="contenido" form="formularioArticulo"></textarea>
   Imágen<br>
-  <input type="file" name="img"><br>
+  <input type="file" id="img" name="img"><br>
   <button type="submit">Crear articulo</button>
 </form> 
 </div>
