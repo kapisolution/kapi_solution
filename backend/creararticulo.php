@@ -21,6 +21,7 @@
             } else {
                 echo "¡Posible ataque de subida de ficheros!\n";
             }
+            echo $nivel . $rol . $titulo . $contenido . $img;
         }
     }
     require("desconexion.php");

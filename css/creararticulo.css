@@ -1,0 +1,26 @@
+#nivel{
+    background: linear-gradient(to right, var(--primario-dark) , var(--secundario-light));
+    border-radius: 10px;
+}
+
+#titulo, #contenido{
+    width: 100%;
+}
+
+#contenido{
+    height: 250px;
+ 
+}
+
+#formularioarticulo{
+    width: 100%;
+    max-width: 1000px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px rgba(128, 128, 128, 0.3);
+    background-color: white;
+}
+
+#content{
+    display: flex;
+    justify-content: center;
+}
