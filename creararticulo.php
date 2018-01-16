@@ -1,7 +1,7 @@
 <?php session_start();?>
 <html>
   <head>
-    <title>Kapi - Articulo</title>
+    <title>Kapi - Nuevo articulo</title>
     <link rel="icon" href="files/icon/logo.png" type="image/gif" sizes="16x16">
     <link rel="stylesheet" type="text/css" href="css/index.css" />
     <link rel="stylesheet" type="text/css" href="css/topbar.css" />

@@ -1,5 +1,6 @@
 <?php
     session_start();
+    //descomentar cuando haya session
     $_SESSION['login']=true;
     $_SESSION['nick']="javimv36";
     require("conexion.php");
@@ -24,6 +25,7 @@
             echo $nivel . $rol . $titulo . $contenido . $img;
         }
     }
+    echo $_POST['contenido'];
     require("desconexion.php");
     header('Location:/');
  ?>

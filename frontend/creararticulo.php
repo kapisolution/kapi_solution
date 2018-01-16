@@ -2,7 +2,7 @@
   <div id="formularioarticulo">
 <h2>Nuevo artículo:</h2>
 
-<form id="formularioArticulo" enctype="multipart/form-data" action="backend/creararticulo.php" method="POST">
+<form id="formularioArticulo" enctype="multipart/form-data" action="backend/creararticulo.php" method="POST" onsubmit="return updateValue()">
 
   Rol:
   <select name="rol">
@@ -17,7 +17,9 @@
   <input id="titulo" type="text" name="titulo"><br> 
 
   Contenido<br>
-  <textarea id="contenido" name="contenido" form="formularioArticulo"></textarea><br>
+  <textarea class="input-block-level" id="summernote" name="contenido"></textarea>
+ <!-- <textarea id="contenido" name="contenido" form="formularioArticulo"></textarea><br>-->
+ <div id="bloquecontenido"></div>
   Imágen
   <input type="file" id="img" name="img"><br>
 
@@ -26,17 +28,19 @@
 </form> 
 </div>
 </div>
-<!--
+
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.js"></script>
-<div id="summernote"></div>
+
 <script>
-  $('#contenido').summernote({
+  $('#summernote').summernote({
     placeholder: 'Escribe el contenido de tu articulo.',
     tabsize: 2,
-    height: 200
+    height: 400
   });
-</script>
 
--->
+  var updateValue = function() {
+	var contenido = $('textarea[name="contenido"]').html($('#summernote').code());
+}
+</script>
