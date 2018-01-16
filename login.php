@@ -15,8 +15,8 @@
      include 'frontend/login.php';
      include 'frontend/footer.php';
      include 'backend/desconexion.php';
-     if($_GET['login']=='false'){
-      echo'<script src="js/sign_in.js"></script>'; 
+     echo'<script src="js/login.js"></script>';
+     if($_GET['login']=='ko'){
       echo ("<script>");
       echo ("alertNick()");
       echo ("</script>"); 

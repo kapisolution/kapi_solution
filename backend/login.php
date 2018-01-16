@@ -1,23 +1,25 @@
 <script src="../js/login.js"></script>
 <?php
+    session_start();
     require 'conexion.php';
     $nombre=$_POST["alias"]; 
     $pass=$_POST["pass"];
    
-    $sql = 'SELECT * FROM Usuarios WHERE nick="'.$nombre.'";';
+    $sql = 'SELECT password FROM Usuarios WHERE nick="'.$nombre.'";';
     $resultado = mysqli_query($con, $sql) or die("Error por nick en consulta sobre la tabla Usuarios");
     include 'desconexion.php';
     $usuario = array();
     while($fila = mysqli_fetch_array($resultado)){
         $usuario[] = $fila;
     }
-    echo $usuario[0]['password'];
-    echo $pass;
+    
     $passdb=$usuario[0]['password'];
-    if($pass == ($usuario[0]['password'])){  
+    if(str_replace(' ', '', $pass) == str_replace(' ', '',$passdb)){
+        $_SESSION["nick"] = $nombre;
+        $_SESSION["login"] = true;  
         header('Location:/');
     }
     else{
-        header('Location:/login.php?login=false');
+        header('Location:/login.php?login=ko');
     }
 ?>

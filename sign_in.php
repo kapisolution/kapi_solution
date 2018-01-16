@@ -15,6 +15,12 @@
      include 'frontend/sign_in.php';
      include 'frontend/footer.php';
      include 'backend/desconexion.php';
+     echo'<script src="js/sign_in.js"></script>';
+    if($_GET['signin'] == 'ko'){
+      echo ("<script>");
+      echo ("alertSignIn()");
+      echo ("</script>");
+    }
     ?>
   </body>
 </html>

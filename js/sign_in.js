@@ -18,11 +18,8 @@
       document.getElementById('okPsw').style.display = 'none';      
     }
   }
-  function alertNick(){ 
-    alert("Usuario ya existente");
-  }
-  function alertEmail(){ 
-    alert("Email ya existente");
+  function alertSignIn(){ 
+    alert("El registro no se ha podido completar. Usuario o email no válidos");
   }
   function alertInsert(){ 
     alert("Usuario creado con exito");

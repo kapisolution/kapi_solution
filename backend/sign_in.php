@@ -4,6 +4,7 @@
 
 <script src="../js/sign_in.js"></script>
 <?php
+    session_start();
     require 'conexion.php';
     $nombre=$_POST["alias"]; 
     $email=$_POST["email"];
@@ -18,19 +19,17 @@
     $numRegistrosEmail = $resultadoEmail->num_rows;
     
     if($numRegistrosNick>0){
-        echo ("<script>");
-        echo ("alertNick()");
-        echo ("</script>");
+        header('Location: /sign_in.php?signin=ko');
     }
     else if($numRegistrosEmail>0){
-        echo ("<script>");
-        echo ("alertEmail()");
-        echo ("</script>");
+        header('Location: /sign_in.php?signin=ko');
     }
     else {
         $sqlInsert = "INSERT INTO Usuarios(nick,rol,password,email) VALUES('$nombre','$rol','$pass  ','$email')";
-        if (mysqli_query($con, $sqlInsert)) {   
-            header('Location: /?login=ok');
+        if (mysqli_query($con, $sqlInsert)) { 
+            $_SESSION["nick"] = $nombre;
+            $_SESSION["login"] = true;  
+            header('Location: /');
         } else {
             echo("Error en la consulta");
         }

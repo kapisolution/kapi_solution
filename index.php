@@ -14,12 +14,6 @@
      include 'frontend/index.php';
      include 'frontend/footer.php';
      include 'backend/desconexion.php';
-     if($_GET['login'] == 'ok'){
-      echo'<script src="js/sign_in.js"></script>'; 
-      echo ("<script>");
-      echo ("alertInsert()");
-      echo ("</script>");
-     }
     ?>
   </body>
 </html>
