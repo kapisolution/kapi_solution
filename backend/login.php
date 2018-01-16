@@ -16,10 +16,12 @@
     $passdb=$usuario[0]['password'];
     if(str_replace(' ', '', $pass) == str_replace(' ', '',$passdb)){
         $_SESSION["nick"] = $nombre;
-        $_SESSION["login"] = true;  
+        $_SESSION["login"] = true;
+        require 'desconexion.php';  
         header('Location:/');
     }
     else{
+        require 'desconexion.php';
         header('Location:/login.php?login=ko');
     }
 ?>
