@@ -25,7 +25,9 @@
         header('Location: /sign_in.php?signin=ko');
     }
     else {
-        $sqlInsert = "INSERT INTO Usuarios(nick,rol,password,email) VALUES('$nombre','$rol','$pass  ','$email')";
+        $password = str_replace(' ', '',$pass);
+        $passdb = md5($password);
+        $sqlInsert = "INSERT INTO Usuarios(nick,rol,password,email) VALUES('$nombre','$rol','$passdb','$email')";
         if (mysqli_query($con, $sqlInsert)) { 
             $_SESSION["nick"] = $nombre;
             $_SESSION["login"] = true;  
