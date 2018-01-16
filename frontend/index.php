@@ -40,7 +40,6 @@
 
 
 	<?php
-		$_SESSION["login"]=true;
         if (isset($_SESSION["login"])){
 	?>
 
