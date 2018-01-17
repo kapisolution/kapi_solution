@@ -1,10 +1,18 @@
 <?php
-if(isset($_GET["id"])&&$_GET["id"]!=""){ 
-    $sql ='SELECT * FROM Articulos WHERE id = '.$_GET["id"] .';';
-    $consulta = mysqli_query($con, $sql) or die("Error en consulta sobre la tabla articulos");
-    $busquedaArticulos = array();
-    while($fila = mysqli_fetch_array($consulta)){
-        $busquedaArticulos[] = $fila;
+    session_start();
+    require("conexion.php");
+    if(isset($_SESSION['login'])){
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $nivel=$_POST["nivel"];
+            $rol=$_POST["rol"];
+            $titulo=$_POST["titulo"];
+            $contenido=$_POST["contenido"];
+            $creador= $_SESSION['nick'];
+            $sql = "INSERT INTO Modificacion_articulo (id_mod, rol, nivel, titulo, contenido, creador) VALUES (NULL, '$rol', '$nivel', '$titulo', '$contenido', '$creador');";
+            $consulta = mysqli_query($con, $sql) or die("No se pudo insertar el articulo");    
+            echo $nivel . $rol . $titulo . $contenido . $img;
+        }
     }
-}
-?>
+    require("desconexion.php");
+    header('Location:/');
+ ?>

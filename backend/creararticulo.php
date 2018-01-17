@@ -1,8 +1,5 @@
 <?php
     session_start();
-    //descomentar cuando haya session
-    $_SESSION['login']=true;
-    $_SESSION['nick']="javimv36";
     require("conexion.php");
     if(isset($_SESSION['login'])){
         if ($_SERVER["REQUEST_METHOD"] == "POST") {

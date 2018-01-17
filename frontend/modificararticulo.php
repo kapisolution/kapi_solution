@@ -3,30 +3,29 @@
 ?>
 <div id="content">
   <div id="formularioarticulo">
-<h2>Modificar artículo: <?php echo $busquedaArticulos[$i]['creador']; ?></h2>
+<h2>Modificar artículo: <?php echo $busquedaArticulos[0]['id']; ?></h2>
 
-<form id="formularioArticulo" enctype="multipart/form-data" action="backend/creararticulo.php" method="POST" onsubmit="return updateValue()">
+<form id="formularioArticulo" enctype="multipart/form-data" action="backend/modificararticulo.php" method="POST" onsubmit="return updateValue()">
 
   Rol:
-  <select name="rol">
-    <option value="informatico">Informático</option>
-    <option value="periodista">Periodista</option>
-    <option value="abogado">Abogado</option>
+  <select name="rol" value="<?php echo $busquedaArticulos[0]['rol']; ?>">
+    <option <?php if( $busquedaArticulos[0]['rol'] == 'informatico'){echo("selected");}?> value="informatico">Informático</option>
+    <option <?php if( $busquedaArticulos[0]['rol'] == 'periodista'){echo("selected");}?> value="periodista">Periodista</option>
+    <option <?php if( $busquedaArticulos[0]['rol'] == 'abogado'){echo("selected");}?> value="abogado">Abogado</option>
+
   </select>
   Nivel:
-  <input id="nivel" type="range" name="nivel" min="1" max="10"><br>
+  <input id="nivel" value="<?php echo $busquedaArticulos[0]['nivel']; ?>" type="range" name="nivel" min="1" max="10"><br>
 
   Título<br>
   <input id="titulo" value="<?php echo $busquedaArticulos[0]['titulo']; ?>" type="text" name="titulo"><br> 
 
   Contenido<br>
-  <textarea class="input-block-level" id="summernote" name="contenido"></textarea>
+  <textarea value="<?php echo $busquedaArticulos[0]['contenido']; ?>" class="input-block-level" id="summernote" name="contenido"><?php echo $busquedaArticulos[0]['contenido']; ?></textarea>
  <!-- <textarea id="contenido" name="contenido" form="formularioArticulo"></textarea><br>-->
  <div id="bloquecontenido"></div>
-  Imágen
-  <input type="file" id="img" name="img"><br>
 
-  <button type="submit">Crear articulo</button>
+  <button type="submit">Enviar modificación</button>
 
 </form> 
 </div>

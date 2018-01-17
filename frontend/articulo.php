@@ -57,6 +57,8 @@
 <div id="articulosRelacionados">
 <div id="modificacion">
 <h2>Crear modificación:</h2>
+<a href="/modificararticulo.php?id=<?php echo $busquedaArticulos[$i]['id']; ?>">Modificar artículo</a>
+
 </div>
     <p>Articulos relacionados</p>
     </div>
