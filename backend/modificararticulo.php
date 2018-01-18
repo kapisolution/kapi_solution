@@ -10,7 +10,6 @@
             $creador= $_SESSION['nick'];
             $sql = "INSERT INTO Modificacion_articulo (id_mod, rol, nivel, titulo, contenido, creador) VALUES (NULL, '$rol', '$nivel', '$titulo', '$contenido', '$creador');";
             $consulta = mysqli_query($con, $sql) or die("No se pudo insertar el articulo");    
-            echo $nivel . $rol . $titulo . $contenido . $img;
         }
     }
     require("desconexion.php");
