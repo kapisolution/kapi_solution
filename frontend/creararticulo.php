@@ -8,23 +8,23 @@
 <form id="formularioArticulo" enctype="multipart/form-data" action="backend/creararticulo.php" method="POST" onsubmit="return updateValue()">
 
   Rol:
-  <select name="rol">
+  <select name="rol" required>
     <option value="informatico">Informático</option>
     <option value="periodista">Periodista</option>
     <option value="abogado">Abogado</option>
   </select>
   Nivel:
-  <input id="nivel" type="range" name="nivel" min="1" max="10"><br>
+  <input id="nivel" type="range" name="nivel" min="1" max="10" required><br>
 
   Título<br>
-  <input id="titulo" type="text" name="titulo"><br> 
+  <input id="titulo" type="text" name="titulo" required><br> 
 
   Contenido<br>
-  <textarea class="input-block-level" id="summernote" name="contenido"></textarea>
+  <textarea class="input-block-level" id="summernote" name="contenido" required></textarea>
  <!-- <textarea id="contenido" name="contenido" form="formularioArticulo"></textarea><br>-->
  <div id="bloquecontenido"></div>
   Imágen
-  <input type="file" id="img" name="img"><br>
+  <input type="file" id="img" name="img" required><br>
 
   <button type="submit">Crear articulo</button>
 
