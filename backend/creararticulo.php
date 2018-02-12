@@ -20,9 +20,20 @@
                 echo "¡Posible ataque de subida de ficheros!\n";
             }
             echo $nivel . $rol . $titulo . $contenido . $img;
+
+            $sql = "SELECT * FROM Articulos WHERE nivel = '$nivel' AND rol = '$rol' AND titulo = '$titulo' AND contenido = '$conenido' AND creador = '$creador';";
+            
+            $consulta = mysqli_query($con, $sql) or die("No se pudo insertar el articulo"); 
+            $id = array();
+            while($fila = mysqli_fetch_array($consulta)){
+                $id[] = $fila;
+            }    
+            require("desconexion.php");
+            echo $id['id'];
+          //header('Location:/articulo.php?id='.$id[0][0]);
         }
     }
     echo $_POST['contenido'];
     require("desconexion.php");
-    header('Location:/');
+   // header('Location:/');
  ?>

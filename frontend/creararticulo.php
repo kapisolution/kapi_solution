@@ -1,5 +1,8 @@
 <div id="content">
   <div id="formularioarticulo">
+  <?php
+    if(isset($_SESSION['login'])){
+  ?>
 <h2>Nuevo artículo:</h2>
 
 <form id="formularioArticulo" enctype="multipart/form-data" action="backend/creararticulo.php" method="POST" onsubmit="return updateValue()">
@@ -26,6 +29,11 @@
   <button type="submit">Crear articulo</button>
 
 </form> 
+<?php
+    }else{
+    echo "Acceso restringido";
+    }
+  ?>
 </div>
 </div>
 
