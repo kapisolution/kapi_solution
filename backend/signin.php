@@ -2,7 +2,7 @@
     Falta redirigir a inicio o a signin en caso de exito o error en el signin
 -->
 
-<script src="../js/sign_in.js"></script>
+<script src="../js/signin.js"></script>
 <?php
     session_start();
     require 'conexion.php';
@@ -19,10 +19,10 @@
     $numRegistrosEmail = $resultadoEmail->num_rows;
     
     if($numRegistrosNick>0){
-        header('Location: /sign_in.php?signin=ko');
+        header('Location: /signin.php?signin=ko');
     }
     else if($numRegistrosEmail>0){
-        header('Location: /sign_in.php?signin=ko');
+        header('Location: /signin.php?signin=ko');
     }
     else {
         $password = str_replace(' ', '',$pass);

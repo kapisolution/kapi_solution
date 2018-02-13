@@ -1,113 +1,152 @@
-
-<?php
-     require 'backend/index.php';
-?>
-<div id="content">
-<div id="tarjetero">
-	<h3>Artículos para leer</h3>
-    <div class="tarjetas" id="articulos" >
-    <?php
-        for ($i = 0; $i < sizeof($busquedaArticulos) ; $i++){
-            echo '<div class="tarjeta">';
-              
-                    echo '<div class="infoTarjeta" style="background-image: url(&quot;/files/img/articulos/' . $busquedaArticulos[$i]['img']. '&quot;);">';
-                    echo '<a class="sinSub" href="/articulo.php?id='.$busquedaArticulos[$i]['id'].'">';
-                    ?>
-					<img class="imgUser" src="/files/img/rol/<?php echo $busquedaArticulos[$i]['rol'].'.jpg';?>">
-					<?php
-                       echo '</a>'; 
-                        echo  '<p> ' . $busquedaArticulos[$i]['nivel']. '</p>';
-                       // echo  '<p> ' . $busquedaArticulos[$i]['capitulo']. '</p>';
-                        //echo  '<p> ' . $busquedaArticulos[$i]['Imagen'] . '</p>';
-						echo '<a class="sinSub" href="/articulo.php?id='.$busquedaArticulos[$i]['id'].'">';
-						?>
-						<img class="imgUser" src="/files/img/usuario/<?php echo $busquedaArticulos[$i]['nick'].'.jpg';?>">
-						<?php
-						   echo '</a>';
-                    echo '</div>';
-                    echo '<a class="sinSub" href="/articulo.php?id='.$busquedaArticulos[$i]['id'].'">';
-                    echo '<div class="contenidoTarjeta">';
-                        echo  '<p> ' . $busquedaArticulos[$i]['titulo']. '</p>';
-                        echo  '<p> ' . $busquedaArticulos[$i]['creador']. '</p>';
-                    //    echo  '<p> ' . $busquedaArticulos[$i]['rol_articulo'] . '</p>';
-                    // echo  '<p> ' . $busquedaArticulos[$i]['contenido'] . '</p>';
-                    echo '</div>';
-                    echo '</a>';
-            echo '</div>';
-        }
-    ?>
-    </div>
-
-
-	<?php
-        if (isset($_SESSION["login"])){
-	?>
-
-<h3>Siguiendo</h3>
-		<div class="tarjetas" id="usuarios">
-			<?php
-				for ($i = 0; $i < sizeof($busquedaUsuarios) ; $i++){
-					echo '<div class="tarjeta">';            
-						echo '<div class="infoTarjeta" style="background-image: url(&quot;/files/img/rol/' . $busquedaUsuarios[$i]['rol']. '.jpg&quot;);">';
-						echo '<a class="sinSub" href="/usuario.php?id='.$busquedaUsuarios[$i]['nick'].'">';
-							?>
-							<img class="imgUser" src="/files/img/usuario/<?php echo $busquedaUsuarios[$i]['nick'].'.jpg';?>">
-							<?php
-						echo '</a>'; 
-					
-						echo '<a class="sinSub" href="/usuario.php?id='.$busquedaUsuarios[$i]['nick'].'">';
-							?> 
-							<svg class="SVGsecundario iconoTarjeta" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 294.843 294.843" style="enable-background:new 0 0 294.843 294.843;" xml:space="preserve">
-								<g>
-									<path d="M278.527,79.946c-10.324-20.023-25.38-37.704-43.538-51.132c-2.665-1.97-6.421-1.407-8.392,1.257s-1.407,6.421,1.257,8.392
-										c16.687,12.34,30.521,28.586,40.008,46.983c9.94,19.277,14.98,40.128,14.98,61.976c0,74.671-60.75,135.421-135.421,135.421
-										S12,222.093,12,147.421S72.75,12,147.421,12c3.313,0,6-2.687,6-6s-2.687-6-6-6C66.133,0,0,66.133,0,147.421
-										s66.133,147.421,147.421,147.421s147.421-66.133,147.421-147.421C294.842,123.977,289.201,100.645,278.527,79.946z"/>
-									<path d="M109.699,78.969c-1.876,1.067-3.035,3.059-3.035,5.216v131.674c0,3.314,2.687,6,6,6s6-2.686,6-6V94.74l88.833,52.883
-										l-65.324,42.087c-2.785,1.795-3.589,5.508-1.794,8.293c1.796,2.786,5.508,3.59,8.294,1.794l73.465-47.333
-										c1.746-1.125,2.786-3.073,2.749-5.15c-0.037-2.077-1.145-3.987-2.93-5.05L115.733,79.029
-										C113.877,77.926,111.575,77.902,109.699,78.969z"/>
-								</g>
-							</svg>
-							<?php
-						echo '</a>';
-					echo '</div>';
-					echo '<a class="sinSub" href="/usuario.php?id='.$busquedaUsuarios[$i]['nick'].'">';
-						echo '<div class="contenidoTarjeta">';
-							echo '<p>' . $busquedaUsuarios[$i]['nick'] . '</p>';
-						//   echo '<p>' . $busquedaUsuarios[$i]['Nombre'] . '</p>';
-						//  echo '<p>' . $busquedaUsuarios[$i]['Apellidos'] . '</p>';
-						echo '</div>';
-					echo '</a>';
-				echo '</div>';
-        }
-    ?>
-    </div>
-		<h3>Ejercicios</h3>
-		<div class="tarjetas" id="ejercicios">
-		
-		<?php
-			for ($i = 0; $i < sizeof($busquedaEjercicios) ; $i++){
-				echo '<div class="ejercicio">';
-					echo  '<p>' . $busquedaEjercicios[$i]['enunciado'] . '</p>';
-				echo '</div>';
-			}
-		?>
-		</div>
-		<h3>Exámenes</h3>
-		<div class="tarjetas" id="examenes">
-		
-		<?php
-			for ($i = 0; $i < sizeof($busquedaEjercicios) ; $i++){
-				echo '<div class="examen">';
-					echo  '<p>' . $busquedaEjercicios[$i]['enunciado'] . '</p>';
-				echo '</div>';
-			}
-		?>
-		</div>
-
-    <?php
-       }
-    ?>
+<div class="jumbotron text-center">
+  <h1>K A P I S O L U T I O N</h1> 
+  <p>Aprende a defenderte</p>
 </div>
-	</div>
+<!-- Container (About Section) -->
+<div id="row1" class="container-fluid">
+  <div class="row">
+    <div class="col-sm-8 text-center">
+      <h1>¿Crees que estás expuesto en la web?</h1>
+      <h4>¿Te preocupa tu privacidad?</h4>      
+      <p>¿Quieres mejorar como profesional?</p>
+    </div>
+    <div class="col-sm-4">
+    <i class="glyphicon glyphicon-fire logo glyphicon-md"></i>
+    </div>
+  </div>
+</div>
+<!-- Container (Services Section) -->
+<div id="row3" class="container-fluid text-center">
+  <h2>TE OFRECEMOS</h2>
+  <br>
+  <div class="row">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-off logo-small"></span>
+      <h4>POWER</h4>
+      <p>Consigue nuestra máxima insignia</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-heart logo-small"></span>
+      <h4>LOVE</h4>
+      <p>Comunidad GitHub</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-lock logo-small"></span>
+      <h4>PROGRESS</h4>
+      <p>Nos valemos de tu progreso</p>
+    </div>
+  </div>
+  <br><br>
+  <div class="row">
+    <div class="col-sm-6">
+      <span class="glyphicon glyphicon-certificate logo-small"></span>
+      <h4>CERTIFICATE</h4>
+      <p>Profesionales en nuestro sector</p>
+    </div>
+    <div class="col-sm-6">
+      <span class="glyphicon glyphicon-wrench logo-small"></span>
+      <h4 style="color:#303030;">HARD WORK</h4>
+      <p>Nunca estás lo suficiente protegido</p>
+    </div>
+  </div>
+</div>
+<!-- Container (Portfolio Section) -->
+<div id="row2" class="container-fluid text-center">
+  <h2>ROLES</h2><br>
+  <h4>¿Qué ROL deseas elegir?</h4>
+  <div class="row text-center">
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="/files/img/rol/informatico.jpg" alt="Paris" width="400" height="100">
+        <p><strong>INFORMÁTICO</strong></p>
+        <p>Sí, reconócelo, no lo sabes todo</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="/files/img/rol/periodista.jpg" alt="New York" width="400" height="100">
+        <p><strong>ABOGADOS</strong></p>
+        <p>We built New York</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="/files/img/rol/periodista.jpg" alt="San Francisco" width="400" height="1  00">
+        <p><strong>PERIODISTAS</strong></p>
+        <p>Yes, San Fran is ours</p>
+      </div>
+    </div>
+  </div>
+  <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <h4>"Despues de ciertos infiernos, no cualquier demonio te quema!"<br><span>Anónimo</span></h4>
+      </div>
+      <div class="item">
+        <h4>"A las armas!!"<br><span>Anónimo2 Inc</span></h4>
+      </div>
+      <div class="item">
+        <h4>"Todo el mundo tiene envidia de mi por ser rico, guapo y famoso"<br><span>Cristiano Ronaldo</span></h4>
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+<!-- Container (Pricing Section) -->
+<div id="row3" class="container-fluid">
+  <div class="text-center">
+    <h2>Para nosotros, la COMUNIDAD, es lo mas importante</h2>
+    <h4></h4>
+  </div>
+  <div class="row">
+    <div class="col-sm-6 ">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1>BÁSICO</h1>
+        </div>
+        <div class="panel-body">
+          <p><strong> Ver Artículos</strong></p></div>
+          <div class="panel-body trans">
+          <p><strong>Añadir Contenido</strong></p>
+          <p><strong>Editar Contenido</strong></p>
+          <p><strong>Realizar Pruebas de nivel</strong></p>
+        </div>
+      </div>      
+    </div>          
+    <div class="col-sm-6">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1>PREMIUM</h1>
+        </div>
+        <div class="panel-body">
+          <p><strong> Ver Artículos</strong></p>
+          <p><strong>Añadir Contenido</strong></p>
+          <p><strong>Editar Contenido</strong></p>
+          <p><strong>Realizar Pruebas de nivel</strong></p>
+        </div>
+        <div class="panel-footer">
+            <br></br>
+            <button class="btn btn-lg">Sign Up</button>
+        </div>
+      </div>      
+    </div>    
+  </div>
+</div>
+  

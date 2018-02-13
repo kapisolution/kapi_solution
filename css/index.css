@@ -1,106 +1,121 @@
-@font-face {
-    font-family: digitalt;
-    src: url(../files/fonts/Digitalt.otf);
+.jumbotron {
+    background-color: rgb(0, 196, 160);
+    color: #fff;
+    padding: 100px 25px;
+    margin-bottom: 0px;
+    margin-top: 50px;
+}
+.logo-small {
+    color: #00644b;
+    font-size: 50px;
+}
+.logo {
+    color: #00644b;
+    font-size: 100px;
+}
+.logo-small:hover {
+    color: #7ee7cd;
 }
 
-@font-face {
-    font-family: gravity;
-    src: url(../files/fonts/Gravity-Regular.otf);
+.thumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
 }
-:root{
-    --primario:#00BFA5;
-    --primario-light:#5df2d6;
-    --primario-dark:#008e76;
-    --secundario:#FFCA28;
-    --secundario-light:#fffd61;
-    --secundario-dark:#c79a00;
-}
-
-* {
-    font-family: gravity;
-}
-
-/*Estilo del body*/
-body {
-    margin: 0; /*Quitamos los margenes para ocupar la ventana del navegador*/
-    background-color: #f4f8ff;
-    margin-top: 75px;
-}
-
-
-.primario{
-    background-color:  var(--primario);
-    color: black;
-}
-
-.primario-light{
-    background-color:  var(--primario-light);
-    color: black;
-}
-
-.primario-dark{
-    background-color:  var(--primario-dark);
-    color: black;
-}
-
-.secundario{
-    background-color:  var(--secundario);
-    color: black;
-}
-
-.secundario-light{
-    background-color:  var(--secundario-light);
-    color: black;
-}
-
-.secundario-dark{
-    background-color:  var(--secundario-dark);
-    color: black;
-}
-
-.SVGsecundario{
-    fill:  var(--secundario);
-    filter: drop-shadow( 0px 0px 2px #000 );
-    stroke: black;
-    stroke-width: 1px;
-}
-
-.SVGsecundario:hover{
-    fill:  var(--secundario-dark);
-    filter: drop-shadow( 0px 0px 2px #000 );
-}
-/*Estilo de la barra superior*/
-#topbar{
-    padding: 5px;
-    box-shadow: 5px 5px 10px rgba(128, 128, 128, 0.3);
-    z-index: 15;
+.thumbnail img {
     width: 100%;
-    float: left;
-    position: fixed;
-    top:0px;
+    margin-bottom: 10px;
 }
-
-/*Estilo de la barra izqierda*/
-#leftbar{
-    background-color: #e8f0ff;
-    width: 20%;
-    float: left;
+.carousel-control.right, .carousel-control.left {
+    background-image: none;
+    color: #00644b;
 }
-
-/*Estilo del contenido central*/
-#content{
-    width: 80%;
-    float: right;
-    /*background-color: #F6F6F6;*/
+.carousel-indicators {
+    bottom: -10px;
 }
-
-/*Estilo del pie de pagina*/
-#footer{
+.carousel-indicators li {
+    border-color: #00644b;
+}
+.carousel-indicators li.active {
+    background-color: #00644b;
+}
+.item h4 {
+    font-size: 2em;
+    line-height: 1.375em;
+    font-weight: 400;
+    font-style: italic;
+    margin: .67em 0;
+}
+.item span {
+    font-style: normal;
+}
+.panel {
+    border: 1px solid #00644b; 
+    border-radius:0 !important;
+    transition: box-shadow 0.5s;
+}
+.panel:hover {
+    box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+}
+.panel-footer .btn:hover {
+    border: 1px solid #00644b;
+    background-color: #fff !important;
+    color: #00644b;
+}
+.panel-heading {
+    color: #fff !important;
+    background-color: #00b185 !important;
+    padding: 25px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+.panel-footer {
+    background-color: white !important;
+}
+.panel-footer h3 {
+    font-size: 2em;
+}
+.panel-footer h4 {
+    color: #aaa;
+    font-size: 2em;
+}
+.panel-footer .btn {
+    margin: 15px 0;
+    background-color: #00b185;;
+    color: #fff;
+}
+.panel-default {
+    margin-top: 40px;
+    height: 500px;
+}
+.row{
+    margin-right: -15px;
+    margin-left: -15px;
+}
+#row1 {
+    background-color: rgb(173, 240, 225);
+}
+#row2 {
+    background-color: rgb(198, 243, 232);
+}
+#row3 {
+    background-color: rgb(223, 250, 243);
+}
+.glyphicon-md {
+    line-height: 2;
+ }
+ p{
+     font-size: 1.5em;
+ }
+ div.trans { 
+    opacity: 0;
+}
+@media screen and (max-width: 768px) {
+  .col-sm-4 {
     text-align: center;
-    clear: both;
-    box-shadow: 5px 5px 10px rgba(128, 128, 128, 0.3);
-    padding:10px;
-}
-.sinSub{
-    text-decoration:none;  
+    margin: 25px 0;
+  }
 }

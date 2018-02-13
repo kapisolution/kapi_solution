@@ -1,44 +1,59 @@
-<div id="topbar" class="primario">
-<a id="topbartitulo"  href="/">KAPI</a>
-<?php
-	include ('buscador.php');
-?>
-	<ul id="topbarbuttonlist">
-		<li>
-		<div class="botonmenu">
-			<a href="https://github.com/kapisolution/kapi_solution" target="_blank"><img src="files/icon/svg/upload-to-cloud.svg" title="Github"></a>
-			</div>
-		</li>
-        
+<nav class="navbar navbar-inverse navbar-fixed-top">
+<a class="navbar-brand" href="/"><img src="/files/icon/logo.png" alt="kapi solution"></a>
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
         <li>
-			<div class="botonmenu">
-			<a href="/phpmyadmin" target="_blank"><img src="files/icon/svg/browser-visualization.svg" title="phpMyamin"></a>
-			</div>
-		</li>
-        
-        <li>
-		<div class="botonmenu">
-			<a href="/"><img src="files/icon/svg/apps.svg" title="Inicio"></a>
-			</div>
-		</li>
-		<?php
-		if(isset($_SESSION["login"])){
-		?>
-		<li>
-		<div class="botonmenu">
-			<a href="/backend/logout.php"><img src="files/icon/svg/close.svg" title="Salir"></a>
-			</div>
-		</li>
-		<?php
-		}else{
-		?>
-		<li>
-		<div class="botonmenu">
-			<a href="/login.php"><img src="files/icon/svg/user.svg" title="Registro"></a>
-			</div>
-		</li>
-		<?php
-		}
-		?>
+            <form class="form-wrapper cf" action="busqueda.php">
+                <input class="" name="search" type="text" aria-label="Search" 
+                    placeholder=	
+                        <?php 
+                            echo (isset($_GET["search"])&&$_GET["search"]!="")?'"'.$_GET["search"].'"':'"'.'Busqueda...'.'"';
+                        ?>
+                >
+                <button class="" type="submit">BUSCAR</button>
+            </form>
+        </li>
+        <?php
+        if(isset($_SESSION["login"])){
+            ?>
+        <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">COMUNIDAD<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+            <li><a href="#">Añadir contenido</a></li>
+            <li><a href="#">Modificar contenido</a></li>
         </ul>
-</div>
+        </li>
+        <?php
+        }
+        ?>
+        <li><a href="#">ARTÍCULOS</a></li>
+        <li><a href="#">EXÁMENES</a></li>
+        </ul>
+        <?php
+        if(isset($_SESSION["login"])){
+        ?>
+        <ul class="nav navbar-nav navbar-right">
+        <?php echo '<li><a href="#"><span class="glyphicon glyphicon-user"></span> Bienvenido ' .$_SESSION["nick"]. '</a></li>'?>
+        <li><a href="/backend/logout.php"><span class="glyphicon glyphicon-log-in"></span> CERRAR SESIÓN</a></li>
+        </ul>
+        <?php
+        }else{
+        ?>
+        <ul class="nav navbar-nav navbar-right">
+        <li><a href="/signin.php"><span class="glyphicon glyphicon-user"></span> Regístrate</a></li>
+        <li><a href="/login.php"><span class="glyphicon glyphicon-log-in"></span> INICIAR SESIÓN</a></li>
+        </ul>
+        <?php
+        }
+        ?>
+    </div>
+  </div>
+</nav>
