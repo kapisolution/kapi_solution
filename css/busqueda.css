@@ -13,18 +13,24 @@
     border: 1px solid rgba(0,0,0,.125);
     border-radius: .25rem;
 }
-
+.btn-block {
+    display: block;
+    width: 100%;
+}
 .card-img-top {
     width: 100%;
     border-top-left-radius: calc(1rem - 1px);
     border-top-right-radius: calc(1rem - 1px);
+}
+.card-img-bottom {
+    width: 100%;
+    border-radius: calc(2.5rem - 1px);
 }
 .card-body {
     -webkit-box-flex: 1;
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
     padding: 1.25rem;
-    height: 200px;
 }
 .justify-content-between {
     -webkit-box-pack: justify !important;
@@ -39,16 +45,13 @@
     align-self: flex-end;
 }
 .row {
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
     margin-right: -15px;
     margin-left: -15px;
 }
-.botonera{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+.align-items-center {
+    -webkit-box-align: center !important;
+    -ms-flex-align: center !important;
+    align-items: center !important;
 }
 
 
