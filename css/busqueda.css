@@ -7,11 +7,15 @@ body{
 .btn-group > .btn{
     width: 33.3%;
 }
+li rol{
+    color: white;
+}
 
 /*CSS Busqueda usuarios*/
 #imgUsr{
     border-radius: 10%;
-    width: 80px;
+    width: 4rem;
+    height: 4rem;
 }
 #imgRol{
     width: 50px;
@@ -39,6 +43,9 @@ body{
     border: 1px solid rgba(0,0,0,.125);
     border-radius: .25rem;
 }
+.card-block{
+    height: 30rem;
+}
 .btn-block {
     display: block;
     width: 100%;
@@ -47,6 +54,10 @@ body{
     width: 100%;
     border-top-left-radius: calc(1rem - 1px);
     border-top-right-radius: calc(1rem - 1px);
+}
+titulo{
+    text-align: center;
+    margin: 1rem 1rem 1rem 1rem;
 }
 .card-img-bottom {
     width: 100%;
@@ -57,7 +68,11 @@ body{
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
     padding: 1.25rem;
-    height: 20rem;
+    height: 32rem;
+}
+h4.card.title{
+    margin: 2rem;
+    height: 10rem;
 }
 .justify-content-between {
     -webkit-box-pack: justify !important;
