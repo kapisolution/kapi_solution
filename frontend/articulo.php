@@ -1,66 +1,42 @@
 <?php
      require 'backend/articulo.php';
 ?>
-<div id="content">
-<div id="bloque">    
-<div id="articulo">
-    <?php
-    $i=0;
-     //   for ($i = 0; $i < sizeof($busquedaArticulos) ; $i++){
-            ?>
-            <div id="infoArticulo">
-            <div>
-            <?php
-            echo  '<h2> Lvl:' . $busquedaArticulos[$i]['nivel']. '</h2>';
-           // echo  '<h2> Ch: ' . $busquedaArticulos[$i]['capitulo']. '</h2>';
-            ?>
-            </div>
-            <div>
-            <a class="sinSub" href="/usuario.php?id=<?php echo $busquedaArticulos[$i]['creador']; ?>">
-            <img class="imgInfoArticulo" src="/files/img/usuario/<?php echo $busquedaArticulos[$i]['creador'].'.jpg';?>">
-            </a>
-            <a class="sinSub" href="/usuario.php?id=<?php echo $busquedaArticulos[$i]['creador']; ?>">
-     
-            <?php
-            echo  '<p>' . $busquedaArticulos[$i]['creador']. '</p>';
-            ?>
-            <a/>
-            </div>
-            <div>
-            <a class="sinSub" href="/rol.php?rol=<?php echo $busquedaArticulos[$i]['rol']; ?>">
-            <img class="imgInfoArticulo" src="/files/img/rol/<?php echo $busquedaArticulos[$i]['rol']. '.jpg'?>">
-            </a>
-            <a class="sinSub" href="/rol.php?rol=<?php echo $busquedaArticulos[$i]['rol']; ?>">
-           
-           <?php
-            echo  '<p>' . $busquedaArticulos[$i]['rol'] . '</p>';
-            ?>
-            </a>
-            </div>
-            </div>
-            <?php
-            echo  '<h2> ' . $busquedaArticulos[$i]['titulo']. '</h1>';
-            ?>
-            <img class="imgArticulo" src="/files/img/articulos/<?php echo $busquedaArticulos[$i]['img']?>">
-            <?php
-            echo  '<p> Img: ' . $busquedaArticulos[$i]['img'] . '</p>';
-            echo  '<p> ' . $busquedaArticulos[$i]['contenido'] . '</p>';
-        //}
-
+<?php 
+$i=0;
+$titulo=$busquedaArticulos[$i]['titulo'];
+$contenido=$busquedaArticulos[$i]['contenido'];
+$creador=$busquedaArticulos[$i]['creador'];
+$rol=$busquedaArticulos[$i]['rol'];
+$nivel=$busquedaArticulos[$i]['nivel'];
 ?>
-<input onclick='responsiveVoice.speak("<?php echo $busquedaArticulos[$i]['contenido']?>", "Spanish Female");' type='button' value='🔊 Leer artículo' />
-<div id="ejercicios">
-<h2>Ejercicios:</h2>
-</div>
-<script src='https://code.responsivevoice.org/responsivevoice.js'></script>
-</div>
-<div id="articulosRelacionados">
-<div id="modificacion">
-<h2>Crear modificación:</h2>
-<a href="/modificararticulo.php?id=<?php echo $busquedaArticulos[$i]['id']; ?>">Modificar artículo</a>
 
+<div class="jumbotron" style="background-image: url(/files/img/rol/<?php echo $busquedaArticulos[$i]['rol'].'.jpg';?>);background-size:100% 200%;background-repeat:no-repeat;">
 </div>
-    <p>Articulos relacionados</p>
+<div class="container">
+    <hr>
+    <h1 class="display-3"><center><?php echo $titulo?></center></h1>
+    <hr>
+    <span class="label label-primary"><?php echo $creador?></span>
+    <span class="label label-warning">Nivel <?php echo $nivel?></span>
+    <span class="label label-danger"><?php echo $rol?></span>
+    <hr>
+    <div class="row" id="contenidoArticulo">
+        <p><?php echo $contenido ?></p>
     </div>
-</div>
+    <hr>
+    <div class="panel-group" id="accordion">
+        <div class="panel panel-warning">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Pregunta 1</a>
+                </h4>
+            </div>
+            <div id="collapse1" class="panel-collapse collapse">
+                <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                commodo consequat.
+            </div>
+        </div>
+    </div>
 </div>

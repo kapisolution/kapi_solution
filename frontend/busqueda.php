@@ -64,8 +64,8 @@
                                     </ul>
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="btn-group">
-                                            <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                            <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                            <a href="/articulo.php?id='<?php echo $busquedaArticulos[$i]['id']."'"?>"><button type="button" class="btn btn-sm btn-outline-secondary">View</button><a>
+                                            <a href="/modificararticulo.php?id='<?php echo $busquedaArticulos[$i]['id']."'"?>"><button type="button" class="btn btn-sm btn-outline-secondary">Edit</button><a>
                                         </div>
                                         <img id="imgUsr" src="/files/img/usuario/<?php echo $busquedaArticulos[$i]['creador'].'.jpg';?>" class="media-object">
                                     </div>
