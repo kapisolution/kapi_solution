@@ -59,8 +59,12 @@
                                 <div class="card-block">
                                     <h4 class="card title"><titulo><?php echo $busquedaArticulos[$i]['titulo']?><titulo></center></h4>
                                     <ul class="list-group list-group-flush">
-                                        <li class="list-group-item" style="background-image: url(/files/img/rol/<?php echo $busquedaArticulos[$i]['rol'].'.jpg';?>);background-size:100% 200%;background-repeat:no-repeat;text-transform: uppercase;"><rol><center><?php echo $busquedaArticulos[$i]['rol']?></center></rol></li>
-                                        <li class="list-group-item"><center>Nivel: <?php echo $busquedaArticulos[$i]['nivel']?><center></li>  
+                                        <li class="list-group-item" style="height:20%;background-image: url(/files/img/rol/<?php echo $busquedaArticulos[$i]['rol'].'.jpg';?>);background-size:100% 200%;background-repeat:no-repeat;text-transform: uppercase;"></li>  
+                                        <li class="list-group-item">
+                                            <center><span class="label label-warning">Nivel <?php echo $busquedaArticulos[$i]['nivel']?></span>
+                                            <span class="label label-primary"><?php echo $busquedaArticulos[$i]['creador']?></span>
+                                            <span class="label label-danger"><?php echo $busquedaArticulos[$i]['rol']?></span></center>
+                                        </li>
                                     </ul>
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="btn-group">

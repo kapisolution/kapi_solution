@@ -69,10 +69,12 @@ titulo{
     flex: 1 1 auto;
     padding: 1.25rem;
     height: 32rem;
+    background-color: #dfdfdf;
 }
 h4.card.title{
     margin: 2rem;
     height: 10rem;
+    background-color: #c2c2c2;
 }
 .justify-content-between {
     -webkit-box-pack: justify !important;
