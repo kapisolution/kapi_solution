@@ -6,11 +6,8 @@
     margin-top: 4rem;
     text-shadow: 0 0 3px rgb(255, 255, 255), 0 0 5px rgb(255, 255, 255);
 }
-#contenidoArticulo{
+#contenidoArticulo, #formularioArticulo{
     border: 1px solid gray;
     padding: 8px;
-    margin-bottom: 5rem;
-}
-.panel-group {
     margin-bottom: 20rem;
 }

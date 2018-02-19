@@ -4,11 +4,11 @@
 <div class="content">
     <h3><center>Resultados de: <?php echo $_GET["search"] ?></center> </h3>
     <br>
-    <div class="btn-group">
-        <button type="button" class="btn btn-primary" onclick="mostrarTarjetas(event, 'usuarios')">Usuarios</button>
-        <button type="button" class="btn btn-primary" onclick="mostrarTarjetas(event, 'articulos')">Artículos</button>
-        <button type="button" class="btn btn-primary" onclick="mostrarTarjetas(event, 'ejercicios')">Ejercicios</button>
-    </div>
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary" onclick="mostrarTarjetas(event, 'usuarios')">Usuarios</button>
+            <button type="button" class="btn btn-primary" onclick="mostrarTarjetas(event, 'articulos')">Artículos</button>
+            <button type="button" class="btn btn-primary" onclick="mostrarTarjetas(event, 'ejercicios')">Ejercicios</button>
+        </div>
     <br>
     <!--BusquedaUsuarios-->
     <div class="album py-5 bg-light" id="usuarios"> 
@@ -25,7 +25,8 @@
                     </div>
                     <div class="media-body">
                         <h4 class="media-heading"><?php echo $busquedaUsuarios[$i]['nick']?> <small><i><?php echo $busquedaUsuarios[$i]['email']?></i></small></h4>
-                        <p>Nivel: <?php echo $busquedaUsuarios[$i]['nivel']?></p>
+                        <span class="label label-warning">Nivel <?php echo $busquedaArticulos[$i]['nivel']?></span>
+                        <span class="label label-danger"><?php echo $busquedaArticulos[$i]['rol']?></span>
                     </div>
                     <div class="media-right">
                         <div class="media-top">

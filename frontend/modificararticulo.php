@@ -1,36 +1,51 @@
 <?php
      require 'backend/articulo.php';
+     $i=0;
+     $titulo=$busquedaArticulos[$i]['titulo'];
+     $contenido=$busquedaArticulos[$i]['contenido'];
+     $creador=$busquedaArticulos[$i]['creador'];
+     $rol=$busquedaArticulos[$i]['rol'];
+     $nivel=$busquedaArticulos[$i]['nivel'];
 ?>
-<div id="content">
-  <div id="formularioarticulo">
-<h2>Modificar artículo: <?php echo $busquedaArticulos[0]['id']; ?></h2>
 
-<form id="formularioArticulo" enctype="multipart/form-data" action="backend/modificararticulo.php" method="POST" onsubmit="return updateValue()">
-
-  Rol:
-  <select name="rol" value="<?php echo $busquedaArticulos[0]['rol']; ?>">
-    <option <?php if( $busquedaArticulos[0]['rol'] == 'informatico'){echo("selected");}?> value="informatico">Informático</option>
-    <option <?php if( $busquedaArticulos[0]['rol'] == 'periodista'){echo("selected");}?> value="periodista">Periodista</option>
-    <option <?php if( $busquedaArticulos[0]['rol'] == 'abogado'){echo("selected");}?> value="abogado">Abogado</option>
-
-  </select>
-  Nivel:
-  <input id="nivel" value="<?php echo $busquedaArticulos[0]['nivel']; ?>" type="range" name="nivel" min="1" max="10"><br>
-
-  Título<br>
-  <input id="titulo" value="<?php echo $busquedaArticulos[0]['titulo']; ?>" type="text" name="titulo"><br> 
-
-  Contenido<br>
-  <textarea value="<?php echo $busquedaArticulos[0]['contenido']; ?>" class="input-block-level" id="summernote" name="contenido"><?php echo $busquedaArticulos[0]['contenido']; ?></textarea>
- <!-- <textarea id="contenido" name="contenido" form="formularioArticulo"></textarea><br>-->
- <div id="bloquecontenido"></div>
-
-  <button type="submit">Enviar modificación</button>
-
-</form> 
+<div class="jumbotron" style="background-image: url(/files/img/rol/<?php echo $busquedaArticulos[$i]['rol'].'.jpg';?>);background-size:100% 200%;background-repeat:no-repeat;">
 </div>
+<div class="container">
+    <hr>
+    <h1 class="display-3"><center>Modificar artículo: <?php echo $titulo?></center></h1>
+    <hr>
+    <span class="label label-primary"><?php echo $creador?></span>
+    <span class="label label-warning">Nivel <?php echo $nivel?></span>
+    <span class="label label-danger"><?php echo $rol?></span>
+    <hr>
+    <form id="formularioArticulo" enctype="multipart/form-data" action="backend/modificararticulo.php" method="POST" onsubmit="return updateValue()">
+    Nuevo Título<br>
+      <input id="titulo" class="form-control" value="<?php echo $busquedaArticulos[0]['titulo']; ?>" type="text" name="titulo"><br> 
+      <hr>
+    Modificar contenido<br>
+      <textarea class="form-control" value="<?php echo $busquedaArticulos[0]['contenido']; ?>" class="input-block-level" id="summernote" name="contenido"><?php echo $busquedaArticulos[0]['contenido']; ?></textarea>
+      <hr>
+      <div class="panel-group" id="accordion">
+        <div class="panel panel-warning">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Pregunta 1</a>
+                </h4>
+            </div>
+            <div id="collapse1" class="panel-collapse collapse">
+                <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                commodo consequat.
+            </div>
+        </div>
+      </div>
+      <hr>
+      <center>
+        <button class="btn btn-success" type="submit">Enviar modificación</button>
+      </center>
+    </form> 
 </div>
-
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.js"></script>
@@ -46,3 +61,8 @@
 	var contenido = $('textarea[name="contenido"]').html($('#summernote').code());
 }
 </script>
+
+
+
+
+
