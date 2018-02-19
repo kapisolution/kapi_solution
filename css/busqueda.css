@@ -1,6 +1,9 @@
 body{
     margin-top:8rem; 
 }
+#usuarios{
+    margin-bottom: 10rem;
+}
 .btn-group{
     width: 100%;
 }

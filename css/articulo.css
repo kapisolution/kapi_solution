@@ -9,5 +9,15 @@
 #contenidoArticulo, #formularioArticulo{
     border: 1px solid gray;
     padding: 8px;
-    margin-bottom: 20rem;
+}
+.label-aviso{
+    font-size: 4rem;
+    background-color: rgb(228, 43, 43);
+}
+.label-volver{
+    font-size: 2rem;
+    background-color: green;
+}
+.container{
+    margin-bottom: 15rem;
 }
