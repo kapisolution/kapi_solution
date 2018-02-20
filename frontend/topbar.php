@@ -9,6 +9,7 @@
       </button>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
+        <div class="contenidoNavbar">
         <ul class="nav navbar-nav">
         <li>
             <form class="form-wrapper cf" action="busqueda.php">
@@ -40,20 +41,21 @@
         <?php
         if(isset($_SESSION["login"])){
         ?>
-        <ul class="nav navbar-nav navbar-right">
+        <ul class="nav navbar-nav navbar-right" id="login">
         <?php echo '<li><a href="#"><span class="glyphicon glyphicon-user"></span> Bienvenido ' .$_SESSION["nick"]. '</a></li>'?>
         <li><a href="/backend/logout.php"><span class="glyphicon glyphicon-log-in"></span> CERRAR SESIÓN</a></li>
         </ul>
         <?php
         }else{
         ?>
-        <ul class="nav navbar-nav navbar-right">
+        <ul class="nav navbar-nav navbar-right" id="login">
         <li><a href="/signin.php"><span class="glyphicon glyphicon-user"></span> Regístrate</a></li>
         <li><a href="/login.php"><span class="glyphicon glyphicon-log-in"></span> INICIAR SESIÓN</a></li>
         </ul>
         <?php
         }
         ?>
+    </div>
     </div>
   </div>
 </nav>
