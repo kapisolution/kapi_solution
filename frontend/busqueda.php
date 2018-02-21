@@ -2,6 +2,7 @@
      require 'backend/busqueda.php';
 ?>
 <div class="content">
+    <hr>
     <h3><center>Resultados de: <?php echo $_GET["search"] ?></center> </h3>
     <br>
         <div class="btn-group">

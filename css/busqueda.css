@@ -1,5 +1,5 @@
 body{
-    margin-top:8rem; 
+    min-height: 100%;
 }
 #usuarios{
     margin-bottom: 10rem;
@@ -12,6 +12,12 @@ body{
 }
 li rol{
     color: white;
+}
+.container {
+    width: 100%;
+}
+.row{
+    min-width: 80rem;
 }
 
 /*CSS Busqueda usuarios*/
@@ -71,9 +77,9 @@ titulo{
     background-color: #dfdfdf;
 }
 h4.card.title{
-    margin: 2rem;
     height: 10rem;
     background-color: #c2c2c2;
+    font-size:1.6rem; 
 }
 .justify-content-between {
     -webkit-box-pack: justify !important;

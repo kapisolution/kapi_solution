@@ -4,8 +4,7 @@
 .navbar{
     -webkit-box-shadow: 0 8px 6px -6px #999;
     -moz-box-shadow: 0 8px 6px -6px #999;
-    box-shadow: 0 8px 6px -6px #999;
-         
+    box-shadow: 0 8px 6px -6px #999;          
 }
 .navbar-inverse .navbar-nav > li > a {
     color: #f2f2f0;
@@ -31,6 +30,20 @@
     margin-right: 10rem;
 }
 
+@media (min-width: 768px) and (max-width: 1200px) {
+    .navbar-collapse.collapse {
+        display: none !important;
+    }
+    .navbar-collapse.collapse.in {
+        display: block !important;
+    }
+    .navbar-header .collapse, .navbar-toggle {
+        display:block !important;
+    }
+    .navbar-header {
+        float:none;
+    }
+}
 
 /*ESTILO BUSCADOR*/
 
