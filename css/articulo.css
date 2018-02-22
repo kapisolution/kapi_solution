@@ -19,8 +19,9 @@
     background-color: green;
 }
 .container{
-    margin-bottom: 15rem;
+    padding-bottom: 15rem;
     width: 100%;
+    max-width: 100rem;
 }
 
 

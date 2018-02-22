@@ -1,17 +1,17 @@
 <?php
      require 'backend/articulo.php';
 
-    $i=0;
-    $titulo=$busquedaArticulos[$i]['titulo'];
-    $contenido=$busquedaArticulos[$i]['contenido'];
-    $creador=$busquedaArticulos[$i]['creador'];
-    $rol=$busquedaArticulos[$i]['rol'];
-    $nivel=$busquedaArticulos[$i]['nivel'];
+    $titulo=$articulo['titulo'];
+    $contenido=$articulo['contenido'];
+    $creador=$articulo['creador'];
+    $rol=$articulo['rol'];
+    $nivel=$articulo['nivel'];
 ?>
-<div class="contentArticulo">
-<div class="jumbotron" style="background-image: url(/files/img/rol/<?php echo $busquedaArticulos[$i]['rol'].'.jpg';?>);background-size:100% 200%;background-repeat:no-repeat;">
-</div>
 <div class="container">
+<div class="contentArticulo">
+<div class="jumbotron" style="background-image: url(/files/img/rol/<?php echo $articulo['rol'].'.jpg';?>);background-size:100% 200%;background-repeat:no-repeat;">
+</div>
+
     <hr>
     <h1 class="display-3"><center><?php echo $titulo?></center></h1>
     <hr>

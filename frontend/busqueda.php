@@ -2,6 +2,7 @@
      require 'backend/busqueda.php';
 ?>
 <div class="contentBusqueda">
+    <div class="container">
     <hr>
     <h3><center>Resultados de: <?php echo $_GET["search"] ?></center> </h3>
     <br>
@@ -86,7 +87,7 @@
             </div>
         </div>
     </div>
-
+    </div>
 </div>
 
 
