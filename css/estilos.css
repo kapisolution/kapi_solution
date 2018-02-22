@@ -14,7 +14,7 @@ html {
 .contentBusqueda, .contentArticulo{
     margin-right: 20rem;
     min-width: 80rem;
-    margin-left: 20rem;
+    margin-left: 10rem;
 }
 .contentBusqueda{
     padding-top: 12rem;

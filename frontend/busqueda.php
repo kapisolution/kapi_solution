@@ -21,22 +21,22 @@
         
             for ($i = 0; $i < sizeof($busquedaUsuarios) ; $i++){
         ?>       
-                <div class="media">
+                <div class="media" id="filaUsuario">
                     <div class="media-left">
                         <img id="imgUsr" src="/files/img/usuario/<?php echo $busquedaUsuarios[$i]['nick'].'.jpg'?>" class="media-object">
                     </div>
-                    <div class="media-body">
+                    <div class="media-body" id="bodyUsuario">
                         <h4 class="media-heading"><?php echo $busquedaUsuarios[$i]['nick']?> <small><i><?php echo $busquedaUsuarios[$i]['email']?></i></small></h4>
-                        <span class="label label-warning">Nivel <?php echo $busquedaArticulos[$i]['nivel']?></span>
-                        <span class="label label-danger"><?php echo $busquedaArticulos[$i]['rol']?></span>
+                        <span class="label label-warning">Nivel <?php echo $busquedaUsuarios[$i]['nivel']?></span>
+                        <span class="label label-danger"><?php echo $busquedaUsuarios[$i]['rol']?></span>
                     </div>
-                    <div class="media-right">
+                    <div class="media-right" id="media-right-usr">
                         <div class="media-top">
                             <center><img id="imgRol" src="/files/img/rol/<?php echo $busquedaUsuarios[$i]['rol'].'.jpg'?>" class="media-object"></center>
                         </div>
                         <br>
                         <div class="media-bottom">
-                            <button type="button" class="btn btn-primary" href=#>Ver Perfil</button>
+                            <center><button type="button" class="btn btn-primary" href=#>Ver Perfil</button></center>
                         </div>
                     </div>
                 </div>
@@ -53,41 +53,37 @@
             <div class="row">
             <hr>
         <?php
+        
             for ($i = 0; $i < sizeof($busquedaArticulos) ; $i++){
         ?>       
-                    <div class="col-md-4">
-                        <div class="card mb-4 box-shadow">
-                            <img class="card-img-top" text="NICK" style="height: 150px; width: 100%; display: block;" src="/files/img/articulos/<?php echo $busquedaArticulos[$i]['img'].'.jpg';?>" data-holder-rendered="true">
-                            <div class="card-body">
-                                <div class="card-block">
-                                    <h4 class="card title"><titulo><?php echo $busquedaArticulos[$i]['titulo']?><titulo></center></h4>
-                                    <ul class="list-group list-group-flush">
-                                        <li class="list-group-item" style="height:20%;background-image: url(/files/img/rol/<?php echo $busquedaArticulos[$i]['rol'].'.jpg';?>);background-size:100% 200%;background-repeat:no-repeat;text-transform: uppercase;"></li>  
-                                        <li class="list-group-item">
-                                            <center><span class="label label-warning">Nivel <?php echo $busquedaArticulos[$i]['nivel']?></span>
-                                            <span class="label label-primary"><?php echo $busquedaArticulos[$i]['creador']?></span>
-                                            <span class="label label-danger"><?php echo $busquedaArticulos[$i]['rol']?></span></center>
-                                        </li>
-                                    </ul>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="btn-group">
-                                            <a href="/articulo.php?id='<?php echo $busquedaArticulos[$i]['id']."'"?>"><button type="button" class="btn btn-sm btn-outline-secondary">View</button><a>
-                                            <a href="/modificararticulo.php?id='<?php echo $busquedaArticulos[$i]['id']."'"?>"><button type="button" class="btn btn-sm btn-outline-secondary">Edit</button><a>
-                                        </div>
-                                        <img id="imgUsr" src="/files/img/usuario/<?php echo $busquedaArticulos[$i]['creador'].'.jpg';?>" class="media-object">
-                                    </div>
-                                </div>
-                                
-                            </div>
+                <div class="media" id="filaArticulo">
+                    <div class="media-left">
+                        <img id="imgUsr" src="/files/img/usuario/<?php echo $busquedaArticulos[$i]['creador'].'.jpg'?>" class="media-object">
+                    </div>
+                    <div class="media-body" id="bodyArticulo">
+                        <h4 class="media-heading"><?php echo $busquedaArticulos[$i]['titulo']?> <small><i><?php echo $busquedaArticulos[$i]['creador']?></i></small></h4>
+                        <span class="label label-warning">Nivel <?php echo $busquedaArticulos[$i]['nivel']?></span>
+                        <span class="label label-danger"><?php echo $busquedaArticulos[$i]['rol']?></span>
+                    </div>
+                    <div class="media-right" id="media-right-articulo">
+                        <div class="media-top">
+                            <center><img id="imgRol" src="/files/img/rol/<?php echo $busquedaArticulos[$i]['rol'].'.jpg'?>" class="media-object"></center>
+                        </div>
+                        <br>
+                        <div class="btn-group" id="btn-articulo">
+                            <center><a href="/articulo.php?id=<?php echo $busquedaArticulos[$i]['id']?>"><button type="button" id="btnIrArticulo" class="btn btn-primary">Ver</button></a>
+                            <button type="button" class="btn btn-primary" id="btnIrArticulo" href="/modificararticulo.php?id=<?php echo $busquedaArticulos[$i]['id']?>">Modificar</button></center>
                         </div>
                     </div>
-                <?php
+                </div>
+                <hr>
+        <?php
         }
         ?>
             </div>
         </div>
     </div>
-    </div>
+    
 </div>
 
 
