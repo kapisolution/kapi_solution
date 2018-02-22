@@ -1,5 +1,6 @@
 <div class="jumbotron" style="background-image: url(/files/img/rol/<?php echo $busquedaArticulos[$i]['rol'].'.jpg';?>);background-size:100% 200%;background-repeat:no-repeat;">
 </div>
+<div class="contentArticulo">
 <div class="container">
 <?php
     if(isset($_SESSION['login'])){
@@ -45,7 +46,7 @@
     }
   ?> 
 </div>
-
+</div>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.css" rel="stylesheet">

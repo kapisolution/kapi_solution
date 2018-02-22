@@ -1,7 +1,7 @@
 <?php
      require 'backend/busqueda.php';
 ?>
-<div class="content">
+<div class="contentBusqueda">
     <hr>
     <h3><center>Resultados de: <?php echo $_GET["search"] ?></center> </h3>
     <br>

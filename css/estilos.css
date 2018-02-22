@@ -1,8 +1,7 @@
 body{
-    padding-bottom: 12rem;
     position: relative;
     /*incluir footer min-height: 100%;*/ 
-    margin-top: 8rem;
+    min-height: 100%;
 }
 html {
     height: 100%;
@@ -12,10 +11,17 @@ html {
     color: #00644b;
     font-size: 50px;
 }
-.content{
-    margin:20rem;
-    margin-top: 12rem;
+.contentBusqueda, .contentArticulo{
+    margin-right: 20rem;
     min-width: 80rem;
+    margin-left: 20rem;
+}
+.contentBusqueda{
+    padding-top: 12rem;
+}
+.contentArticulo{
+    padding-top: 8rem;
+    padding-bottom: 10rem;
 }
 
 

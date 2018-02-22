@@ -8,7 +8,7 @@
     $rol=$busquedaArticulos[$i]['rol'];
     $nivel=$busquedaArticulos[$i]['nivel'];
 ?>
-
+<div class="contentArticulo">
 <div class="jumbotron" style="background-image: url(/files/img/rol/<?php echo $busquedaArticulos[$i]['rol'].'.jpg';?>);background-size:100% 200%;background-repeat:no-repeat;">
 </div>
 <div class="container">
@@ -39,4 +39,5 @@
             </div>
         </div>
     </div>
+</div>
 </div>
