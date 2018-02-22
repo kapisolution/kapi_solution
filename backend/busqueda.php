@@ -14,7 +14,7 @@ if(isset($_GET["search"])&&$_GET["search"]!=""){
         $busquedaUsuarios[] = $fila;
     }
 
-    $sql ='SELECT * FROM Ejercicios WHERE enunciado LIKE "%'.$_GET["search"] .'%";';
+    $sql ='SELECT * FROM Preguntas WHERE enunciado LIKE "%'.$_GET["search"] .'%";';
     $consulta = mysqli_query($con, $sql) or die("Error en consulta sobre la tabla ejercicios");
     $busquedaEjercicios = array();
     while($fila = mysqli_fetch_array($consulta)){
