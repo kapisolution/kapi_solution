@@ -5,7 +5,7 @@ if(isset($_GET["id"])&&$_GET["id"]!=""){
     $articulo = mysqli_fetch_array($consulta);
 
     $sql ='SELECT * FROM Preguntas WHERE id = '.$_GET["id"] .';';
-    $consulta = mysqli_query($con, $sql) or die("Error en consulta sobre la tabla articulos");
+    $consulta = mysqli_query($con, $sql) or die("Error en consulta sobre la tabla preguntas");
     $preguntas = array();
     $n_preguntas=0;
     while($pregunta = mysqli_fetch_array($consulta)){
