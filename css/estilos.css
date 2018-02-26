@@ -11,17 +11,9 @@ html {
     color: #00644b;
     font-size: 50px;
 }
-.contentBusqueda, .contentArticulo{
-    margin-right: 20rem;
-    min-width: 80rem;
-    margin-left: 10rem;
-}
+
 .contentBusqueda{
     padding-top: 12rem;
-}
-.contentArticulo{
-    padding-top: 8rem;
-    padding-bottom: 10rem;
 }
 
 

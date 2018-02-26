@@ -9,6 +9,6 @@ function mostrarTarjetas(evt, tarjetero) {
     for (i = 0; i < x.length; i++) {
         tablinks[i].className = tablinks[i].className.replace(" tab-selected", "");
     }
-    document.getElementById(tarjetero).style.display = "flex";
+    document.getElementById(tarjetero).style.display = "block";
     evt.currentTarget.className += " tab-selected";
 }

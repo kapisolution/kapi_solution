@@ -8,14 +8,14 @@
 }
 .navbar-toggle{
     margin-top: 2rem;
-    margin-right: 15rem;
+    margin-right: 10%;
 }
 .navbar-inverse .navbar-nav > li > a {
     color: #f2f2f0;
 }
 .navbar-brand{
     height: 8rem;
-    margin-left: 10rem;
+    margin-left: 10%;
 }
 .navbar-brand > img {
     max-height: 100%;
