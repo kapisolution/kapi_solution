@@ -18,19 +18,23 @@
         <?php 
             for ($i = 0; $i < sizeof($busquedaUsuarios) ; $i++){
         ?>       
-                <div class="row" id="filaUsuario">
-                    <div class="col-xs-3 col-sm-2 col-md-3 text-center">
-                        <img id="imgUsr" class="img-rounded" src="/files/img/usuario/<?php echo $busquedaUsuarios[$i]['nick'].'.jpg'?>">
+                <div class="row filaUsuario">
+                    <div class="col-xs-3 col-sm-2 col-md-2 col-lg-2">
+                        <img class="imgUsr" class="img-rounded" src="/files/img/usuario/<?php echo $busquedaUsuarios[$i]['nick'].'.jpg'?>">
                     </div>
-                    <div class="col-xs-6 col-sm-7 col-md-6 text-center" id="bodyUsuario">
-                        <h4 class="text-center"><?php echo $busquedaUsuarios[$i]['nick']?> <small><i><?php echo $busquedaUsuarios[$i]['email']?></i></small></h4>
-                        <span class="label label-warning">Nivel <?php echo $busquedaUsuarios[$i]['nivel']?></span>
-                        <span class="label label-danger"><?php echo $busquedaUsuarios[$i]['rol']?></span>
+                    <div class="col-xs-6 col-sm-8 col-md-8 col-lg-8">
+                        <div class="datosUsr">
+                        <h6><?php echo $busquedaUsuarios[$i]['nick']?> <small><i><?php echo $busquedaUsuarios[$i]['email']?></i></small></h6>
+                        <h6><span class="label label-warning">Nivel <?php echo $busquedaUsuarios[$i]['nivel']?></span></h6>
+                        <h6><span class="label label-danger"><?php echo $busquedaUsuarios[$i]['rol']?></span><h6>
+                        </div>
                     </div>
-                    <div class="col-xs-3 col-sm-3 col-md-3 text-center" id="media-right-usr">
-                           <img id="imgRol" class="img-circle" src="/files/img/rol/<?php echo $busquedaUsuarios[$i]['rol'].'.jpg'?>">
-                        <br>
-                            <a href="#"><span class="label label-primary">Ver Perfil</span></a>
+                    <div class="col-xs-3 col-sm-2 col-md-2 col-lg-2 text-center">
+                    <div class="infoRol">
+                           <img class="imgRol" width="40px" height="40px" src="/files/img/rol/<?php echo $busquedaUsuarios[$i]['rol'].'.jpg'?>">
+
+                           <h6><a href="#"><span class="label label-primary">Ver Perfil</span></a></h6>
+                    </div>
                     </div>
                 </div>
                 <hr>
@@ -40,37 +44,40 @@
     </div>
     <!--BusquedaArticulos-->
     <div class="album py-5 bg-light" id="articulos" style="display:none"> 
-            <div class="row">
             <hr>
         <?php
-        
             for ($i = 0; $i < sizeof($busquedaArticulos) ; $i++){
         ?>       
-                <div class="media row" id="filaArticulo">
-                <div class="media-left col-xs-4 col-sm-3 col-md-8" style="width: 30%;">
-                    <img id="imgUsr" src="/files/img/usuario/javimv36.jpg" class="media-object">
+                <div class="row filaArticulo">
+                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-1">
+                    <img class="imgUsrArticulo" class="img-rounded" src="/files/img/usuario/<?php echo $busquedaArticulos[$i]['creador'].'.jpg'?>">
                 </div>
-                <div class="media-body col-xs-8 col-sm-5" id="bodyArticulo" style="">
-                    <h4 class="media-heading">lorem lorem, luctus ut, pellentesque eget, dictum placerat, augue. Sed <small><i>javimv36</i></small></h4>
-                    <span class="label label-warning">Nivel 1</span>
-                    <span class="label label-danger">abogado</span>
-                </div>
-                <div class="media-right col-xs-12 col-sm-4" id="media-right-articulo" style="">
-                    <div class="media-top">
-                        <center><img id="imgRol" src="/files/img/rol/abogado.jpg" class="media-object"></center>
+                <div class="col-xs-7 col-sm-8 col-md-8 col-lg-9">
+                    <div class="datosUsr">
+                    <h6><?php echo $busquedaArticulos[$i]['titulo']?> <small><i><?php echo $busquedaArticulos[$i]['creador']?></i></small>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h6><span class="label label-warning">Nivel <?php echo $busquedaArticulos[$i]['nivel']?></span>
+                                <span class="label label-danger"><?php echo $busquedaArticulos[$i]['rol']?></span></h6>
+                            </div>
+                        </div>
                     </div>
-                    <br>
-                    <div class="btn-group" id="btn-articulo">
-                        <center><a href="/articulo.php?id=827"><button type="button" id="btnIrArticulo" class="btn btn-primary">Ver</button></a>
-                        <a href="/modificararticulo.php?id=827"><button type="button" class="btn btn-primary" id="btnIrArticulo">Modificar</button></a></center>
+                </div>
+                <div class="col-xs-3 col-sm-2 col-md-2 col-lg-2 text-center">
+                    <div class="infoRol">
+                        <img class="imgRolArticulos" width="30px" height="30px" margin-bottom="30px" src="/files/img/rol/<?php echo $busquedaArticulos[$i]['rol'].'.jpg'?>">
+
+                        <div class="row">
+                            <span class="label label-primary col-xs-12">Ver</span>
+                            <span class="label label-primary col-xs-12">Editar</span>
+                        </div>
                     </div>
                 </div>
             </div>
-                <hr>
+            <hr>
         <?php
         }
         ?>
-            </div>
         </div>    
 </div>
 
