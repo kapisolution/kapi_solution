@@ -1,12 +1,23 @@
-.jumbotron{
-    height: 15rem;
+.container.containerImagenes{
+    margin: auto;
+    width: 50%;
+}
+.container.containerArticulos{
+    margin: 77px auto;
+}
+.imgArticulo{
+    margin: auto;
+    padding: 0;
 }
 .jumbotron h1{
     font-size: 2rem;
     margin-top: 4rem;
     text-shadow: 0 0 3px rgb(255, 255, 255), 0 0 5px rgb(255, 255, 255);
 }
-#contenidoArticulo, #formularioArticulo{
+.row{
+    margin: auto;
+}
+.caja{
     border: 1px solid gray;
     padding: 8px;
 }
@@ -18,10 +29,9 @@
     font-size: 2rem;
     background-color: green;
 }
-.container{
-    padding-bottom: 15rem;
-    width: 100%;
-    max-width: 100rem;
+#relacionados{
+    text-overflow: ellipsis;
 }
+
 
 

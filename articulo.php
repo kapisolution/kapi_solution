@@ -22,7 +22,7 @@
      require 'backend/conexion.php';
      include 'frontend/topbar.php';
      include 'frontend/articulo.php';
-     include 'frontend/footer.php';
+     //include 'frontend/footer.php';
      include 'backend/desconexion.php';
     ?>
   </body>

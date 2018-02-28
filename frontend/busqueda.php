@@ -68,7 +68,7 @@
                         <img class="imgRolArticulos" width="30px" height="30px" margin-bottom="30px" src="/files/img/rol/<?php echo $busquedaArticulos[$i]['rol'].'.jpg'?>">
 
                         <div class="row">
-                            <span class="label label-primary col-xs-12">Ver</span>
+                            <a href="articulo.php?id=<?php echo $busquedaArticulos[$i]['id']?>"><span class="label label-primary col-xs-12">Ver</span></a>
                             <span class="label label-primary col-xs-12">Editar</span>
                         </div>
                     </div>
