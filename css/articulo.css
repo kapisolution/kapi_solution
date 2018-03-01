@@ -6,7 +6,6 @@
     margin: 77px auto;
 }
 .imgArticulo{
-    margin: auto;
     padding: 0;
 }
 .jumbotron h1{
@@ -31,6 +30,7 @@
 }
 #relacionados{
     text-overflow: ellipsis;
+    margin-bottom: 5px;
 }
 
 

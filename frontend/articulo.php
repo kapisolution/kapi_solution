@@ -27,8 +27,7 @@
     <hr>
 
     <div class="row">
-        <div class="col-xs-1 col-sm-2 col-md-3 col-lg-3"></div>
-        <div id="imagenesArticulo" class="carousel slide col-xs-10 col-sm-8 col-md-6 col-lg-6 imgArticulo" data-ride="carousel">
+        <div id="imagenesArticulo" class="carousel slide col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3 imgArticulo" data-ride="carousel">
             <?php
                 for($j=1; $j<4 ;$j++){?>
                     <ol class="carousel-indicators">
@@ -61,7 +60,6 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
-        <div class="col-xs-1 col-sm-2 col-md-3 col-lg-3"></div>
     </div>
     <hr>
     <div class="caja">
@@ -87,14 +85,14 @@
     </div>
     <hr>
     <div class="row ultimaFila">
-        <div class="caja col-xs-5 col-sm-5 col-md-5 col-lg-5">      
+        <div id="relacionados" class="caja col-xs-12 col-sm-5 col-md-5 col-lg-5">      
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">Articulos relacionados</div>
             <br>
             <hr>
             <?php
             for($i=0;$i<$n_relacionados;$i++){?>
             <div class="row">
-                <div id="relacionados" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <li><a href="articulo.php?id=<?php echo $relacionados[$i]['id']?>"><?php echo $relacionados[$i]['titulo']?></a></li>
                 </div>
             </div>
@@ -102,8 +100,8 @@
             }
             ?>
         </div>
-        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2"></div>
-        <div class="caja col-xs-5 col-sm-5 col-md-5 col-lg-5">      
+        <!--<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2"></div>-->
+        <div class="caja col-xs-12 col-sm-5 col-sm-offset-2 col-md-5 col-md-offset-2 col-lg-5 col-lg-offset-2">      
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">Examenes nivel <?php echo $nivel?></div>
             <br>
             <hr>
