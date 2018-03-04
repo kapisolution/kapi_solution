@@ -3,13 +3,16 @@
  position: absolute;
  right: 0;
  left: 0;
- background-color: #37a08e;
-}
-#logo-sm {
- color: #ffffff; 
- font-size: 50px;
+ bottom: 0;
+ background-color: transparent;
 }
 
 h5{
- color: #ffffff;
+ color: #3d3d3d;
+}
+.imagenesFooter{
+    height: 5rem;
+}
+.imgLogo{
+    height: 3rem;
 }	

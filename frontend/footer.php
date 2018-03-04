@@ -1,15 +1,15 @@
-
 <div class="container-fluid text-center footerBS">
-    <br>
+  <hr>
     <div class="row">
-      <div class="col-sm-6">
-        <span id="logo-sm" class="glyphicon glyphicon-globe logo-small"></span>
-        <h5>GPL</h5>
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+        <a href="https://github.com/kapisolution/kapi_solution"><img class="imagenesFooter" src="/files/img/footer/descarga.png" alt="Github"></a>
       </div>
-      <div class="col-sm-6">
-        <a href="https://github.com/kapisolution/kapi_solution"><span id="logo-sm" class="glyphicon glyphicon-eye-open logo-small"></span>
-        <h5>GITHUB</h5></a>
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+        <a href="/"><img class="imgLogo" src="/files/icon/logo.png" alt="Kapi Solution"></a>
       </div>
-      <h5>KAPI SOLUTION 2018</h5>
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+        <a href="https://ucm.es"><img class="imagenesFooter" src="/files/img/footer/complutense.png" alt="Universidad Complutense"></a>
+      </div>
+      <h5><small class="text-muted">2018 GPL v2.0 Kapi Solution</small></h5>
 </div>
 

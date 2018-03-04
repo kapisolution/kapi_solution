@@ -32,6 +32,8 @@
     text-overflow: ellipsis;
     margin-bottom: 5px;
 }
-
+.container-fluid.text-center.footerBS{
+    margin-bottom: -100px;
+}
 
 
