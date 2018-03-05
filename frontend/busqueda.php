@@ -69,7 +69,7 @@
 
                         <div class="row">
                             <a href="articulo.php?id=<?php echo $busquedaArticulos[$i]['id']?>"><span class="label label-primary col-xs-12">Ver</span></a>
-                            <span class="label label-primary col-xs-12">Editar</span>
+                            <a href="modificararticulo.php?id=<?php echo $busquedaArticulos[$i]['id']?>"><span class="label label-primary col-xs-12">Editar</span></a>
                         </div>
                     </div>
                 </div>

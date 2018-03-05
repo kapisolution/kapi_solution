@@ -35,5 +35,9 @@
 .container-fluid.text-center.footerBS{
     margin-bottom: -100px;
 }
+textarea{
+    width: 100%;
+    height: auto;
+}
 
 

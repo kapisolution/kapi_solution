@@ -1,53 +1,102 @@
 <?php
-     require 'backend/articulo.php';
-     $i=0;
-     $titulo=$busquedaArticulos[$i]['titulo'];
-     $contenido=$busquedaArticulos[$i]['contenido'];
-     $creador=$busquedaArticulos[$i]['creador'];
-     $rol=$busquedaArticulos[$i]['rol'];
-     $nivel=$busquedaArticulos[$i]['nivel'];
+require 'backend/articulo.php';
+$titulo=$articulo['titulo'];
+$contenido=$articulo['contenido'];
+$creador=$articulo['creador'];
+$rol=$articulo['rol'];
+$nivel=$articulo['nivel'];
+
+  if($rol=='informatico'){
+    $color='red';
+  }else if($rol=='abogado'){
+    $color='black';
+  }else   $color='blue';
 ?>
-<div class="container">
-<div class="contentArticulo">
-<div class="jumbotron" style="background-image: url(/files/img/rol/<?php echo $busquedaArticulos[$i]['rol'].'.jpg';?>);background-size:100% 200%;background-repeat:no-repeat;">
-</div>
+<div class="container containerArticulos">
+  <div style="height:20px;background-color:<?php echo $color ?>;"></div>
+  <hr>
 <?php
     if(isset($_SESSION['login'])){
   ?>
-      <hr>
-      <h1 class="display-3"><center>Modificar artículo: <?php echo $titulo?></center></h1>
-      <hr>
-      <span class="label label-primary"><?php echo $creador?></span>
-      <span class="label label-warning">Nivel <?php echo $nivel?></span>
-      <span class="label label-danger"><?php echo $rol?></span>
-      <hr>
+      <div class="row text-center">
+        <span class="label label-warning">Nivel <?php echo $nivel?></span>
+        <span class="label label-danger"><?php echo $rol?></span>
+      </div>
       <form id="formularioArticulo" enctype="multipart/form-data" action="backend/modificararticulo.php" method="POST" onsubmit="return updateValue()">
-      Nuevo Título<br>
-        <input id="titulo" class="form-control" value="<?php echo $busquedaArticulos[0]['titulo']; ?>" type="text" name="titulo"><br> 
         <hr>
-      Modificar contenido<br>
-        <textarea class="form-control" value="<?php echo $busquedaArticulos[0]['contenido']; ?>" class="input-block-level" id="summernote" name="contenido"><?php echo $busquedaArticulos[0]['contenido']; ?></textarea>
-        <hr>
-        <div class="panel-group" id="accordion">
-          <div class="panel panel-warning">
+        <div class="form-group">
+          <div class="panel-group">
+            <div class="panel panel-primary">
               <div class="panel-heading">
-                  <h4 class="panel-title">
-                      <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Pregunta 1</a>
-                  </h4>
+                <h4 class="panel-title">
+                  <a>Titulo</a>
+                  <span id="editarTitulo" onclick="editarTitulo()" class="label label-success pull-right">Editar
+                    <span class="glyphicon glyphicon-pencil"></span>
+                  </span>
+                </h4>
               </div>
-              <div id="collapse1" class="panel-collapse collapse">
-                  <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                  minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                  commodo consequat.
+              <div id="titulo" class="panel-body">
+                <?php echo $titulo?>
               </div>
-          </div>
+              </div>
+            </div>  
         </div>
         <hr>
-        <center>
-          <button class="btn btn-success" type="submit">Enviar modificación</button>
-        </center>
-      </form> 
+        <div class="form-group">
+          <div class="panel-group">
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                <a>Contenido</a>
+                  <span onclick="editarContenido()" class="label label-success pull-right">Editar
+                    <span class="glyphicon glyphicon-pencil"></span>
+                  </span>
+                </h4>
+              </div>
+                <div id="contenido" class="panel-body"><?php echo $contenido?></div>
+              </div>
+            </div>  
+          </div>
+          <hr>
+        <div class="form-group">
+          <div class="panel-group">
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a>Preguntas</a>
+                  
+                </h4>
+              </div>
+              <div class="panel-body">
+                <div class="panel-group" id="accordion">
+                <?php
+                    for($i=0; $i<$n_preguntas; $i++){?>
+                        <div class="panel panel-warning">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                <span onclick="editarPregunta(<?php echo $i?>)" class="label label-success pull-right">Editar
+                    <span class="glyphicon glyphicon-pencil"></span>
+                  </span>
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $i?>">Pregunta <?php echo $i+1?></a>
+                                </h4>
+                            </div>
+                            <div id="collapse<?php echo $i ?>" class="panel-collapse collapse">
+                                <div id="pregunta<?php echo $i?>" class="panel-body"><?php echo $preguntas[$i]['texto']?></div>
+                            </div>
+                        </div>
+                    <?php
+                }
+                ?>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <center>
+        <button class="btn btn-success" type="submit">Enviar modificación</button>
+      </center>
+    </form> 
 <?php
   }else{
     echo '<center><span class="label label-aviso">ACCESO RESTRINGIDO</span></center><br>';
@@ -55,7 +104,6 @@
     echo '<center><a href="/"><span class="label label-volver">VOLVER</span></a></center>';             
   }
 ?> 
-</div>
 </div>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.css" rel="stylesheet">
@@ -69,8 +117,8 @@
   });
 
   var updateValue = function() {
-	var contenido = $('textarea[name="contenido"]').html($('#summernote').code());
-}
+	  var contenido = $('textarea[name="contenido"]').html($('#summernote').code());
+  }
 </script>
 
 
