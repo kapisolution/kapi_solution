@@ -30,9 +30,9 @@ $nivel=$articulo['nivel'];
               <div class="panel-heading">
                 <h4 class="panel-title">
                   <a>Titulo</a>
-                  <span id="editarTitulo" onclick="editarTitulo()" class="label label-success pull-right">Editar
+                  <a href="javascript:void(0);"><span id="editarTitulo" onclick="editarTitulo()" class="label label-success pull-right">Editar
                     <span class="glyphicon glyphicon-pencil"></span>
-                  </span>
+                  </span></a>
                 </h4>
               </div>
               <div id="titulo" class="panel-body">
@@ -48,9 +48,9 @@ $nivel=$articulo['nivel'];
               <div class="panel-heading">
                 <h4 class="panel-title">
                 <a>Contenido</a>
-                  <span onclick="editarContenido()" class="label label-success pull-right">Editar
+                <a href="javascript:void(0);"><span onclick="editarContenido()" class="label label-success pull-right">Editar
                     <span class="glyphicon glyphicon-pencil"></span>
-                  </span>
+                  </span></a>
                 </h4>
               </div>
                 <div id="contenido" class="panel-body"><?php echo $contenido?></div>
@@ -74,8 +74,8 @@ $nivel=$articulo['nivel'];
                         <div class="panel panel-warning">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                <span onclick="editarPregunta(<?php echo $i?>)" class="label label-success pull-right">Editar
-                    <span class="glyphicon glyphicon-pencil"></span>
+                                <a href="javascript:void(0);"><span onclick="editarPregunta(<?php echo $i?>)" class="label label-success pull-right">Editar
+                    <span class="glyphicon glyphicon-pencil"></span></a>
                   </span>
                                     <a data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $i?>">Pregunta <?php echo $i+1?></a>
                                 </h4>
@@ -91,6 +91,12 @@ $nivel=$articulo['nivel'];
               </div>
             </div>
           </div>
+        </div>
+        <hr>
+        <div class="form-group">
+          <label for="imagen">Añade una imagen</label>
+          <input type="file" class="form-control-file" id="imagen">
+          <small id="fileHelp" class="form-text text-muted">
         </div>
       </div>
       <center>
