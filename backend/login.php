@@ -6,7 +6,7 @@
     $pass=$_POST["pass"];
     
 
-    $sql = 'SELECT password FROM Usuarios WHERE nick="'.$nombre.'";';
+    $sql = 'SELECT * FROM Usuarios WHERE nick="'.$nombre.'";';
     $resultado = mysqli_query($con, $sql) or die("Error por nick en consulta sobre la tabla Usuarios");
     include 'desconexion.php';
     $usuario = array();
@@ -18,14 +18,14 @@
     if($passdb == md5($passIntroducida)){
         $_SESSION["nick"] = $nombre;
         $_SESSION["login"] = true;
+        $_SESSION["rol"] = $usuario[0]['rol'];
+        $_SESSION["nivel"] = $usuario[0]['nivel'];
         require 'desconexion.php';  
         header('Location:/');
     }
     else{
         require 'desconexion.php';
-        echo $passdb;
-        echo md5($passIntroducida);
-        //header('Location:/login.php?login=ko');
+        header('Location:/login.php?login=ko');
     }
     
 ?>

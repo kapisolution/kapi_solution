@@ -1,4 +1,5 @@
   var j=0;
+  var textarea;
   function editarTitulo(){
     var area ="#titulo";
     divClickedTitulo(area);
@@ -13,53 +14,72 @@
   }
   function divClickedTitulo(area) {
     var divHtml = $(area).html();
-    var editableText = $("<textarea/>");
+    var editableText = $("<textarea id='textoTitulo'/>");
     editableText.val(divHtml);
     $(area).replaceWith(editableText);
+    tinymce.init({ selector:'textarea#textoTitulo' });
+    textarea="textoTitulo";
+    id="textoTitulo";
     editableText.focus();
-    // setup the blur event for this new textarea
-    editableText.blur(editableTextBlurredTitulo);
+    $("body").click(editableTextBlurredTitulo);
   }
   function divClickedContenido(area) {
     var divHtml = $(area).html();
-    var editableText = $("<textarea style='height:20%';/>");
+    var editableText = $("<textarea id='textoContenido' style='height:20%';/>");
     editableText.val(divHtml);
     $(area).replaceWith(editableText);
+    tinymce.init({ selector:'textarea#textoContenido' });
+    textarea="textoContenido";
+    id="textoContenido";
     editableText.focus();
-    // setup the blur event for this new textarea
-    editableText.blur(editableTextBlurredContenido);
+    $("body").click(editableTextBlurredContenido);
   }
   function divClickedPregunta(area,i) {
     var divHtml = $(area).html();
-    var editableText = $("<textarea />");
+    var editableText = $("<textarea id='textoPregunta' />");
     editableText.val(divHtml);
     $(area).replaceWith(editableText);
+    tinymce.init({ selector:'textarea#textoPregunta' });
+    textarea="textoPregunta";
+    id="textoPregunta";
     editableText.focus();
-    // setup the blur event for this new textarea
     j=i;
-    editableText.blur(editableTextBlurredPregunta);
+    $("body").click(editableTextBlurredPregunta);
   }
   function editableTextBlurredTitulo(){
-    var html = $(this).val();
-    var viewableText = $("<div id='titulo'style='padding:15px;'/>");
-    viewableText.html(html)
-    $(this).replaceWith(viewableText);
-    // setup the click event for this new div
-    viewableText.click(divClickedTitulo);
+    if (!$(event.target).closest("form").length && !$(event.target).closest(".mce-widget").length) {   
+      if(tinymce.activeEditor!=null){
+          var html = tinymce.activeEditor.getContent();
+          tinymce.remove();		    
+          var e = $("textarea#textoTitulo");
+          var valor = e.val();
+          e.replaceWith('<div style="padding:10px;" id="titulo">' + valor + '</div>');
+          $("body").off('click');
+      }
+    } 
   }
   function editableTextBlurredContenido(){
-    var html = $(this).val();
-    var viewableText = $("<div id='contenido'style='padding:15px;'/>");
-    viewableText.html(html)
-    $(this).replaceWith(viewableText);
-    // setup the click event for this new div
-    viewableText.click(divClickedContenido);
+    if (!$(event.target).closest("form").length && !$(event.target).closest(".mce-widget").length) {   
+      if(tinymce.activeEditor!=null){
+          var html = tinymce.activeEditor.getContent();
+          tinymce.remove();		    
+          var e = $("textarea#textoContenido");
+          var valor = e.val();
+          e.replaceWith('<div style="padding:10px;" id="contenido">' + valor + '</div>');
+          $("body").off('click');	    
+      }
+    }
   }
   function editableTextBlurredPregunta(){
-    var html = $(this).val();
-    var viewableText = $("<div id='pregunta"+j+"'style='padding:15px;'/>");
-    viewableText.html(html)
-    $(this).replaceWith(viewableText);
-    // setup the click event for this new div
-    viewableText.click(divClickedPregunta);
+    if (!$(event.target).closest("form").length && !$(event.target).closest(".mce-widget").length) {   
+      if(tinymce.activeEditor!=null){
+          var html = tinymce.activeEditor.getContent();
+          tinymce.remove();		    
+          var e = $("textarea#textoPregunta");
+          var valor = e.val();
+          e.replaceWith("<div id='pregunta"+j+"'style='padding:15px;'>" + valor + '</div>');
+          $("body").off('click');    
+      }
+    }
   }
+  

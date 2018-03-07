@@ -12,6 +12,7 @@ $nivel=$articulo['nivel'];
     $color='black';
   }else   $color='blue';
 ?>
+<script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
 <div class="container containerArticulos">
   <div style="height:20px;background-color:<?php echo $color ?>;"></div>
   <hr>
@@ -29,8 +30,8 @@ $nivel=$articulo['nivel'];
             <div class="panel panel-primary">
               <div class="panel-heading">
                 <h4 class="panel-title">
-                  <a>Titulo</a>
-                  <a href="javascript:void(0);"><span id="editarTitulo" onclick="editarTitulo()" class="label label-success pull-right">Editar
+                  Titulo
+                  <a class="editar"><span id="editarTitulo" class="label label-success pull-right">Editar
                     <span class="glyphicon glyphicon-pencil"></span>
                   </span></a>
                 </h4>
@@ -47,8 +48,8 @@ $nivel=$articulo['nivel'];
             <div class="panel panel-primary">
               <div class="panel-heading">
                 <h4 class="panel-title">
-                <a>Contenido</a>
-                <a href="javascript:void(0);"><span onclick="editarContenido()" class="label label-success pull-right">Editar
+                Contenido
+                <a class="editar"><span id="editarContenido" class="label label-success pull-right">Editar
                     <span class="glyphicon glyphicon-pencil"></span>
                   </span></a>
                 </h4>
@@ -63,8 +64,7 @@ $nivel=$articulo['nivel'];
             <div class="panel panel-primary">
               <div class="panel-heading">
                 <h4 class="panel-title">
-                  <a>Preguntas</a>
-                  
+                Preguntas
                 </h4>
               </div>
               <div class="panel-body">
@@ -74,13 +74,13 @@ $nivel=$articulo['nivel'];
                         <div class="panel panel-warning">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                <a href="javascript:void(0);"><span onclick="editarPregunta(<?php echo $i?>)" class="label label-success pull-right">Editar
-                    <span class="glyphicon glyphicon-pencil"></span></a>
-                  </span>
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $i?>">Pregunta <?php echo $i+1?></a>
+                                <a class="editar"><span onclick="editarPregunta(<?php echo $i?>)" class="label label-success pull-right">Editar
+                                  <span class="glyphicon glyphicon-pencil"></span></a>
+                                </span>
+                                    Pregunta <?php echo $i+1?>
                                 </h4>
                             </div>
-                            <div id="collapse<?php echo $i ?>" class="panel-collapse collapse">
+                            <div>
                                 <div id="pregunta<?php echo $i?>" class="panel-body"><?php echo $preguntas[$i]['texto']?></div>
                             </div>
                         </div>
@@ -111,10 +111,17 @@ $nivel=$articulo['nivel'];
   }
 ?> 
 </div>
+
+<script>
+var titulo = document.getElementById("editarTitulo");
+var contenido = document.getElementById("editarContenido");
+titulo.addEventListener("click", editarTitulo);
+contenido.addEventListener("click", editarContenido);
+</script>
+<!--
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.js"></script>
-
 <script>
   $('#summernote').summernote({
     placeholder: 'Escribe el contenido de tu articulo.',
@@ -126,6 +133,7 @@ $nivel=$articulo['nivel'];
 	  var contenido = $('textarea[name="contenido"]').html($('#summernote').code());
   }
 </script>
+-->
 
 
 

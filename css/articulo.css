@@ -39,5 +39,8 @@ textarea{
     width: 100%;
     height: auto;
 }
+.editar{
+    cursor:pointer;
+}
 
 
