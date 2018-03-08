@@ -9,13 +9,15 @@ body{
     width: 100%;
 }
 .btn-group > .btn{
-    width: 33.3%;
+    width: 50%;
+    background-color: #1b3c59;
+    border-color: #305d83; 
 }
 li rol{
     color: white;
 }
 .container{
-    padding-top: 12rem;
+    padding-top: 10rem;
     padding-bottom: 12rem;  
 }
 .filaUsuario, .filaArticulo{
@@ -40,15 +42,15 @@ li rol{
     border-radius: 10%;
 }
 .imgUsrArticulo{
-    margin-top: 1rem;
+    margin-right: 1rem;
 }
 .imgUsr{
     width: 50px;
     height: 50px;
 }
 .imgUsrArticulo{
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
 }
 .infoRol{
     margin: 1rem auto;
@@ -65,5 +67,32 @@ li rol{
 }
 .h6{
     font-size: 20%;
+}
+.panel-primary>.panel-heading {
+    color: #fff;
+    background-color: #132a3d;
+    border-color: #132a3d;
+    height: 4rem;
+}
+.tituloBody{
+    padding-top: 1rem;
+}
+.dropdown-menu>li>a:hover {
+    background-color: #305d83;
+    color: white;
+}
+.glyphicon.glyphicon-plus{
+    color: #132a3d;
+}
+.glyphicon.glyphicon-plus:hover{
+    color: #305d83;
+}
+h4 small{
+    color: rgb(196, 196, 196);
+}
+.accion{
+    margin-top: -2rem;
+    margin-right: 0.5rem;
+    cursor: pointer;
 }
 

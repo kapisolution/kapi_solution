@@ -9,76 +9,76 @@
         <div class="btn-group">
             <button type="button" class="btn btn-primary" onclick="mostrarTarjetas(event, 'usuarios')">Usuarios</button>
             <button type="button" class="btn btn-primary" onclick="mostrarTarjetas(event, 'articulos')">Artículos</button>
-            <button type="button" class="btn btn-primary" onclick="mostrarTarjetas(event, 'ejercicios')">Ejercicios</button>
+            <!--<button type="button" class="btn btn-primary" onclick="mostrarTarjetas(event, 'ejercicios')">Ejercicios</button>-->
         </div>
     <br>
     <!--BusquedaUsuarios-->
-    <div class="album py-5 bg-light" id="usuarios"> 
-            <hr>
-        <?php 
-            for ($i = 0; $i < sizeof($busquedaUsuarios) ; $i++){
-        ?>       
-                <div class="row filaUsuario">
-                    <div class="col-xs-3 col-sm-2 col-md-2 col-lg-2">
-                        <img class="imgUsr" class="img-rounded" src="/files/img/usuario/<?php echo $busquedaUsuarios[$i]['nick'].'.jpg'?>">
-                    </div>
-                    <div class="col-xs-6 col-sm-8 col-md-8 col-lg-8">
-                        <div class="datosUsr">
-                        <h6><?php echo $busquedaUsuarios[$i]['nick']?> <small><i><?php echo $busquedaUsuarios[$i]['email']?></i></small></h6>
-                        <h6><span class="label label-warning">Nivel <?php echo $busquedaUsuarios[$i]['nivel']?></span></h6>
-                        <h6><span class="label label-danger"><?php echo $busquedaUsuarios[$i]['rol']?></span><h6>
+    <div class="album py-5 bg-light" id="usuarios">
+    <hr>
+    <?php
+        for ($i = 0; $i < sizeof($busquedaUsuarios) ; $i++){
+    ?> 
+        <div class="panel-group">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <div>
+                            <?php echo $busquedaUsuarios[$i]['nick'];?><small><?php echo "  ".$busquedaUsuarios[$i]['email']?></small>                
                         </div>
-                    </div>
-                    <div class="col-xs-3 col-sm-2 col-md-2 col-lg-2 text-center">
-                    <div class="infoRol">
-                           <img class="imgRol" width="40px" height="40px" src="/files/img/rol/<?php echo $busquedaUsuarios[$i]['rol'].'.jpg'?>">
-
-                           <h6><a href="#"><span class="label label-primary">Ver Perfil</span></a></h6>
-                    </div>
-                    </div>
+                    </h4>
                 </div>
-                <hr>
-        <?php
-        }
-        ?>
+                <div class="panel-body">
+                    <div class="pull-left">
+                        <img class="imgUsrArticulo" class="img-rounded" src="/files/img/usuario/<?php echo $busquedaUsuarios[$i]['nick'].'.jpg'?>">
+                    </div>
+                    <div class="text-center">
+                        <span class="label label-warning"><?php echo $busquedaUsuarios[$i]['rol']?></span>
+                        <span class="label label-danger"><?php echo "Nivel ".$busquedaUsuarios[$i]['nivel']?></span>
+                    </div> 
+                </div>
+                <a><span id="verPerfil" class="accion label label-success pull-right">Ver Perfil</span></a>
+            </div>
+        </div>
+        <hr>
+    <?php } ?>
     </div>
     <!--BusquedaArticulos-->
-    <div class="album py-5 bg-light" id="articulos" style="display:none"> 
-            <hr>
-        <?php
-            for ($i = 0; $i < sizeof($busquedaArticulos) ; $i++){
-        ?>       
-                <div class="row filaArticulo">
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-1">
-                    <img class="imgUsrArticulo" class="img-rounded" src="/files/img/usuario/<?php echo $busquedaArticulos[$i]['creador'].'.jpg'?>">
-                </div>
-                <div class="col-xs-7 col-sm-8 col-md-8 col-lg-9">
-                    <div class="datosUsr">
-                    <h6><?php echo $busquedaArticulos[$i]['titulo']?> <small><i><?php echo $busquedaArticulos[$i]['creador']?></i></small>
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <h6><span class="label label-warning">Nivel <?php echo $busquedaArticulos[$i]['nivel']?></span>
-                                <span class="label label-danger"><?php echo $busquedaArticulos[$i]['rol']?></span></h6>
-                            </div>
+    <div class="album py-5 bg-light" id="articulos" style="display:none">
+    <hr>
+    <?php
+        for ($i = 0; $i < sizeof($busquedaArticulos) ; $i++){
+    ?> 
+        <div class="panel-group">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <div class="pull-right">
+                            <span class="label label-warning"><?php echo $busquedaArticulos[$i]['rol']?></span>
+                            <span class="label label-danger"><?php echo "Nivel ".$busquedaArticulos[$i]['nivel']?></span>
                         </div>
-                    </div>
+                    </h4>
                 </div>
-                <div class="col-xs-3 col-sm-2 col-md-2 col-lg-2 text-center">
-                    <div class="infoRol">
-                        <img class="imgRolArticulos" width="30px" height="30px" margin-bottom="30px" src="/files/img/rol/<?php echo $busquedaArticulos[$i]['rol'].'.jpg'?>">
-
-                        <div class="row">
-                            <a href="articulo.php?id=<?php echo $busquedaArticulos[$i]['id']?>"><span class="label label-primary col-xs-12">Ver</span></a>
-                            <a href="modificararticulo.php?id=<?php echo $busquedaArticulos[$i]['id']?>"><span class="label label-primary col-xs-12">Editar</span></a>
-                        </div>
+                <div class="panel-body">
+                    <div class="pull-left">
+                        <img class="imgUsrArticulo" class="img-rounded" src="/files/img/usuario/<?php echo $busquedaArticulos[$i]['creador'].'.jpg'?>">
                     </div>
+                    <div class="tituloBody text-center">
+                        <?php echo $busquedaArticulos[$i]['titulo'];?><small><?php echo "  ".$busquedaArticulos[$i]['creador']?></small>                
+                    </div>    
+                </div>
+                <div class="accion pull-right">
+                    <ul class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-plus"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/articulo.php?id=<?php echo $busquedaArticulos[$i]['id']?>">Ver</a></li>
+                        <li class="divider"></li>
+                        <li><a class="dropdown-item" href="/modificararticulo.php?id=<?php echo $busquedaArticulos[$i]['id']?>">Editar</a></li>
+                    </ul>
                 </div>
             </div>
-            <hr>
-        <?php
-        }
-        ?>
-        </div>    
+        </div>
+        <hr>
+    <?php } ?>
 </div>
 
 

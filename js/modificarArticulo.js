@@ -17,7 +17,7 @@
     var editableText = $("<textarea id='textoTitulo'/>");
     editableText.val(divHtml);
     $(area).replaceWith(editableText);
-    tinymce.init({ selector:'textarea#textoTitulo' });
+    //tinymce.init({ selector:'textarea#textoTitulo' });
     textarea="textoTitulo";
     id="textoTitulo";
     editableText.focus();
@@ -39,7 +39,7 @@
     var editableText = $("<textarea id='textoPregunta' />");
     editableText.val(divHtml);
     $(area).replaceWith(editableText);
-    tinymce.init({ selector:'textarea#textoPregunta' });
+    //tinymce.init({ selector:'textarea#textoPregunta' });
     textarea="textoPregunta";
     id="textoPregunta";
     editableText.focus();
@@ -47,16 +47,16 @@
     $("body").click(editableTextBlurredPregunta);
   }
   function editableTextBlurredTitulo(){
-    if (!$(event.target).closest("form").length && !$(event.target).closest(".mce-widget").length) {   
-      if(tinymce.activeEditor!=null){
-          var html = tinymce.activeEditor.getContent();
-          tinymce.remove();		    
+    if (!$(event.target).closest("form").length) {   
+      //if(tinymce.activeEditor!=null){
+          //var html = tinymce.activeEditor.getContent();
+          //tinymce.remove();		    
           var e = $("textarea#textoTitulo");
           var valor = e.val();
           e.replaceWith('<div style="padding:10px;" id="titulo">' + valor + '</div>');
           $("body").off('click');
       }
-    } 
+    //} 
   }
   function editableTextBlurredContenido(){
     if (!$(event.target).closest("form").length && !$(event.target).closest(".mce-widget").length) {   
@@ -71,15 +71,15 @@
     }
   }
   function editableTextBlurredPregunta(){
-    if (!$(event.target).closest("form").length && !$(event.target).closest(".mce-widget").length) {   
-      if(tinymce.activeEditor!=null){
-          var html = tinymce.activeEditor.getContent();
-          tinymce.remove();		    
+    if (!$(event.target).closest("form").length) {   
+      //if(tinymce.activeEditor!=null){
+          //var html = tinymce.activeEditor.getContent();
+          //tinymce.remove();		    
           var e = $("textarea#textoPregunta");
           var valor = e.val();
           e.replaceWith("<div id='pregunta"+j+"'style='padding:15px;'>" + valor + '</div>');
           $("body").off('click');    
       }
-    }
+    //}
   }
   

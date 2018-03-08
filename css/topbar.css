@@ -20,7 +20,8 @@
     background-color: #f2f2f0;
 }
 .navbar-inverse .navbar-nav .open .dropdown-menu>li>a:hover{
-    color: #207dce;
+    background-color: #305d83;
+    color: white;
 }
 .navbar-inverse .navbar-nav .open .dropdown-menu>li>a{
     color: #1b3c59;
@@ -59,6 +60,10 @@
 .navbar-inverse .navbar-toggle {
     margin-top: 2.5rem; 
     border-color: #e5e5e5;
+}
+.dropdown-menu>li>a:hover {
+    background-color: #305d83;
+    color: white;
 }
 /*
 @media (max-width: 1500px) {
