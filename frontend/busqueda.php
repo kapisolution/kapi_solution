@@ -36,7 +36,7 @@
                         <span class="label label-danger"><?php echo "Nivel ".$busquedaUsuarios[$i]['nivel']?></span>
                     </div> 
                 </div>
-                <a><span id="verPerfil" class="accion label label-success pull-right">Ver Perfil</span></a>
+                <a href="usuario.php?id=<?php echo $busquedaUsuarios[$i]['nick']?>"><span id="verPerfil" class="accion label label-success pull-right">Ver Perfil</span></a>
             </div>
         </div>
         <hr>

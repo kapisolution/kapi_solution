@@ -47,7 +47,7 @@
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item">Registrado como <?php echo $_SESSION["nick"]?></a></li>
                         <li class="divider"></li>
-                        <li><a class="dropdown-item" href="#">Ver Perfil</a></li>
+                        <li><a class="dropdown-item" href="/usuario.php?id=<?php echo $_SESSION["nick"]?>">Ver Perfil</a></li>
                         <li class="divider"></li>
                         <li><a class="dropdown-item" href="backend/logout.php">Cerrar Sesion</a></li>
                     </ul> 
