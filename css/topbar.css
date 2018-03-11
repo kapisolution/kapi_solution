@@ -50,6 +50,10 @@
 .label.mylabel{
     background-color: #d9534f;
     font-size: 130%;
+    cursor:pointer;
+}
+.caret{
+    cursor: pointer;
 }
 #login{
     font-size:0.8em; 

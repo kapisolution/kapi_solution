@@ -1,6 +1,67 @@
 <?php include 'backend/usuario.php';
 $nick = $usuario['nick'];
+$rol = $usuario['rol'];
+$nivel = $usuario['nivel'];
+$email = $usuario['email'];
 ?>
 <div class="container containerUsuario">
-    <h6><?php echo $nick?></h6>
+    <hr>
+    <div clas="row">
+        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+        <!-- Imagen, nombre, email, insignias-->
+            <img src="/files/img/usuario/<?php echo $nick ?>.jpg" class="img-rounded imgUsr">
+            <h3><?php echo $nick ?></h3>
+            <hr>
+            <h4><span class="label label-warning"><?php echo $rol?></span></h4>
+            <h4><span class="label label-danger">Nivel <?php echo $nivel?></span></h4>
+            <h5><?php echo $email?></h5>
+            <hr>
+            <h4><a href="#"><span class="label label-success">Editar</span></a></h4>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+        <!-- Contribuciones populares, grafico contribuciones, x contribuciones/año-->
+            <h3>Contribuciones populares</h3>
+            <!--Necesitamos backend para consulta de modificaciones, creaciones articulo ordenadas por votos,
+            de momento nos creamos nosotros los datos-->
+            <div class="row">
+                <?php for($i=0;$i<4;$i++){?>
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                        <div class="panel-group">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <div class="pull-right">
+                                            <span class="label label-warning">Rol</span>
+                                            <span class="label label-danger">Nivel</span>
+                                        </div>
+                                    </h4>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="tituloBody">
+                                        Titulo<small>creador</small>                
+                                    </div>    
+                                </div>
+                                <div class="accion pull-right">
+                                    <ul class="dropdown">
+                                    <a class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-plus"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Ver</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Progress bar con votos positivos, negativos de las modificaciones -->
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-success progress-bar-striped" style="width: 50%">
+                                <span class="glyphicon glyphicon-thumbs-up">50%</span>
+                            </div>
+                            <div class="progress-bar progress-bar-danger progress-bar-striped" style="width: 50%">
+                                <span class="glyphicon glyphicon-thumbs-down">50%</span>
+                            </div>
+                        </div>
+                    </div>
+                <?php } ?>
+            </div>
+        </div>
+    </div>
 </div>

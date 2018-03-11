@@ -81,12 +81,6 @@ li rol{
     background-color: #305d83;
     color: white;
 }
-.glyphicon.glyphicon-plus{
-    color: #132a3d;
-}
-.glyphicon.glyphicon-plus:hover{
-    color: #305d83;
-}
 h4 small{
     color: rgb(196, 196, 196);
 }
