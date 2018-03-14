@@ -1,4 +1,5 @@
 <?php
+
 require 'backend/articulo.php';
 $titulo=$articulo['titulo'];
 $contenido=$articulo['contenido'];
@@ -70,7 +71,7 @@ $nivel=$articulo['nivel'];
               <div class="panel-body">
                 <div class="panel-group" id="accordion">
                 <?php
-                    for($i=0; $i<$n_preguntas; $i++){?>
+                    for($i=0; $i<3; $i++){?>
                         <div class="panel panel-warning">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
@@ -95,7 +96,7 @@ $nivel=$articulo['nivel'];
         <hr>
         <div class="form-group">
           <label for="imagen">Añade una imagen</label>
-          <input type="file" class="form-control-file" id="imagen">
+          <input type="file" class="form-control-file" id="imagen" name="imagen[]" multiple="multiple">
           <small id="fileHelp" class="form-text text-muted">
         </div>
       </div>
@@ -118,22 +119,24 @@ var contenido = document.getElementById("editarContenido");
 titulo.addEventListener("click", editarTitulo);
 contenido.addEventListener("click", editarContenido);
 </script>
-<!--
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.css" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.js"></script>
-<script>
-  $('#summernote').summernote({
-    placeholder: 'Escribe el contenido de tu articulo.',
-    tabsize: 2,
-    height: 400
-  });
 
+<script type="text/javascript">
   var updateValue = function() {
-	  var contenido = $('textarea[name="contenido"]').html($('#summernote').code());
+
+    $('#formularioArticulo').append("<input type='hidden' name='titulo' value='"+$('#titulo').html()+"'>");
+    $('#formularioArticulo').append("<input type='hidden' name='contenido' value='"+$('#contenido').html()+"'>");
+    $('#formularioArticulo').append("<input type='hidden' name='pregunta0' value='"+$('#pregunta0').html()+"'>");
+    $('#formularioArticulo').append("<input type='hidden' name='pregunta1' value='"+$('#pregunta1').html()+"'>");
+    $('#formularioArticulo').append("<input type='hidden' name='pregunta2' value='"+$('#pregunta2').html()+"'>");
+    $.ajax({
+      url:"backend/modificararticulo.php",
+      type:"POST",
+      data: $('#formularioArticulo')
+    });
   }
+  
 </script>
--->
+
 
 
 
