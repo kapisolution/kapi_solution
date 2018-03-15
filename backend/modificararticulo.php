@@ -8,7 +8,9 @@
             $titulo=$_POST["titulo"];
             $contenido=$_POST["contenido"];
             $creador= $_SESSION['nick'];
-            $sql = "INSERT INTO Modificacion_articulo (id_mod, rol, nivel, titulo, contenido, creador) VALUES (NULL, '$rol', '$nivel', '$titulo', '$contenido', '$creador');";
+            $id=$_POST["id"];
+            echo $id.$rol.$nivel.$titulo.$contenido.$creador;
+            $sql = "INSERT INTO Modificacion_articulo (id, rol, nivel, titulo, contenido, creador) VALUES ('$id', '$rol', '$nivel', '$titulo', '$contenido', '$creador');";
             $consulta = mysqli_query($con, $sql) or die("No se pudo insertar el articulo");    
         }
     }
