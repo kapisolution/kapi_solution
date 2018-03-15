@@ -1,14 +1,14 @@
 
-function mostrarTarjetas(evt, tarjetero) {
-    var i, x, tablinks;
+function mostrarTarjetas(evt, tarjetero, btn) {
+    var x;
     x = document.getElementsByClassName("album py-5 bg-light");
     for (i = 0; i < x.length; i++) {
         x[i].style.display = "none";
     }
-    tablinks = document.getElementsByClassName("btn btn-primary");
+    x = document.getElementsByClassName("list-group-item disabled");
     for (i = 0; i < x.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" tab-selected", "");
-    }
+        x[i].className='list-group-item';
+    } 
     document.getElementById(tarjetero).style.display = "block";
-    evt.currentTarget.className += " tab-selected";
+    $("#"+btn).removeClass('list-group-item').addClass('list-group-item disabled');
 }

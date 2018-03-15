@@ -89,4 +89,9 @@ h4 small{
     margin-right: 0.5rem;
     cursor: pointer;
 }
+.list-group-item.disabled, .list-group-item.disabled:focus, .list-group-item.disabled:hover {
+    color: rgb(255, 255, 255);
+    cursor: not-allowed;
+    background-color: #305d83;
+}
 
