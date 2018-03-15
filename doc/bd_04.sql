@@ -2,10 +2,10 @@
 -- version 4.5.4.1deb2ubuntu2
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Feb 22, 2018 at 07:08 PM
--- Server version: 10.0.33-MariaDB-0ubuntu0.16.04.1
--- PHP Version: 7.0.22-0ubuntu0.16.04.1
+-- Servidor: localhost
+-- Tiempo de generación: 15-03-2018 a las 19:01:17
+-- Versión del servidor: 10.0.33-MariaDB-0ubuntu0.16.04.1
+-- Versión de PHP: 7.0.22-0ubuntu0.16.04.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `bd_test`
+-- Base de datos: `bd_test`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Articulos`
+-- Estructura de tabla para la tabla `Articulos`
 --
 
 CREATE TABLE `Articulos` (
@@ -37,7 +37,7 @@ CREATE TABLE `Articulos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `Articulos`
+-- Volcado de datos para la tabla `Articulos`
 --
 
 INSERT INTO `Articulos` (`id`, `nivel`, `rol`, `titulo`, `contenido`, `img`, `creador`) VALUES
@@ -110,7 +110,7 @@ INSERT INTO `Articulos` (`id`, `nivel`, `rol`, `titulo`, `contenido`, `img`, `cr
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Examenes`
+-- Estructura de tabla para la tabla `Examenes`
 --
 
 CREATE TABLE `Examenes` (
@@ -122,7 +122,7 @@ CREATE TABLE `Examenes` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Insignias`
+-- Estructura de tabla para la tabla `Insignias`
 --
 
 CREATE TABLE `Insignias` (
@@ -133,7 +133,7 @@ CREATE TABLE `Insignias` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Insignias_Usuario`
+-- Estructura de tabla para la tabla `Insignias_Usuario`
 --
 
 CREATE TABLE `Insignias_Usuario` (
@@ -144,7 +144,7 @@ CREATE TABLE `Insignias_Usuario` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Modificaciones`
+-- Estructura de tabla para la tabla `Modificaciones`
 --
 
 CREATE TABLE `Modificaciones` (
@@ -157,7 +157,7 @@ CREATE TABLE `Modificaciones` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Modificacion_articulo`
+-- Estructura de tabla para la tabla `Modificacion_articulo`
 --
 
 CREATE TABLE `Modificacion_articulo` (
@@ -173,7 +173,7 @@ CREATE TABLE `Modificacion_articulo` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Modificacion_pregunta`
+-- Estructura de tabla para la tabla `Modificacion_pregunta`
 --
 
 CREATE TABLE `Modificacion_pregunta` (
@@ -192,7 +192,7 @@ CREATE TABLE `Modificacion_pregunta` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Modificacion_sugerencia`
+-- Estructura de tabla para la tabla `Modificacion_sugerencia`
 --
 
 CREATE TABLE `Modificacion_sugerencia` (
@@ -203,7 +203,7 @@ CREATE TABLE `Modificacion_sugerencia` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Preguntas`
+-- Estructura de tabla para la tabla `Preguntas`
 --
 
 CREATE TABLE `Preguntas` (
@@ -211,18 +211,27 @@ CREATE TABLE `Preguntas` (
   `nivel` int(11) NOT NULL,
   `texto` text NOT NULL,
   `rol` varchar(20) NOT NULL,
-  `A` text NOT NULL,
-  `B` text NOT NULL,
-  `C` text NOT NULL,
-  `D` text NOT NULL,
-  `correcta` text NOT NULL,
+  `A` text,
+  `B` text,
+  `C` text,
+  `D` text,
+  `correcta` text,
   `id` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `Preguntas`
+--
+
+INSERT INTO `Preguntas` (`id_pregunta`, `nivel`, `texto`, `rol`, `A`, `B`, `C`, `D`, `correcta`, `id`) VALUES
+('1', 1, 'Esta es una pregunta de prueba', 'abogado', '', '', '', '', '', 827),
+('2', 1, 'Pregunta prueba 2', 'abogado', NULL, NULL, NULL, NULL, NULL, 827),
+('3', 1, 'Pregunta de prueba 3', 'abogado', NULL, NULL, NULL, NULL, NULL, 827);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Preguntas_Examen`
+-- Estructura de tabla para la tabla `Preguntas_Examen`
 --
 
 CREATE TABLE `Preguntas_Examen` (
@@ -233,7 +242,7 @@ CREATE TABLE `Preguntas_Examen` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Realiza_Examen`
+-- Estructura de tabla para la tabla `Realiza_Examen`
 --
 
 CREATE TABLE `Realiza_Examen` (
@@ -245,7 +254,7 @@ CREATE TABLE `Realiza_Examen` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Usuarios`
+-- Estructura de tabla para la tabla `Usuarios`
 --
 
 CREATE TABLE `Usuarios` (
@@ -257,16 +266,17 @@ CREATE TABLE `Usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `Usuarios`
+-- Volcado de datos para la tabla `Usuarios`
 --
 
 INSERT INTO `Usuarios` (`nick`, `rol`, `nivel`, `password`, `email`) VALUES
 ('a', 'abogado', 0, 'c4ca4238a0b923820dcc509a6f75849b', 'a@a.com'),
-('alvasenj', 'informatico', 1, '81dc9bdb52d04dc20036dbd8313ed055', 'alvi_senjo@hotmail.es'),
+('alvasenj', 'informatico', 5, '81dc9bdb52d04dc20036dbd8313ed055', 'alvi_senjo@hotmail.es'),
 ('alvasenjPrueba', 'informatico', 0, 'c4ca4238a0b923820dcc509a6f75849b', 'aaaa@email.com'),
 ('hola', 'abogado', 0, 'c4ca4238a0b923820dcc509a6f75849b', 'hola@1.com'),
 ('javi', 'informatico', 0, '81dc9bdb52d04dc20036dbd8313ed055', 'javimv36@ucm.es'),
 ('juan', 'informatico', 0, 'c4ca4238a0b923820dcc509a6f75849b', 'juan@prueba.com'),
+('juanGutierrez', 'informatico', 0, '202cb962ac59075b964b07152d234b70', 'juan@juan.com'),
 ('p', 'abogado', 0, 'c4ca4238a0b923820dcc509a6f75849b', 'p@p.com'),
 ('prueba', 'periodista', 0, 'c4ca4238a0b923820dcc509a6f75849b', ''),
 ('prueba2', 'informatico', 0, 'c4ca4238a0b923820dcc509a6f75849b', 'prueba@email.com'),
@@ -275,7 +285,7 @@ INSERT INTO `Usuarios` (`nick`, `rol`, `nivel`, `password`, `email`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Visitan`
+-- Estructura de tabla para la tabla `Visitan`
 --
 
 CREATE TABLE `Visitan` (
@@ -284,143 +294,143 @@ CREATE TABLE `Visitan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Indexes for dumped tables
+-- Índices para tablas volcadas
 --
 
 --
--- Indexes for table `Articulos`
+-- Indices de la tabla `Articulos`
 --
 ALTER TABLE `Articulos`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `Examenes`
+-- Indices de la tabla `Examenes`
 --
 ALTER TABLE `Examenes`
   ADD PRIMARY KEY (`id_ex`,`nivel`);
 
 --
--- Indexes for table `Insignias`
+-- Indices de la tabla `Insignias`
 --
 ALTER TABLE `Insignias`
   ADD PRIMARY KEY (`nombre`);
 
 --
--- Indexes for table `Insignias_Usuario`
+-- Indices de la tabla `Insignias_Usuario`
 --
 ALTER TABLE `Insignias_Usuario`
   ADD PRIMARY KEY (`nick`,`nombre`),
   ADD KEY `Insignias_Usuario_fk1` (`nombre`);
 
 --
--- Indexes for table `Modificaciones`
+-- Indices de la tabla `Modificaciones`
 --
 ALTER TABLE `Modificaciones`
   ADD PRIMARY KEY (`id_modificacion`),
   ADD KEY `Modificaciones_fk0` (`nick`);
 
 --
--- Indexes for table `Modificacion_articulo`
+-- Indices de la tabla `Modificacion_articulo`
 --
 ALTER TABLE `Modificacion_articulo`
   ADD PRIMARY KEY (`id_mod`);
 
 --
--- Indexes for table `Modificacion_pregunta`
+-- Indices de la tabla `Modificacion_pregunta`
 --
 ALTER TABLE `Modificacion_pregunta`
   ADD PRIMARY KEY (`id_mod`);
 
 --
--- Indexes for table `Modificacion_sugerencia`
+-- Indices de la tabla `Modificacion_sugerencia`
 --
 ALTER TABLE `Modificacion_sugerencia`
   ADD PRIMARY KEY (`id_mod`);
 
 --
--- Indexes for table `Preguntas`
+-- Indices de la tabla `Preguntas`
 --
 ALTER TABLE `Preguntas`
   ADD PRIMARY KEY (`id_pregunta`,`nivel`);
 
 --
--- Indexes for table `Preguntas_Examen`
+-- Indices de la tabla `Preguntas_Examen`
 --
 ALTER TABLE `Preguntas_Examen`
   ADD PRIMARY KEY (`id_ex`,`id_pregunta`),
   ADD KEY `Preguntas_Examen_fk1` (`id_pregunta`);
 
 --
--- Indexes for table `Realiza_Examen`
+-- Indices de la tabla `Realiza_Examen`
 --
 ALTER TABLE `Realiza_Examen`
   ADD PRIMARY KEY (`nick`,`id_ex`),
   ADD KEY `Realiza_Examen_fk1` (`id_ex`);
 
 --
--- Indexes for table `Usuarios`
+-- Indices de la tabla `Usuarios`
 --
 ALTER TABLE `Usuarios`
   ADD PRIMARY KEY (`nick`);
 
 --
--- Indexes for table `Visitan`
+-- Indices de la tabla `Visitan`
 --
 ALTER TABLE `Visitan`
   ADD PRIMARY KEY (`nick`,`articulo`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT for table `Examenes`
+-- AUTO_INCREMENT de la tabla `Examenes`
 --
 ALTER TABLE `Examenes`
   MODIFY `id_ex` int(11) NOT NULL AUTO_INCREMENT;
 --
--- Constraints for dumped tables
+-- Restricciones para tablas volcadas
 --
 
 --
--- Constraints for table `Insignias_Usuario`
+-- Filtros para la tabla `Insignias_Usuario`
 --
 ALTER TABLE `Insignias_Usuario`
   ADD CONSTRAINT `Insignias_Usuario_fk0` FOREIGN KEY (`nick`) REFERENCES `Usuarios` (`nick`);
 
 --
--- Constraints for table `Modificaciones`
+-- Filtros para la tabla `Modificaciones`
 --
 ALTER TABLE `Modificaciones`
   ADD CONSTRAINT `Modificaciones_fk0` FOREIGN KEY (`nick`) REFERENCES `Usuarios` (`nick`);
 
 --
--- Constraints for table `Modificacion_articulo`
+-- Filtros para la tabla `Modificacion_articulo`
 --
 ALTER TABLE `Modificacion_articulo`
   ADD CONSTRAINT `Modificacion_contenido_fk0` FOREIGN KEY (`id_mod`) REFERENCES `Modificaciones` (`id_modificacion`);
 
 --
--- Constraints for table `Modificacion_pregunta`
+-- Filtros para la tabla `Modificacion_pregunta`
 --
 ALTER TABLE `Modificacion_pregunta`
   ADD CONSTRAINT `Modificacion_pregunta_fk0` FOREIGN KEY (`id_mod`) REFERENCES `Modificaciones` (`id_modificacion`);
 
 --
--- Constraints for table `Modificacion_sugerencia`
+-- Filtros para la tabla `Modificacion_sugerencia`
 --
 ALTER TABLE `Modificacion_sugerencia`
   ADD CONSTRAINT `Modificacion_sugerencia_fk0` FOREIGN KEY (`id_mod`) REFERENCES `Modificaciones` (`id_modificacion`);
 
 --
--- Constraints for table `Preguntas_Examen`
+-- Filtros para la tabla `Preguntas_Examen`
 --
 ALTER TABLE `Preguntas_Examen`
   ADD CONSTRAINT `Preguntas_Examen_fk0` FOREIGN KEY (`id_ex`) REFERENCES `Examenes` (`id_ex`),
   ADD CONSTRAINT `Preguntas_Examen_fk1` FOREIGN KEY (`id_pregunta`) REFERENCES `Preguntas` (`id_pregunta`);
 
 --
--- Constraints for table `Realiza_Examen`
+-- Filtros para la tabla `Realiza_Examen`
 --
 ALTER TABLE `Realiza_Examen`
   ADD CONSTRAINT `Realiza_Examen_fk0` FOREIGN KEY (`nick`) REFERENCES `Usuarios` (`nick`),
