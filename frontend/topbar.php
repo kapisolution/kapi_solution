@@ -21,20 +21,7 @@
                 <button class="" type="submit">BUSCAR</button>
                 </form>
             </li>
-            <?php
-            if(isset($_SESSION["login"])){
-                ?>
-            <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#">COMUNIDAD<span class="caret"></span></a>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="/creararticulo.php">Añadir contenido</a></li>
-                <li class="divider"></li>
-                <li><a "dropdown-item" href="#">Modificar contenido</a></li>
-            </ul>
-            </li>
-            <?php
-            }
-            ?>
+            <li><a href="/comunidad.php">COMUNIDAD</a></li>
             <li><a href="#">ARTÍCULOS</a></li>
             <li><a href="#">EXÁMENES</a></li>
         </ul>

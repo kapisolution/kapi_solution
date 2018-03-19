@@ -1,0 +1,20 @@
+.container{
+    padding-top: 15rem;
+    padding-bottom: 12rem;  
+}
+.thumbnail{
+    cursor: pointer;
+    height: 35rem;
+}
+.thumbnail > img{
+    height: 20rem;
+}
+a:link, a:visited {
+    color: transparent;
+}
+a:hover {
+    color: transparent;
+}
+.thumbnail:hover{
+    background-color: gray;
+}
