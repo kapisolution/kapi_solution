@@ -22,7 +22,7 @@
                 </form>
             </li>
             <li><a href="/comunidad.php">COMUNIDAD</a></li>
-            <li><a href="#">ARTÍCULOS</a></li>
+            <li><a href="/articulos.php">ARTÍCULOS</a></li>
             <li><a href="#">EXÁMENES</a></li>
         </ul>
         <?php

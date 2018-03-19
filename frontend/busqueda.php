@@ -54,6 +54,7 @@
                     <div class="panel panel-primary">
                         <div class="panel-heading">
                             <h4 class="panel-title">
+                                <small><?php echo "  ".$busquedaArticulos[$i]['creador']?></small>
                                 <div class="pull-right">
                                     <span class="label label-warning"><?php echo $busquedaArticulos[$i]['rol']?></span>
                                     <span class="label label-danger"><?php echo "Nivel ".$busquedaArticulos[$i]['nivel']?></span>
@@ -65,7 +66,7 @@
                                 <img class="imgUsrArticulo" class="img-rounded" src="/files/img/usuario/<?php echo $busquedaArticulos[$i]['creador'].'.jpg'?>">
                             </div>
                             <div class="tituloBody text-center">
-                                <?php echo $busquedaArticulos[$i]['titulo'];?><small><?php echo "  ".$busquedaArticulos[$i]['creador']?></small>                
+                                <?php echo $busquedaArticulos[$i]['titulo'];?>                
                             </div>    
                         </div>
                         <div class="accion pull-right">
@@ -91,6 +92,7 @@
                     <div class="panel panel-primary">
                         <div class="panel-heading">
                             <h4 class="panel-title">
+                                <small><?php echo "  ".$busquedaCreaciones[$i]['creador']?></small>
                                 <div class="pull-right">
                                     <span class="label label-warning"><?php echo $busquedaCreaciones[$i]['rol']?></span>
                                     <span class="label label-danger"><?php echo "Nivel ".$busquedaCreaciones[$i]['nivel']?></span>
@@ -102,7 +104,7 @@
                                 <img class="imgUsrArticulo" class="img-rounded" src="/files/img/usuario/<?php echo $busquedaCreaciones[$i]['creador'].'.jpg'?>">
                             </div>
                             <div class="tituloBody text-center">
-                                <?php echo $busquedaCreaciones[$i]['titulo'];?><small><?php echo "  ".$busquedaCreaciones[$i]['creador']?></small>                
+                                <?php echo $busquedaCreaciones[$i]['titulo'];?>
                             </div>    
                         </div>
                         <div class="accion pull-right">
@@ -128,6 +130,7 @@
                     <div class="panel panel-primary">
                         <div class="panel-heading">
                             <h4 class="panel-title">
+                                <small><?php echo "  ".$busquedaModificaciones[$i]['creador']?></small>                
                                 <div class="pull-right">
                                     <span class="label label-warning"><?php echo $busquedaModificaciones[$i]['rol']?></span>
                                     <span class="label label-danger"><?php echo "Nivel ".$busquedaModificaciones[$i]['nivel']?></span>
@@ -139,7 +142,7 @@
                                 <img class="imgUsrArticulo" class="img-rounded" src="/files/img/usuario/<?php echo $busquedaModificaciones[$i]['creador'].'.jpg'?>">
                             </div>
                             <div class="tituloBody text-center">
-                                <?php echo $busquedaModificaciones[$i]['titulo'];?><small><?php echo "  ".$busquedaModificaciones[$i]['creador']?></small>                
+                                <?php echo $busquedaModificaciones[$i]['titulo'];?>
                             </div>    
                         </div>
                         <div class="accion pull-right">
