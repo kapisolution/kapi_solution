@@ -12,3 +12,16 @@ function mostrarTarjetas(evt, tarjetero, btn) {
     document.getElementById(tarjetero).style.display = "block";
     $("#"+btn).removeClass('list-group-item').addClass('list-group-item disabled');
 }
+function mostrarContribuciones(evt, tarjetero, id) {
+    var x;
+    x = document.getElementsByClassName("row myClass");
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+    }
+    x = document.getElementsByClassName("active");
+    for (i = 0; i < x.length; i++) {
+        x[i].classList.remove("active");
+    } 
+    document.getElementById(tarjetero).style.display = "block";
+    $("#"+id).addClass('active');
+}

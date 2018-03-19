@@ -22,3 +22,6 @@
 .progress-bar{
     padding-top: 0.2rem;
 }
+a{
+    cursor: pointer;
+}

@@ -5,7 +5,8 @@ $nivel = $usuario['nivel'];
 $email = $usuario['email'];
 ?>
 <div class="container containerUsuario">
-    <hr>
+    
+    <br>
     <div clas="row">
         <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
         <!-- Imagen, nombre, email, insignias-->
@@ -16,15 +17,63 @@ $email = $usuario['email'];
             <h4><span class="label label-danger">Nivel <?php echo $nivel?></span></h4>
             <h5><?php echo $email?></h5>
             <hr>
+            <?php 
+            if($nick==$_SESSION['nick']){?>
             <h4><a href="#"><span class="label label-success">Editar</span></a></h4>
+            <br>
+            <?php } ?>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+            <ul class="nav nav-tabs">
+                <li id="modi" role="presentation" onclick="mostrarContribuciones('event', 'modificaciones', 'modi')" class="active"><a>Contribuciones</a></li>
+                <li id="crea" role="presentation" onclick="mostrarContribuciones('event', 'creaciones', 'crea')"><a>Modificaciones</a></li>
+            </ul>
         <!-- Contribuciones populares, grafico contribuciones, x contribuciones/año-->
-            <h3>Contribuciones populares</h3>
             <!--Necesitamos backend para consulta de modificaciones, creaciones articulo ordenadas por votos,
             de momento nos creamos nosotros los datos-->
-            <div class="row">
+            <div id="modificaciones" class="row myClass">
+            <br>
                 <?php for($i=0;$i<4;$i++){?>
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                        <div class="panel-group">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <div class="pull-right">
+                                            <span class="label label-warning">Rol</span>
+                                            <span class="label label-danger">Nivel</span>
+                                        </div>
+                                    </h4>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="tituloBody">
+                                        Titulo<small>creador</small>                
+                                    </div>    
+                                </div>
+                                <div class="accion pull-right">
+                                    <ul class="dropdown">
+                                    <a class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-plus"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Ver</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Progress bar con votos positivos, negativos de las modificaciones -->
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-success progress-bar-striped" style="width: 50%">
+                                <span class="glyphicon glyphicon-thumbs-up">50%</span>
+                            </div>
+                            <div class="progress-bar progress-bar-danger progress-bar-striped" style="width: 50%">
+                                <span class="glyphicon glyphicon-thumbs-down">50%</span>
+                            </div>
+                        </div>
+                    </div>
+                <?php } ?>
+            </div>
+            <div id="creaciones" class="row myClass" style="display:none">
+            <br>
+                <?php for($i=0;$i<2;$i++){?>
                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                         <div class="panel-group">
                             <div class="panel panel-primary">
