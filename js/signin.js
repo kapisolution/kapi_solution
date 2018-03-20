@@ -1,21 +1,24 @@
   function validarSignIn() {
     var x = document.getElementById("psw").value;
-    var y = document.getElementById("rep-psw").value;
+    var y = document.getElementById("inputCheckPsw").value;
     if (x != y) {
-        alert("Las contraseñas deben ser iguales");
         return false;
     }
   }
   function checkPass(){ 
     var x = document.getElementById("psw").value;
-    var y = document.getElementById("rep-psw").value;
-    if (x == y) {
-      document.getElementById('okPsw').style.display = 'block';
-      document.getElementById('incorrectoPsw').style.display = 'none';
-    }
-    else {
-      document.getElementById('incorrectoPsw').style.display = 'block';
-      document.getElementById('okPsw').style.display = 'none';      
+    var y = document.getElementById("inputCheckPsw").value;
+    if(y!=""){
+      if (x != y) {
+        document.getElementById('alert false').style.display = 'block';
+        document.getElementById('alert success').style.display = 'none';
+      }else{
+        document.getElementById('alert success').style.display = 'block';
+        document.getElementById('alert false').style.display = 'none';
+      }
+    }else{
+      document.getElementById('alert false').style.display = 'none';
+      document.getElementById('alert success').style.display = 'none';
     }
   }
   function alertSignIn(){ 

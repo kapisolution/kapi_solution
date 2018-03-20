@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <!--Cabeceras bootstrap -->
     <link rel="stylesheet" type="text/css" href="css/estilos.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
     <link rel="stylesheet" type="text/css" href="css/signin.css" />
     <title>Sign In</title>
     <meta charset="utf-8">

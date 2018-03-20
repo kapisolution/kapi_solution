@@ -9,6 +9,7 @@
   <!--Cabeceras bootstrap -->
     <title>Kapi - Home</title>
     <link rel="stylesheet" type="text/css" href="css/estilos.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
     <link rel="stylesheet" type="text/css" href="css/signin.css" />
     <meta charset="utf-8">
   </head>

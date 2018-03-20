@@ -19,10 +19,10 @@
     $numRegistrosEmail = $resultadoEmail->num_rows;
     
     if($numRegistrosNick>0){
-        header('Location: /signin.php?signin=ko');
+        header('Location: /signin.php?signin=kon');
     }
     else if($numRegistrosEmail>0){
-        header('Location: /signin.php?signin=ko');
+        header('Location: /signin.php?signin=kom');
     }
     else {
         $password = str_replace(' ', '',$pass);
