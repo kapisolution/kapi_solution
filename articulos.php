@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="css/topbar.css" />
     <link rel="stylesheet" type="text/css" href="css/footer.css" />
     <link rel="stylesheet" type="text/css" href="css/busqueda.css" />
+    <link rel="stylesheet" type="text/css" href="css/articulos.css" />
     <link rel="stylesheet" type="text/css" href="css/estilos.css" />
     
     <title>Kapi - Articulos</title>

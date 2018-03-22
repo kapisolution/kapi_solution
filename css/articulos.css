@@ -1,0 +1,21 @@
+#filtro{
+    width: 100%;
+    display:flex;
+    justify-content:center;
+}
+.list-group input[type="radio"]{
+     display: none;
+}
+.list-group input[type="radio"]:checked + label >span{
+    background-color: #337ab7;
+    color: white;
+}
+.label.label-default {
+    background-color: white;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: 1px solid #337ab7;
+    color: #337ab7;
+    padding: 1.2rem;
+    cursor: pointer;
+}
