@@ -21,9 +21,6 @@ label {
     color: #337ab7;
     padding: 1.2rem;
 }
-.form-control{
-    background-color: rgb(253, 253, 198);
-}
 #ElegirRol{
     width: 100%;
     display:flex;

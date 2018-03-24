@@ -10,8 +10,8 @@
                 <br><hr>
                 <p><center>Si aún no estás registrado <a href="/signin.php">REGÍSTRATE</a>.</center></p>
                 <hr>
-                <center><button id="bRegistro"class="btn btn-lg btn-success" type="submit">Entrar</button>
-                <a class="volver" href="/"><span class="label label-danger">Volver</button></a></center>
+                <center><button id="bRegistro" class="btn btn-lg btn-success" type="submit">Entrar</button>
+                <a class="volver" href="/"><span class="label label-danger back">Volver</button></a></center>
             </form>
         </div>
     </div>

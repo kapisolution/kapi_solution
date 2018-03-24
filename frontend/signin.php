@@ -34,7 +34,7 @@
                 </div>
                 <hr>
                 <center><button id="bRegistro"class="btn btn-lg btn-success" type="submit">Regístrate</button>
-                <a class="volver" href="/"><span class="label label-danger">Volver</button></a></center>
+                <a class="volver" href="/"><span class="label label-danger back">Volver</button></a></center>
             </form>
         </div>
     </div>

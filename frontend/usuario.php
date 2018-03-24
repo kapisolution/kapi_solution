@@ -19,7 +19,7 @@ $email = $usuario['email'];
             <hr>
             <?php 
             if($nick==$_SESSION['nick']){?>
-            <h4><a href="#"><span class="label label-success">Editar</span></a></h4>
+            <h4><a href="/editarusuario.php"><span class="label label-success">Editar</span></a></h4>
             <br>
             <?php } ?>
         </div>

@@ -25,3 +25,18 @@
 a{
     cursor: pointer;
 }
+a:link, a:visited {
+    color: transparent;
+}
+a:hover {
+    color: transparent;
+}
+#fotoUsr{
+    padding-top: 2rem;
+}
+.form-control{
+    margin-bottom: 1rem;
+}
+#rolUsr{
+    text-transform: uppercase;
+}

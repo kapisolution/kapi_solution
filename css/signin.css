@@ -10,16 +10,5 @@ body{
     padding-top: 3rem;
     padding-bottom: 0;
 }
-.label-danger {
-    padding: 1.7rem;
-    border-radius: 0.8rem;
-}
-.label-danger:hover{
-    background-color: rgb(150, 50, 50);
-}
-a.volver:link, a.volver:visited {
-    color: transparent;
-}
-a.volver:hover {
-    color: transparent;
-}
+
+

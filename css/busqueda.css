@@ -94,4 +94,7 @@ h4 small{
     cursor: not-allowed;
     background-color: #305d83;
 }
+#alert{
+    margin-top: 2rem;
+}
 

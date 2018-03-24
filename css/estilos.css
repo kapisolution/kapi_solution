@@ -20,3 +20,20 @@ html {
 .glyphicon.glyphicon-plus:hover{
     color: #305d83;
 }
+.form-control{
+    background-color: rgb(253, 253, 198);
+}
+.label-danger:hover{
+    background-color: rgb(150, 50, 50);
+}
+a.volver:link, a.volver:visited {
+    color: transparent;
+}
+a.volver:hover {
+    color: transparent;
+}
+.back {
+    border-radius: 0.8rem;
+    font-size: 1.4rem;
+    padding: 1.45rem 2rem 1.65rem 2rem;
+}
