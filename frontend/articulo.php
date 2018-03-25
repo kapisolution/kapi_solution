@@ -75,7 +75,28 @@
                     </h4>
                 </div>
                 <div id="collapse<?php echo $i ?>" class="panel-collapse collapse">
-                    <div class="panel-body"><?php echo $preguntas[$i]['texto']?></div>
+                    <div class="panel-body"><?php echo $preguntas[$i]['texto']?><br>
+                        <div class="thumbnail">
+                            <div class="caption">
+                                <ul class="list-group">
+                                    <li class="list-group-item"><?php echo $preguntas[$i]['A']?></li>
+                                    <li class="list-group-item"><?php echo $preguntas[$i]['B']?></li>
+                                    <li class="list-group-item"><?php echo $preguntas[$i]['C']?></li>
+                                    <li class="list-group-item"><?php echo $preguntas[$i]['D']?></li>
+                                </ul>
+                                <div class="list-group text-center" id="filtro">
+                                    <input type="radio" id="respuestaA<?php echo $i ?>" onclick="comprobarRespuesta('A','<?php echo $preguntas[$i]['correcta']?>','opcionA<?php echo $i ?>')";>
+                                    <label for="respuestaA<?php echo $i ?>"><span id="opcionA<?php echo $i ?>" class="label label-default">A</span></label>
+                                    <input type="radio" id="respuestaB<?php echo $i ?>" onclick="comprobarRespuesta('B','<?php echo $preguntas[$i]['correcta']?>','opcionB<?php echo $i ?>')">
+                                    <label for="respuestaB<?php echo $i ?>"><span id="opcionB<?php echo $i ?>" class="label label-default">B</span></label>
+                                    <input type="radio" id="respuestaC<?php echo $i ?>" onclick="comprobarRespuesta('C','<?php echo $preguntas[$i]['correcta']?>','opcionC<?php echo $i ?>')">
+                                    <label for="respuestaC<?php echo $i ?>"><span id="opcionC<?php echo $i ?>" class="label label-default">C</span></label>
+                                    <input type="radio" id="respuestaD<?php echo $i ?>" onclick="comprobarRespuesta('D','<?php echo $preguntas[$i]['correcta']?>','opcionD<?php echo $i ?>')">
+                                    <label for="respuestaD<?php echo $i ?>"><span id="opcionD<?php echo $i ?>" class="label label-default">D</span></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         <?php
@@ -116,3 +137,18 @@
         </div>
     </div>
 </div>
+<script>
+    function comprobarRespuesta(opcion,correcta,elemento){
+        x = document.getElementsByClassName("label label-success respuesta");
+        for (i = 0; i < x.length; i++) {
+            x[i].className='label label-default';
+        }
+        y = document.getElementsByClassName("label label-danger respuesta");
+        for (i = 0; i < y.length; i++) {
+            y[i].className='label label-default';
+        }
+        if(opcion==correcta){
+            $("#"+elemento).removeClass().addClass('label label-success respuesta');
+        }else   $("#"+elemento).removeClass().addClass('label label-danger respuesta');
+    }
+</script>

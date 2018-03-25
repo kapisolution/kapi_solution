@@ -42,5 +42,27 @@ textarea{
 .editar{
     cursor:pointer;
 }
+.thumbnail{
+    margin-top: 1rem;
+}
+.list-group input[type="radio"]{
+    display: none;
+}
+
+.label.label-default {
+   background-color: white;
+   box-sizing: border-box;
+   border-radius: 10px;
+   border: 1px solid #337ab7;
+   color: #337ab7;
+   padding: 1.2rem;
+   cursor: pointer;
+}
+
+.label.label-success.respuesta, .label.label-danger.respuesta {
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 1.2rem;
+ }
 
 
