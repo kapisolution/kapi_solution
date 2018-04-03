@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-            <a href="#">
+            <a href="/creaciones.php">
                 <div class="thumbnail">
                     <img class="imageComunidad" src="/files/icon/bombilla.png" alt="...">
                     <div class="caption">
@@ -12,7 +12,7 @@
             </a>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-            <a href="#">    
+            <a href="/modificaciones.php">    
                 <div class="thumbnail">
                     <img class="imageComunidad" src="/files/icon/modificaciones.png" alt="...">
                     <div class="caption">

@@ -65,26 +65,35 @@ $nivel=$articulo['nivel'];
             <div class="panel panel-primary">
               <div class="panel-heading">
                 <h4 class="panel-title">
-                Preguntas
+                Añade como máximo 3 preguntas a tu artículo
                 </h4>
               </div>
               <div class="panel-body">
                 <div class="panel-group" id="accordion">
                 <?php
                     for($i=0; $i<3; $i++){?>
-                        <div class="panel panel-warning">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                <a class="editar"><span onclick="editarPregunta(<?php echo $i?>)" class="label label-success pull-right">Editar
-                                  <span class="glyphicon glyphicon-pencil"></span></a>
-                                </span>
-                                    Pregunta <?php echo $i+1?>
-                                </h4>
-                            </div>
-                            <div>
-                                <div id="pregunta<?php echo $i?>" class="panel-body"><?php echo $preguntas[$i]['texto']?></div>
-                            </div>
-                        </div>
+                      <label for="textoPregunta<?php echo $i?>">Introduce el texto de tu pregunta (Pregunta <?php echo $i+1?>)</label>
+                      <input type="text" id="textoPregunta<?php echo $i?>" class="form-control" name="textoPregunta<?php echo $i?>">
+                      <label for="respuestaA<?php echo $i?>">Respuesta A</label>
+                      <input type="text" id="respuestaA<?php echo $i?>" class="form-control respuesta" name="respuestaA<?php echo $i?>">
+                      <label for="respuestaB<?php echo $i?>">Respuesta B</label>
+                      <input type="text" id="respuestaB<?php echo $i?>" class="form-control respuesta" name="respuestaB<?php echo $i?>">
+                      <label for="respuestaC<?php echo $i?>">Respuesta C</label>
+                      <input type="text" id="respuestaC<?php echo $i?>" class="form-control respuesta" name="respuestaC<?php echo $i?>">
+                      <label for="respuestaD<?php echo $i?>">Respuesta D</label>
+                      <input type="text" id="respuestaD<?php echo $i?>" class="form-control respuesta" name="respuestaD<?php echo $i?>">
+                      <label>Marca la respuesta correcta</label><br>
+                      <div class="correcta">
+                        <input type="radio" value="A" class="elegirCorrecta" name="correcta<?php echo $i ?>" id="correctaA<?php echo $i ?>" >
+                        <label for="correctaA<?php echo $i ?>"><span class="label label-default">A</span></label>
+                        <input type="radio" value="B" class="elegirCorrecta" name="correcta<?php echo $i ?>" id="correctaB<?php echo $i ?>" >
+                        <label for="correctaB<?php echo $i ?>"><span class="label label-default">B</span></label>
+                        <input type="radio" value="C" class="elegirCorrecta"  name="correcta<?php echo $i ?>" id="correctaC<?php echo $i ?>">
+                        <label for="correctaC<?php echo $i ?>"><span class="label label-default">C</span></label>
+                        <input type="radio" value="D" class="elegirCorrecta"  name="correcta<?php echo $i ?>" id="correctaD<?php echo $i ?>" >
+                        <label for="correctaD<?php echo $i ?>"><span class="label label-default">D</span></label>
+                      </div>
+                      <hr>
                     <?php
                 }
                 ?>

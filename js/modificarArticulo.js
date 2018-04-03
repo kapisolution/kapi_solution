@@ -8,10 +8,10 @@
     var area ="#contenido";
     divClickedContenido(area);
   }
-  function editarPregunta(i){
-    var area ="#pregunta"+i;
-    divClickedPregunta(area, i);
-  }
+  // function editarPregunta(i){
+  //   var area ="#pregunta"+i;
+  //   divClickedPregunta(area, i);
+  // }
   function divClickedTitulo(area) {
     var divHtml = $(area).html();
     var editableText = $("<textarea id='textoTitulo'/>");
@@ -34,18 +34,18 @@
     editableText.focus();
     $("body").click(editableTextBlurredContenido);
   }
-  function divClickedPregunta(area,i) {
-    var divHtml = $(area).html();
-    var editableText = $("<textarea id='textoPregunta' />");
-    editableText.val(divHtml);
-    $(area).replaceWith(editableText);
-    //tinymce.init({ selector:'textarea#textoPregunta' });
-    textarea="textoPregunta";
-    id="textoPregunta";
-    editableText.focus();
-    j=i;
-    $("body").click(editableTextBlurredPregunta);
-  }
+  // function divClickedPregunta(area,i) {
+  //   var divHtml = $(area).html();
+  //   var editableText = $("<textarea id='textoPregunta' />");
+  //   editableText.val(divHtml);
+  //   $(area).replaceWith(editableText);
+  //   //tinymce.init({ selector:'textarea#textoPregunta' });
+  //   textarea="textoPregunta";
+  //   id="textoPregunta";
+  //   editableText.focus();
+  //   j=i;
+  //   $("body").click(editableTextBlurredPregunta);
+  // }
   function editableTextBlurredTitulo(){
     if (!$(event.target).closest("form").length) {   
       //if(tinymce.activeEditor!=null){
@@ -70,16 +70,16 @@
       }
     }
   }
-  function editableTextBlurredPregunta(){
-    if (!$(event.target).closest("form").length) {   
-      //if(tinymce.activeEditor!=null){
-          //var html = tinymce.activeEditor.getContent();
-          //tinymce.remove();		    
-          var e = $("textarea#textoPregunta");
-          var valor = e.val();
-          e.replaceWith("<div id='pregunta"+j+"'style='padding:15px;'>" + valor + '</div>');
-          $("body").off('click');    
-      }
-    //}
-  }
+  // function editableTextBlurredPregunta(){
+  //   if (!$(event.target).closest("form").length) {   
+  //     //if(tinymce.activeEditor!=null){
+  //         //var html = tinymce.activeEditor.getContent();
+  //         //tinymce.remove();		    
+  //         var e = $("textarea#textoPregunta");
+  //         var valor = e.val();
+  //         e.replaceWith("<div id='pregunta"+j+"'style='padding:15px;'>" + valor + '</div>');
+  //         $("body").off('click');    
+  //     }
+  //   //}
+  // }
   
