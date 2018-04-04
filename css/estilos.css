@@ -23,7 +23,7 @@ html {
 .form-control{
     background-color: rgb(253, 253, 198);
 }
-.label-danger:hover{
+a>.label-danger:hover{
     background-color: rgb(150, 50, 50);
 }
 a.volver:link, a.volver:visited {

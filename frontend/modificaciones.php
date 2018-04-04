@@ -54,25 +54,23 @@
                         </div>
                     </div>
                 </div>
+                <!-- Progress bar con votos positivos, negativos de las modificaciones -->
+                <div class="progress" id="barra<?php echo $i?>" <?php if($i>4){?>style="display:none"<?php } ?>>
+                    <div class="progress-bar progress-bar-success progress-bar-striped" style="width: 50%">
+                        <span class="glyphicon glyphicon-thumbs-up">50%</span>
+                    </div>
+                    <div class="progress-bar progress-bar-danger progress-bar-striped" style="width: 50%">
+                        <span class="glyphicon glyphicon-thumbs-down">50%</span>
+                    </div>
+                </div>
             <?php } ?>
             </div>
-            <center><button class="btn btn-default" onclick=<?php $contador+=5 ?>"cargar(<?php echo $contador?>)">Cargar Mas</button></center>
+            <center><button class="btn btn-default" onclick=<?php $contador+=5 ?>"cargar(<?php echo $contador?>,<?php echo sizeof($articulos)?>)">Cargar Mas</button></center>
         </div>
     </div>
 </div>
 <script type="text/javascript">
     var cont=0;
-    function cargar(i){
-        var min=i+cont;
-        var max=<?php echo sizeof($articulos)?>;
-        if(min>=max){
-            $("#album").append("<div id='alert' class='alert alert-warning' role='alert'>No hay mas resultados</div>");
-        }
-        for(var j=min; j<min+5;j++){
-            $("#panel"+j).show();
-        }
-        cont=cont+min;
-    }
     function comparatorFecha(a,b){
         if (a.fecha < b.fecha) return -1;
         if (a.fecha > b.fecha) return 1;

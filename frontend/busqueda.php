@@ -45,7 +45,7 @@
                 </div>
                 <hr>
             <?php } ?>
-            <center><button class="btn btn-default" onclick="cargarUsuarios(<?php echo $contador+5?>)">Cargar Mas</button></center>  
+            <center><button class="btn btn-default" onclick="cargarUsuarios(<?php echo $contador+5?>,<?php echo sizeof($busquedaUsuarios)?>)">Cargar Mas</button></center>  
             </div>
             <!--BusquedaArticulos-->
             <div class="album py-5 bg-light" id="articulos" style="display:none">
@@ -83,7 +83,7 @@
                     </div>
                 </div>
             <?php } ?>
-            <center><button class="btn btn-default" onclick="cargarArticulos(<?php echo $contador+5?>)">Cargar Mas</button></center>  
+            <center><button class="btn btn-default" onclick="cargarArticulos(<?php echo $contador+5?>, <?php echo sizeof($busquedaArticulos)?>)">Cargar Mas</button></center>  
             </div>
             <!--BusquedaCreaciones-->
             <div class="album py-5 bg-light" id="creaciones" style="display:none">
@@ -160,54 +160,10 @@
                 </div>
                 <hr>
             <?php } ?>
-            <center><button class="btn btn-default" onclick="cargarModificaciones(<?php echo $contador+5?>)">Cargar Mas</button></center>  
+            <center><button class="btn btn-default" onclick="cargarModificaciones(<?php echo $contador+5?>, <?php echo sizeof($busquedaModificaciones)?>)">Cargar Mas</button></center>  
             </div>
         </div>
     </div>
 </div>
-<script type="text/javascript">
-    var alertArticulos=false;
-    var contArticulos=0;
-    var alertUsuarios=false;
-    var contUsuarios=0;
-    var alertModificaciones=false;
-    var contModificaciones=0;
-    function cargarArticulos(i){
-        var min=i+contArticulos;
-        var max=<?php echo sizeof($busquedaArticulos)?>;
-        if(min>=max&&!alertArticulos){
-            $("#articulos").append("<div id='alert' class='alert alert-warning' role='alert'>No hay mas resultados</div>");
-            alertArticulos=true;
-        }
-        for(var j=min; j<min+5;j++){
-            $("#panelArticulos"+j).show();
-        }
-        contArticulos=contArticulos+min;
-    }
-    function cargarUsuarios(i){
-        var min=i+contUsuarios;
-        var max=<?php echo sizeof($busquedaUsuarios)?>;
-        if(min>=max&&!alertUsuarios){
-            $("#usuarios").append("<div id='alert' class='alert alert-warning' role='alert'>No hay mas resultados</div>");
-            alertUsuarios=true;
-        }
-        for(var j=min; j<min+5;j++){
-            $("#panelUsuarios"+j).show();
-        }
-        contUsuarios=contUsuarios+min;
-    }
-    function cargarModificaciones(i){
-        var min=i+contModificaciones;
-        var max=<?php echo sizeof($busquedaModificaciones)?>;
-        if(min>=max&&!alertModificaciones){
-            $("#modificaciones").append("<div id='alert' class='alert alert-warning' role='alert'>No hay mas resultados</div>");
-            alertModificaciones=true;
-        }
-        for(var j=min; j<min+5;j++){
-            $("#panelModificaciones"+j).show();
-        }
-        contModificaciones=contModificaciones+min;
-    }
-</script>
 
 
