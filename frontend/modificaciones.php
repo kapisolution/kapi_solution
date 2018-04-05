@@ -30,7 +30,8 @@
                 <div id="panel<?php echo $i?>" class="panel panel-primary" <?php if($i>4){?>style="display:none"<?php } ?>>
                         <div class="panel-heading">
                             <h4 class="panel-title">
-                                <small id="creador<?php echo $i ?>"><?php echo "  ".$articulos[$i]['creador']?></small>                
+                                <a id="creador<?php echo $i ?>"><?php echo "  ".$articulos[$i]['creador']?></a>
+                                <small id="creador<?php echo $i ?>"><?php echo "  ".$articulos[$i]['fecha']?></small>
                                 <div class="pull-right">
                                 <span id="rol<?php echo $i ?>" class="label label-warning"><?php echo $articulos[$i]['rol']?></span>
                                 <span id="nivel<?php echo $i ?>"class="label label-danger"><?php echo "Nivel ".$articulos[$i]['nivel']?></span>
@@ -49,7 +50,7 @@
                             <ul class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-plus"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a id="verArt<?php echo $i?>" class="dropdown-item" href="/modificacion.php?id=<?php echo $articulos[$i]['id']?>">Ver</a></li>
+                                <li><a id="verArt<?php echo $i?>" class="dropdown-item" href="/modificacion.php?idmod=<?php echo $articulos[$i]['id']?>">Ver</a></li>
                             </ul>
                         </div>
                     </div>
