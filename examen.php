@@ -14,7 +14,7 @@
     <link rel="stylesheet" type="text/css" href="css/articulo.css" />
     <link rel="stylesheet" type="text/css" href="css/estilos.css" />
 
-    <title>Kapi - Articulo</title>
+    <title>Kapi - Examen</title>
     <link rel="icon" href="files/icon/logo.png" type="image/gif" sizes="16x16">
     <meta charset="utf-8">
   </head>
@@ -22,7 +22,7 @@
     <?php 
      require 'backend/conexion.php';
      include 'frontend/topbar.php';
-     include 'frontend/articulo.php';
+     include 'frontend/examen.php';
      include 'frontend/footer.php';
      include 'backend/desconexion.php';
     ?>

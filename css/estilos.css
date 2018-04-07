@@ -14,6 +14,10 @@ html {
 .contentBusqueda{
     padding-top: 12rem;
 }
+.container.containerExamenes{
+    padding-top: 10rem;
+    padding-bottom: 12rem;
+}
 .glyphicon.glyphicon-plus{
     color: #132a3d;
 }

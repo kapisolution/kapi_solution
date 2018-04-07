@@ -100,3 +100,26 @@ function ordenar(stringArray,criterio){
         $("#editarArt"+i).attr("href","/modificararticulo.php?id="+stringArray[i].id);
     }  
 }
+function comprobarRespuesta(opcion,correcta,elemento){
+    x = document.getElementsByClassName("label label-success respuesta");
+    for (i = 0; i < x.length; i++) {
+        x[i].className='label label-default';
+    }
+    y = document.getElementsByClassName("label label-danger respuesta");
+    for (i = 0; i < y.length; i++) {
+        y[i].className='label label-default';
+    }
+    if(opcion==correcta){
+        $("#"+elemento).removeClass().addClass('label label-success respuesta');
+    }else   $("#"+elemento).removeClass().addClass('label label-danger respuesta');
+}
+function respuestaExamen(filtro,opcion,correcta,elemento){
+    x = document.getElementById(filtro).getElementsByClassName('label label-primary respuesta');
+    for (i = 0; i < x.length; i++) {
+        x[i].className='label label-default';
+    }
+    $("#"+elemento).removeClass().addClass('label label-primary respuesta');
+    if(opcion==correcta){
+        //sumar puntos
+    }//else  restar puntos
+}

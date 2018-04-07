@@ -77,5 +77,10 @@ input[type="radio"]{
 .correcta{
     margin: 1rem 0;
 }
+.label.label-primary.respuesta{
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 1.3rem;
+ }
 
 
