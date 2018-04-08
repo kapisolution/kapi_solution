@@ -18,7 +18,7 @@ $nivel=$articulo['nivel'];
   <div style="height:20px;background-color:<?php echo $color ?>;"></div>
   <hr>
 <?php
-    if(isset($_SESSION['login'])){
+    if(isset($_SESSION['login']) && $_SESSION['nivel']>=$nivel){
   ?>
       <div class="row text-center">
         <span class="label label-warning">Nivel <?php echo $nivel?></span>
