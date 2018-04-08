@@ -4,5 +4,4 @@
     Acceso restringido
 </div>
 <hr>
-<center><a class="registro" href="/signin.php"><span class="label label-success back">Registrate</span></a>
-<a class="volver" href="/"><span class="label label-danger back">Volver</span></a></center>
+<center><a class="volver" href="/"><span class="label label-danger back">Volver</span></a></center>

@@ -108,17 +108,16 @@ $nivel=$articulo['nivel'];
           <input type="file" class="form-control-file" id="imagen" name="imagen[]" multiple="multiple">
           <small id="fileHelp" class="form-text text-muted">
         </div>
-      </div>
       <center>
         <button class="btn btn-success" type="submit">Enviar modificación</button>
       </center>
     </form> 
+</div>
 <?php
   }else{
     require 'accesoRestringido.php';   
   }
 ?> 
-</div>
 
 <script>
 var titulo = document.getElementById("editarTitulo");

@@ -3,7 +3,8 @@
     width: 50%;
 }
 .container.containerArticulos{
-    margin: 77px auto;
+    padding-top:77px;
+    padding-bottom: 100px;
 }
 .imgArticulo{
     padding: 0;
@@ -36,7 +37,7 @@
     margin-bottom: 5px;
 }
 .container-fluid.text-center.footerBS{
-    margin-bottom: -100px;
+    padding-bottom: -100px;
 }
 textarea{
     width: 100%;
