@@ -38,7 +38,6 @@ li rol{
 
 /*CSS Busqueda usuarios*/
 .imgUsr, .imgUsrArticulo{
-    border: 0.2rem solid black;
     border-radius: 10%;
 }
 .imgUsrArticulo{
@@ -57,7 +56,6 @@ li rol{
 }
 .imgRol, .imgRolArticulos{
     border-radius: 50%;
-    border: 0.2rem solid black;
 }
 .imgRolArticulos{
     margin-bottom: 30px;
@@ -68,31 +66,28 @@ li rol{
 .h6{
     font-size: 20%;
 }
-.panel-primary>.panel-heading {
-    color: #fff;
-    background-color: #132a3d;
-    border-color: #132a3d;
+.panel-default>.panel-heading {
     height: 4rem;
 }
 .tituloBody{
     padding-top: 1rem;
 }
 .dropdown-menu>li>a:hover {
-    background-color: #305d83;
+    background-color: #0077d8;
     color: white;
 }
 h4 small{
-    color: rgb(196, 196, 196);
+    color: rgb(128, 128, 128);
 }
 .accion{
-    margin-top: -2rem;
+    margin-top: -2.5rem;
     margin-right: 0.5rem;
     cursor: pointer;
 }
 .list-group-item.disabled, .list-group-item.disabled:focus, .list-group-item.disabled:hover {
-    color: rgb(255, 255, 255);
+    color: rgb(70, 70, 70);
     cursor: not-allowed;
-    background-color: #305d83;
+    
 }
 #alert{
     margin-top: 2rem;

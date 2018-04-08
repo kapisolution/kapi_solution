@@ -20,6 +20,9 @@
     border: 1px solid gray;
     padding: 8px;
 }
+.caja.votos{
+    margin-bottom:0.5rem;
+}
 .label-aviso{
     font-size: 4rem;
     background-color: rgb(228, 43, 43);
@@ -82,5 +85,4 @@ input[type="radio"]{
     border-radius: 10px;
     padding: 1.3rem;
  }
-
 

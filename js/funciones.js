@@ -9,7 +9,7 @@ var contModificaciones=0;
 function cargarUsuarios(i, max){
     var min=i+contUsuarios;
     if(min>=max&&!alertUsuarios){
-        $("#usuarios").append("<div id='alert' class='alert alert-warning' role='alert'>No hay mas resultados</div>");
+        $("#usuarios").append("<div id='alert' class='alert alert-info' role='alert'>No hay mas resultados</div>");
         alertUsuarios=true;
     }
     if(!alertUsuarios){
@@ -22,7 +22,7 @@ function cargarUsuarios(i, max){
 function cargarArticulos(i, max){
     var min=i+contArticulos;
     if(min>=max&&!alertArticulos){
-        $("#articulos").append("<div id='alert' class='alert alert-warning' role='alert'>No hay mas resultados</div>");
+        $("#articulos").append("<div id='alert' class='alert alert-info' role='alert'>No hay mas resultados</div>");
         alertArticulos=true;
     }
     if(!alertArticulos){
@@ -35,7 +35,7 @@ function cargarArticulos(i, max){
 function cargarModificaciones(i, max){
     var min=i+contModificaciones;
     if(min>=max&&!alertModificaciones){
-        $("#modificaciones").append("<div id='alert' class='alert alert-warning' role='alert'>No hay mas resultados</div>");
+        $("#modificaciones").append("<div id='alert' class='alert alert-info' role='alert'>No hay mas resultados</div>");
         alertModificaciones=true;
     }
     if(!alertModificaciones){
@@ -48,7 +48,7 @@ function cargarModificaciones(i, max){
 function cargar(i, max){
     var min=i+cont;
     if(min>=max&&!alertCargar){
-        $("#album").append("<div id='alert' class='alert alert-warning' role='alert'>No hay mas resultados</div>");
+        $("#album").append("<div id='alert' class='alert alert-info' role='alert'>No hay mas resultados</div>");
         alertCargar=true;
     }
     if(!alertCargar){
@@ -122,4 +122,11 @@ function respuestaExamen(filtro,opcion,correcta,elemento){
     if(opcion==correcta){
         //sumar puntos
     }//else  restar puntos
+}
+function votar(voto){
+    if(voto=='postivo'){
+        //sumar
+    }else{
+        //restar
+    }
 }

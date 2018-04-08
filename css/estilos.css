@@ -19,7 +19,7 @@ html {
     padding-bottom: 12rem;
 }
 .glyphicon.glyphicon-plus{
-    color: #132a3d;
+    color: #0077d8;
 }
 .glyphicon.glyphicon-plus:hover{
     color: #305d83;
@@ -28,12 +28,18 @@ html {
     background-color: rgb(253, 253, 198);
 }
 a>.label-danger:hover{
-    background-color: rgb(150, 50, 50);
+    background-color: rgb(179, 54, 54);
 }
-a.volver:link, a.volver:visited {
+a>.label-success:hover{
+    background-color: #00644b;
+}
+a>.label-primary:hover{
+    background-color: #305d83;
+}
+a.volver:link, a.volver:visited, a.registro:link, a.registro:visited{
     color: transparent;
 }
-a.volver:hover {
+a.volver:hover, a.registro:hover{
     color: transparent;
 }
 .back {
@@ -41,3 +47,6 @@ a.volver:hover {
     font-size: 1.4rem;
     padding: 1.45rem 2rem 1.65rem 2rem;
 }
+span.label.label-danger.votos, span.label.label-success.votos{
+    cursor: pointer;
+} 

@@ -33,6 +33,7 @@
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#"><img class="img-rounded" id="imgUsr" src="/files/img/usuario/<?php echo $_SESSION["nick"]?>.jpg"></img><span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item">Registrado como <?php echo $_SESSION["nick"]?></a></li>
+                        <li><a class="dropdown-item nivel">Nivel <?php echo $_SESSION["nivel"]?></a></li>
                         <li class="divider"></li>
                         <li><a class="dropdown-item" href="/usuario.php?id=<?php echo $_SESSION["nick"]?>">Ver Perfil</a></li>
                         <li class="divider"></li>

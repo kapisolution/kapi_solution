@@ -117,9 +117,7 @@ session_start();
     </form> 
 <?php
   }else{
-    echo '<center><span class="label label-aviso">ACCESO RESTRINGIDO</span></center><br>';
-    echo '<hr><center>Para poder crear contenido, debes estar registrado</center><br>';
-    echo '<center><a href="/"><span class="label label-volver">VOLVER</span></a></center>';             
+    require 'accesoRestringido.php';             
   }
 ?> 
 </div>

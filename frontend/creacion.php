@@ -2,6 +2,7 @@
     if(isset($_GET["id"])){
         require 'backend/articulo.php';
     }else require 'backend/articulo.php';
+    
     $titulo=$articulo['titulo'];
     $contenido=$articulo['contenido'];
     $creador=$articulo['creador'];
@@ -106,6 +107,18 @@
         </div>
     </div>
     <hr>
+    <?php
+    if(isset($_SESSION['login'])){
+    ?>
+    <div class="caja votos col-xs-12 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+        <div class="pull-left">
+            <h4><span class="label label-danger votos" onclick="votar('negativo')"><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span> No me gusta</span></h4>
+        </div>
+        <div class="pull-right">
+            <h4><span class="label label-success votos" onclick="votar('positivo')"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> Me gusta</span></h4>
+        </div>
+    </div>
+    <?php } ?>
     <div class="row ultimaFila">
         <div id="relacionados" class="caja col-xs-12 col-sm-5 col-md-5 col-lg-5">      
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">Articulos relacionados</div>

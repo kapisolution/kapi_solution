@@ -27,7 +27,7 @@
                 for ($i = 0; $i < sizeof($articulos) ; $i++){
             ?> 
                 <div class="panel-group">
-                <div id="panel<?php echo $i?>" class="panel panel-primary" <?php if($i>4){?>style="display:none"<?php } ?>>
+                <div id="panel<?php echo $i?>" class="panel panel-default" <?php if($i>4){?>style="display:none"<?php } ?>>
                         <div class="panel-heading">
                             <h4 class="panel-title">
                                 <a id="creador<?php echo $i ?>"><?php echo "  ".$articulos[$i]['creador']?></a>
@@ -52,7 +52,7 @@
                             <ul class="dropdown-menu">
                                 <li><a id="verArt<?php echo $i?>" class="dropdown-item" href="/articulo.php?id=<?php echo $articulos[$i]['id']?>">Ver</a></li>
                                 <li class="divider"></li>
-                                <li><a id="editarArt<?php echo $i?>" class="dropdown-item" href="/modificararticulo.php?id=<?php echo $articulos[$i]['id']?>">Editar</a></li>
+                                <li><a id="editarArt<?php echo $i?>" class="dropdown-item <?php if(!isset($_SESSION['login'])){?>disabled"<?php } else{ ?> href="/modificararticulo.php?id=<?php echo $articulos[$i]['id']?>" <?php } ?>>Editar</a></li>
                             </ul>
                         </div>
                     </div>

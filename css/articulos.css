@@ -19,3 +19,10 @@
     padding: 1.2rem;
     cursor: pointer;
 }
+.dropdown-menu>li>a.dropdown-item.disabled,
+.dropdown-menu>li>a.dropdown-item.disabled:visited,
+.dropdown-menu>li>a.dropdown-item.disabled:active,
+.dropdown-menu>li>a.dropdown-item.disabled:hover{
+   background-color:white;
+   color:#aaa !important;
+}

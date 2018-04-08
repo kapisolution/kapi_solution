@@ -8,10 +8,8 @@
 .tituloBody{
     padding-top: 1rem;
 }
-.panel-primary>.panel-heading {
+.panel-default>.panel-heading {
     color: #fff;
-    background-color: #132a3d;
-    border-color: #132a3d;
     height: 4rem;
 }
 .accion{

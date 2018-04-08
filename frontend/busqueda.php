@@ -23,11 +23,12 @@
                 for ($i = 0; $i < sizeof($busquedaUsuarios) ; $i++){
             ?> 
                 <div class="panel-group">
-                    <div id="panelUsuarios<?php echo $i?>" class="panel panel-primary" <?php if($i>4){?>style="display:none"<?php } ?>>
+                    <div id="panelUsuarios<?php echo $i?>" class="panel panel-default" <?php if($i>4){?>style="display:none"<?php } ?>>
                         <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <div>
-                                    <?php echo $busquedaUsuarios[$i]['nick'];?><small><?php echo "  ".$busquedaUsuarios[$i]['email']?></small>                
+                            <h4 class="panel-title">                
+                                <div class="pull-left">
+                                    <span class="label label-warning"><?php echo $busquedaUsuarios[$i]['rol']?></span>
+                                    <span class="label label-danger"><?php echo "Nivel ".$busquedaUsuarios[$i]['nivel']?></span>
                                 </div>
                             </h4>
                         </div>
@@ -36,11 +37,10 @@
                                 <img class="imgUsrArticulo" class="img-rounded" src="/files/img/usuario/<?php echo $busquedaUsuarios[$i]['nick'].'.jpg'?>">
                             </div>
                             <div class="text-center">
-                                <span class="label label-warning"><?php echo $busquedaUsuarios[$i]['rol']?></span>
-                                <span class="label label-danger"><?php echo "Nivel ".$busquedaUsuarios[$i]['nivel']?></span>
+                                <h4><?php echo $busquedaUsuarios[$i]['nick'];?><small><?php echo "  ".$busquedaUsuarios[$i]['email']?></small></h4>
                             </div> 
                         </div>
-                        <a href="usuario.php?id=<?php echo $busquedaUsuarios[$i]['nick']?>"><span id="verPerfil" class="accion label label-success pull-right">Ver Perfil</span></a>
+                        <h4><a href="usuario.php?id=<?php echo $busquedaUsuarios[$i]['nick']?>"><span id="verPerfil" class="accion label label-success pull-right">Ver Perfil</span></a></h4>
                     </div>
                 </div>
                 <hr>
@@ -53,10 +53,11 @@
                 for ($i = 0; $i < sizeof($busquedaArticulos) ; $i++){
             ?> 
                 <div class="panel-group">
-                    <div id="panelArticulos<?php echo $i?>" class="panel panel-primary" <?php if($i>4){?>style="display:none"<?php } ?>>
+                    <div id="panelArticulos<?php echo $i?>" class="panel panel-default" <?php if($i>4){?>style="display:none"<?php } ?>>
                         <div class="panel-heading">
                             <h4 class="panel-title">
-                                <small><?php echo "  ".$busquedaArticulos[$i]['creador']?></small>
+                                <?php echo "  ".$busquedaArticulos[$i]['creador']?>
+                                <small><?php echo "  ".$busquedaArticulos[$i]['fecha']?></small>
                                 <div class="pull-right">
                                     <span class="label label-warning"><?php echo $busquedaArticulos[$i]['rol']?></span>
                                     <span class="label label-danger"><?php echo "Nivel ".$busquedaArticulos[$i]['nivel']?></span>
@@ -91,10 +92,11 @@
                 for ($i = 0; $i < sizeof($busquedaCreaciones) ; $i++){
             ?> 
                 <div class="panel-group">
-                    <div class="panel panel-primary">
+                    <div class="panel panel-default">
                         <div class="panel-heading">
                             <h4 class="panel-title">
-                                <small><?php echo "  ".$busquedaCreaciones[$i]['creador']?></small>
+                                <?php echo "  ".$busquedaArticulos[$i]['creador']?>
+                                <small><?php echo "  ".$busquedaArticulos[$i]['fecha']?></small>
                                 <div class="pull-right">
                                     <span class="label label-warning"><?php echo $busquedaCreaciones[$i]['rol']?></span>
                                     <span class="label label-danger"><?php echo "Nivel ".$busquedaCreaciones[$i]['nivel']?></span>
@@ -113,9 +115,7 @@
                             <ul class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-plus"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="/articulo.php?id=<?php echo $busquedaCreaciones[$i]['id']?>">Ver</a></li>
-                                <li class="divider"></li>
-                                <li><a class="dropdown-item" href="/modificararticulo.php?id=<?php echo $busquedaCreaciones[$i]['id']?>">Editar</a></li>
+                                <li><a class="dropdown-item" href="/creacion.php?id=<?php echo $busquedaCreaciones[$i]['id']?>">Ver</a></li>
                             </ul>
                         </div>
                     </div>
@@ -129,10 +129,11 @@
                 for ($i = 0; $i < sizeof($busquedaModificaciones) ; $i++){
             ?> 
                 <div class="panel-group">
-                    <div id="panelModificaciones<?php echo $i?>" class="panel panel-primary" <?php if($i>4){?>style="display:none"<?php } ?>>
+                    <div id="panelModificaciones<?php echo $i?>" class="panel panel-default" <?php if($i>4){?>style="display:none"<?php } ?>>
                         <div class="panel-heading">
                             <h4 class="panel-title">
-                                <small><?php echo "  ".$busquedaModificaciones[$i]['creador']?></small>                
+                                <?php echo "  ".$busquedaArticulos[$i]['creador']?>
+                                <small><?php echo "  ".$busquedaArticulos[$i]['fecha']?></small>                
                                 <div class="pull-right">
                                     <span class="label label-warning"><?php echo $busquedaModificaciones[$i]['rol']?></span>
                                     <span class="label label-danger"><?php echo "Nivel ".$busquedaModificaciones[$i]['nivel']?></span>
@@ -151,9 +152,7 @@
                             <ul class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-plus"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="/articulo.php?id=<?php echo $busquedaModificaciones[$i]['id']?>">Ver</a></li>
-                                <li class="divider"></li>
-                                <li><a class="dropdown-item" href="/modificararticulo.php?id=<?php echo $busquedaModificaciones[$i]['id']?>">Editar</a></li>
+                                <li><a class="dropdown-item" href="/creacion.php?id=<?php echo $busquedaModificaciones[$i]['id']?>">Ver</a></li>
                             </ul>
                         </div>
                     </div>

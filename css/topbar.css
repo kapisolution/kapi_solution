@@ -1,18 +1,18 @@
 .collapse.navbar-collapse{
     padding-top: 2rem;
 }
-.navbar-inverse{
+/* .navbar-inverse{
     background-color: #1b3c59;
-}
+} */
 .navbar{
     -webkit-box-shadow: 0 8px 6px -6px #999;
     -moz-box-shadow: 0 8px 6px -6px #999;
     box-shadow: 0 8px 6px -6px #999;          
 }
 /*Colores dropdown al desplegarse*/
-.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover{
+/* .navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover{
     background-color: #1b3c59;
-}
+} */
 .dropdown-menu>li>a:hover{
     background-color: #b9b9b9;
 }
@@ -20,20 +20,24 @@
     background-color: #f2f2f0;
 }
 .navbar-inverse .navbar-nav .open .dropdown-menu>li>a:hover{
-    background-color: #305d83;
+    background-color: #0077d8;
     color: white;
 }
-.navbar-inverse .navbar-nav .open .dropdown-menu>li>a{
+.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover {
+    color: #fff;
+    background-color: #222;
+}
+/* .navbar-inverse .navbar-nav .open .dropdown-menu>li>a{
     color: #1b3c59;
-}
-.navbar-inverse .navbar-nav > li > a {
+} */
+/* .navbar-inverse .navbar-nav > li > a {
     color: #7895ad;
-}
+} */
 /*Colores dropdown al desplegarse*/
 
-.navbar-inverse .navbar-nav .open .dropdown-menu .divider{
+/* .navbar-inverse .navbar-nav .open .dropdown-menu .divider{
     background-color:#e5e5e5;
-}
+} */
 .navbar-brand{
     height: 8rem;
 }
@@ -43,13 +47,13 @@
     -o-object-fit: contain;
     object-fit: contain;
 }
-#imgUsr{
-    height: 4rem;
-    margin-top: -10px;
+#imgUsr {
+    height: 2.7rem;
+    margin-top: -3px;
 }
 .label.mylabel{
     background-color: #d9534f;
-    font-size: 130%;
+    font-size: 115%;
     cursor:pointer;
 }
 .caret{
@@ -68,6 +72,10 @@
 .dropdown-menu>li>a:hover {
     background-color: #305d83;
     color: white;
+}
+.navbar-inverse .navbar-nav .open .dropdown-menu>li>a.dropdown-item.nivel:hover {
+    background-color: #f2f2f0;
+    color:rgb(0, 0, 0);
 }
 /*
 @media (max-width: 1500px) {

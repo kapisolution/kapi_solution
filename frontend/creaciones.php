@@ -27,7 +27,7 @@
                 for ($i = 0; $i < sizeof($articulos) ; $i++){
             ?> 
                 <div class="panel-group">
-                    <div id="panel<?php echo $i?>" class="panel panel-primary" <?php if($i>4){?>style="display:none"<?php } ?>>
+                    <div id="panel<?php echo $i?>" class="panel panel-default" <?php if($i>4){?>style="display:none"<?php } ?>>
                         <div class="panel-heading">
                             <h4 class="panel-title">
                                 <a id="creador<?php echo $i ?>"><?php echo "  ".$articulos[$i]['creador']?></a>
