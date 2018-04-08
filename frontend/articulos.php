@@ -52,7 +52,7 @@
                             <ul class="dropdown-menu">
                                 <li><a id="verArt<?php echo $i?>" class="dropdown-item" href="/articulo.php?id=<?php echo $articulos[$i]['id']?>">Ver</a></li>
                                 <li class="divider"></li>
-                                <li><a id="editarArt<?php echo $i?>" class="dropdown-item <?php if(!isset($_SESSION['login'])){?>disabled"<?php } else{ ?> href="/modificararticulo.php?id=<?php echo $articulos[$i]['id']?>" <?php } ?>>Editar</a></li>
+                                <li><a id="editarArt<?php echo $i?>" <?php if((!isset($_SESSION['login'])||($articulos[$i]['rol']!= $_SESSION["rol"]))){?>class="dropdown-item disabled"<?php } else{ ?> class="dropdown-item" href="/modificararticulo.php?id=<?php echo $articulos[$i]['id']?>" <?php } ?>>Editar</a></li>
                             </ul>
                         </div>
                     </div>

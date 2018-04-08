@@ -21,7 +21,7 @@ session_start();
         <hr>
         <div class="form-group">
           <div class="panel-group">
-            <div class="panel panel-primary">
+            <div class="panel panel-default">
               <div class="panel-heading">
                 <h4 class="panel-title">
                 Crea el titulo de tu artículo
@@ -38,7 +38,7 @@ session_start();
         <hr>
         <div class="form-group">
           <div class="panel-group">
-            <div class="panel panel-primary">
+            <div class="panel panel-default">
               <div class="panel-heading">
                 <h4 class="panel-title">
                 Crea el contenido de tu artículo
@@ -54,7 +54,7 @@ session_start();
           <hr>
         <div class="form-group">
           <div class="panel-group">
-            <div class="panel panel-primary">
+            <div class="panel panel-default">
               <div class="panel-heading">
                 <h4 class="panel-title">
                 Preguntas<small> Máximo 3 preguntas</small>

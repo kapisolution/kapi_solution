@@ -34,6 +34,7 @@
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item">Registrado como <?php echo $_SESSION["nick"]?></a></li>
                         <li><a class="dropdown-item nivel">Nivel <?php echo $_SESSION["nivel"]?></a></li>
+                        <li><a class="dropdown-item nivel"><?php echo $_SESSION["rol"]?></a></li>
                         <li class="divider"></li>
                         <li><a class="dropdown-item" href="/usuario.php?id=<?php echo $_SESSION["nick"]?>">Ver Perfil</a></li>
                         <li class="divider"></li>
@@ -46,7 +47,7 @@
             ?>
                 <ul class="nav navbar-nav navbar-right" id="login">
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown"><span class="label mylabel">SignIn</span><span class="caret"></span></a>
+                    <a class="dropdown-toggle" data-toggle="dropdown"><span class="label mylabel">Registro</span><span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="/login.php">Inicia sesión</a></li>
                         <li class="divider"></li>

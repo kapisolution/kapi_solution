@@ -28,7 +28,7 @@ $nivel=$articulo['nivel'];
         <hr>
         <div class="form-group">
           <div class="panel-group">
-            <div class="panel panel-primary">
+            <div class="panel panel-default">
               <div class="panel-heading">
                 <h4 class="panel-title">
                   Titulo
@@ -46,7 +46,7 @@ $nivel=$articulo['nivel'];
         <hr>
         <div class="form-group">
           <div class="panel-group">
-            <div class="panel panel-primary">
+            <div class="panel panel-default">
               <div class="panel-heading">
                 <h4 class="panel-title">
                 Contenido
@@ -62,7 +62,7 @@ $nivel=$articulo['nivel'];
           <hr>
         <div class="form-group">
           <div class="panel-group">
-            <div class="panel panel-primary">
+            <div class="panel panel-default">
               <div class="panel-heading">
                 <h4 class="panel-title">
                 Añade como máximo 3 preguntas a tu artículo
