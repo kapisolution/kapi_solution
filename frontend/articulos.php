@@ -2,6 +2,13 @@
     include 'backend/articulos.php';
     $array=$articulos;
     $contador=0;
+    if(isset($_SESSION['login'])){
+        $nivel=$_SESSION['nivel'];
+        $rol=$_SESSION['rol'];
+    }else{
+        $nivel=0;
+        $rol='informatico';
+    }
 ?>
 <div class="container">
     <div class="row">
@@ -11,11 +18,11 @@
                 <center><h4>Filtrar<h4></center><br>
                 <div class="caption">
                     <div class="list-group" id="filtro">
-                        <input type="radio" id="ordFecha" onclick="ordenar('<?php echo $array ?>','fecha', <?php echo $_SESSION['nivel']?>, '<?php echo $_SESSION['rol']?>')";>
+                        <input type="radio" id="ordFecha" onclick="ordenar('<?php echo $array ?>','fecha', <?php echo $nivel?>, '<?php echo $rol?>')";>
                         <label for="ordFecha"><span class="label label-default">Fecha</span></label>
-                        <input type="radio" id="ordNivelMay" onclick="ordenar('<?php echo $array ?>','nivelMay', <?php echo $_SESSION['nivel']?>, '<?php echo $_SESSION['rol']?>')">
+                        <input type="radio" id="ordNivelMay" onclick="ordenar('<?php echo $array ?>','nivelMay', <?php echo $nivel?>, '<?php echo $rol?>')">
                         <label for="ordNivelMay"><span class="label label-default">Mayor Nivel</span></label>
-                        <input type="radio" id="ordNivelMen" onclick="ordenar('<?php echo $array ?>','nivelMen', <?php echo $_SESSION['nivel']?>, '<?php echo $_SESSION['rol']?>')">
+                        <input type="radio" id="ordNivelMen" onclick="ordenar('<?php echo $array ?>','nivelMen', <?php echo $nivel?>, '<?php echo $rol?>')">
                         <label for="ordNivelMen"><span class="label label-default">Menor Nivel</span></label>
                     </div>
                 </div>
@@ -50,7 +57,7 @@
                             <ul class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-plus"></span></a>
                             <ul class="dropdown-menu">
-                            <li><a id="verArt<?php echo $i ?>" <?php if((!isset($_SESSION['login'])||($articulos[$i]['rol']!= $_SESSION["rol"]) ||($articulos[$i]['nivel']> $_SESSION["nivel"]))){?>class="dropdown-item disabled"<?php } else{ ?> class="dropdown-item" href="/articulo.php?id=<?php echo $articulos[$i]['id']?>" <?php } ?>>Ver</a></li>
+                            <li><a id="verArt<?php echo $i ?>" class="dropdown-item" href="/articulo.php?id=<?php echo $articulos[$i]['id']?>">Ver</a></li>
                             <li class="divider"></li>
                             <li><a id="editarArt<?php echo $i?>" <?php if((!isset($_SESSION['login'])||($articulos[$i]['rol']!= $_SESSION["rol"]) ||($articulos[$i]['nivel']> $_SESSION["nivel"]))){?>class="dropdown-item disabled"<?php } else{ ?> class="dropdown-item" href="/modificararticulo.php?id=<?php echo $articulos[$i]['id']?>" <?php } ?>>Editar</a></li>
                             </ul>
@@ -101,13 +108,11 @@
             $("#titulo"+i).html(stringArray[i].titulo);
             $("#imagen"+i).attr("src","/files/img/usuario/"+stringArray[i].creador+".jpg");
             $("#creador"+i).html(stringArray[i].creador);
+            $("#verArt"+i).attr("href","/articulo.php?id="+stringArray[i].id);
             if(stringArray[i].nivel > nivel || stringArray[i].rol != rol){
-                $("#verArt"+i).attr("class","dropdown-item disabled");
                 $("#editarArt"+i).attr("class","dropdown-item disabled");
             }else{
-                $("#verArt"+i).removeClass().addClass('dropdown-item');
                 $("#editarArt"+i).removeClass().addClass('dropdown-item');
-                $("#verArt"+i).attr("href","/articulo.php?id="+stringArray[i].id);
                 $("#editarArt"+i).attr("href","/modificararticulo.php?id="+stringArray[i].id); 
             }
         }  
