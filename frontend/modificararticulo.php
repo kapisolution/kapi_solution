@@ -32,6 +32,9 @@ $nivel=$articulo['nivel'];
               <div class="panel-heading">
                 <h4 class="panel-title">
                   Titulo
+                  <a class="editar"><span id="guardarTitulo" class="label label-success pull-right">Guardar
+                    <span class="glyphicon glyphicon-save"></span>
+                  </span></a>
                   <a class="editar"><span id="editarTitulo" class="label label-success pull-right">Editar
                     <span class="glyphicon glyphicon-pencil"></span>
                   </span></a>
@@ -40,8 +43,8 @@ $nivel=$articulo['nivel'];
               <div id="titulo" class="panel-body">
                 <?php echo $titulo?>
               </div>
-              </div>
-            </div>  
+            </div>
+          </div>
         </div>
         <hr>
         <div class="form-group">
@@ -50,6 +53,9 @@ $nivel=$articulo['nivel'];
               <div class="panel-heading">
                 <h4 class="panel-title">
                 Contenido
+                <a class="editar"><span id="guardarContenido" class="label label-success pull-right">Guardar
+                    <span class="glyphicon glyphicon-save"></span>
+                </span></a>
                 <a class="editar"><span id="editarContenido" class="label label-success pull-right">Editar
                     <span class="glyphicon glyphicon-pencil"></span>
                   </span></a>

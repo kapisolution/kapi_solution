@@ -64,7 +64,21 @@ input[type="radio"]{
    padding: 1.2rem;
    cursor: pointer;
 }
-
+#editarTitulo, #editarContenido{
+    background-color: rgb(214, 214, 214);
+    border: 1px solid rgb(31, 31, 31);
+    color:rgb(31, 31, 31);
+    margin-right:3px;
+}
+#editarTitulo:hover, #editarContenido:hover{
+    background-color: rgb(184, 184, 184);
+}
+#guardarTitulo, #guardarContenido{
+    border: 1px solid rgb(62, 148, 84);
+}
+#guardarTitulo:hover, #guardarContenido:hover{
+    background-color: #4a964a;
+}
 .label.label-success.respuesta, .label.label-danger.respuesta {
     box-sizing: border-box;
     border-radius: 10px;

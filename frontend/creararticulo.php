@@ -25,6 +25,9 @@ session_start();
               <div class="panel-heading">
                 <h4 class="panel-title">
                 Crea el titulo de tu artículo
+                  <a class="editar"><span id="guardarTitulo" class="label label-success pull-right">Guardar
+                    <span class="glyphicon glyphicon-save"></span>
+                  </span></a>
                   <a class="editar"><span id="editarTitulo" class="label label-success pull-right">Editar
                     <span class="glyphicon glyphicon-pencil"></span>
                   </span></a>
@@ -42,6 +45,9 @@ session_start();
               <div class="panel-heading">
                 <h4 class="panel-title">
                 Crea el contenido de tu artículo
+                <a class="editar"><span id="guardarContenido" class="label label-success pull-right">Guardar
+                    <span class="glyphicon glyphicon-save"></span>
+                </span></a>
                 <a class="editar"><span id="editarContenido" class="label label-success pull-right">Editar
                     <span class="glyphicon glyphicon-pencil"></span>
                   </span></a>
