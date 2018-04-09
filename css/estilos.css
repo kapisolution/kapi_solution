@@ -69,10 +69,6 @@ span.label.label-danger.votos, span.label.label-success.votos{
     border: 1px solid rgb(255, 255, 255);
     color: white;
 }
-.list-group input[type="radio"]:checked + label >span{
-    background-color: #333;
-    color: white;
-}
  .label.label-default:hover {
     background-color: #d3d2d2;
  } 
