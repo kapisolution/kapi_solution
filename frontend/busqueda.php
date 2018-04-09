@@ -45,7 +45,8 @@
                 </div>
                 <hr>
             <?php } ?>
-            <center><button class="btn btn-default" onclick="cargarUsuarios(<?php echo $contador+5?>,<?php echo sizeof($busquedaUsuarios)?>)">Cargar Mas</button></center>  
+            <br>
+            <center><span class="label label-default" onclick="cargarUsuarios(<?php echo $contador+5?>,<?php echo sizeof($busquedaUsuarios)?>)">Cargar Mas</span></center>  
             </div>
             <!--BusquedaArticulos-->
             <div class="album py-5 bg-light" id="articulos" style="display:none">
@@ -85,7 +86,8 @@
                     </div>
                 </div>
             <?php } ?>
-            <center><button class="btn btn-default" onclick="cargarArticulos(<?php echo $contador+5?>, <?php echo sizeof($busquedaArticulos)?>)">Cargar Mas</button></center>  
+            <br>
+            <center><span class="label label-default" onclick="cargarArticulos(<?php echo $contador+5?>, <?php echo sizeof($busquedaArticulos)?>)">Cargar Mas</span></center>  
             </div>
             <!--BusquedaCreaciones-->
             <div class="album py-5 bg-light" id="creaciones" style="display:none">
@@ -160,7 +162,8 @@
                 </div>
                 <hr>
             <?php } ?>
-            <center><button class="btn btn-default" onclick="cargarModificaciones(<?php echo $contador+5?>, <?php echo sizeof($busquedaModificaciones)?>)">Cargar Mas</button></center>  
+            <br>
+            <center><span class="label label-default" onclick="cargarModificaciones(<?php echo $contador+5?>, <?php echo sizeof($busquedaModificaciones)?>)">Cargar Mas</span></center>  
             </div>
         </div>
     </div>

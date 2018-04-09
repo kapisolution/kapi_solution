@@ -8,10 +8,10 @@ $rol=$articulo['rol'];
 $nivel=$articulo['nivel'];
 
   if($rol=='informatico'){
-    $color='red';
+    $color='#d9534f';
   }else if($rol=='abogado'){
-    $color='black';
-  }else   $color='blue';
+    $color='rgb(31, 31, 31)';
+  }else   $color='#337ab7';
 ?>
 <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
 <div class="container containerArticulos">

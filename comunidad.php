@@ -10,7 +10,7 @@
   <!--Cabeceras bootstrap -->
     <link rel="stylesheet" type="text/css" href="css/topbar.css" />
     <link rel="stylesheet" type="text/css" href="css/footer.css" />
-    <link rel="stylesheet" type="text/css" href="css/comunidad.css" />
+    <link rel="stylesheet" type="text/css" href="css/examenes.css" />
     <link rel="stylesheet" type="text/css" href="css/estilos.css" />
     
     <title>Kapi - Comunidad</title>

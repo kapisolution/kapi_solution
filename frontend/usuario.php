@@ -10,17 +10,17 @@ $email = $usuario['email'];
     <div clas="row">
         <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
         <!-- Imagen, nombre, email, insignias-->
-            <img src="/files/img/usuario/<?php echo $nick ?>.jpg" class="img-rounded imgUsr">
+            <center><img src="/files/img/usuario/<?php echo $nick ?>.jpg" class="img-rounded imgUsr">
             <h3><?php echo $nick ?></h3>
+            <h5><?php echo $email?></h5>
             <hr>
             <h4><span class="label label-warning"><?php echo $rol?></span></h4>
             <h4><span class="label label-danger">Nivel <?php echo $nivel?></span></h4>
-            <h5><?php echo $email?></h5>
             <hr>
             <?php 
             if($nick==$_SESSION['nick']){?>
-            <h4><a href="/editarusuario.php"><span class="label label-success">Editar</span></a></h4>
-            <br>
+            <center><h4><a href="/editarusuario.php"><span class="label label-default">Editar Perfil</span></a></h4></center>
+            <hr>
             <?php } ?>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
@@ -39,6 +39,7 @@ $email = $usuario['email'];
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
+                                        Fecha<small> creador</small>
                                         <div class="pull-right">
                                             <span class="label label-warning">Rol</span>
                                             <span class="label label-danger">Nivel</span>
@@ -47,7 +48,7 @@ $email = $usuario['email'];
                                 </div>
                                 <div class="panel-body">
                                     <div class="tituloBody">
-                                        Titulo<small>creador</small>                
+                                        <center>Titulo</center>                
                                     </div>    
                                 </div>
                                 <div class="accion pull-right">
@@ -79,6 +80,7 @@ $email = $usuario['email'];
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
+                                        Fecha<small> creador</small>
                                         <div class="pull-right">
                                             <span class="label label-warning">Rol</span>
                                             <span class="label label-danger">Nivel</span>
@@ -87,7 +89,7 @@ $email = $usuario['email'];
                                 </div>
                                 <div class="panel-body">
                                     <div class="tituloBody">
-                                        Titulo<small>creador</small>                
+                                        <center>Titulo</center>              
                                     </div>    
                                 </div>
                                 <div class="accion pull-right">

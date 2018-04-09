@@ -29,7 +29,3 @@ label {
 .rol input[type="radio"]{
      display: none;
 }
-.rol input[type="radio"]:checked + label >span{
-    background-color: #337ab7;
-    color: white;
-}

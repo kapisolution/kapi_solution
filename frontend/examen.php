@@ -19,10 +19,10 @@
                         <div class="thumbnail">
                             <div class="caption">
                                 <ul class="list-group">
-                                    <li class="list-group-item"><?php echo $preguntas[$i]['A']?></li>
-                                    <li class="list-group-item"><?php echo $preguntas[$i]['B']?></li>
-                                    <li class="list-group-item"><?php echo $preguntas[$i]['C']?></li>
-                                    <li class="list-group-item"><?php echo $preguntas[$i]['D']?></li>
+                                    <li class="list-group-item"><?php echo $preguntas[$i]['A']?><strong>A   </strong></li>
+                                    <li class="list-group-item"><?php echo $preguntas[$i]['B']?><strong>B   </strong></li>
+                                    <li class="list-group-item"><?php echo $preguntas[$i]['C']?><strong>C   </strong></li>
+                                    <li class="list-group-item"><?php echo $preguntas[$i]['D']?><strong>D   </strong></li>
                                 </ul>
                                 <div class="list-group text-center" id="filtro<?php echo $i?>">
                                     <input type="radio" id="respuestaA<?php echo $i ?>" onclick="respuestaExamen('filtro<?php echo $i?>','A','<?php echo $preguntas[$i]['correcta']?>','opcionA<?php echo $i ?>')";>

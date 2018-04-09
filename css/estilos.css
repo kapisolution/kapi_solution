@@ -18,6 +18,10 @@ html {
     padding-top: 10rem;
     padding-bottom: 12rem;
 }
+.container.containerComunidad{
+    padding-top: 10rem;
+    padding-bottom: 12rem;
+}
 .glyphicon.glyphicon-plus{
     color: #0077d8;
 }
@@ -49,4 +53,26 @@ a.volver:hover, a.registro:hover{
 }
 span.label.label-danger.votos, span.label.label-success.votos{
     cursor: pointer;
-} 
+}
+.label.label-default {
+    background-color: #f5f5f5;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    color: #333;
+    padding: 1.2rem;
+    cursor: pointer;
+    font-size: 87%;
+ }
+ .rol input[type="radio"]:checked + label >span{
+    background-color: #333;
+    border: 1px solid rgb(255, 255, 255);
+    color: white;
+}
+.list-group input[type="radio"]:checked + label >span{
+    background-color: #333;
+    color: white;
+}
+ .label.label-default:hover {
+    background-color: #d3d2d2;
+ } 

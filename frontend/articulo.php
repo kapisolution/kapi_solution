@@ -79,10 +79,10 @@
                         <div class="thumbnail">
                             <div class="caption">
                                 <ul class="list-group">
-                                    <li class="list-group-item"><?php echo $preguntas[$i]['A']?></li>
-                                    <li class="list-group-item"><?php echo $preguntas[$i]['B']?></li>
-                                    <li class="list-group-item"><?php echo $preguntas[$i]['C']?></li>
-                                    <li class="list-group-item"><?php echo $preguntas[$i]['D']?></li>
+                                    <li class="list-group-item"><strong>A)   </strong><?php echo $preguntas[$i]['A']?></li>
+                                    <li class="list-group-item"><strong>B)   </strong><?php echo $preguntas[$i]['B']?></li>
+                                    <li class="list-group-item"><strong>C)   </strong><?php echo $preguntas[$i]['C']?></li>
+                                    <li class="list-group-item"><strong>D)   </strong><?php echo $preguntas[$i]['D']?></li>
                                 </ul>
                                 <div class="list-group text-center" id="filtro">
                                     <input type="radio" id="respuestaA<?php echo $i ?>" onclick="comprobarRespuesta('A','<?php echo $preguntas[$i]['correcta']?>','opcionA<?php echo $i ?>')";>

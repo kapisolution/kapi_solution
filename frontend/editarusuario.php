@@ -24,7 +24,7 @@
                         <input type="file" id="imagen" name="imagen[]" multiple="multiple">
                         <small id="fileHelp" class="form-text text-muted">
                  </div>
-                 <div id="rolUsr" class="alert alert-success text-center" role="alert"><?php echo $_SESSION['rol'] ?></div>
+                 <div id="rolUsr" class="alert alert-info text-center" role="alert"><?php echo $_SESSION['rol'] ?></div>
             </div>
         </div>
         <button class="btn btn-lg btn-success" type="submit">Actualizar</button>
