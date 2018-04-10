@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="css/index.css" />
     <link rel="stylesheet" type="text/css" href="css/signin.css" />
     <title>Sign In</title>
+    <link rel="icon" href="files/icon/logo_v2N.png" type="image/gif" sizes="16x16">
     <meta charset="utf-8">
   </head>
   <body>

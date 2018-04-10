@@ -14,7 +14,7 @@
     <link rel="stylesheet" type="text/css" href="css/estilos.css" />
     
     <title>Kapi - Comunidad</title>
-    <link rel="icon" href="files/icon/logo.png" type="image/gif" sizes="16x16">
+    <link rel="icon" href="files/icon/logo_v2N.png" type="image/gif" sizes="16x16">
     <meta charset="utf-8">
   </head>
   <body>

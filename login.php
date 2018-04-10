@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <!--Cabeceras bootstrap -->
     <title>Kapi - Home</title>
+    <link rel="icon" href="files/icon/logo_v2N.png" type="image/gif" sizes="16x16">
     <link rel="stylesheet" type="text/css" href="css/estilos.css" />
     <link rel="stylesheet" type="text/css" href="css/index.css" />
     <link rel="stylesheet" type="text/css" href="css/signin.css" />

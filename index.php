@@ -10,11 +10,13 @@
   <!--Cabeceras bootstrap -->
     <link rel="stylesheet" type="text/css" href="css/topbar.css" />
     <title>Kapi - Home</title>
-    <!--<link rel="icon" href="files/icon/logo.png" type="image/gif" sizes="16x16">-->
     <link rel="stylesheet" type="text/css" href="css/index.css" />
     <link rel="stylesheet" type="text/css" href="css/estilos.css" />
+    <link rel="stylesheet" type="text/css" href="css/articulos.css" />
+    <link rel="stylesheet" type="text/css" href="css/busqueda.css" />
     <link rel="stylesheet" type="text/css" href="css/topbar.css" />
     <link rel="stylesheet" type="text/css" href="css/footer.css" />
+    <link rel="icon" href="files/icon/logo_v2N.png" type="image/gif" sizes="16x16">
     <meta charset="utf-8">
   </head>
   <body>

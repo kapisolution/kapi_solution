@@ -4,9 +4,10 @@
  right: 0;
  left: 0;
  bottom: 0;
- background-color: transparent;
+ background-color: #f5f5f5;
+ border-color: #ddd;
+ padding-top: 2rem;
 }
-
 h5{
  color: #3d3d3d;
 }

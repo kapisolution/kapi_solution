@@ -10,7 +10,7 @@
             else if($_GET["signin"]=='kon'){?>
             <div id="alert" class="alert alert-danger" role="alert">Error en el registro.El nick ya está en uso</div>
             <?php }?>
-            <center><img class="mb-4" src="/files/icon/logo.png" alt="" width="72" height="72"></center>
+            <center><img class="mb-4" src="/files/icon/logo_v2N.png" alt="" width="72" height="72"></center>
             <form class="form" action="/backend/signin.php"method="post"onsubmit="return validarSignIn()">
                 <label for="inputNick">Nick</label>
                 <input type="text" id="inputNick" class="form-control" name="alias" required autofocus>

@@ -1,5 +1,8 @@
+body{
+    background-color: rgb(40, 41, 43);
+}
 .container.containerIndex{
-    padding-top: 9rem;
+    padding-top: 20rem;
     padding-bottom: 12rem;
 }
 .form{
@@ -13,14 +16,6 @@ label {
     cursor:pointer;
     color: #646464;
 }
-.label.label-default{
-    background-color: white;
-    box-sizing: border-box;
-    border-radius: 10px; 
-    border: 1px solid #337ab7;
-    color: #337ab7;
-    padding: 1.2rem;
-}
 #ElegirRol{
     width: 100%;
     display:flex;
@@ -28,4 +23,24 @@ label {
 }
 .rol input[type="radio"]{
      display: none;
+}
+h2,h3,h4{
+    color: white;
+}
+#indexArticulos{
+    background-color: #222;
+    width: 100%;
+    border-radius: 1rem;
+}
+#imgLogo{
+    height: 250px;
+    width: 300px;
+}
+.glyphicon.glyphicon-thumbs-up{
+    font-size: 73px;
+    padding-left: 5rem;
+    color:rgb(158, 158, 158);
+}
+#cuerpoCajaRegistro{
+    padding-right: 5rem;
 }
