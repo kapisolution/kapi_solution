@@ -45,7 +45,7 @@
             $consulta = mysqli_query($con, $sql) or die("No se pudo insertar la pregunta2"); 
             
             $img= $_FILES['imagen']['name'];
-            $dir_subida = '../files/img/articulos/';
+            $dir_subida = '/files/img/articulos/';
             $fichero_subido = $dir_subida . basename($_FILES['imagen']['name']);
             if (move_uploaded_file($_FILES['imagen']['tmp_name'], $fichero_subido)) {
                 echo "El fichero es válido y se subió con éxito.\n";  
