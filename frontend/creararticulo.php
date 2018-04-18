@@ -17,25 +17,26 @@ session_start();
       <div class="row text-center">
         <span class="label label-danger"><?php echo $_SESSION["rol"]?></span>
       </div>
-      <form id="formularioArticulo" enctype="multipart/form-data" action="backend/creararticulo.php" method="POST" onsubmit="return updateValue()">
+      <form id="formularioArticulo" enctype="multipart/form-data"  method="POST" onsubmit="return updateValue()">
         <hr>
         <div class="form-group">
           <div class="panel-group">
             <div class="panel panel-default">
               <div class="panel-heading">
+                <a class="editar"><span id="guardarTitulo" class="label label-success pull-right">Guardar
+                  <span class="glyphicon glyphicon-save"></span>
+                </span></a>
+                <a class="editar"><span id="editarTitulo" class="label label-success pull-right">Editar
+                  <span class="glyphicon glyphicon-pencil"></span>
+                </span></a>
                 <h4 class="panel-title">
-                Crea el titulo de tu artículo
-                  <a class="editar"><span id="guardarTitulo" class="label label-success pull-right">Guardar
-                    <span class="glyphicon glyphicon-save"></span>
-                  </span></a>
-                  <a class="editar"><span id="editarTitulo" class="label label-success pull-right">Editar
-                    <span class="glyphicon glyphicon-pencil"></span>
-                  </span></a>
+                Crea el titulo de tu artículo 
                 </h4>
               </div>
-              <div id="titulo" class="panel-body">
+              <div id="titulo" class="panel-body" >
               </div>
               </div>
+              <div class="alert alert-danger" role="alert" <?php if($_GET['enviar']=='emptyT'){ ?> style="display:block" <?php }else{ ?> style="display:none" <?php } ?> >El título es un campo obligatorio</div>
             </div>  
         </div>
         <hr>
@@ -43,18 +44,19 @@ session_start();
           <div class="panel-group">
             <div class="panel panel-default">
               <div class="panel-heading">
-                <h4 class="panel-title">
-                Crea el contenido de tu artículo
                 <a class="editar"><span id="guardarContenido" class="label label-success pull-right">Guardar
                     <span class="glyphicon glyphicon-save"></span>
                 </span></a>
                 <a class="editar"><span id="editarContenido" class="label label-success pull-right">Editar
-                    <span class="glyphicon glyphicon-pencil"></span>
-                  </span></a>
+                  <span class="glyphicon glyphicon-pencil"></span>
+                </span></a>
+                <h4 class="panel-title">
+                Crea el contenido de tu artículo
                 </h4>
               </div>
                 <div id="contenido" class="panel-body"></div>
               </div>
+              <div  class="alert alert-danger" role="alert" <?php if($_GET['enviar']=='emptyC'){ ?> style="display:block" <?php }else{ ?> style="display:none" <?php } ?> >El contenido es un campo obligatorio</div>
             </div>  
           </div>
           <hr>
@@ -116,9 +118,8 @@ session_start();
           <input type="file" class="form-control-file" id="imagen" name="imagen[]" multiple="multiple">
           <small id="fileHelp" class="form-text text-muted">
         </div>
-      </div>
       <center>
-        <button class="btn btn-success" type="submit">Enviar modificación</button>
+        <button class="btn btn-success">Enviar modificación</button>
       </center>
     </form> 
 <?php
@@ -137,17 +138,26 @@ contenido.addEventListener("click", editarContenido);
 
 <script type="text/javascript">
   var updateValue = function() {
-
-    $('#formularioArticulo').append("<input type='hidden' name='titulo' value='"+$('#titulo').html()+"'>");
-    $('#formularioArticulo').append("<input type='hidden' name='contenido' value='"+$('#contenido').html()+"'>");
-    $('#formularioArticulo').append("<input type='hidden' name='pregunta0' value='"+$('#pregunta0').html()+"'>");
-    $('#formularioArticulo').append("<input type='hidden' name='pregunta1' value='"+$('#pregunta1').html()+"'>");
-    $('#formularioArticulo').append("<input type='hidden' name='pregunta2' value='"+$('#pregunta2').html()+"'>");
-    $.ajax({
-      url:"backend/modificararticulo.php",
-      type:"POST",
-      data: $('#formularioArticulo')
-    });
+    var titulo = $('#titulo').html();
+    var contenido = $('#contenido').html();
+    if( $.trim(titulo) == ""){
+      $('#formularioArticulo').attr("action","creararticulo.php?enviar=emptyT");
+    }else if($.trim(contenido) == ""){
+      $('#formularioArticulo').attr("action","creararticulo.php?enviar=emptyC");
+    }else{
+      $('#enviar').attr("type","submit");
+      $('#formularioArticulo').attr("action","backend/creararticulo.php");
+      $('#formularioArticulo').append("<input type='hidden' name='titulo' value='"+$('#titulo').html()+"'>");
+      $('#formularioArticulo').append("<input type='hidden' name='contenido' value='"+$('#contenido').html()+"'>");
+      $('#formularioArticulo').append("<input type='hidden' name='pregunta0' value='"+$('#pregunta0').html()+"'>");
+      $('#formularioArticulo').append("<input type='hidden' name='pregunta1' value='"+$('#pregunta1').html()+"'>");
+      $('#formularioArticulo').append("<input type='hidden' name='pregunta2' value='"+$('#pregunta2').html()+"'>");
+      $.ajax({
+        url:"backend/creararticulo.php",
+        type:"POST",
+        data: $('#formularioArticulo')
+      });
+    }
   }
   
 </script>

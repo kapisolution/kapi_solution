@@ -30,14 +30,14 @@ $nivel=$articulo['nivel'];
           <div class="panel-group">
             <div class="panel panel-default">
               <div class="panel-heading">
+                <a class="editar"><span id="guardarTitulo" class="label label-success pull-right">Guardar
+                  <span class="glyphicon glyphicon-save"></span>
+                </span></a>
+                <a class="editar"><span id="editarTitulo" class="label label-success pull-right">Editar
+                  <span class="glyphicon glyphicon-pencil"></span>
+                </span></a>
                 <h4 class="panel-title">
-                  Titulo
-                  <a class="editar"><span id="guardarTitulo" class="label label-success pull-right">Guardar
-                    <span class="glyphicon glyphicon-save"></span>
-                  </span></a>
-                  <a class="editar"><span id="editarTitulo" class="label label-success pull-right">Editar
-                    <span class="glyphicon glyphicon-pencil"></span>
-                  </span></a>
+                  Titulo  
                 </h4>
               </div>
               <div id="titulo" class="panel-body">
@@ -51,14 +51,14 @@ $nivel=$articulo['nivel'];
           <div class="panel-group">
             <div class="panel panel-default">
               <div class="panel-heading">
-                <h4 class="panel-title">
-                Contenido
                 <a class="editar"><span id="guardarContenido" class="label label-success pull-right">Guardar
-                    <span class="glyphicon glyphicon-save"></span>
+                  <span class="glyphicon glyphicon-save"></span>
                 </span></a>
                 <a class="editar"><span id="editarContenido" class="label label-success pull-right">Editar
-                    <span class="glyphicon glyphicon-pencil"></span>
-                  </span></a>
+                  <span class="glyphicon glyphicon-pencil"></span>
+                </span></a>
+                <h4 class="panel-title">
+                Contenido
                 </h4>
               </div>
                 <div id="contenido" class="panel-body"><?php echo $contenido?></div>
@@ -137,9 +137,6 @@ contenido.addEventListener("click", editarContenido);
 
     $('#formularioArticulo').append("<input type='hidden' name='titulo' value='"+$('#titulo').html()+"'>");
     $('#formularioArticulo').append("<input type='hidden' name='contenido' value='"+$('#contenido').html()+"'>");
-    $('#formularioArticulo').append("<input type='hidden' name='pregunta0' value='"+$('#pregunta0').html()+"'>");
-    $('#formularioArticulo').append("<input type='hidden' name='pregunta1' value='"+$('#pregunta1').html()+"'>");
-    $('#formularioArticulo').append("<input type='hidden' name='pregunta2' value='"+$('#pregunta2').html()+"'>");
     $('#formularioArticulo').append("<input type='hidden' name='id' value='"+<?php echo "'".$_GET['id']."'"?>+"'>");
     $('#formularioArticulo').append("<input type='hidden' name='rol' value='"+<?php echo "'".$articulo['rol']."'"?>+"'>");
     $('#formularioArticulo').append("<input type='hidden' name='nivel' value='"+<?php echo "'".$articulo['nivel']."'"?>+"'>");
