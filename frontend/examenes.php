@@ -9,7 +9,7 @@
     <?php for($i=1;$i<=$_SESSION['nivel']+1;$i++){ ?>
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
             <div class="list-group">
-                <a  <?php if(!isset($_SESSION['login'])){?> class="list-group-item disabled" <?php }else{ ?>  href="/examen.php?id=<?php echo $i ?>" class="list-group-item <?php if($i<=$_SESSION['nivel']) { ?> list-group-item-success<?php } else { ?> list-group-item-info <?php } }?>">
+                <a  <?php if(!isset($_SESSION['login'])){?> class="list-group-item disabled" <?php }else{ ?> class="list-group-item <?php if($i<=$_SESSION['nivel']) { ?> list-group-item-success"<?php } else { ?> list-group-item-info" href="/examen.php?id=<?php echo $i ?>"<?php } }?>>
                     <h4 class="list-group-item-heading">Prueba de nivel <?php echo $i ?></h4>
                     <!-- <p class="list-group-item-text">...</p> -->
                     <h4><span class="label label-warning"><?php echo $_SESSION['rol']?></span>

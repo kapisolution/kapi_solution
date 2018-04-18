@@ -1,3 +1,4 @@
+<!-- creaciones_usuario, modificaciones_usuario, publicaciones_usuario -->
 <?php include 'backend/usuario.php';
 $nick = $usuario['nick'];
 $rol = $usuario['rol'];
