@@ -1,5 +1,5 @@
 <?php
-    include 'backend/articulos.php';
+    include 'backend/creaciones.php';
     $array=$articulos;
     $contador=0;
     if(isset($_SESSION['login'])){
@@ -62,13 +62,17 @@
                         </div>
                     </div>
                 </div>
+                <?php 
+                $positivos=($articulos[$i]['votos_positivos']*100)/($articulos[$i]['votos_positivos']+$articulos[$i]['votos_negativos']);
+                $negativos=($articulos[$i]['votos_negativos']*100)/($articulos[$i]['votos_positivos']+$articulos[$i]['votos_negativos']);
+                ?>
                 <!-- Progress bar con votos positivos, negativos de las modificaciones -->
                 <div class="progress" id="barra<?php echo $i?>" <?php if($i>4){?>style="display:none"<?php } ?>>
-                    <div class="progress-bar progress-bar-success progress-bar-striped" style="width: 50%">
-                        <span class="glyphicon glyphicon-thumbs-up">50%</span>
+                    <div class="progress-bar progress-bar-success progress-bar-striped" style="width: <?php echo $positivos?>%">
+                        <span class="glyphicon glyphicon-thumbs-up"><?php echo round($positivos, 0, PHP_ROUND_HALF_UP);?>%</span>
                     </div>
-                    <div class="progress-bar progress-bar-danger progress-bar-striped" style="width: 50%">
-                        <span class="glyphicon glyphicon-thumbs-down">50%</span>
+                    <div class="progress-bar progress-bar-danger progress-bar-striped" style="width: <?php echo $negativos?>%">
+                        <span class="glyphicon glyphicon-thumbs-down"><?php echo round($negativos, 0, PHP_ROUND_HALF_UP);?>%</span>
                     </div>
                 </div>
             <?php } ?>

@@ -11,6 +11,9 @@
 .panel-default>.panel-heading {
     height: 4rem;
 }
+.panel-group.publicaciones .panel {
+    height: 14rem;
+}
 .accion{
     margin-top: -2rem;
     margin-right: 0.5rem;

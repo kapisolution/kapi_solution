@@ -1,4 +1,8 @@
+<?php require 'backend/generaexamen.php';
+//array examen
+?>
 <div class="container containerExamenes">
+    <?php echo json_encode($examen);?>
     <?php if($_SESSION['login']){ ?>
         <center><h2>Prueba de nivel  <?php echo $_GET['id']?></h2><br>
         <h4>

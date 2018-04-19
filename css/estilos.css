@@ -75,4 +75,5 @@ span.label.label-danger.votos, span.label.label-success.votos{
  }
  .dropdown-menu>li>a:hover{
     background-color: #0077d8;
+    color: white;
 }
