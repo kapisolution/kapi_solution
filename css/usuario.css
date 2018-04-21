@@ -28,10 +28,10 @@ a.separador:hover{
 a{
     cursor: pointer;
 }
-a:link, a:visited {
+a.editar:link, a.editar:visited {
     color: transparent;
 }
-a:hover {
+a.editar:hover {
     color: transparent;
 }
 #fotoUsr{

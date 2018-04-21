@@ -34,15 +34,15 @@
                 for ($i = 0; $i < sizeof($articulos) ; $i++){
             ?> 
                 <div class="panel-group">
-                <div id="panel<?php echo $i?>" class="panel panel-default" <?php if($i>4){?>style="display:none"<?php } ?>>
+                    <div id="panel<?php echo $i?>" class="panel panel-default" <?php if($i>4){?>style="display:none"<?php } ?>>
                         <div class="panel-heading">
                             <h4 class="panel-title">
-                                <a id="creador<?php echo $i ?>"><?php echo "  ".$articulos[$i]['creador']?></a>
-                                <small id="creador<?php echo $i ?>"><?php echo "  ".$articulos[$i]['fecha']?></small>
+                                <a href="usuario.php?id=<?php echo $articulos[$i]['creador']?>" id="creador<?php echo $i ?>"><?php echo "  ".$articulos[$i]['creador']?></a>
                                 <div class="pull-right">
                                 <span id="rol<?php echo $i ?>" class="label label-warning"><?php echo $articulos[$i]['rol']?></span>
                                 <span id="nivel<?php echo $i ?>"class="label label-danger"><?php echo "Nivel ".$articulos[$i]['nivel']?></span>
-                                </div>
+                                </div><br>
+                                <small id="creador<?php echo $i ?>"><?php echo "  ".$articulos[$i]['fecha']?></small>
                             </h4>
                         </div>
                         <div class="panel-body">
@@ -50,7 +50,7 @@
                                 <img id="imagen<?php echo $i ?>" class="imgUsrArticulo" class="img-rounded" src="/files/img/usuario/<?php echo $articulos[$i]['creador'].'.jpg'?>">
                             </div>
                             <div id="titulo<?php echo $i ?>" class="tituloBody text-center">
-                                <?php echo $articulos[$i]['titulo'];?>
+                                <a href="creacion.php?id=<?php echo $articulos[$i]['id'];?>"><?php echo $articulos[$i]['titulo'];?></a>
                             </div>    
                         </div>
                         <div class="accion pull-right">

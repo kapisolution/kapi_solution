@@ -77,3 +77,6 @@ span.label.label-danger.votos, span.label.label-success.votos{
     background-color: #0077d8;
     color: white;
 }
+h4.panel-title>a:hover{
+    text-decoration: none;
+}

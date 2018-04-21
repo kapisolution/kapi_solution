@@ -23,7 +23,7 @@ $email = $usuario['email'];
             <hr>
             <?php 
             if($nick==$_SESSION['nick']){?>
-            <center><h4><a href="/editarusuario.php"><span class="label label-default">Editar Perfil</span></a></h4></center>
+            <center><h4><a class="editar" href="/editarusuario.php"><span class="label label-default">Editar Perfil</span></a></h4></center>
             <hr>
             <?php } ?>
         </div>
@@ -44,16 +44,17 @@ $email = $usuario['email'];
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                <?php echo $modificaciones_usuario[$i]['creador']?><small> <?php echo $modificaciones_usuario[$i]['fecha']?></small>
+                                    <a id="creador<?php echo $i ?>"><?php echo "  ".$modificaciones_usuario[$i]['creador']?></a>
                                     <div class="pull-right">
-                                        <span class="label label-warning"><?php echo $modificaciones_usuario[$i]['rol']?></span>
-                                        <span class="label label-danger">Nivel <?php echo $modificaciones_usuario[$i]['nivel']?></span>
-                                    </div>
+                                    <span id="rol<?php echo $i ?>" class="label label-warning"><?php echo $modificaciones_usuario[$i]['rol']?></span>
+                                    <span id="nivel<?php echo $i ?>"class="label label-danger"><?php echo "Nivel ".$modificaciones_usuario[$i]['nivel']?></span>
+                                    </div><br>
+                                    <small id="creador<?php echo $i ?>"><?php echo "  ".$modificaciones_usuario[$i]['fecha']?></small>                
                                 </h4>
                             </div>
                             <div class="panel-body">
                                 <div class="tituloBody">
-                                    <center><?php echo $modificaciones_usuario[$i]['titulo']?></center>              
+                                    <a href="creacion.php?id=<?php echo $modificaciones_usuario[$i]['id']?>"><center><?php echo $modificaciones_usuario[$i]['titulo']?></center></a>              
                                 </div>    
                             </div>
                             <div class="accion pull-right">
@@ -89,16 +90,17 @@ $email = $usuario['email'];
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
-                                    <?php echo $creaciones_usuario[$i]['creador']?><small> <?php echo $creaciones_usuario[$i]['fecha']?></small>
+                                        <a id="creador<?php echo $i ?>"><?php echo "  ".$modificaciones_usuario[$i]['creador']?></a>
                                         <div class="pull-right">
-                                            <span class="label label-warning"><?php echo $creaciones_usuario[$i]['rol']?></span>
-                                            <span class="label label-danger">Nivel <?php echo $creaciones_usuario[$i]['nivel']?></span>
-                                        </div>
+                                        <span id="rol<?php echo $i ?>" class="label label-warning"><?php echo $modificaciones_usuario[$i]['rol']?></span>
+                                        <span id="nivel<?php echo $i ?>"class="label label-danger"><?php echo "Nivel ".$modificaciones_usuario[$i]['nivel']?></span>
+                                        </div><br>
+                                        <small id="creador<?php echo $i ?>"><?php echo "  ".$modificaciones_usuario[$i]['fecha']?></small>                
                                     </h4>
                                 </div>
                                 <div class="panel-body">
                                     <div class="tituloBody">
-                                        <center><?php echo $creaciones_usuario[$i]['titulo']?></center>              
+                                        <a href="creacion.php?id=<?php echo $modificaciones_usuario[$i]['id']?>"><center><?php echo $creaciones_usuario[$i]['titulo']?></center></a>              
                                     </div>    
                                 </div>
                                 <div class="accion pull-right">
@@ -134,16 +136,17 @@ $email = $usuario['email'];
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
-                                    <?php echo $publicaciones_usuario[$i]['creador']?><small> <?php echo $publicaciones_usuario[$i]['fecha']?></small>
+                                        <a id="creador<?php echo $i ?>"><?php echo "  ".$modificaciones_usuario[$i]['creador']?></a>
                                         <div class="pull-right">
-                                            <span class="label label-warning"><?php echo $publicaciones_usuario[$i]['rol']?></span>
-                                            <span class="label label-danger">Nivel <?php echo $publicaciones_usuario[$i]['nivel']?></span>
-                                        </div>
+                                        <span id="rol<?php echo $i ?>" class="label label-warning"><?php echo $modificaciones_usuario[$i]['rol']?></span>
+                                        <span id="nivel<?php echo $i ?>"class="label label-danger"><?php echo "Nivel ".$modificaciones_usuario[$i]['nivel']?></span>
+                                        </div><br>
+                                        <small id="creador<?php echo $i ?>"><?php echo "  ".$modificaciones_usuario[$i]['fecha']?></small>                
                                     </h4>
                                 </div>
                                 <div class="panel-body">
                                     <div class="tituloBody">
-                                        <center><?php echo $publicaciones_usuario[$i]['titulo']?></center>              
+                                        <a href="articulo.php?id=<?php echo $publicaciones_usuario[$i]['id']?>"><center><?php echo $publicaciones_usuario[$i]['titulo']?></center></a>              
                                     </div>    
                                 </div>
                                 <div class="accion pull-right">
