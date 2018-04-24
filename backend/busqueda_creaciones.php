@@ -1,10 +1,10 @@
 <?php
 if(isset($_GET["search"])&&$_GET["search"]!=""){ 
-    $sql ='SELECT * FROM Modificacion_articulo WHERE id = 0 AND titulo LIKE "%'.$_GET["search"] .'%" OR contenido LIKE "%'.$_GET["search"] .'%" ORDER BY nivel, rol;';
+    $sql ='SELECT * FROM Modificacion_articulo  a, Modificaciones m WHERE a.id = 0 AND a.id_mod = m.id_modificacion AND a.titulo LIKE "%'.$_GET["search"] .'%" OR a.contenido LIKE "%'.$_GET["search"] .'%" ORDER BY a.nivel, a.rol;';
     $consulta = mysqli_query($con, $sql) or die("Error en consulta sobre la tabla creacion de articulos");
-    $busquedaModificaciones = array();
+    $busquedaCreaciones = array();
     while($fila = mysqli_fetch_array($consulta)){
-        $busquedaModificaciones[] = $fila;
+        $busquedaCreaciones[] = $fila;
     }
 }
 ?>
