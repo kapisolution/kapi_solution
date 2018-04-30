@@ -9,6 +9,12 @@
         $nivel=0;
         $rol='informatico';
     }
+    // foreach($_SESSION as $valor)
+    // {
+    // echo $valor.',';
+    // }
+    echo $_SESSION['sNivel'];
+    echo $_SESSION['login'];
 ?>
 <div class="container">
     <div class="row">

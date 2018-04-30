@@ -3,13 +3,6 @@
     display:flex;
     justify-content:center;
 }
-.list-group input[type="radio"]{
-     display: none;
-}
-.list-group input[type="radio"]:checked + label >span{
-    background-color: #333;
-    color: white;
-}
 .dropdown-menu>li>a.dropdown-item.disabled,
 .dropdown-menu>li>a.dropdown-item.disabled:visited,
 .dropdown-menu>li>a.dropdown-item.disabled:active,

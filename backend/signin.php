@@ -30,7 +30,8 @@
         $sqlInsert = "INSERT INTO Usuarios(nick,rol,password,email) VALUES('$nombre','$rol','$passdb','$email')";
         if (mysqli_query($con, $sqlInsert)) { 
             $_SESSION["nick"] = $nombre;
-            $_SESSION["login"] = true;  
+            $_SESSION["login"] = true;
+            $_SESSION["formularioNivel"] = false;  
             header('Location: /');
         } else {
             echo("Error en la consulta");

@@ -55,12 +55,22 @@ a.volver:hover, a.registro:hover{
 span.label.label-danger.votos, span.label.label-success.votos{
     cursor: pointer;
 }
-.label.label-default {
+.label.label-default{
     background-color: #f5f5f5;
     box-sizing: border-box;
     border-radius: 10px;
     border: 1px solid #ddd;
     color: #333;
+    padding: 10px 5px 10px 5px;
+    cursor: pointer;
+    font-size: 87%;
+ }
+ .label.label-primary.respuesta{
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    background-color: #333;
+    color: white;
     padding: 10px 5px 10px 5px;
     cursor: pointer;
     font-size: 87%;
@@ -79,4 +89,10 @@ span.label.label-danger.votos, span.label.label-success.votos{
 }
 h4.panel-title>a:hover{
     text-decoration: none;
+}
+h4.modal-title{
+    color:black;
+}
+.list-group input[type="radio"]{
+    display: none;
 }

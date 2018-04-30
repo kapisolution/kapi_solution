@@ -1,0 +1,30 @@
+{
+    "p1": {
+        "texto": "basdajhsd",
+        "correcta": "A",
+        "respuestas": [
+            {
+                "texto": "asdasdasd",
+                "valor": "A"
+            },
+            {
+                "texto": "asdasd",
+                "valor": "B"
+            }
+        ]
+    },
+    "p2": {
+        "texto": "basdajhsd",
+        "correcta": "A",
+        "respuestas": [
+            {
+                "texto": "asdasdasd",
+                "valor": "A"
+            },
+            {
+                "texto": "asdasd",
+                "valor": "B"
+            }
+        ]
+    }
+}
