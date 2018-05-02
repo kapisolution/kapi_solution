@@ -56,7 +56,7 @@
                                 <img id="imagen<?php echo $i ?>" class="imgUsrArticulo" class="img-rounded" src="/files/img/usuario/<?php echo $articulos[$i]['creador'].'.jpg'?>">
                             </div>
                             <div id="titulo<?php echo $i ?>" class="tituloBody text-center">
-                                <a href="articulo.php?id=<?php echo $articulos[$i]['id'];?>"><?php echo $articulos[$i]['titulo'];?></a>
+                                <a id="refArt<?php echo $i ?>" href="articulo.php?id=<?php echo $articulos[$i]['id'];?>"><?php echo $articulos[$i]['titulo'];?></a>
                             </div>    
                         </div>
                         <div class="accion pull-right">
@@ -112,9 +112,11 @@
         for(var i=0; i<stringArray.length; i++){
             $("#rol"+i).html(stringArray[i].rol);
             $("#nivel"+i).html("Nivel "+stringArray[i].nivel);
-            $("#titulo"+i).html(stringArray[i].titulo);
+            $("#refArt"+i).attr("href","/articulo.php?id="+stringArray[i].id);
+            $("#refArt"+i).html(stringArray[i].titulo);
             $("#imagen"+i).attr("src","/files/img/usuario/"+stringArray[i].creador+".jpg");
             $("#creador"+i).html(stringArray[i].creador);
+            $("#creador"+i).attr("href","/usuario.php?id="+stringArray[i].creador);
             $("#verArt"+i).attr("href","/articulo.php?id="+stringArray[i].id);
             if(stringArray[i].nivel > nivel || stringArray[i].rol != rol){
                 $("#editarArt"+i).attr("class","dropdown-item disabled");

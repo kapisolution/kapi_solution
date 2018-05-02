@@ -1,7 +1,7 @@
 <?php 
 include 'backend/articulos.php';
 session_start();
-$jsonText = file_get_contents("backend/preguntasTestNivel.json");
+$jsonText = file_get_contents("doc/preguntasTestNivel.json");
 $preguntas = json_decode($jsonText, true);
 
 $puntos =0;
@@ -13,8 +13,6 @@ $puntos =0;
     <?php 
      $logedIn=isset($_SESSION['login']);
      $sNivel=isset($_SESSION['formularioNivel']);
-    
-    echo trim($_SESSION['login']);
     if($logedIn){
       if(trim($_SESSION['formularioNivel'])==1){
         header('Location:/articulos.php');
@@ -30,7 +28,7 @@ $puntos =0;
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h4 class="modal-title">Responde a 5 preguntas para concretar tu nivel</h4>
+                  <h4 class="modal-title">Responde a 5 preguntas para determinar tu nivel</h4>
                 </div>
                   <div class="modal-body"><?php
                     foreach($preguntas as $key => $pregunta) {
@@ -197,19 +195,3 @@ $puntos =0;
        ?>
     </div>
 </div>
-
-<script type="text/javascript">
-var puntos = 0;
-
-function respuestaTest(filtro,opcion,correcta,elemento){
-    x = document.getElementById(filtro).getElementsByClassName('label label-primary respuesta');
-    $("#"+filtro).prop("checked", false);
-    for (i = 0; i < x.length; i++) {
-        x[i].className='label label-default';
-    }
-    $("#"+elemento).removeClass().addClass('label label-primary respuesta');
-    if(opcion==correcta){
-      puntos+=1;
-    }//else  restar puntos
-}
-</script>

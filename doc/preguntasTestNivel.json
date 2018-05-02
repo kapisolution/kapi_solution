@@ -1,0 +1,117 @@
+{
+    "p1": {
+        "texto": "Como cifrar el correo",
+        "correcta": "A",
+        "puntos": 4,
+        "respuestas": [
+            {
+                "texto": "A) asdasdasd",
+                "valor": "A"
+            },
+            {
+                "texto": "B) asdasd",
+                "valor": "B"
+            },
+            {
+                "texto": "C) asdasdasd",
+                "valor": "C"
+            },
+            {
+                "texto": "D) asdasdasd",
+                "valor": "D"
+            }
+        ]
+    },
+    "p2": {
+        "texto": "Montar una VPN",
+        "correcta": "A",
+        "puntos": 3,
+        "respuestas": [
+            {
+                "texto": "A) asdasdasd",
+                "valor": "A"
+            },
+            {
+                "texto": "B) asdasd",
+                "valor": "B"
+            },
+            {
+                "texto": "C) asdasdasd",
+                "valor": "C"
+            },
+            {
+                "texto": "D) asdasdasd",
+                "valor": "D"
+            }
+        ]
+    },
+    "p3": {
+        "texto": "Conceptos acerca de Thor",
+        "correcta": "A",
+        "puntos": 2,
+        "respuestas": [
+            {
+                "texto": "A) asdasdasd",
+                "valor": "A"
+            },
+            {
+                "texto": "B) asdasd",
+                "valor": "B"
+            },
+            {
+                "texto": "C) asdasdasd",
+                "valor": "C"
+            },
+            {
+                "texto": "D) asdasdasd",
+                "valor": "D"
+            }
+        ]
+    },
+    "p4": {
+        "texto": "Phishing",
+        "correcta": "A",
+        "puntos": 0.5,
+        "respuestas": [
+            {
+                "texto": "A) asdasdasd",
+                "valor": "A"
+            },
+            {
+                "texto": "B) asdasd",
+                "valor": "B"
+            },
+            {
+                "texto": "C) asdasdasd",
+                "valor": "C"
+            },
+            {
+                "texto": "D) asdasdasd",
+                "valor": "D"
+            }
+        ]
+    },
+    "p5": {
+        "texto": "Deep Web",
+        "correcta": "A",
+        "puntos": 0.5,
+        "respuestas": [
+            {
+                "texto": "A) asdasdasd",
+                "valor": "A"
+            },
+            {
+                "texto": "B) asdasd",
+                "valor": "B"
+            },
+            {
+                "texto": "C) asdasdasd",
+                "valor": "C"
+            },
+            {
+                "texto": "D) asdasdasd",
+                "valor": "D"
+            }
+        ]
+    }
+}
