@@ -1,5 +1,5 @@
 <?php
-    $nivel=7;//$_POST["nivel"];
+    $nivel=$_POST["nivel"];
     $rol=$_POST["rol"];
     $titulo=$_POST["titulo"];
     $contenido=$_POST["contenido"];
