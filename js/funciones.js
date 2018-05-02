@@ -66,6 +66,7 @@ function cargar(i, max){
     var min=i+cont;
     if(min>=max&&!alertCargar){
         $("#album").append("<div id='alert' class='alert alert-info' role='alert'>No hay mas resultados</div>");
+        $("span.label.label-default.cargar").hide();
         alertCargar=true;
     }
     if(!alertCargar){

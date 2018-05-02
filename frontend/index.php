@@ -21,7 +21,9 @@ $puntos =0;
         ?>
         <script>
         $('body').removeClass().addClass('modal-open');
-        $('body').attr("style","padding-right: 15px;");  
+        $('body').attr("style","padding-right: 15px;");
+        $('nav').hide();
+        $('#footerBS.container-fluid.text-center.footerBS').hide();
         </script>
         <form id="testNivel" method="POST" action="backend/testNivel.php"> 
           <div class="modal fade in" role="dialog" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" style="display: block;"> 

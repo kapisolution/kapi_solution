@@ -1,4 +1,4 @@
-<div class="container-fluid text-center footerBS">
+<div id="footerBS" class="container-fluid text-center footerBS">
     <div class="row">
       <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
         <a href="https://github.com/kapisolution/kapi_solution"><img class="imagenesFooter" src="/files/img/footer/descarga.png" alt="Github"></a>

@@ -21,7 +21,7 @@
             <div id="albumUsuarios" class="album py-5 bg-light">
             <?php
                 if(sizeof($busquedaUsuarios)==0){?>
-                    <div id='alert' class='alert alert-info' role='alert'>No hay resultados</div>
+                    <div  class='alert alert-info' role='alert'>No hay resultados</div>
                 <?php }else{
                     for ($i = 0; $i < sizeof($busquedaUsuarios) ; $i++){
                 ?> 
@@ -51,12 +51,12 @@
                 <center><span id="cargarUsr" class="label label-default cargar" onclick="cargarUsuarios(<?php echo $contador+5?>,<?php echo sizeof($busquedaUsuarios)?>)">Cargar Mas</span></center>  
             </div>
             <?php } ?>
-            
+            </div>
             <!--BusquedaArticulos-->
             <div class="album py-5 bg-light" id="articulos" style="display:none">
             <?php
                 if(sizeof($busquedaArticulos)==0){?>
-                    <div id='alert' class='alert alert-info' role='alert'>No hay resultados</div>
+                    <div  class='alert alert-info' role='alert'>No hay resultados</div>
                 <?php }else{
                     for ($i = 0; $i < sizeof($busquedaArticulos) ; $i++){
                 ?> 
@@ -91,16 +91,17 @@
                             </div>
                         </div>
                     </div>
+                    <hr>
                 <?php } ?>
-                <hr>
                 <center><span id="cargarArt" class="label label-default cargar" onclick="cargarArticulos(<?php echo $contador+5?>, <?php echo sizeof($busquedaArticulos)?>)">Cargar Mas</span></center>  
-                <?php } ?>
+            </div>
+            <?php } ?>
             </div>
             <!--busquedaCreaciones-->
             <div class="album py-5 bg-light" id="creaciones" style="display:none">
             <?php
                 if(sizeof($busquedaModificaciones)==0){?>
-                    <div id='alert' class='alert alert-info' role='alert'>No hay resultados</div>
+                    <div  class='alert alert-info' role='alert'>No hay resultados</div>
                 <?php }else{
                     for ($i = 0; $i < sizeof($busquedaModificaciones) ; $i++){
                 ?> 
@@ -157,7 +158,7 @@
             <div class="album py-5 bg-light" id="modificaciones" style="display:none">
             <?php
                 if(sizeof($busquedaModificaciones)==0){?>
-                    <div id='alert' class='alert alert-info' role='alert'>No hay resultados</div>
+                    <div  class='alert alert-info' role='alert'>No hay resultados</div>
                 <?php }else{
                     for ($i = 0; $i < sizeof($busquedaModificaciones) ; $i++){
                 ?> 
@@ -209,6 +210,7 @@
                 <center><span id="cargarModificaciones" class="label label-default cargar" onclick="cargarModificaciones(<?php echo $contador+5?>, <?php echo sizeof($busquedaModificaciones)?>)">Cargar Mas</span></center>  
                 </div>
             <?php } ?>
+            </div>
             </div>
         </div>
     </div>

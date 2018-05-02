@@ -64,7 +64,11 @@
 }
 .navbar-inverse .navbar-nav .open .dropdown-menu>li>a.dropdown-item.nivel:hover {
     background-color: #f2f2f0;
-    color:#0077d8;
+    color:#e5e5e5;
+}
+.navbar-inverse .navbar-nav .open .dropdown-menu>li>a.dropdown-item.pruebaNivel:hover {
+    background-color: #d9534f;
+    color:#e5e5e5;
 }
 @media (min-width: 1200px) {
     .navbar-right {

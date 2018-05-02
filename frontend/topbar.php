@@ -1,3 +1,4 @@
+<?php session_start();?>
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="row">
@@ -41,6 +42,10 @@
                                 <li><a class="dropdown-item" href="/usuario.php?id=<?php echo $_SESSION["nick"]?>">Ver Perfil</a></li>
                                 <li class="divider"></li>
                                 <li><a class="dropdown-item" href="backend/logout.php">Cerrar Sesion</a></li>
+                                <?php if($_SESSION['formularioNivel']==0){ ?>
+                                    <li class="divider"></li>
+                                    <li><a href="/" class="dropdown-item pruebaNivel">Realizar prueba de nivel</a></li>
+                                <?php } ?>
                             </ul> 
                         </li>
                         </ul>
