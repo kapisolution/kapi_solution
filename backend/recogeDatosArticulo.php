@@ -1,6 +1,6 @@
 <?php
     $nivel=$_POST["nivel"];
-    $rol=$_POST["rol"];
+    $rol=$_SESSION["rol"];
     $titulo=$_POST["titulo"];
     $contenido=$_POST["contenido"];
     $creador= $_SESSION['nick'];

@@ -32,6 +32,7 @@ if(isset($_GET["id"])&&$_GET["id"]!=""){
 
     return - $relacionados y $n_relacionados
     */
+    /*
     $sql ='SELECT * FROM Articulos WHERE nivel = '. $modificacionArticulo['nivel'] .' AND rol = "'. $modificacionArticulo['rol'] .'";';
     $consulta = mysqli_query($con, $sql) or die("Error en consulta sobre articulos relacionados");
     $relacionados = array();
@@ -40,5 +41,6 @@ if(isset($_GET["id"])&&$_GET["id"]!=""){
         $relacionados[] = $relacionado;
         $n_relacionados++;
     }
+    */
 }
 ?>

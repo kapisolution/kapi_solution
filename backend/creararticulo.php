@@ -10,5 +10,5 @@
         }
     }
     require("desconexion.php");
-    header('Location:/');
+    //header('Location:/');
  ?>
