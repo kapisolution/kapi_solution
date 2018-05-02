@@ -7,7 +7,7 @@
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
             <div class="list-group">
-                <button id="usr" type="button"  class="list-group-item disabled" onclick="mostrarTarjetas(event, 'usuarios', 'usr')">
+                <button id="usr" type="button"  class="list-group-item disabled" onclick="mostrarTarjetas(event, 'albumUsuarios', 'usr')">
                     Usuarios
                 </button>
                 <button id="art" type="button" class="list-group-item" onclick="mostrarTarjetas(event, 'articulos', 'art')">Articulos</button>
@@ -18,7 +18,7 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
             <!--BusquedaUsuarios-->
-            <div class="album py-5 bg-light" id="usuarios">
+            <div id="albumUsuarios" class="album py-5 bg-light">
             <?php
                 if(sizeof($busquedaUsuarios)==0){?>
                     <div id='alert' class='alert alert-info' role='alert'>No hay resultados</div>
@@ -48,10 +48,10 @@
                     </div>
                     <hr>
                 <?php } ?>
-            <br>
-            <center><span class="label label-default" onclick="cargarUsuarios(<?php echo $contador+5?>,<?php echo sizeof($busquedaUsuarios)?>)">Cargar Mas</span></center>  
-            <?php } ?>
+                <center><span id="cargarUsr" class="label label-default cargar" onclick="cargarUsuarios(<?php echo $contador+5?>,<?php echo sizeof($busquedaUsuarios)?>)">Cargar Mas</span></center>  
             </div>
+            <?php } ?>
+            
             <!--BusquedaArticulos-->
             <div class="album py-5 bg-light" id="articulos" style="display:none">
             <?php
@@ -77,7 +77,7 @@
                                     <img class="imgUsrArticulo" class="img-rounded" src="/files/img/usuario/<?php echo $busquedaArticulos[$i]['creador'].'.jpg'?>">
                                 </div>
                                 <div class="tituloBody text-center">
-                                    <?php echo $busquedaArticulos[$i]['titulo'];?>                
+                                        <a id="refArt<?php echo $i ?>" href="articulo.php?id=<?php echo $busquedaArticulos[$i]['id'];?>"><?php echo $busquedaArticulos[$i]['titulo'];?></a>                
                                 </div>    
                             </div>
                             <div class="accion pull-right">
@@ -92,11 +92,11 @@
                         </div>
                     </div>
                 <?php } ?>
-                <br>
-                <center><span class="label label-default" onclick="cargarArticulos(<?php echo $contador+5?>, <?php echo sizeof($busquedaArticulos)?>)">Cargar Mas</span></center>  
+                <hr>
+                <center><span id="cargarArt" class="label label-default cargar" onclick="cargarArticulos(<?php echo $contador+5?>, <?php echo sizeof($busquedaArticulos)?>)">Cargar Mas</span></center>  
                 <?php } ?>
             </div>
-            <!--busquedaModificaciones-->
+            <!--busquedaCreaciones-->
             <div class="album py-5 bg-light" id="creaciones" style="display:none">
             <?php
                 if(sizeof($busquedaModificaciones)==0){?>
@@ -105,16 +105,16 @@
                     for ($i = 0; $i < sizeof($busquedaModificaciones) ; $i++){
                 ?> 
                     <div class="panel-group">
-                        <div class="panel panel-default">
+                        <div id="panelCreaciones<?php echo $i?>" class="panel panel-default" <?php if($i>4){?>style="display:none"<?php } ?>>
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <?php echo "  ".$busquedaArticulos[$i]['creador']?>
+                                    <?php echo "  ".$busquedaModificaciones[$i]['creador']?>
                                     
                                     <div class="pull-right">
                                         <span class="label label-warning"><?php echo $busquedaModificaciones[$i]['rol']?></span>
                                         <span class="label label-danger"><?php echo "Nivel ".$busquedaModificaciones[$i]['nivel']?></span>
                                     </div><br>
-                                    <small><?php echo "  ".$busquedaArticulos[$i]['fecha']?></small>
+                                    <small><?php echo "  ".$busquedaModificaciones[$i]['fecha']?></small>                
                                 </h4>
                             </div>
                             <div class="panel-body">
@@ -122,7 +122,7 @@
                                     <img class="imgUsrArticulo" class="img-rounded" src="/files/img/usuario/<?php echo $busquedaModificaciones[$i]['creador'].'.jpg'?>">
                                 </div>
                                 <div class="tituloBody text-center">
-                                    <?php echo $busquedaModificaciones[$i]['titulo'];?>
+                                    <a id="refArt<?php echo $i ?>" href="articulo.php?id=<?php echo $busquedaModificaciones[$i]['id'];?>"><?php echo $busquedaModificaciones[$i]['titulo'];?></a>                
                                 </div>    
                             </div>
                             <div class="accion pull-right">
@@ -148,8 +148,10 @@
                         </div>
                     </div>
                 <?php } ?>
+                <hr>
+                <center><span id="cargarCreaciones" class="label label-default cargar" onclick="cargarCreaciones(<?php echo $contador+5?>, <?php echo sizeof($busquedaModificaciones)?>)">Cargar Mas</span></center>  
                 
-                <?php } ?>
+            <?php } ?>
             </div>
             <!--BusquedaModificaciones-->
             <div class="album py-5 bg-light" id="modificaciones" style="display:none">
@@ -163,13 +165,13 @@
                         <div id="panelModificaciones<?php echo $i?>" class="panel panel-default" <?php if($i>4){?>style="display:none"<?php } ?>>
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <?php echo "  ".$busquedaArticulos[$i]['creador']?>
+                                    <?php echo "  ".$busquedaModificaciones[$i]['creador']?>
                                     
                                     <div class="pull-right">
                                         <span class="label label-warning"><?php echo $busquedaModificaciones[$i]['rol']?></span>
                                         <span class="label label-danger"><?php echo "Nivel ".$busquedaModificaciones[$i]['nivel']?></span>
                                     </div><br>
-                                    <small><?php echo "  ".$busquedaArticulos[$i]['fecha']?></small>                
+                                    <small><?php echo "  ".$busquedaModificaciones[$i]['fecha']?></small>                
                                 </h4>
                             </div>
                             <div class="panel-body">
@@ -177,7 +179,7 @@
                                     <img class="imgUsrArticulo" class="img-rounded" src="/files/img/usuario/<?php echo $busquedaModificaciones[$i]['creador'].'.jpg'?>">
                                 </div>
                                 <div class="tituloBody text-center">
-                                    <?php echo $busquedaModificaciones[$i]['titulo'];?>
+                                    <a id="refArt<?php echo $i ?>" href="articulo.php?id=<?php echo $busquedaModificaciones[$i]['id'];?>"><?php echo $busquedaModificaciones[$i]['titulo'];?></a>                
                                 </div>    
                             </div>
                             <div class="accion pull-right">
@@ -203,10 +205,11 @@
                         </div>
                     </div>
                 <?php } ?>
-                <br>
-                <center><span class="label label-default" onclick="cargarModificaciones(<?php echo $contador+5?>, <?php echo sizeof($busquedaModificaciones)?>)">Cargar Mas</span></center>  
+                <hr>
+                <center><span id="cargarModificaciones" class="label label-default cargar" onclick="cargarModificaciones(<?php echo $contador+5?>, <?php echo sizeof($busquedaModificaciones)?>)">Cargar Mas</span></center>  
                 </div>
             <?php } ?>
+            </div>
         </div>
     </div>
 </div>

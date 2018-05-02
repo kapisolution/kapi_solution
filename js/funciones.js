@@ -9,7 +9,8 @@ var contModificaciones=0;
 function cargarUsuarios(i, max){
     var min=i+contUsuarios;
     if(min>=max&&!alertUsuarios){
-        $("#usuarios").append("<div id='alert' class='alert alert-info' role='alert'>No hay mas resultados</div>");
+        $("#albumUsuarios").append("<div id='alert' class='alert alert-info' role='alert'>No hay mas resultados</div>");
+        $("#cargarUsr").hide();
         alertUsuarios=true;
     }
     if(!alertUsuarios){
@@ -23,6 +24,7 @@ function cargarArticulos(i, max){
     var min=i+contArticulos;
     if(min>=max&&!alertArticulos){
         $("#articulos").append("<div id='alert' class='alert alert-info' role='alert'>No hay mas resultados</div>");
+        $("#cargarArt").hide();
         alertArticulos=true;
     }
     if(!alertArticulos){
@@ -36,11 +38,26 @@ function cargarModificaciones(i, max){
     var min=i+contModificaciones;
     if(min>=max&&!alertModificaciones){
         $("#modificaciones").append("<div id='alert' class='alert alert-info' role='alert'>No hay mas resultados</div>");
+        $("#cargarModificaciones").hide();
         alertModificaciones=true;
     }
     if(!alertModificaciones){
         for(var j=min; j<min+5;j++){
             $("#panelModificaciones"+j).show();
+        }
+        contModificaciones=contModificaciones+min;
+    }
+}
+function cargarCreaciones(i, max){
+    var min=i+contModificaciones;
+    if(min>=max&&!alertModificaciones){
+        $("#creaciones").append("<div id='alert' class='alert alert-info' role='alert'>No hay mas resultados</div>");
+        $("#cargarCreaciones").hide();
+        alertModificaciones=true;
+    }
+    if(!alertModificaciones){
+        for(var j=min; j<min+5;j++){
+            $("#panelCreaciones"+j).show();
         }
         contModificaciones=contModificaciones+min;
     }

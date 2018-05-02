@@ -84,10 +84,14 @@ h4 small{
     margin-right: 0.5rem;
     cursor: pointer;
 }
+button.list-group-item, button.list-group-item:hover{
+    color: #0077d8;
+}
 .list-group-item.disabled, .list-group-item.disabled:focus, .list-group-item.disabled:hover {
-    color: rgb(70, 70, 70);
+    color: black;
+    font-weight: bold;
     cursor: not-allowed;
-    
+    background-color: transparent;
 }
 #alert{
     margin-top: 2rem;

@@ -73,7 +73,7 @@
             <?php } ?>
             </div>
             <br>
-            <center><span class="label label-default" onclick=<?php $contador+=5 ?>"cargar(<?php echo $contador?>,<?php echo sizeof($articulos)?>)">Cargar Mas</span></center>
+            <center><span class="label label-default cargar" onclick=<?php $contador+=5 ?>"cargar(<?php echo $contador?>,<?php echo sizeof($articulos)?>)">Cargar Mas</span></center>
         </div>
     </div>
 </div>
