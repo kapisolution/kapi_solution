@@ -16,7 +16,7 @@ if(isset($_GET["id"])&&$_GET["id"]!=""){
 
     return - $preguntas[] y $n_preguntas
     */
-    $sql ='SELECT * FROM Preguntas WHERE id = '.$_GET["id"] .';';
+    $sql ='SELECT * FROM Modificacion_pregunta WHERE id_mod = '.$_GET["id"] .';';
     $consulta = mysqli_query($con, $sql) or die("Error en consulta sobre la tabla preguntas");
     $preguntas = array();
     $n_preguntas=0;
