@@ -1,6 +1,4 @@
 <?php
-    session_start();
-    require("conexion.php");
     if(isset($_SESSION['login'])){
         $nivel=$_GET["nivel"];
         $rol=$_GET["rol"];
@@ -12,5 +10,4 @@
         }
         // echo json_encode($examen);
     }
-    require("desconexion.php");
-    ?>
+?>

@@ -8,7 +8,7 @@ if(isset($_GET["id"])&&$_GET["id"]!=""){
     */
     $sql ='SELECT * FROM Modificacion_articulo a, Modificaciones m WHERE a.id <> 0 AND a.id_mod = '.$_GET["id"] .' AND a.id_mod = m.id_modificacion ORDER BY fecha DESC;';
 	$consulta = mysqli_query($con, $sql) or die("Error en consulta sobre la tabla creaciones");
-    $creacionArticulo = mysqli_fetch_array($consulta);
+    $modificacionArticulo = mysqli_fetch_array($consulta);
 
 
     /*
@@ -32,7 +32,7 @@ if(isset($_GET["id"])&&$_GET["id"]!=""){
 
     return - $relacionados y $n_relacionados
     */
-    $sql ='SELECT * FROM Articulos WHERE nivel = '. $articulo['nivel'] .' AND rol = "'. $articulo['rol'] .'";';
+    $sql ='SELECT * FROM Articulos WHERE nivel = '. $modificacionArticulo['nivel'] .' AND rol = "'. $modificacionArticulo['rol'] .'";';
     $consulta = mysqli_query($con, $sql) or die("Error en consulta sobre articulos relacionados");
     $relacionados = array();
     $n_relacionados=0;

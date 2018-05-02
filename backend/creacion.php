@@ -6,10 +6,9 @@ if(isset($_GET["id"])&&$_GET["id"]!=""){
 
     return - $creacionArticulo
     */
-    $sql ='SELECT * FROM Modificacion_articulo a, Modificaciones m WHERE a.id = 0 AND a.id_mod = '.$_GET["id"] .' AND a.id_mod = m.id_modificacion ORDER BY fecha DESC;';
+    $sql ='SELECT * FROM Modificacion_articulo a, Modificaciones m WHERE a.id_mod = '.$_GET["id"] .' AND a.id_mod = m.id_modificacion;';
 	$consulta = mysqli_query($con, $sql) or die("Error en consulta sobre la tabla creaciones");
     $creacionArticulo = mysqli_fetch_array($consulta);
-
 
     /*
     Consulta que prepara las preguntas del articulos
@@ -21,7 +20,7 @@ if(isset($_GET["id"])&&$_GET["id"]!=""){
     $preguntas = array();
     $n_preguntas=0;
     while($pregunta = mysqli_fetch_array($consulta)){
-        $preguntas[] = $pregunta;
+        $preguntas[] = $pregunta;   
         $n_preguntas++;
     }
 
@@ -32,7 +31,7 @@ if(isset($_GET["id"])&&$_GET["id"]!=""){
 
     return - $relacionados y $n_relacionados
     */
-    $sql ='SELECT * FROM Articulos WHERE nivel = '. $articulo['nivel'] .' AND rol = "'. $articulo['rol'] .'";';
+    $sql ='SELECT * FROM Articulos WHERE nivel = '. $creacionArticulo['nivel'] .' AND rol = "'. $creacionArticulo['rol'] .'";';
     $consulta = mysqli_query($con, $sql) or die("Error en consulta sobre articulos relacionados");
     $relacionados = array();
     $n_relacionados=0;
