@@ -44,6 +44,7 @@ function cargarModificaciones(i, max){
     if(!alertModificaciones){
         for(var j=min; j<min+5;j++){
             $("#panelModificaciones"+j).show();
+            $("#barraMod"+j).show();
         }
         contModificaciones=contModificaciones+min;
     }
@@ -58,6 +59,7 @@ function cargarCreaciones(i, max){
     if(!alertModificaciones){
         for(var j=min; j<min+5;j++){
             $("#panelCreaciones"+j).show();
+            $("#barra"+j).show();
         }
         contModificaciones=contModificaciones+min;
     }

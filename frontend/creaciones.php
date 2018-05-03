@@ -50,14 +50,14 @@
                                 <img id="imagen<?php echo $i ?>" class="imgUsrArticulo" class="img-rounded" src="/files/img/usuario/<?php echo $articulos[$i]['creador'].'.jpg'?>">
                             </div>
                             <div id="titulo<?php echo $i ?>" class="tituloBody text-center">
-                                <a id="refArt<?php echo $i ?>" href="creacion.php?id=<?php echo $articulos[$i]['id'];?>"><?php echo $articulos[$i]['titulo'];?></a>
+                                <a id="refArt<?php echo $i ?>" href="creacion.php?id=<?php echo $articulos[$i]['id_mod'];?>"><?php echo $articulos[$i]['titulo'];?></a>
                             </div>    
                         </div>
                         <div class="accion pull-right">
                             <ul class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-plus"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a id="verArt<?php echo $i ?>" <?php if((!isset($_SESSION['login']))){?>class="dropdown-item disabled"<?php } else{ ?> class="dropdown-item" href="/creacion.php?id=<?php echo $articulos[$i]['id']?>" <?php } ?>>Ver</a></li>
+                                <li><a id="verArt<?php echo $i ?>" <?php if((!isset($_SESSION['login']))){?>class="dropdown-item disabled"<?php } else{ ?> class="dropdown-item" href="/creacion.php?id=<?php echo $articulos[$i]['id_mod']?>" <?php } ?>>Ver</a></li>
                             </ul>
                         </div>
                     </div>

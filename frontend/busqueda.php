@@ -22,7 +22,7 @@
             <?php
                 if(sizeof($busquedaUsuarios)==0){?>
                     <div  class='alert alert-info' role='alert'>No hay resultados</div>
-                <?php }else{
+            <?php }else{
                     for ($i = 0; $i < sizeof($busquedaUsuarios) ; $i++){
                 ?> 
                     <div class="panel-group">
@@ -46,12 +46,13 @@
                             <h4><a href="usuario.php?id=<?php echo $busquedaUsuarios[$i]['nick']?>"><span id="verPerfil" class="accion label label-success pull-right">Ver Perfil</span></a></h4>
                         </div>
                     </div>
+                    <?php } ?>
                     <hr>
-                <?php } ?>
+                
                 <center><span id="cargarUsr" class="label label-default cargar" onclick="cargarUsuarios(<?php echo $contador+5?>,<?php echo sizeof($busquedaUsuarios)?>)">Cargar Mas</span></center>  
             </div>
             <?php } ?>
-            </div>
+            
             <!--BusquedaArticulos-->
             <div class="album py-5 bg-light" id="articulos" style="display:none">
             <?php
@@ -100,60 +101,61 @@
             <!--busquedaCreaciones-->
             <div class="album py-5 bg-light" id="creaciones" style="display:none">
             <?php
-                if(sizeof($busquedaModificaciones)==0){?>
+                if(sizeof($busquedaCreaciones)==0){?>
                     <div  class='alert alert-info' role='alert'>No hay resultados</div>
                 <?php }else{
-                    for ($i = 0; $i < sizeof($busquedaModificaciones) ; $i++){
+                    for ($i = 0; $i < sizeof($busquedaCreaciones) ; $i++){
                 ?> 
                     <div class="panel-group">
                         <div id="panelCreaciones<?php echo $i?>" class="panel panel-default" <?php if($i>4){?>style="display:none"<?php } ?>>
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <?php echo "  ".$busquedaModificaciones[$i]['creador']?>
+                                    <?php echo "  ".$busquedaCreaciones[$i]['creador']?>
                                     
                                     <div class="pull-right">
-                                        <span class="label label-warning"><?php echo $busquedaModificaciones[$i]['rol']?></span>
-                                        <span class="label label-danger"><?php echo "Nivel ".$busquedaModificaciones[$i]['nivel']?></span>
+                                        <span class="label label-warning"><?php echo $busquedaCreaciones[$i]['rol']?></span>
+                                        <span class="label label-danger"><?php echo "Nivel ".$busquedaCreaciones[$i]['nivel']?></span>
                                     </div><br>
-                                    <small><?php echo "  ".$busquedaModificaciones[$i]['fecha']?></small>                
+                                    <small><?php echo "  ".$busquedaCreaciones[$i]['fecha']?></small>                
                                 </h4>
                             </div>
                             <div class="panel-body">
                                 <div class="pull-left">
-                                    <img class="imgUsrArticulo" class="img-rounded" src="/files/img/usuario/<?php echo $busquedaModificaciones[$i]['creador'].'.jpg'?>">
+                                    <img class="imgUsrArticulo" class="img-rounded" src="/files/img/usuario/<?php echo $busquedaCreaciones[$i]['creador'].'.jpg'?>">
                                 </div>
                                 <div class="tituloBody text-center">
-                                    <a id="refArt<?php echo $i ?>" href="articulo.php?id=<?php echo $busquedaModificaciones[$i]['id'];?>"><?php echo $busquedaModificaciones[$i]['titulo'];?></a>                
+                                    <a id="refArt<?php echo $i ?>" href="articulo.php?id=<?php echo $busquedaCreaciones[$i]['id'];?>"><?php echo $busquedaCreaciones[$i]['titulo'];?></a>                
                                 </div>    
                             </div>
                             <div class="accion pull-right">
                                 <ul class="dropdown">
                                 <a class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-plus"></span></a>
                                 <ul class="dropdown-menu">
-                                    <li><a <?php if(!isset($_SESSION['login'])) { ?> class="dropdown-item disabled"<?php } else{ ?> class="dropdown-item" href="/creacion.php?id=<?php echo $busquedaModificaciones[$i]['id']?>" <?php } ?>>Ver</a></li>
+                                    <li><a <?php if(!isset($_SESSION['login'])) { ?> class="dropdown-item disabled"<?php } else{ ?> class="dropdown-item" href="/creacion.php?id=<?php echo $busquedaCreaciones[$i]['id']?>" <?php } ?>>Ver</a></li>
                                 </ul>
                             </div>
                         </div>
-                    </div>
                     <?php 
-                        $positivos=($busquedaModificaciones[$i]['votos_positivos']*100)/($busquedaModificaciones[$i]['votos_positivos']+$busquedaModificaciones[$i]['votos_negativos']);
-                        $negativos=($busquedaModificaciones[$i]['votos_negativos']*100)/($busquedaModificaciones[$i]['votos_positivos']+$busquedaModificaciones[$i]['votos_negativos']);
+                        $positivos=($busquedaCreaciones[$i]['votos_positivos']*100)/($busquedaCreaciones[$i]['votos_positivos']+$busquedaCreaciones[$i]['votos_negativos']);
+                        $negativos=($busquedaCreaciones[$i]['votos_negativos']*100)/($busquedaCreaciones[$i]['votos_positivos']+$busquedaCreaciones[$i]['votos_negativos']);
                     ?>
-                    <!-- Progress bar con votos positivos, negativos de las modificaciones -->
-                    <div class="progress" id="barra<?php echo $i?>" <?php if($i>4){?>style="display:none"<?php } ?>>
-                        <div class="progress-bar progress-bar-success progress-bar-striped" style="width: <?php echo $positivos?>%">
-                            <span class="glyphicon glyphicon-thumbs-up"><?php echo round($positivos, 0, PHP_ROUND_HALF_UP);?>%</span>
-                        </div>
-                        <div class="progress-bar progress-bar-danger progress-bar-striped" style="width: <?php echo $negativos?>%">
-                            <span class="glyphicon glyphicon-thumbs-down"><?php echo round($negativos, 0, PHP_ROUND_HALF_UP);?>%</span>
+                        <!-- Progress bar con votos positivos, negativos de las modificaciones -->
+                        <div class="progress" id="barra<?php echo $i?>" <?php if($i>4){?>style="display:none"<?php } ?>>
+                            
+                            <div class="progress-bar progress-bar-success progress-bar-striped" style="width: <?php echo $positivos?>%">
+                                <span class="glyphicon glyphicon-thumbs-up"><?php echo round($positivos, 0, PHP_ROUND_HALF_UP);?>%</span>
+                            </div>
+                            <div class="progress-bar progress-bar-danger progress-bar-striped" style="width: <?php echo $negativos?>%">
+                                <span class="glyphicon glyphicon-thumbs-down"><?php echo round($negativos, 0, PHP_ROUND_HALF_UP);?>%</span>
+                            </div>
                         </div>
                     </div>
                 <?php } ?>
                 <hr>
-                <center><span id="cargarCreaciones" class="label label-default cargar" onclick="cargarCreaciones(<?php echo $contador+5?>, <?php echo sizeof($busquedaModificaciones)?>)">Cargar Mas</span></center>  
-                
+                <center><span id="cargarCreaciones" class="label label-default cargar" onclick="cargarCreaciones(<?php echo $contador+5?>, <?php echo sizeof($busquedaCreaciones)?>)">Cargar Mas</span></center>  
+            </div>   
             <?php } ?>
-            </div>
+            
             <!--BusquedaModificaciones-->
             <div class="album py-5 bg-light" id="modificaciones" style="display:none">
             <?php
@@ -191,27 +193,28 @@
                                 </ul>
                             </div>
                         </div>
-                    </div>
                     <?php 
                         $positivos=($busquedaModificaciones[$i]['votos_positivos']*100)/($busquedaModificaciones[$i]['votos_positivos']+$busquedaModificaciones[$i]['votos_negativos']);
                         $negativos=($busquedaModificaciones[$i]['votos_negativos']*100)/($busquedaModificaciones[$i]['votos_positivos']+$busquedaModificaciones[$i]['votos_negativos']);
                     ?>
-                    <!-- Progress bar con votos positivos, negativos de las modificaciones -->
-                    <div class="progress" id="barra<?php echo $i?>" <?php if($i>4){?>style="display:none"<?php } ?>>
-                        <div class="progress-bar progress-bar-success progress-bar-striped" style="width: <?php echo $positivos?>%">
-                            <span class="glyphicon glyphicon-thumbs-up"><?php echo round($positivos, 0, PHP_ROUND_HALF_UP);?>%</span>
-                        </div>
-                        <div class="progress-bar progress-bar-danger progress-bar-striped" style="width: <?php echo $negativos?>%">
-                            <span class="glyphicon glyphicon-thumbs-down"><?php echo round($negativos, 0, PHP_ROUND_HALF_UP);?>%</span>
+                        <!-- Progress bar con votos positivos, negativos de las modificaciones -->
+                        <div class="progress" id="barraMod<?php echo $i?>" <?php if($i>4){?>style="display:none"<?php } ?>>
+                            
+                            <div class="progress-bar progress-bar-success progress-bar-striped" style="width: <?php echo $positivos?>%">
+                                <span class="glyphicon glyphicon-thumbs-up"><?php echo round($positivos, 0, PHP_ROUND_HALF_UP);?>%</span>
+                            </div>
+                            <div class="progress-bar progress-bar-danger progress-bar-striped" style="width: <?php echo $negativos?>%">
+                                <span class="glyphicon glyphicon-thumbs-down"><?php echo round($negativos, 0, PHP_ROUND_HALF_UP);?>%</span>
+                            </div>
                         </div>
                     </div>
                 <?php } ?>
                 <hr>
                 <center><span id="cargarModificaciones" class="label label-default cargar" onclick="cargarModificaciones(<?php echo $contador+5?>, <?php echo sizeof($busquedaModificaciones)?>)">Cargar Mas</span></center>  
-                </div>
+            </div>   
             <?php } ?>
             </div>
-            </div>
+            
         </div>
     </div>
 </div>
