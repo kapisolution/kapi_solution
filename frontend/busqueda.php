@@ -92,10 +92,9 @@
                             </div>
                         </div>
                     </div>
-                    <hr>
                 <?php } ?>
+                <hr>
                 <center><span id="cargarArt" class="label label-default cargar" onclick="cargarArticulos(<?php echo $contador+5?>, <?php echo sizeof($busquedaArticulos)?>)">Cargar Mas</span></center>  
-            
             <?php } ?>
             </div>
             <!--busquedaCreaciones-->
