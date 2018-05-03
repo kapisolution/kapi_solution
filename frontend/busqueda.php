@@ -94,7 +94,7 @@
                     <hr>
                 <?php } ?>
                 <center><span id="cargarArt" class="label label-default cargar" onclick="cargarArticulos(<?php echo $contador+5?>, <?php echo sizeof($busquedaArticulos)?>)">Cargar Mas</span></center>  
-            </div>
+            
             <?php } ?>
             </div>
             <!--busquedaCreaciones-->

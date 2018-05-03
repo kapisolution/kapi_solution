@@ -13,6 +13,11 @@ $puntos =0;
     <?php 
      $logedIn=isset($_SESSION['login']);
      $sNivel=isset($_SESSION['formularioNivel']);
+     if($_SESSION['nivel']==0){
+      $_SESSION['formularioNivel']=0;
+     }else{
+      $_SESSION['formularioNivel']=1; 
+     }
     if($logedIn){
       if(trim($_SESSION['formularioNivel'])==1){
         header('Location:/articulos.php');

@@ -4,10 +4,10 @@
 <div class="container containerExamenes">
     <?php echo json_encode($examen);?>
     <?php if($_SESSION['login']){ ?>
-        <center><h2>Prueba de nivel  <?php echo $_GET['id']?></h2><br>
+        <center><h2>Prueba de nivel  <?php echo $_SESSION['nivel']+1?></h2><br>
         <h4>
             <span class="label label-warning"><?php echo $_SESSION['rol']?></span>
-            <span class="label label-primary">Nivel <?php echo $_GET['id']?></span>
+            <span class="label label-primary">Nivel <?php echo $_SESSION['nivel']?></span>
         </h4></center>
         <hr>
         <div class="panel-group" id="accordion">

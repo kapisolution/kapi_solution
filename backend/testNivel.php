@@ -29,8 +29,7 @@
     }
     // print_r($puntos);
     $nombre=$_SESSION['nick']; 
-    $examen=true;
-    $sqlInsert = "UPDATE Usuarios SET nivel = '$puntos',examen='$examen' WHERE nick = '$nombre';";
+    $sqlInsert = "UPDATE Usuarios SET nivel = '$puntos' WHERE nick = '$nombre';";
     if (mysqli_query($con, $sqlInsert)) {
         $sql = 'SELECT * FROM Usuarios WHERE nick="'.$nombre.'";';
         $resultado = mysqli_query($con, $sql) or die("Error por nick en consulta sobre la tabla Usuarios");

@@ -1,7 +1,7 @@
 <?php
     
-    require 'backend/creacion.php';
-    $articulo=$creacionArticulo;
+    require 'backend/modificacion.php';
+    $articulo=$modificacionArticulo;
     $titulo=$articulo['titulo'];
     $contenido=$articulo['contenido'];
     $creador=$articulo['creador'];

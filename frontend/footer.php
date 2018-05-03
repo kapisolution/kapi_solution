@@ -10,5 +10,6 @@
         <a href="https://ucm.es"><img class="imagenesFooter" src="/files/img/footer/complutense.png" alt="Universidad Complutense"></a>
       </div>
       <h5><small class="text-muted">2018 GPL v2.0 Kapi Solution</small></h5>
+    </div>
 </div>
 

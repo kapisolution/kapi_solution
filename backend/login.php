@@ -20,7 +20,6 @@
         $_SESSION["login"] = true;
         $_SESSION["rol"] = $usuario[0]['rol'];
         $_SESSION["nivel"] = $usuario[0]['nivel'];
-        $_SESSION["formularioNivel"] = $usuario[0]['examen'];
         require 'desconexion.php';  
         header('Location:/');
     }
