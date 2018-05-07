@@ -9,6 +9,7 @@
             require("subeImgArticulo.php");
         }
     }
+    $_SESSION['creacion']=true;
     require("desconexion.php");
     header('Location:/');
  ?>

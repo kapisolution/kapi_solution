@@ -73,7 +73,8 @@ input[type="radio"]{
 .label.label-success.respuesta, .label.label-danger.respuesta {
     box-sizing: border-box;
     border-radius: 10px;
-    padding: 1.2rem;
+    padding: 10px 5px 10px 5px;
+    font-size: 87%;
  }
  input[type="radio"].elegirCorrecta:checked + label >span {
     background-color: #5cb85c;
@@ -90,5 +91,6 @@ input[type="radio"]{
     box-sizing: border-box;
     border-radius: 10px;
     padding: 1.3rem;
+    background-color: #5cb85c;
  }
 

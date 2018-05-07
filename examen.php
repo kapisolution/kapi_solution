@@ -12,6 +12,7 @@
     <link rel="stylesheet" type="text/css" href="css/topbar.css" />
     <link rel="stylesheet" type="text/css" href="css/footer.css" />
     <link rel="stylesheet" type="text/css" href="css/articulo.css" />
+    <link rel="stylesheet" type="text/css" href="css/articulos.css" />
     <link rel="stylesheet" type="text/css" href="css/estilos.css" />
 
     <title>Kapi - Examen</title>

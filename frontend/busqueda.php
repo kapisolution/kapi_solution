@@ -13,8 +13,7 @@
                 <button id="art" type="button" class="list-group-item" onclick="mostrarTarjetas(event, 'articulos', 'art')">Articulos</button>
                 <button id="crea" type="button" class="list-group-item" onclick="mostrarTarjetas(event, 'creaciones', 'crea')">Creaciones</button>
                 <button id="mod" type="button" class="list-group-item" onclick="mostrarTarjetas(event, 'modificaciones', 'mod')">Modificaciones</button>
-            </div>
-                 
+            </div>         
         </div>
         <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
             <!--BusquedaUsuarios-->
@@ -50,9 +49,8 @@
                     <hr>
                 
                 <center><span id="cargarUsr" class="label label-default cargar" onclick="cargarUsuarios(<?php echo $contador+5?>,<?php echo sizeof($busquedaUsuarios)?>)">Cargar Mas</span></center>  
-            </div>
             <?php } ?>
-            
+            </div>
             <!--BusquedaArticulos-->
             <div class="album py-5 bg-light" id="articulos" style="display:none">
             <?php
@@ -123,7 +121,7 @@
                                     <img class="imgUsrArticulo" class="img-rounded" src="/files/img/usuario/<?php echo $busquedaCreaciones[$i]['creador'].'.jpg'?>">
                                 </div>
                                 <div class="tituloBody text-center">
-                                    <a id="refArt<?php echo $i ?>" href="articulo.php?id=<?php echo $busquedaCreaciones[$i]['id'];?>"><?php echo $busquedaCreaciones[$i]['titulo'];?></a>                
+                                    <a id="refArt<?php echo $i ?>" href="creacion.php?id=<?php echo $busquedaCreaciones[$i]['id_mod'];?>"><?php echo $busquedaCreaciones[$i]['titulo'];?></a>                
                                 </div>    
                             </div>
                             <div class="accion pull-right">
@@ -134,10 +132,16 @@
                                 </ul>
                             </div>
                         </div>
-                    <?php 
-                        $positivos=($busquedaCreaciones[$i]['votos_positivos']*100)/($busquedaCreaciones[$i]['votos_positivos']+$busquedaCreaciones[$i]['votos_negativos']);
-                        $negativos=($busquedaCreaciones[$i]['votos_negativos']*100)/($busquedaCreaciones[$i]['votos_positivos']+$busquedaCreaciones[$i]['votos_negativos']);
-                    ?>
+                        <?php
+                        if($articulos[$i]['votos_positivos'] == 0 && $articulos[$i]['votos_negativos'] == 0){
+                            $positivos=50;
+                            $negativos=50;
+                        }
+                        else{
+                            $positivos=($articulos[$i]['votos_positivos']*100)/($articulos[$i]['votos_positivos']+$articulos[$i]['votos_negativos']);
+                            $negativos=($articulos[$i]['votos_negativos']*100)/($articulos[$i]['votos_positivos']+$articulos[$i]['votos_negativos']);
+                        }
+                        ?>
                         <!-- Progress bar con votos positivos, negativos de las modificaciones -->
                         <div class="progress" id="barra<?php echo $i?>" <?php if($i>4){?>style="display:none"<?php } ?>>
                             
@@ -152,9 +156,9 @@
                 <?php } ?>
                 <hr>
                 <center><span id="cargarCreaciones" class="label label-default cargar" onclick="cargarCreaciones(<?php echo $contador+5?>, <?php echo sizeof($busquedaCreaciones)?>)">Cargar Mas</span></center>  
-            </div>   
+              
             <?php } ?>
-            
+            </div>
             <!--BusquedaModificaciones-->
             <div class="album py-5 bg-light" id="modificaciones" style="display:none">
             <?php
@@ -181,7 +185,7 @@
                                     <img class="imgUsrArticulo" class="img-rounded" src="/files/img/usuario/<?php echo $busquedaModificaciones[$i]['creador'].'.jpg'?>">
                                 </div>
                                 <div class="tituloBody text-center">
-                                    <a id="refArt<?php echo $i ?>" href="articulo.php?id=<?php echo $busquedaModificaciones[$i]['id'];?>"><?php echo $busquedaModificaciones[$i]['titulo'];?></a>                
+                                    <a id="refArt<?php echo $i ?>" href="modificacion.php?id=<?php echo $busquedaModificaciones[$i]['id_mod'];?>"><?php echo $busquedaModificaciones[$i]['titulo'];?></a>                
                                 </div>    
                             </div>
                             <div class="accion pull-right">
@@ -192,10 +196,16 @@
                                 </ul>
                             </div>
                         </div>
-                    <?php 
-                        $positivos=($busquedaModificaciones[$i]['votos_positivos']*100)/($busquedaModificaciones[$i]['votos_positivos']+$busquedaModificaciones[$i]['votos_negativos']);
-                        $negativos=($busquedaModificaciones[$i]['votos_negativos']*100)/($busquedaModificaciones[$i]['votos_positivos']+$busquedaModificaciones[$i]['votos_negativos']);
-                    ?>
+                        <?php
+                        if($articulos[$i]['votos_positivos'] == 0 && $articulos[$i]['votos_negativos'] == 0){
+                            $positivos=50;
+                            $negativos=50;
+                        }
+                        else{
+                            $positivos=($articulos[$i]['votos_positivos']*100)/($articulos[$i]['votos_positivos']+$articulos[$i]['votos_negativos']);
+                            $negativos=($articulos[$i]['votos_negativos']*100)/($articulos[$i]['votos_positivos']+$articulos[$i]['votos_negativos']);
+                        }
+                        ?>
                         <!-- Progress bar con votos positivos, negativos de las modificaciones -->
                         <div class="progress" id="barraMod<?php echo $i?>" <?php if($i>4){?>style="display:none"<?php } ?>>
                             
@@ -212,8 +222,7 @@
                 <center><span id="cargarModificaciones" class="label label-default cargar" onclick="cargarModificaciones(<?php echo $contador+5?>, <?php echo sizeof($busquedaModificaciones)?>)">Cargar Mas</span></center>  
             </div>   
             <?php } ?>
-            </div>
-            
+            </div>  
         </div>
     </div>
 </div>

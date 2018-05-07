@@ -96,4 +96,9 @@ button.list-group-item, button.list-group-item:hover{
 #alert{
     margin-top: 2rem;
 }
+input[type="radio"]:checked + label >span, input[type="radio"]:checked:hover + label >span{
+    background-color: #333;
+    border: 1px solid rgb(255, 255, 255);
+    color: white;
+}
 

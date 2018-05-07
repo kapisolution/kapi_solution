@@ -141,11 +141,6 @@ contenido.addEventListener("click", editarContenido);
     $('#formularioArticulo').append("<input type='hidden' name='rol' value='"+<?php echo "'".$articulo['rol']."'"?>+"'>");
     $('#formularioArticulo').append("<input type='hidden' name='nivel' value='"+<?php echo "'".$articulo['nivel']."'"?>+"'>");
     $('#formularioArticulo').append("<input type='hidden' name='creador' value='"+<?php echo "'".$articulo['creador']."'"?>+"'>");
-    $.ajax({
-      url:"backend/modificararticulo.php",
-      type:"POST",
-      data: $('#formularioArticulo')
-    });
   }
   
 </script>

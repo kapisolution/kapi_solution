@@ -155,7 +155,7 @@
             }
         ?>
 </div>
-<script>
+<!-- <script>
     function comprobarRespuesta(opcion,correcta,elemento){
         x = document.getElementsByClassName("label label-success respuesta");
         for (i = 0; i < x.length; i++) {
@@ -169,4 +169,4 @@
             $("#"+elemento).removeClass().addClass('label label-success respuesta');
         }else   $("#"+elemento).removeClass().addClass('label label-danger respuesta');
     }
-</script>
+</script> -->

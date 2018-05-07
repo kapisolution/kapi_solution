@@ -62,9 +62,15 @@
                         </div>
                     </div>
                 </div>
-                <?php 
+                <?php
+                if($articulos[$i]['votos_positivos'] == 0 && $articulos[$i]['votos_negativos'] == 0){
+                    $positivos=50;
+                    $negativos=50;
+                }
+                else{
                     $positivos=($articulos[$i]['votos_positivos']*100)/($articulos[$i]['votos_positivos']+$articulos[$i]['votos_negativos']);
                     $negativos=($articulos[$i]['votos_negativos']*100)/($articulos[$i]['votos_positivos']+$articulos[$i]['votos_negativos']);
+                }
                 ?>
                 <!-- Progress bar con votos positivos, negativos de las modificaciones -->
                 <div class="progress" id="barra<?php echo $i?>" <?php if($i>4){?>style="display:none"<?php } ?>>
@@ -78,7 +84,7 @@
             <?php } ?>
             </div>
             <br>
-            <center><span class="label label-default" onclick=<?php $contador+=5 ?>"cargar(<?php echo $contador?>,<?php echo sizeof($articulos)?>)">Cargar Mas</span></center>
+            <center><span class="label label-default cargar" onclick=<?php $contador+=5 ?>"cargar(<?php echo $contador?>,<?php echo sizeof($articulos)?>)">Cargar Mas</span></center>
         </div>
     </div>
 </div>

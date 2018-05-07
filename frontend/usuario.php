@@ -38,53 +38,10 @@ $email = $usuario['email'];
             de momento nos creamos nosotros los datos-->
             <div id="modificaciones" class="row myClass">
             <br>
-            <?php for($i=0;$i<sizeof($modificaciones_usuario);$i++){?>
-                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                    <div class="panel-group">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a id="creador<?php echo $i ?>"><?php echo "  ".$modificaciones_usuario[$i]['creador']?></a>
-                                    <div class="pull-right">
-                                    <span id="rol<?php echo $i ?>" class="label label-warning"><?php echo $modificaciones_usuario[$i]['rol']?></span>
-                                    <span id="nivel<?php echo $i ?>"class="label label-danger"><?php echo "Nivel ".$modificaciones_usuario[$i]['nivel']?></span>
-                                    </div><br>
-                                    <small id="creador<?php echo $i ?>"><?php echo "  ".$modificaciones_usuario[$i]['fecha']?></small>                
-                                </h4>
-                            </div>
-                            <div class="panel-body">
-                                <div class="tituloBody">
-                                    <a href="creacion.php?id=<?php echo $modificaciones_usuario[$i]['id']?>"><center><?php echo $modificaciones_usuario[$i]['titulo']?></center></a>              
-                                </div>    
-                            </div>
-                            <div class="accion pull-right">
-                                <ul class="dropdown">
-                                <a class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-plus"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Ver</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <?php 
-                    $positivos=($modificaciones_usuario[$i]['votos_positivos']*100)/($modificaciones_usuario[$i]['votos_positivos']+$modificaciones_usuario[$i]['votos_negativos']);
-                    $negativos=($modificaciones_usuario[$i]['votos_negativos']*100)/($modificaciones_usuario[$i]['votos_positivos']+$modificaciones_usuario[$i]['votos_negativos']);
-                    ?>
-                    <!-- Progress bar con votos positivos, negativos de las modificaciones -->
-                    <div class="progress" id="barra<?php echo $i?>">
-                        <div class="progress-bar progress-bar-danger progress-bar-striped" style="width: <?php echo $negativos?>%">
-                            <span class="glyphicon glyphicon-thumbs-up"><?php echo round($negativos, 0, PHP_ROUND_HALF_UP);?>%</span>
-                        </div>
-                        <div class="progress-bar progress-bar-success progress-bar-striped" style="width: <?php echo $positivos?>%">
-                            <span class="glyphicon glyphicon-thumbs-down"><?php echo round($positivos, 0, PHP_ROUND_HALF_UP);?>%</span>
-                        </div>
-                    </div>
-                </div>
-            <?php } ?>
-            </div>
-            <div id="creaciones" class="row myClass" style="display:none">
-            <br>
-                <?php for($i=0;$i<sizeof($creaciones_usuario);$i++){?>
+                <?php if(sizeof($modificaciones_usuario) == 0){?>
+                    <div  class='alert alert-info' role='alert'>El usuario aún no ha sugerido ninguna modificación</div>
+                <?php }else{
+                    for($i=0;$i<sizeof($modificaciones_usuario);$i++){?>
                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                         <div class="panel-group">
                             <div class="panel panel-default">
@@ -100,7 +57,7 @@ $email = $usuario['email'];
                                 </div>
                                 <div class="panel-body">
                                     <div class="tituloBody">
-                                        <a href="creacion.php?id=<?php echo $modificaciones_usuario[$i]['id']?>"><center><?php echo $creaciones_usuario[$i]['titulo']?></center></a>              
+                                        <a href="creacion.php?id=<?php echo $modificaciones_usuario[$i]['id']?>"><center><?php echo $modificaciones_usuario[$i]['titulo']?></center></a>              
                                     </div>    
                                 </div>
                                 <div class="accion pull-right">
@@ -112,9 +69,15 @@ $email = $usuario['email'];
                                 </div>
                             </div>
                         </div>
-                        <?php 
-                        $positivos=($creaciones_usuario[$i]['votos_positivos']*100)/($creaciones_usuario[$i]['votos_positivos']+$creaciones_usuario[$i]['votos_negativos']);
-                        $negativos=($creaciones_usuario[$i]['votos_negativos']*100)/($creaciones_usuario[$i]['votos_positivos']+$creaciones_usuario[$i]['votos_negativos']);
+                        <?php
+                        if($articulos[$i]['votos_positivos'] == 0 && $articulos[$i]['votos_negativos'] == 0){
+                            $positivos=50;
+                            $negativos=50;
+                        }
+                        else{
+                            $positivos=($articulos[$i]['votos_positivos']*100)/($articulos[$i]['votos_positivos']+$articulos[$i]['votos_negativos']);
+                            $negativos=($articulos[$i]['votos_negativos']*100)/($articulos[$i]['votos_positivos']+$articulos[$i]['votos_negativos']);
+                        }
                         ?>
                         <!-- Progress bar con votos positivos, negativos de las modificaciones -->
                         <div class="progress" id="barra<?php echo $i?>">
@@ -127,38 +90,99 @@ $email = $usuario['email'];
                         </div>
                     </div>
                 <?php } ?>
+            <?php } ?>
             </div>
-            <div id="publicaciones" class="row myClass" style="display:none">
+            <div id="creaciones" class="row myClass" style="display:none">
             <br>
-                <?php for($i=0;$i<sizeof($publicaciones_usuario);$i++){?>
-                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                        <div class="panel-group publicaciones">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a id="creador<?php echo $i ?>"><?php echo "  ".$modificaciones_usuario[$i]['creador']?></a>
-                                        <div class="pull-right">
-                                        <span id="rol<?php echo $i ?>" class="label label-warning"><?php echo $modificaciones_usuario[$i]['rol']?></span>
-                                        <span id="nivel<?php echo $i ?>"class="label label-danger"><?php echo "Nivel ".$modificaciones_usuario[$i]['nivel']?></span>
-                                        </div><br>
-                                        <small id="creador<?php echo $i ?>"><?php echo "  ".$modificaciones_usuario[$i]['fecha']?></small>                
-                                    </h4>
+                <?php if(sizeof($creaciones_usuario) == 0){?>
+                    <div  class='alert alert-info' role='alert'>El usuario aún no ha creado ningún artículo</div>
+                <?php }else{
+                        for($i=0;$i<sizeof($creaciones_usuario);$i++){?>
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                            <div class="panel-group">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a id="creador<?php echo $i ?>"><?php echo "  ".$creaciones_usuario[$i]['creador']?></a>
+                                            <div class="pull-right">
+                                            <span id="rol<?php echo $i ?>" class="label label-warning"><?php echo $creaciones_usuario[$i]['rol']?></span>
+                                            <span id="nivel<?php echo $i ?>"class="label label-danger"><?php echo "Nivel ".$creaciones_usuario[$i]['nivel']?></span>
+                                            </div><br>
+                                            <small id="creador<?php echo $i ?>"><?php echo "  ".$creaciones_usuario[$i]['fecha']?></small>                
+                                        </h4>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="tituloBody">
+                                            <a href="creacion.php?id=<?php echo $creaciones_usuario[$i]['id_mod']?>"><center><?php echo $creaciones_usuario[$i]['titulo']?></center></a>              
+                                        </div>    
+                                    </div>
+                                    <div class="accion pull-right">
+                                        <ul class="dropdown">
+                                        <a class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-plus"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#">Ver</a></li>
+                                        </ul>
+                                    </div>
                                 </div>
-                                <div class="panel-body">
-                                    <div class="tituloBody">
-                                        <a href="articulo.php?id=<?php echo $publicaciones_usuario[$i]['id']?>"><center><?php echo $publicaciones_usuario[$i]['titulo']?></center></a>              
-                                    </div>    
+                            </div>
+                            <?php
+                            if($articulos[$i]['votos_positivos'] == 0 && $articulos[$i]['votos_negativos'] == 0){
+                                $positivos=50;
+                                $negativos=50;
+                            }
+                            else{
+                                $positivos=($articulos[$i]['votos_positivos']*100)/($articulos[$i]['votos_positivos']+$articulos[$i]['votos_negativos']);
+                                $negativos=($articulos[$i]['votos_negativos']*100)/($articulos[$i]['votos_positivos']+$articulos[$i]['votos_negativos']);
+                            }
+                            ?>
+                            <!-- Progress bar con votos positivos, negativos de las modificaciones -->
+                            <div class="progress" id="barra<?php echo $i?>">
+                                <div class="progress-bar progress-bar-danger progress-bar-striped" style="width: <?php echo $negativos?>%">
+                                    <span class="glyphicon glyphicon-thumbs-up"><?php echo round($negativos, 0, PHP_ROUND_HALF_UP);?>%</span>
                                 </div>
-                                <div class="accion pull-right">
-                                    <ul class="dropdown">
-                                    <a class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-plus"></span></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="/articulo.php?id=<?php echo $publicaciones_usuario[$i]['id']?>">Ver</a></li>
-                                    </ul>
+                                <div class="progress-bar progress-bar-success progress-bar-striped" style="width: <?php echo $positivos?>%">
+                                    <span class="glyphicon glyphicon-thumbs-down"><?php echo round($positivos, 0, PHP_ROUND_HALF_UP);?>%</span>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    <?php } ?>
+                <?php } ?>
+            </div>
+            <div id="publicaciones" class="row myClass" style="display:none">
+            <br>
+                <?php if(sizeof($publicaciones_usuario) == 0){?>
+                    <div  class='alert alert-info' role='alert'>El usuario aún no tiene contribuciones</div>
+                <?php }else{
+                        for($i=0;$i<sizeof($publicaciones_usuario);$i++){?>
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                            <div class="panel-group publicaciones">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a id="creador<?php echo $i ?>"><?php echo "  ".$modificaciones_usuario[$i]['creador']?></a>
+                                            <div class="pull-right">
+                                            <span id="rol<?php echo $i ?>" class="label label-warning"><?php echo $modificaciones_usuario[$i]['rol']?></span>
+                                            <span id="nivel<?php echo $i ?>"class="label label-danger"><?php echo "Nivel ".$modificaciones_usuario[$i]['nivel']?></span>
+                                            </div><br>
+                                            <small id="creador<?php echo $i ?>"><?php echo "  ".$modificaciones_usuario[$i]['fecha']?></small>                
+                                        </h4>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="tituloBody">
+                                            <a href="articulo.php?id=<?php echo $publicaciones_usuario[$i]['id']?>"><center><?php echo $publicaciones_usuario[$i]['titulo']?></center></a>              
+                                        </div>    
+                                    </div>
+                                    <div class="accion pull-right">
+                                        <ul class="dropdown">
+                                        <a class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-plus"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="/articulo.php?id=<?php echo $publicaciones_usuario[$i]['id']?>">Ver</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <?php } ?>
                 <?php } ?>
             </div>
         </div>

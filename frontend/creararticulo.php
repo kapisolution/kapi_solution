@@ -149,14 +149,6 @@ contenido.addEventListener("click", editarContenido);
       $('#formularioArticulo').attr("action","backend/creararticulo.php");
       $('#formularioArticulo').append("<input type='hidden' name='titulo' value='"+$('#titulo').html()+"'>");
       $('#formularioArticulo').append("<input type='hidden' name='contenido' value='"+$('#contenido').html()+"'>");
-      // $('#formularioArticulo').append("<input type='hidden' name='pregunta0' value='"+$('#pregunta0').html()+"'>");
-      // $('#formularioArticulo').append("<input type='hidden' name='pregunta1' value='"+$('#pregunta1').html()+"'>");
-      // $('#formularioArticulo').append("<input type='hidden' name='pregunta2' value='"+$('#pregunta2').html()+"'>");
-      $.ajax({
-        url:"backend/creararticulo.php",
-        type:"POST",
-        data: $('#formularioArticulo')
-      });
     }
   }
   

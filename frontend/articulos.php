@@ -9,15 +9,21 @@
         $nivel=0;
         $rol='informatico';
     }
-    // foreach($_SESSION as $valor)
-    // {
-    // echo $valor.',';
-    // }
-    echo $_SESSION['sNivel'];
-    echo $_SESSION['login'];
 ?>
 <div class="container">
     <div class="row">
+        <?php if($_SESSION['examen']=='aprobado'){?>
+                <div  class='alert alert-success' role='alert'>Aumentas de nivel</div>
+                <?php $_SESSION['examen'] ='';
+             }else if($_SESSION['examen']=='suspenso'){?>
+                <div  class='alert alert-danger' role='alert'>No has conseguido aumentar tu nivel</div>
+                <?php $_SESSION['examen'] ='';
+            }
+            else if($_SESSION['creacion']==true){?>
+                <div  class='alert alert-success' role='alert'>Artículo creado con éxito</div>
+                <?php $_SESSION['creacion'] =false;
+            } 
+            ?> 
     <hr>
         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
             <div class="thumbnail">
@@ -37,6 +43,9 @@
         <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
             <div id="album" class="album py-5 bg-light">
             <?php
+            if(sizeof($articulos)==0){?>
+                <div  class='alert alert-info' role='alert'>No hay resultados</div>
+            <?php }else{
                 for ($i = 0; $i < sizeof($articulos) ; $i++){
             ?> 
                 <div class="panel-group">
@@ -75,6 +84,7 @@
             <br>
             <center><span class="label label-default cargar" onclick=<?php $contador+=5 ?>"cargar(<?php echo $contador?>,<?php echo sizeof($articulos)?>)">Cargar Mas</span></center>
         </div>
+        <?php }?>
     </div>
 </div>
 <script type="text/javascript">

@@ -75,11 +75,6 @@ span.label.label-danger.votos, span.label.label-success.votos{
     cursor: pointer;
     font-size: 87%;
  }
- input[type="radio"]:checked + label >span, input[type="radio"]:checked:hover + label >span{
-    background-color: #333;
-    border: 1px solid rgb(255, 255, 255);
-    color: white;
-}
  .label.label-default:hover {
     background-color: #d3d2d2;
  }
