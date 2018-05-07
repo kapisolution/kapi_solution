@@ -27,27 +27,20 @@
             <span class="label label-danger"><?php echo $rol?></span>
         </div>
         <hr>
-
+        <?php
+        if(file_exists('/home/alvasenj/Documentos/git/kapi_solution/files/img/articulos/'.$articulo['id_mod'])){
+    ?>
         <div class="row">
+            
             <div id="imagenesArticulo" class="carousel slide col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3 imgArticulo" data-ride="carousel">
-                <?php
-                    for($j=1; $j<4 ;$j++){?>
-                        <ol class="carousel-indicators">
-                            <li data-target="#imagenesArticulo" data-slide-to="<?php echo $j?>" class="active"></li>
-                            <li data-target="#imagenesArticulo" data-slide-to="<?php echo $j?>"></li>
-                            <li data-target="#imagenesArticulo" data-slide-to="<?php echo $j?>"></li>
-                        </ol>
-                <?php
-                    }
-                ?>
                 <div class="carousel-inner">
                     <div class="item active">
-                        <img src="/files/img/articulos/1.jpg">
+                        <img src="/files/img/articulos/<?php echo $articulo['id_mod'] ?>/1.jpg">
                     </div>
                 <?php
                     for($j=2; $j<4 ;$j++){?>
                         <div class="item">
-                            <img src="/files/img/articulos/<?php echo $j?>.jpg">
+                            <img src="/files/img/articulos/<?php echo $articulo['id_mod'] ?>/<?php echo $j?>.jpg">
                         </div>
                 <?php
                 }
@@ -64,6 +57,7 @@
             </div>
         </div>
         <hr>
+    <?php } ?>
         <div class="caja">
             <p><?php echo $contenido ?></p>
         <hr>

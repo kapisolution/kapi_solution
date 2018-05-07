@@ -26,33 +26,36 @@
         <span class="label label-danger"><?php echo $rol?></span>
     </div>
     <hr>
-
-    <div class="row">
-        <div id="imagenesArticulo" class="carousel slide col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3 imgArticulo" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="item active">
-                    <img src="/files/img/articulos/<?php echo $id?>/1.jpg">
-                </div>
-            <?php
-                for($j=2; $j<4 ;$j++){?>
-                    <div class="item">
-                        <img src="/files/img/articulos/<?php echo $id?>/<?php echo $j?>.jpg">
+    <?php
+        if(file_exists('/home/alvasenj/Documentos/git/kapi_solution/files/img/articulos/'.$articulo['id'])){
+    ?>
+        <div class="row">
+            <div id="imagenesArticulo" class="carousel slide col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3 imgArticulo" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="/files/img/articulos/<?php echo $id?>/1.jpg">
                     </div>
-            <?php
-            }
-            ?>
+                <?php
+                    for($j=2; $j<4 ;$j++){?>
+                        <div class="item">
+                            <img src="/files/img/articulos/<?php echo $id?>/<?php echo $j?>.jpg">
+                        </div>
+                <?php
+                }
+                ?>
+                </div>
+                <a class="left carousel-control" href="#imagenesArticulo" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#imagenesArticulo" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                    <span class="sr-only">Next</span>
+                </a>
             </div>
-            <a class="left carousel-control" href="#imagenesArticulo" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="right carousel-control" href="#imagenesArticulo" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right"></span>
-                <span class="sr-only">Next</span>
-            </a>
         </div>
-    </div>
-    <hr>
+        <hr>
+        <?php } ?>
     <div class="caja">
         <p><?php echo $contenido ?></p>
     <hr>
