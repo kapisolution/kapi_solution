@@ -29,8 +29,13 @@
         $passdb = md5($password);
         $sqlInsert = "INSERT INTO Usuarios(nick,rol,password,email) VALUES('$nombre','$rol','$passdb','$email')";
         if (mysqli_query($con, $sqlInsert)) { 
+            $origen="../files/img/usuario/default.jpg";
+            $destino="../files/img/usuario/";
+            if(!copy($origen, $destino.$nombre.".jpg")){
+                echo 'Error en la subida de ficheros';
+            }
             $_SESSION["nick"] = $nombre;
-            $_SESSION["login"] = true; 
+            $_SESSION["login"] = true;  
             header('Location: /');
         } else {
             echo("Error en la consulta");

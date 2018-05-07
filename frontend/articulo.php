@@ -6,6 +6,7 @@
     $creador=$articulo['creador'];
     $rol=$articulo['rol'];
     $nivel=$articulo['nivel'];
+    $id=$articulo['id'];
     $imagen=1;
 
     if($rol=='informatico'){
@@ -28,24 +29,14 @@
 
     <div class="row">
         <div id="imagenesArticulo" class="carousel slide col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3 imgArticulo" data-ride="carousel">
-            <?php
-                for($j=1; $j<4 ;$j++){?>
-                    <ol class="carousel-indicators">
-                        <li data-target="#imagenesArticulo" data-slide-to="<?php echo $j?>" class="active"></li>
-                        <li data-target="#imagenesArticulo" data-slide-to="<?php echo $j?>"></li>
-                        <li data-target="#imagenesArticulo" data-slide-to="<?php echo $j?>"></li>
-                    </ol>
-            <?php
-                }
-            ?>
             <div class="carousel-inner">
                 <div class="item active">
-                    <img src="/files/img/articulos/1.jpg">
+                    <img src="/files/img/articulos/<?php echo $id?>/1.jpg">
                 </div>
             <?php
                 for($j=2; $j<4 ;$j++){?>
                     <div class="item">
-                        <img src="/files/img/articulos/<?php echo $j?>.jpg">
+                        <img src="/files/img/articulos/<?php echo $id?>/<?php echo $j?>.jpg">
                     </div>
             <?php
             }

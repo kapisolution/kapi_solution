@@ -1,6 +1,9 @@
 <div class="container containerSignin">
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+            <?php if($_GET["login"]=='ko'){?>
+            <div id="alert" class="alert alert-danger" role="alert">Error en el login.Contraseña o usuario no válido</div>
+            <?php } ?>
             <center><img class="mb-4" src="/files/icon/logo_v2N.png" alt="" width="72" height="72"></center>
             <form class="form" action="/backend/login.php"method="post"onsubmit="return validarSignIn()">
                 <label for="inputNick">Nick</label>

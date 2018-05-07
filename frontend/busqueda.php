@@ -39,10 +39,10 @@
                                     <img class="imgUsrArticulo" class="img-rounded" src="/files/img/usuario/<?php echo $busquedaUsuarios[$i]['nick'].'.jpg'?>">
                                 </div>
                                 <div class="text-center">
-                                    <h4><?php echo $busquedaUsuarios[$i]['nick'];?><small><?php echo "  ".$busquedaUsuarios[$i]['email']?></small></h4>
+                                    <a id="refUsr<?php echo $i ?>" href="usuario.php?id=<?php echo $busquedaUsuarios[$i]['nick'];?>"><h4><?php echo $busquedaUsuarios[$i]['nick'];?><small><?php echo "  ".$busquedaUsuarios[$i]['email']?></small></h4></a>
                                 </div> 
                             </div>
-                            <h4><a href="usuario.php?id=<?php echo $busquedaUsuarios[$i]['nick']?>"><span id="verPerfil" class="accion label label-success pull-right">Ver Perfil</span></a></h4>
+                            <h4><a href="usuario.php?id=<?php echo $busquedaUsuarios[$i]['nick']?>"><span id="verPerfil" class="accion label label-success pull-right">Ver</span></a></h4>
                         </div>
                     </div>
                     <?php } ?>
