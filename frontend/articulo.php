@@ -27,7 +27,8 @@
     </div>
     <hr>
     <?php
-        if(file_exists('/home/alvasenj/Documentos/git/kapi_solution/files/img/articulos/'.$articulo['id'])){
+        if(file_exists(__DIR__.'/../files/img/articulos/'.$articulo['id'])){
+            $total_imagenes = count(glob(__DIR__.'/../files/img/articulos/'.$articulo['id'].'/{*.jpg,*.gif,*.png}',GLOB_BRACE));
     ?>
         <div class="row">
             <div id="imagenesArticulo" class="carousel slide col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3 imgArticulo" data-ride="carousel">
@@ -36,7 +37,7 @@
                         <img src="/files/img/articulos/<?php echo $id?>/1.jpg">
                     </div>
                 <?php
-                    for($j=2; $j<4 ;$j++){?>
+                    for($j=2; $j<=$total_imagenes ;$j++){?>
                         <div class="item">
                             <img src="/files/img/articulos/<?php echo $id?>/<?php echo $j?>.jpg">
                         </div>

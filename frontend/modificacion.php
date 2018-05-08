@@ -28,7 +28,8 @@
         </div>
         <hr>
         <?php
-        if(file_exists('/home/alvasenj/Documentos/git/kapi_solution/files/img/articulos/'.$articulo['id_mod'])){
+        if(file_exists(__DIR__.'/../files/img/articulos/'.$articulo['id_mod'])){
+            $total_imagenes = count(glob(__DIR__.'/../files/img/articulos/'.$articulo['id_mod'].'/{*.jpg,*.gif,*.png}',GLOB_BRACE));
         ?>
             <div class="row">
                 
@@ -38,7 +39,7 @@
                             <img src="/files/img/articulos/<?php echo $articulo['id_mod'] ?>/1.jpg">
                         </div>
                     <?php
-                        for($j=2; $j<4 ;$j++){?>
+                        for($j=2; $j<=$total_imagenes ;$j++){?>
                             <div class="item">
                                 <img src="/files/img/articulos/<?php echo $articulo['id_mod'] ?>/<?php echo $j?>.jpg">
                             </div>

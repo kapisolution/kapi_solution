@@ -159,12 +159,12 @@ $email = $usuario['email'];
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
                                         <h4 class="panel-title">
-                                            <a id="creador<?php echo $i ?>"><?php echo "  ".$modificaciones_usuario[$i]['creador']?></a>
+                                            <a id="creador<?php echo $i ?>"><?php echo "  ".$publicaciones_usuario[$i]['creador']?></a>
                                             <div class="pull-right">
-                                            <span id="rol<?php echo $i ?>" class="label label-warning"><?php echo $modificaciones_usuario[$i]['rol']?></span>
-                                            <span id="nivel<?php echo $i ?>"class="label label-danger"><?php echo "Nivel ".$modificaciones_usuario[$i]['nivel']?></span>
+                                            <span id="rol<?php echo $i ?>" class="label label-warning"><?php echo $publicaciones_usuario[$i]['rol']?></span>
+                                            <span id="nivel<?php echo $i ?>"class="label label-danger"><?php echo "Nivel ".$publicaciones_usuario[$i]['nivel']?></span>
                                             </div><br>
-                                            <small id="creador<?php echo $i ?>"><?php echo "  ".$modificaciones_usuario[$i]['fecha']?></small>                
+                                            <small id="creador<?php echo $i ?>"><?php echo "  ".$publicaciones_usuario[$i]['fecha']?></small>                
                                         </h4>
                                     </div>
                                     <div class="panel-body">
