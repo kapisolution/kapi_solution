@@ -80,6 +80,10 @@ input[type="radio"]{
     background-color: #5cb85c;
     color: white
 }
+input[type="radio"].votaciones:checked + label > h4 > span{
+    background-color: #337ab7;
+    color: white
+}
 .form-control{
     background-color: rgb(224, 224, 224);
     margin: 1rem 0;

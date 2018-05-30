@@ -1,5 +1,26 @@
 <?php
-    
+    session_start();
+    include '/backend/conexion.php';
+    $id=$_GET["id"];
+    $sql ='SELECT * FROM Votaciones_Contribuciones WHERE nick LIKE "'.$_SESSION['nick'].'" AND contribucion LIKE "'.$id.'";';
+    $result=mysqli_query($con, $sql);
+    if ($result){
+        $fila = mysqli_fetch_array($result);
+        $votaciones[] = $fila;
+        $numRegistros = mysqli_num_rows($result);
+    }else{
+        echo ('La consulta de votaciones usuario ha fallado');
+    }
+    $sqlComentarios ='SELECT * FROM Votaciones_Contribuciones WHERE contribucion LIKE "'.$id.'";';
+    $resultComentarios = mysqli_query($con, $sqlComentarios);
+    if ($resultComentarios){
+        $filaComentarios = mysqli_fetch_array($resultComentarios);
+        $comentarios[] = $filaComentarios;
+        $numComentarios = mysqli_num_rows($resultComentarios);
+    }else{
+        echo ('La consulta de votaciones comentarios ha fallado');
+    }
+    include '/backend/desconexion.php';
     require 'backend/creacion.php';
     $articulo=$creacionArticulo;
     $titulo=$articulo['titulo'];
@@ -17,6 +38,7 @@
 ?>
 <div class="container containerArticulos">
     <div style="height:20px;background-color:<?php echo $color ?>;"></div>
+    <?php print_r($cajaVotos); ?>
     <hr>
     <?php if($_SESSION['login']){ ?>
         <h1><center><?php echo $titulo?></center></h1>
@@ -103,17 +125,40 @@
         </div>
         <hr>
         <?php
-        if(isset($_SESSION['login']) && $_SESSION['rol']==$rol && $_SESSION['nivel'] > $nivel){
+        if(isset($_SESSION['login']) && $_SESSION['rol']==$rol && $_SESSION['nivel'] > $nivel && $numRegistros==0){
         ?>
         <div class="caja votos col-xs-12 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
-            <div class="pull-left">
-                <h4><span class="label label-danger votos" onclick="votar('negativo')"><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span> No me gusta</span></h4>
-            </div>
-            <div class="pull-right">
-                <h4><span class="label label-success votos" onclick="votar('positivo')"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> Me gusta</span></h4>
-            </div>
+            <form id="votarContribucion" method="POST" action="/backend/votos.php" onsubmit="return completarDatos()">
+                <div id="votacion" class="form-group">
+                    <div class="pull-left">
+                        <input type="radio" class="votaciones" id="neg" value="negativo" name="voto">
+                        <label for="neg"><h4><span class="label label-danger votos"><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span> No me gusta</span></h4></label>
+                    </div>
+                    <div class="pull-right">
+                        <input type="radio" class="votaciones" id="pos" value="positivo" name="voto">
+                        <label for="pos"><h4><span class="label label-success votos"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> Me gusta</span></h4></label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="comentarios">Escribe tu comentario: <?php echo $numRegistros ?></label>
+                    <textarea class="form-control" rows="5" id="comentarios" name="comentario"></textarea>
+                </div>
+                <button class="btn btn-primary pull-right" type="submit">Enviar votos</button>
+            </form>
         </div>
-        <?php } ?>
+        <?php } 
+        else{ 
+           if($votaciones[0]['voto']=="positivo"){ ?>
+              <div id="alert success" class="alert alert-success" role="alert">Te ha gustado esta contribución</div>
+           <?php } 
+           else{ ?>
+            <div id="alert false" class="alert alert-danger" role="alert">No te ha gustado esta contribución</div>
+        <?php } 
+        } ?>
+        <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+        <hr>
+        </div>
         <div class="row ultimaFila">
             <div id="relacionados" class="caja col-xs-12 col-sm-5 col-md-5 col-lg-5">      
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">Articulos relacionados</div>
@@ -130,17 +175,26 @@
                 }
                 ?>
             </div>
-            <!--<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2"></div>-->
             <div class="caja col-xs-12 col-sm-5 col-sm-offset-2 col-md-5 col-md-offset-2 col-lg-5 col-lg-offset-2">      
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">Examenes nivel <?php echo $nivel?></div>
-                <br>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">Comentarios de otros usuarios</div>
                 <hr>
                 <?php
-                for($i=0;$i<2;$i++){?>
-                <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">Examen <?php echo $i?></div>
-                </div>
-                <?php
+                if($numComentarios == 0){ ?>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div id="alert false" class="alert alert-info" role="alert">Aún no existen comentarios</div>
+                        </div>
+                    </div>
+                <?php }
+                else{
+                    for($i=0;$i<$numComentarios;$i++){?>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <li><a><?php echo $comentarios[$i]['nick'] ?> -- "<?php echo $comentarios[$i]['comentario']?>"</a></li>
+                        </div>
+                    </div>
+                    <?php
+                    }
                 }
                 ?>
             </div>
@@ -150,18 +204,9 @@
             }
         ?>
 </div>
-<!-- <script>
-    function comprobarRespuesta(opcion,correcta,elemento){
-        x = document.getElementsByClassName("label label-success respuesta");
-        for (i = 0; i < x.length; i++) {
-            x[i].className='label label-default';
-        }
-        y = document.getElementsByClassName("label label-danger respuesta");
-        for (i = 0; i < y.length; i++) {
-            y[i].className='label label-default';
-        }
-        if(opcion==correcta){
-            $("#"+elemento).removeClass().addClass('label label-success respuesta');
-        }else   $("#"+elemento).removeClass().addClass('label label-danger respuesta');
+<script>
+    function completarDatos(){
+        $('#votarContribucion').append("<input type='hidden' name='usuario' value='<?php echo $_SESSION['nick'] ?>'>");
+        $('#votarContribucion').append("<input type='hidden' name='contribucion' value='<?php echo $_GET['id'] ?>'>");
     }
-</script> -->
+</script>
