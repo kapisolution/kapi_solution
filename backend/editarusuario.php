@@ -25,7 +25,6 @@ if($pass==$passrep && $passComprob==md5($passant)){
             $emailUso=true;
             header('Location: /editarusuario.php?koem');
         }else{
-            $passdb = md5($pass);
             $sqlInsert = "UPDATE Usuarios SET password='$passdb', email='$email' WHERE nick = '$id';";
             if (mysqli_query($con, $sqlInsert)) {
                 echo 'Todo ha ido bien';

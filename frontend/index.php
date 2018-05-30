@@ -38,8 +38,7 @@ $puntos =0;
                   <h4 class="modal-title">Responde a 5 preguntas para determinar tu nivel</h4>
                 </div>
                   <div class="modal-body"><?php
-                    foreach($preguntas as $key => $pregunta) {
-                    // for($i=0; $i<5; $i++){?>
+                    foreach($preguntas as $key => $pregunta) { ?>
                       <div class="panel panel-default">
                           <div class="panel-heading">
                               <h4 class="panel-title">

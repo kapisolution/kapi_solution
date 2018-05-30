@@ -95,7 +95,6 @@ function comparatorNivelMay(a,b){
     return 0;
 }
 function ordenar(stringArray,criterio){
-    
     if(criterio=="fecha"){
         $("#ordNivelMen").prop("checked", false);
         $("#ordNivelMay").prop("checked", false);
