@@ -4,6 +4,15 @@
     if (x != y) {
         return false;
     }
+    var abogado = document.getElementById('abogado');
+    var informatico = document.getElementById('informatico');
+    var periodista = document.getElementById('periodista');
+    if (!neg.checked && !pos.checked) {
+        alert('Debes elegir tu rol');
+    }
+    else {
+        labelvar.innerHTML = "Yes";
+    }
   }
   function checkPass(){ 
     var x = document.getElementById("psw").value;

@@ -131,20 +131,22 @@
             <form id="votarContribucion" method="POST" action="/backend/votos.php" onsubmit="return completarDatos()">
                 <div id="votacion" class="form-group">
                     <div class="pull-left">
-                        <input type="radio" class="votaciones" id="neg" value="negativo" name="voto">
+                        <input type="radio" class="votaciones" id="neg" value="negativo" name="voto" required>
                         <label for="neg"><h4><span class="label label-danger votos"><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span> No me gusta</span></h4></label>
                     </div>
                     <div class="pull-right">
-                        <input type="radio" class="votaciones" id="pos" value="positivo" name="voto">
+                        <input type="radio" class="votaciones" id="pos" value="positivo" name="voto" required>
                         <label for="pos"><h4><span class="label label-success votos"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> Me gusta</span></h4></label>
                     </div>
                 </div>
                 
                 <div class="form-group">
-                    <label for="comentarios">Escribe tu comentario: <?php echo $numRegistros ?></label>
-                    <textarea class="form-control" rows="5" id="comentarios" name="comentario"></textarea>
+                    <label for="comentarios">Escribe tu comentario: Max 150 caracteres</label>
+                    <textarea class="form-control"  rows="3" id="comentarios" name="comentario" onKeyUp="return limitar(event,this.value,100)" onKeyDown="return limitar(event,this.value,100)"></textarea>
                 </div>
-                <button class="btn btn-primary pull-right" type="submit">Enviar votos</button>
+                <button class="btn btn-primary pull-right" type="submit" onclick="return comprobarVotos()">Enviar votos</button>
+                <br><br>
+                <div id="alertVotos" class="alert alert-danger" role="alert" style="display:none">Debes seleccionar una valoración</div>
             </form>
         </div>
         <?php } 
