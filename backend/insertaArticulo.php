@@ -1,6 +1,5 @@
 <?php
     $id_mod = uniqid();
-    echo $id_mod;
     $sqlModificacion = "INSERT INTO Modificaciones (id_modificacion, votos_positivos, votos_negativos, nick) VALUES ('$id_mod', 0, 0 , '$creador');";
     $consulta = mysqli_query($con, $sqlModificacion) or die("No se pudo insertar la modificacion");    
     

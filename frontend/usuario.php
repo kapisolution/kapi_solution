@@ -43,7 +43,7 @@ $email = $usuario['email'];
                 <?php }else{
                     for($i=0;$i<sizeof($modificaciones_usuario);$i++){?>
                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                        <div class="panel-group">
+                        <div class="panel-group publicaciones">
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
@@ -70,22 +70,22 @@ $email = $usuario['email'];
                             </div>
                         </div>
                         <?php
-                        if($articulos[$i]['votos_positivos'] == 0 && $articulos[$i]['votos_negativos'] == 0){
+                        if($modificaciones_usuario[$i]['votos_positivos'] == 0 && $modificaciones_usuario[$i]['votos_negativos'] == 0){
                             $positivos=50;
                             $negativos=50;
                         }
                         else{
-                            $positivos=($articulos[$i]['votos_positivos']*100)/($articulos[$i]['votos_positivos']+$articulos[$i]['votos_negativos']);
-                            $negativos=($articulos[$i]['votos_negativos']*100)/($articulos[$i]['votos_positivos']+$articulos[$i]['votos_negativos']);
+                            $positivos=($modificaciones_usuario[$i]['votos_positivos']*100)/($modificaciones_usuario[$i]['votos_positivos']+$modificaciones_usuario[$i]['votos_negativos']);
+                            $negativos=($modificaciones_usuario[$i]['votos_negativos']*100)/($modificaciones_usuario[$i]['votos_positivos']+$modificaciones_usuario[$i]['votos_negativos']);
                         }
                         ?>
                         <!-- Progress bar con votos positivos, negativos de las modificaciones -->
                         <div class="progress" id="barra<?php echo $i?>">
-                            <div class="progress-bar progress-bar-danger progress-bar-striped" style="width: <?php echo $negativos?>%">
-                                <span class="glyphicon glyphicon-thumbs-up"><?php echo round($negativos, 0, PHP_ROUND_HALF_UP);?>%</span>
-                            </div>
                             <div class="progress-bar progress-bar-success progress-bar-striped" style="width: <?php echo $positivos?>%">
-                                <span class="glyphicon glyphicon-thumbs-down"><?php echo round($positivos, 0, PHP_ROUND_HALF_UP);?>%</span>
+                            <?php if($positivos >=1) { ?> <span class="glyphicon glyphicon-thumbs-up"><?php echo round($positivos, 0, PHP_ROUND_HALF_UP);?>% <?php }?></span>
+                            </div>
+                            <div class="progress-bar progress-bar-danger progress-bar-striped" style="width: <?php echo $negativos?>%">
+                            <?php if($negativos >=1) { ?> <span class="glyphicon glyphicon-thumbs-down"><?php echo round($negativos, 0, PHP_ROUND_HALF_UP);?>% <?php }?></span>
                             </div>
                         </div>
                     </div>
@@ -99,7 +99,7 @@ $email = $usuario['email'];
                 <?php }else{
                         for($i=0;$i<sizeof($creaciones_usuario);$i++){?>
                         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                            <div class="panel-group">
+                            <div class="panel-group publicaciones">
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
                                         <h4 class="panel-title">
@@ -126,22 +126,22 @@ $email = $usuario['email'];
                                 </div>
                             </div>
                             <?php
-                            if($articulos[$i]['votos_positivos'] == 0 && $articulos[$i]['votos_negativos'] == 0){
+                            if($creaciones_usuario[$i]['votos_positivos'] == 0 && $creaciones_usuario[$i]['votos_negativos'] == 0){
                                 $positivos=50;
                                 $negativos=50;
                             }
                             else{
-                                $positivos=($articulos[$i]['votos_positivos']*100)/($articulos[$i]['votos_positivos']+$articulos[$i]['votos_negativos']);
-                                $negativos=($articulos[$i]['votos_negativos']*100)/($articulos[$i]['votos_positivos']+$articulos[$i]['votos_negativos']);
+                                $positivos=($creaciones_usuario[$i]['votos_positivos']*100)/($creaciones_usuario[$i]['votos_positivos']+$creaciones_usuario[$i]['votos_negativos']);
+                                $negativos=($creaciones_usuario[$i]['votos_negativos']*100)/($creaciones_usuario[$i]['votos_positivos']+$creaciones_usuario[$i]['votos_negativos']);
                             }
                             ?>
                             <!-- Progress bar con votos positivos, negativos de las modificaciones -->
                             <div class="progress" id="barra<?php echo $i?>">
-                                <div class="progress-bar progress-bar-danger progress-bar-striped" style="width: <?php echo $negativos?>%">
-                                    <span class="glyphicon glyphicon-thumbs-up"><?php echo round($negativos, 0, PHP_ROUND_HALF_UP);?>%</span>
-                                </div>
                                 <div class="progress-bar progress-bar-success progress-bar-striped" style="width: <?php echo $positivos?>%">
-                                    <span class="glyphicon glyphicon-thumbs-down"><?php echo round($positivos, 0, PHP_ROUND_HALF_UP);?>%</span>
+                                <?php if($positivos >=1) { ?> <span class="glyphicon glyphicon-thumbs-up"><?php echo round($positivos, 0, PHP_ROUND_HALF_UP);?>% <?php }?></span>
+                                </div>
+                                <div class="progress-bar progress-bar-danger progress-bar-striped" style="width: <?php echo $negativos?>%">
+                                <?php if($negativos >=1) { ?> <span class="glyphicon glyphicon-thumbs-down"><?php echo round($negativos, 0, PHP_ROUND_HALF_UP);?>% <?php }?></span>
                                 </div>
                             </div>
                         </div>

@@ -65,20 +65,20 @@
                             $consulta2 = mysqli_query($con, $InsertPreguntas) or die("Error en consulta sobre la tabla preg, ". mysqli_error($con) . " " . $InsertPreguntas);
                     }
                 }
-                //caso de ser una modificacion de articulo existente borramos el articulo anterior
+                //caso de ser una modificacion de articulo existente borramos el articulo anterior y sus preguntas
                 if($modificacion[0]['id'] != '0'){
                     $sqlDelete="DELETE FROM Articulos WHERE id='".$modificacion[0]['id']."';";
                     mysqli_query($con, $sqlDelete) or die(mysqli_error($con));
+
+                    $sqlDelete="DELETE FROM Preguntas  WHERE id_pregunta='".$modificacion[0]['id']."';";
+                    mysqli_query($con, $sqlDelete) or die("Error en consulta sobre la tabla Preguntas, ". mysqli_error($con) . " " . $sqlDelete);
                 }
-                //BORRAR DE MODIFICACIONES Y MODIFICACION_ARTICULO
+                //BORRAR DE MODIFICACION_PREGUNTA Y MODIFICACION_ARTICULO
                 $sqlDelete="DELETE FROM Modificacion_articulo WHERE id_mod='".$contribucion."';";
                 mysqli_query($con, $sqlDelete) or die("Error en consulta sobre la tabla modArticulos, ". mysqli_error($con) . " " . $sqlDelete);
                 
                 $sqlDelete="DELETE FROM Modificacion_pregunta  WHERE id_mod='".$contribucion."';";
                 mysqli_query($con, $sqlDelete) or die("Error en consulta sobre la tabla modArticulos, ". mysqli_error($con) . " " . $sqlDelete);
-                
-                $sqlDelete="DELETE FROM Preguntas  WHERE id_pregunta='".$modificacion[0]['id']."';";
-                mysqli_query($con, $sqlDelete) or die("Error en consulta sobre la tabla Preguntas, ". mysqli_error($con) . " " . $sqlDelete);
             }else{
                 echo ('La consulta de votaciones usuario ha fallado');
             }    
@@ -92,7 +92,6 @@
     //Insertamos en la tabla VotacionesContribuciones para restriccion usuario vote 1 sola vez
     $sqlContribu = "INSERT INTO Votaciones_Contribuciones(contribucion, nick, voto, comentario) VALUES ('$contribucion','$nick','$voto','$comentario');";
     if (mysqli_query($con, $sqlContribu)) {
-        // header('Location:/creacion.php?id='.$contribucion);
         header('Location:/comunidad.php');
     }else{
         echo 'La consulta ha fallado';

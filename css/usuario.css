@@ -14,11 +14,6 @@
 .panel-group.publicaciones .panel {
     height: 14rem;
 }
-.accion{
-    margin-top: -2rem;
-    margin-right: 0.5rem;
-    cursor: pointer;
-}
 .progress-bar{
     padding-top: 0.2rem;
 }

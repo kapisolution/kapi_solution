@@ -56,9 +56,6 @@ span.label.label-danger.votos, span.label.label-success.votos{
     cursor: pointer;
     padding: 1rem 1rem;
 }
-span.label.label-success.votos{
-    padding: 1rem 2.1rem 1rem;
-}
 .label.label-default{
     background-color: #f5f5f5;
     box-sizing: border-box;
@@ -97,4 +94,14 @@ h4.modal-title{
 }
 #votacion{
     padding-bottom: 5rem;
+}
+.accion{
+    margin-right: 0.5rem;
+    cursor: pointer;
+    position: absolute;
+    bottom: 0;
+    right: 1;
+}
+.panel-group .panel {
+    position: relative;
 }

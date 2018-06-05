@@ -75,10 +75,10 @@
                 <!-- Progress bar con votos positivos, negativos de las modificaciones -->
                 <div class="progress" id="barra<?php echo $i?>" <?php if($i>4){?>style="display:none"<?php } ?>>
                     <div class="progress-bar progress-bar-success progress-bar-striped" style="width: <?php echo $positivos?>%">
-                        <span class="glyphicon glyphicon-thumbs-up"><?php echo round($positivos, 0, PHP_ROUND_HALF_UP);?>%</span>
+                    <?php if($positivos >=1) { ?> <span class="glyphicon glyphicon-thumbs-up"><?php echo round($positivos, 0, PHP_ROUND_HALF_UP);?>% <?php }?></span>
                     </div>
                     <div class="progress-bar progress-bar-danger progress-bar-striped" style="width: <?php echo $negativos?>%">
-                        <span class="glyphicon glyphicon-thumbs-down"><?php echo round($negativos, 0, PHP_ROUND_HALF_UP);?>%</span>
+                    <?php if($negativos >=1) { ?> <span class="glyphicon glyphicon-thumbs-down"><?php echo round($negativos, 0, PHP_ROUND_HALF_UP);?>% <?php }?></span>
                     </div>
                 </div>
             <?php } ?>
