@@ -3,7 +3,7 @@
     for($i=0; $i<$total; $i++) {
         $ficheroAsubir = $_FILES['imagen']['tmp_name'][$i];
         $directorio ="../files/img/articulos/". $id_mod . "/" ;
-        $nombreImagen = $_FILES['imagen']['name'][$i];
+        $nombreImagen = $i+1 . ".jpg";
         $fichero_subido = $directorio . $nombreImagen;
         if (!file_exists($directorio)) {
             mkdir($directorio, 0777, true);  //crea el directorio si no existe

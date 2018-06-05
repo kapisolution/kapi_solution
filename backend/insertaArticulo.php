@@ -1,9 +1,9 @@
 <?php
-
-    $sql = "INSERT INTO Modificaciones (votos_positivos, votos_negativos, nick) VALUES (0, 0 , '$creador');";
-    $consulta = mysqli_query($con, $sql) or die("No se pudo insertar la modificacion");    
-    $id_mod = mysqli_insert_id($con);
-
+    $id_mod = uniqid();
+    echo $id_mod;
+    $sqlModificacion = "INSERT INTO Modificaciones (id_modificacion, votos_positivos, votos_negativos, nick) VALUES ('$id_mod', 0, 0 , '$creador');";
+    $consulta = mysqli_query($con, $sqlModificacion) or die("No se pudo insertar la modificacion");    
+    
     $sql = "INSERT INTO Modificacion_articulo (id_mod, id, rol, nivel, titulo, contenido, creador) VALUES ('$id_mod', '$id', '$rol', '$nivel', '$titulo', '$contenido', '$creador');";
     $consulta = mysqli_query($con, $sql) or die("No se pudo insertar el articulo");    
 
