@@ -5,11 +5,8 @@
     $jsonText = file_get_contents("../doc/preguntasTestNivel.json");
     $preguntas = json_decode($jsonText, true);
     $puntos=0;
-    // print_r($_POST);
-    // print_r($preguntas);
+    //Comprobamos resultados
     foreach($_POST as $key => $value){
-        // print_r($preguntas[$key]['correcta']);
-        // print_r($value);
         if($preguntas[$key]['correcta'] == $value){
             $puntos+=$preguntas[$key]['puntos'];
         }else{
@@ -27,13 +24,14 @@
     }else{
         $puntos = 4;
     }
-    // print_r($puntos);
     $nombre=$_SESSION['nick']; 
+    //Actualizamos el nivel del usuario
     $sqlInsert = "UPDATE Usuarios SET nivel = '$puntos' WHERE nick = '$nombre';";
     if (mysqli_query($con, $sqlInsert)) {
         $sql = 'SELECT * FROM Usuarios WHERE nick="'.$nombre.'";';
         $resultado = mysqli_query($con, $sql) or die("Error por nick en consulta sobre la tabla Usuarios");
         $usuario = array();
+        //Inicializamos variable de sesion
         $_SESSION["formularioNivel"] = true;
         $_SESSION["nivel"] = $puntos; 
         header('Location: /');

@@ -1,2 +1,7 @@
 !.gitignore
 backend/conexion.php
+*.jpg
+*.gif
+*.png
+*.svg
+*.ico

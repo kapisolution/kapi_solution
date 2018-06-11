@@ -7,9 +7,15 @@
             <center><img class="mb-4" src="/files/icon/logo_v2N.png" alt="" width="72" height="72"></center>
             <form class="form" action="/backend/login.php"method="post"onsubmit="return validarSignIn()">
                 <label for="inputNick">Nick</label>
-                <input type="text" id="nick" class="form-control" placeholder="Nombre Usuario" name="alias" required>
+                <div class="input-group">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
+                    <input type="text" id="nick" class="form-control" placeholder="Nombre Usuario" name="alias" required autofocus>
+                </div>
                 <label for="inputCheck">Contraseña</label>
-                <input type="password" id="psw" class="form-control" placeholder="Contraseña" name="pass" required>
+                <div class="input-group">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></span>
+                    <input type="password" id="psw" class="form-control" placeholder="Contraseña" name="pass" required>
+                </div>
                 <br><hr>
                 <p><center>Si aún no estás registrado <a href="/signin.php">REGÍSTRATE</a>.</center></p>
                 <hr>

@@ -14,19 +14,17 @@
     <div class="row">
     <hr>
         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-            <div class="thumbnail">
-                <center><h4>Filtrar<h4></center><br>
-                <div class="caption">
-                    <div class="list-group" id="filtro">
-                        <input type="radio" id="ordFecha" onclick="ordenar('<?php echo $array ?>','fecha', <?php echo $nivel?>, '<?php echo $rol?>', <?php echo $_SESSION['login']?>)";>
-                        <label for="ordFecha"><span class="label label-default">Fecha</span></label>
-                        <input type="radio" id="ordNivelMay" onclick="ordenar('<?php echo $array ?>','nivelMay', <?php echo $nivel?>, '<?php echo $rol?>', <?php echo $_SESSION['login']?>)">
-                        <label for="ordNivelMay"><span class="label label-default">Mayor Nivel</span></label>
-                        <input type="radio" id="ordNivelMen" onclick="ordenar('<?php echo $array ?>','nivelMen', <?php echo $nivel?>, '<?php echo $rol?>', <?php echo $_SESSION['login']?>)">
-                        <label for="ordNivelMen"><span class="label label-default">Menor Nivel</span></label>
-                    </div>
-                </div>
-            </div> 
+            <div class="list-group">
+                <button id="last" type="button"  class="list-group-item disabled" onclick="ordenar('<?php echo $array ?>','fecha', <?php echo $nivel?>, '<?php echo $rol?>', 'last')";>
+                    Últimos añadidos
+                </button>
+                <button id="mayor" type="button" class="list-group-item" onclick="ordenar('<?php echo $array ?>','nivelMay', <?php echo $nivel?>, '<?php echo $rol?>', 'mayor')";>
+                    Mayor nivel
+                </button>
+                <button id="minor" type="button" class="list-group-item" onclick="ordenar('<?php echo $array ?>','nivelMen', <?php echo $nivel?>, '<?php echo $rol?>', 'minor')">
+                    Menor nivel
+                </button>
+            </div>         
         </div>
         <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
             <div id="album" class="album py-5 bg-light">
@@ -89,7 +87,6 @@
     </div>
 </div>
 <script type="text/javascript">
-    var cont=0;
     function comparatorFecha(a,b){
         if (a.fecha < b.fecha) return -1;
         if (a.fecha > b.fecha) return 1;
@@ -105,7 +102,7 @@
         if (a.nivel > b.nivel) return -1;
         return 0;
     }
-    function ordenar(array,criterio,nivel,rol,login){
+    function ordenar(array,criterio,nivel,rol, btn){
         var stringArray = <?php echo json_encode($array); ?>;
         if(criterio=="fecha"){
             $("#ordNivelMen").prop("checked", false);
@@ -126,18 +123,21 @@
             $("#nivel"+i).html("Nivel "+stringArray[i].nivel);
             $("#refArt"+i).attr("href","/articulo.php?id="+stringArray[i].id);
             $("#refArt"+i).html(stringArray[i].titulo);
-            
             $("#imagen"+i).attr("src","/files/img/usuario/"+stringArray[i].creador+".jpg");
             $("#creador"+i).html(stringArray[i].creador);
-            if(login){
-                $("#verArt"+i).attr("href","/creacion.php?id="+stringArray[i].id);
-            }
+            $("#creador"+i).attr("href","/usuario.php?id="+stringArray[i].creador);
+            $("#verArt"+i).attr("href","/articulo.php?id="+stringArray[i].id);
             if(stringArray[i].nivel > nivel || stringArray[i].rol != rol){
                 $("#editarArt"+i).attr("class","dropdown-item disabled");
             }else{
                 $("#editarArt"+i).removeClass().addClass('dropdown-item');
                 $("#editarArt"+i).attr("href","/modificararticulo.php?id="+stringArray[i].id); 
             }
-        }  
+        }
+        x = document.getElementsByClassName("list-group-item disabled");
+        for (i = 0; i < x.length; i++) {
+            x[i].className='list-group-item';
+        } 
+        $("#"+btn).removeClass('list-group-item').addClass('list-group-item disabled');  
     }
 </script>

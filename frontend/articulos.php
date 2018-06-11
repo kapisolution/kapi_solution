@@ -26,19 +26,17 @@
             ?> 
     <hr>
         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-            <div class="thumbnail">
-                <center><h4>Filtrar<h4></center><br>
-                <div class="caption">
-                    <div class="list-group" id="filtro">
-                        <input type="radio" id="ordFecha" onclick="ordenar('<?php echo $array ?>','fecha', <?php echo $nivel?>, '<?php echo $rol?>')";>
-                        <label for="ordFecha"><span class="label label-default">Fecha</span></label>
-                        <input type="radio" id="ordNivelMay" onclick="ordenar('<?php echo $array ?>','nivelMay', <?php echo $nivel?>, '<?php echo $rol?>')">
-                        <label for="ordNivelMay"><span class="label label-default">Mayor Nivel</span></label>
-                        <input type="radio" id="ordNivelMen" onclick="ordenar('<?php echo $array ?>','nivelMen', <?php echo $nivel?>, '<?php echo $rol?>')">
-                        <label for="ordNivelMen"><span class="label label-default">Menor Nivel</span></label>
-                    </div>
-                </div>
-            </div> 
+            <div class="list-group">
+                <button id="last" type="button"  class="list-group-item disabled" onclick="ordenar('<?php echo $array ?>','fecha', <?php echo $nivel?>, '<?php echo $rol?>', 'last')";>
+                    Últimos añadidos
+                </button>
+                <button id="mayor" type="button" class="list-group-item" onclick="ordenar('<?php echo $array ?>','nivelMay', <?php echo $nivel?>, '<?php echo $rol?>', 'mayor')";>
+                    Mayor nivel
+                </button>
+                <button id="minor" type="button" class="list-group-item" onclick="ordenar('<?php echo $array ?>','nivelMen', <?php echo $nivel?>, '<?php echo $rol?>', 'minor')">
+                    Menor nivel
+                </button>
+            </div>         
         </div>
         <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
             <div id="album" class="album py-5 bg-light">
@@ -103,7 +101,7 @@
         if (a.nivel > b.nivel) return -1;
         return 0;
     }
-    function ordenar(array,criterio,nivel,rol){
+    function ordenar(array,criterio,nivel,rol, btn){
         var stringArray = <?php echo json_encode($array); ?>;
         if(criterio=="fecha"){
             $("#ordNivelMen").prop("checked", false);
@@ -134,6 +132,11 @@
                 $("#editarArt"+i).removeClass().addClass('dropdown-item');
                 $("#editarArt"+i).attr("href","/modificararticulo.php?id="+stringArray[i].id); 
             }
-        }  
+        }
+        x = document.getElementsByClassName("list-group-item disabled");
+        for (i = 0; i < x.length; i++) {
+            x[i].className='list-group-item';
+        } 
+        $("#"+btn).removeClass('list-group-item').addClass('list-group-item disabled');  
     }
 </script>

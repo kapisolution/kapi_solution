@@ -29,9 +29,9 @@ $email = $usuario['email'];
         </div>
         <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
             <ul class="nav nav-tabs">
-                <li id="modi" role="presentation" onclick="mostrarContribuciones('event', 'modificaciones', 'modi')" class="active"><a class="separador">Modificaciones</a></li>
-                <li id="crea" role="presentation" onclick="mostrarContribuciones('event', 'creaciones', 'crea')"><a class="separador">Creaciones</a></li>
-                <li id="publ" role="presentation" onclick="mostrarContribuciones('event', 'publicaciones', 'publ')"><a class="separador">Publicaciones</a></li>
+                <li id="modi" role="presentation" onclick="mostrarContribuciones('event', 'modificaciones', 'modi')" class="active"><a class="separador"><span class="glyphicon glyphicon-erase"></span>Modificaciones</a></li>
+                <li id="crea" role="presentation" onclick="mostrarContribuciones('event', 'creaciones', 'crea')"><a class="separador"><span class="glyphicon glyphicon-floppy-open"></span>Creaciones</a></li>
+                <li id="publ" role="presentation" onclick="mostrarContribuciones('event', 'publicaciones', 'publ')"><a class="separador"><span class="glyphicon glyphicon-floppy-saved"></span>Publicaciones</a></li>
             </ul>
         <!-- Contribuciones populares, grafico contribuciones, x contribuciones/año-->
             <!--Necesitamos backend para consulta de modificaciones, creaciones articulo ordenadas por votos,

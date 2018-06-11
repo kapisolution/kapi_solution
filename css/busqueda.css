@@ -66,7 +66,7 @@ li rol{
 .h6{
     font-size: 20%;
 }
-.panel-default>.panel-heading {
+.panel-default>.panel-heading.usuarios {
     height: 4rem;
 }
 .tituloBody{
@@ -87,6 +87,7 @@ button.list-group-item, button.list-group-item:hover{
     font-weight: bold;
     cursor: not-allowed;
     background-color: transparent;
+    border-left: thick solid #ff8800;
 }
 #alert{
     margin-top: 2rem;
@@ -95,5 +96,8 @@ input[type="radio"]:checked + label >span, input[type="radio"]:checked:hover + l
     background-color: #333;
     border: 1px solid rgb(255, 255, 255);
     color: white;
+}
+.panel-group .panel {
+    margin-bottom: 20px;
 }
 

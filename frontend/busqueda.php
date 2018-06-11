@@ -26,7 +26,7 @@
                 ?> 
                     <div class="panel-group">
                         <div id="panelUsuarios<?php echo $i?>" class="panel panel-default" <?php if($i>4){?>style="display:none"<?php } ?>>
-                            <div class="panel-heading">
+                            <div class="panel-heading usuarios">
                                 <h4 class="panel-title">                
                                     <div class="pull-left">
                                         <span class="label label-warning"><?php echo $busquedaUsuarios[$i]['rol']?></span>
@@ -42,7 +42,10 @@
                                     <a id="refUsr<?php echo $i ?>" href="usuario.php?id=<?php echo $busquedaUsuarios[$i]['nick'];?>"><h4><?php echo $busquedaUsuarios[$i]['nick'];?><small><?php echo "  ".$busquedaUsuarios[$i]['email']?></small></h4></a>
                                 </div> 
                             </div>
-                            <h4><a href="usuario.php?id=<?php echo $busquedaUsuarios[$i]['nick']?>"><span id="verPerfil" class="accion label label-success pull-right">Ver</span></a></h4>
+                            <div class="accion pull-right">
+                                <ul>
+                                <a href="/usuario.php?id=<?php echo $busquedaUsuarios[$i]['nick']?>"><span class="glyphicon glyphicon-eye-open"></span></a>
+                            </div>
                         </div>
                     </div>
                     <?php } ?>

@@ -6,7 +6,7 @@
         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
             <div class="list-group">
                 <a class="list-group-item list-group-item-info"  href="/creaciones.php">
-                    <h4 class="list-group-item-heading">Creaciones</h4>
+                    <h4 class="list-group-item-heading">Nuevas propuestas de Artículos</h4>
                     <p class="list-group-item-text">Entra para ver los nuevos artículos propuestos de los usuarios</p>
                     </h4>
                 </a>
@@ -15,7 +15,7 @@
         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
             <div class="list-group">
                 <a class="list-group-item list-group-item-success"  href="/modificaciones.php">
-                    <h4 class="list-group-item-heading">Modificaciones</h4>
+                    <h4 class="list-group-item-heading">Modificaciones de artículos</h4>
                     <p class="list-group-item-text">Entra para ver las modificaciones propuestas por los usuarios</p>
                     </h4>
                 </a>

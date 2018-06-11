@@ -105,3 +105,16 @@ h4.modal-title{
 .panel-group .panel {
     position: relative;
 }
+button.list-group-item:hover {
+    background-color: #cde5f554;
+}
+a.separador>span{
+    padding-right: 1rem;
+}
+.carousel-inner>.active{
+    width: 100%;
+}
+.carousel-inner>.item>img {
+    height: 50%;
+    width: 150%;
+}

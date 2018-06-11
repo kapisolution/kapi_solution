@@ -54,7 +54,7 @@
         ?>
             <div class="row">
                 
-                <div id="imagenesArticulo" class="carousel slide col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3 imgArticulo" data-ride="carousel">
+                <div id="imagenesArticulo" class="carousel slide col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4 imgArticulo" data-ride="carousel">
                     <div class="carousel-inner">
                         <div class="item active">
                             <img src="/files/img/articulos/<?php echo $articulo['id_mod'] ?>/1.jpg">
