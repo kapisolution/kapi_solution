@@ -57,14 +57,14 @@ $email = $usuario['email'];
                                 </div>
                                 <div class="panel-body">
                                     <div class="tituloBody">
-                                        <a href="creacion.php?id=<?php echo $modificaciones_usuario[$i]['id']?>"><center><?php echo $modificaciones_usuario[$i]['titulo']?></center></a>              
+                                        <a href="modificacion.php?id=<?php echo $modificaciones_usuario[$i]['id_mod']?>"><center><?php echo $modificaciones_usuario[$i]['titulo']?></center></a>              
                                     </div>    
                                 </div>
                                 <div class="accion pull-right">
                                     <ul class="dropdown">
                                     <a class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-plus"></span></a>
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">Ver</a></li>
+                                        <li><a class="dropdown-item" href="modificacion.php?id=<?php echo $modificaciones_usuario[$i]['id_mod']?>">Ver</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -120,7 +120,7 @@ $email = $usuario['email'];
                                         <ul class="dropdown">
                                         <a class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-plus"></span></a>
                                         <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#">Ver</a></li>
+                                            <li><a class="dropdown-item" href="creacion.php?id=<?php echo $creaciones_usuario[$i]['id_mod']?>">Ver</a></li>
                                         </ul>
                                     </div>
                                 </div>
