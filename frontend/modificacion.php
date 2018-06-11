@@ -87,7 +87,7 @@
             <div class="panel-group" id="accordion">
         <?php
             for($i=0; $i<$n_preguntas; $i++){?>
-                <div class="panel panel-warning">
+                <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $i?>">Pregunta <?php echo $i+1?></a>
@@ -154,10 +154,11 @@
            if($votaciones[0]['voto']=="positivo"){ ?>
               <div id="alert success" class="alert alert-success" role="alert">Te ha gustado esta contribución</div>
            <?php } 
-           else{ ?>
+           else if($votaciones[0]['voto']=="negativo"){ ?>
             <div id="alert false" class="alert alert-danger" role="alert">No te ha gustado esta contribución</div>
-        <?php } 
-        } ?>
+        <?php }else{ ?>
+            <div id="alert false" class="alert alert-warning" role="alert">Para poder votar debes tener mismo rol y nivel superior a la misma.</div>
+        <?php } } ?>
         <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
         <hr>
         </div>

@@ -63,7 +63,7 @@
         <div class="panel-group" id="accordion">
     <?php
         for($i=0; $i<$n_preguntas; $i++){?>
-            <div class="panel panel-warning">
+            <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
                         <a data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $i?>">Pregunta <?php echo $i+1?></a>
