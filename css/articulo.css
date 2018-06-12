@@ -17,10 +17,6 @@
 .row{
     margin: auto;
 }
-.caja{
-    border: 1px solid gray;
-    padding: 8px;
-}
 .caja.votos{
     margin-bottom:0.5rem;
 }

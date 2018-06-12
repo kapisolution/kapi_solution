@@ -81,12 +81,10 @@
                     </a>
                 </div>
             </div>
-            <hr>
         <?php } ?>
         
         <div class="caja">
             <p><?php echo $contenido ?></p>
-        <hr>
             <div class="panel-group" id="accordion">
         <?php
             for($i=0; $i<$n_preguntas; $i++){?>
@@ -126,11 +124,10 @@
             ?>
             </div>
         </div>
-        <hr>
         <?php
         if(isset($_SESSION['login']) && $_SESSION['rol']==$rol && $_SESSION['nivel'] > $nivel && $numRegistros==0){
         ?>
-        <div class="caja votos col-xs-12 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+        <div class="cajaVotos col-xs-12 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
             <form id="votarContribucion" method="POST" action="/backend/votos.php" onsubmit="return completarDatos()">
                 <div id="votacion" class="form-group">
                     <div class="pull-left">
@@ -163,25 +160,9 @@
             <div id="alert false" class="alert alert-warning" role="alert">Para poder votar debes tener mismo rol y nivel superior a la contribución.</div>
         <?php } } ?>
         <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
-        <hr>
         </div>
         <div class="row ultimaFila">
-            <div id="relacionados" class="caja col-xs-12 col-sm-5 col-md-5 col-lg-5">      
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">Articulos relacionados</div>
-                <br>
-                <hr>
-                <?php
-                for($i=0;$i<$n_relacionados;$i++){?>
-                <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <li><a href="articulo.php?id=<?php echo $relacionados[$i]['id']?>"><?php echo $relacionados[$i]['titulo']?></a></li>
-                    </div>
-                </div>
-                <?php
-                }
-                ?>
-            </div>
-            <div class="caja col-xs-12 col-sm-5 col-sm-offset-2 col-md-5 col-md-offset-2 col-lg-5 col-lg-offset-2">      
+            <div class="cajaComentarios col-xs-12 col-sm-5 col-sm-offset-2 col-md-5 col-md-offset-2 col-lg-5 col-lg-offset-2 pull-right">      
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">Comentarios de otros usuarios</div>
                 <hr>
                 <?php

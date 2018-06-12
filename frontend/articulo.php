@@ -57,11 +57,9 @@
                 </a>
             </div>
         </div>
-        <hr>
         <?php } ?>
     <div class="caja">
         <p><?php echo $contenido ?></p>
-    <hr>
         <div class="panel-group" id="accordion">
     <?php
         for($i=0; $i<$n_preguntas; $i++){?>
@@ -101,9 +99,8 @@
         ?>
         </div>
     </div>
-    <hr>
     <div class="row ultimaFila">
-        <div id="relacionados" class="caja col-xs-12 col-sm-5 col-md-5 col-lg-5 pull-right">      
+        <div id="relacionados" class="cajaComentarios col-xs-12 col-sm-5 col-md-5 col-lg-5 pull-right">      
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">Articulos relacionados</div>
             <br>
             <hr>

@@ -69,9 +69,6 @@ li rol{
 .panel-default>.panel-heading.usuarios {
     height: 4rem;
 }
-.tituloBody{
-    padding-top: 1rem;
-}
 .dropdown-menu>li>a:hover {
     background-color: #0077d8;
     color: white;

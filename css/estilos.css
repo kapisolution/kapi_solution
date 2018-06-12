@@ -1,7 +1,28 @@
+@font-face{
+    font-family: 'Gravity';
+    src:url('/files/fonts/Gravity-Regular.otf');
+}
+@font-face{
+    font-family: 'Digitalt';
+    src:url('/files/fonts/Digitalt.otf');
+}
+@font-face{
+    font-family: 'Exo';
+    src:url('/files/fonts/exo.otf');
+}
 body{
     position: relative;
     /*incluir footer min-height: 100%;*/ 
     min-height: 100%;
+    font-family: 'Gravity';
+}
+h1{
+    font-family: 'Digitalt';
+    text-transform: uppercase;
+}
+ul.nav.navbar-nav>li>a{
+    font-family: 'Digitalt';
+    font-size: 2rem;
 }
 html {
     height: 100%;
@@ -118,9 +139,31 @@ a.separador>span{
     height: 50%;
     width: 150%;
 }
+.carousel-inner>.item>img, .carousel-control.left, .carousel-control.right{
+    border-radius: 1rem;
+}
 .breadcrumb {
     padding-top: 2rem;
     border-bottom: 1px solid #d8d8d8;
     background-color: white;
     border-radius: 0; 
 }
+.tituloBody, .tituloBodyUser{
+    padding-top: 1rem;
+    font-family: 'Digitalt';
+    text-transform: uppercase;
+}
+.tituloBody{
+    padding-left: 8rem;
+    font-size: 2rem;
+}
+.caja, .cajaVotos, .cajaComentarios{
+    border: 1px solid #d8d8d8;
+    padding: 8px;
+    border-radius: 2px;
+    margin-bottom: 2rem;
+}
+.caja{
+    margin-top: 2rem;
+}
+

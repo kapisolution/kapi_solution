@@ -18,7 +18,7 @@ function mostrarContribuciones(evt, tarjetero, id) {
     for (i = 0; i < x.length; i++) {
         x[i].style.display = "none";
     }
-    x = document.getElementsByClassName("active");
+    x = document.getElementById("tabs").getElementsByClassName("active");
     for (i = 0; i < x.length; i++) {
         x[i].classList.remove("active");
     } 

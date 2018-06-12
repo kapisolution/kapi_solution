@@ -80,51 +80,6 @@ function cargar(i, max){
         cont=cont+min;
     }
 }
-// function comparatorFecha(a,b){
-//     if (a.fecha < b.fecha) return -1;
-//     if (a.fecha > b.fecha) return 1;
-//     return 0;
-// }
-// function comparatorNivelMen(a,b){
-//     if (a.nivel < b.nivel) return -1;
-//     if (a.nivel > b.nivel) return 1;
-//     return 0;
-// }
-// function comparatorNivelMay(a,b){
-//     if (a.nivel < b.nivel) return 1;
-//     if (a.nivel > b.nivel) return -1;
-//     return 0;
-// }
-// function ordenar(stringArray,criterio,btn){
-//     if(criterio=="fecha"){
-//         $("#ordNivelMen").prop("checked", false);
-//         $("#ordNivelMay").prop("checked", false);
-//         stringArray=stringArray.sort(comparatorFecha);
-//     }else if(criterio=="nivelMen"){
-//         $("#ordFecha").prop("checked", false);
-//         $("#ordNivelMay").prop("checked", false);            
-//         stringArray=stringArray.sort(comparatorNivelMen);
-//     }else{
-//         $("#ordNivelMen").prop("checked", false);
-//         $("#ordFecha").prop("checked", false);
-//         stringArray=stringArray.sort(comparatorNivelMay);
-//     }
-    
-//     for(var i=0; i<stringArray.length; i++){
-//         $("#rol"+i).html(stringArray[i].rol);
-//         $("#nivel"+i).html("Nivel "+stringArray[i].nivel);
-//         $("#titulo"+i).html(stringArray[i].titulo);
-//         $("#imagen"+i).attr("src","/files/img/usuario/"+stringArray[i].creador+".jpg");
-//         $("#creador"+i).html(stringArray[i].creador);
-//         $("#verArt"+i).attr("href","/articulo.php?id="+stringArray[i].id);
-//         $("#editarArt"+i).attr("href","/modificararticulo.php?id="+stringArray[i].id);
-//     }
-//     x = document.getElementsByClassName("list-group-item disabled");
-//     for (i = 0; i < x.length; i++) {
-//         x[i].className='list-group-item';
-//     } 
-//     $("#"+btn).removeClass('list-group-item').addClass('list-group-item disabled');
-// }
 function comprobarRespuesta(opcion,correcta,elemento){
     x = document.getElementsByClassName("label label-success respuesta");
     for (i = 0; i < x.length; i++) {
