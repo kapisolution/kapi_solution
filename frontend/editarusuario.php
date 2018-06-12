@@ -1,6 +1,7 @@
 <script src="../js/signin.js"></script>
 <div class="container">
         <ol class="breadcrumb">
+            <li><a href="usuario.php?id=<?php echo $_SESSION['nick'] ?>">usuario</a></li>
             <li><a href="#">editar perfil</a></li>
             <li class="active"><?php echo $_SESSION['nick'] ?></a></li>
         </ol>
