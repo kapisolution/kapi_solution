@@ -37,7 +37,7 @@ html {
 }
 .container.containerExamenes{
     padding-top: 10rem;
-    padding-bottom: 12rem;
+    padding-bottom: 20rem;
 }
 .container.containerComunidad{
     padding-top: 10rem;
@@ -169,5 +169,9 @@ a.separador>span{
 .imgExm{
     width: 15rem;
     height: 12rem;
+}
+.container.containerArticulos{
+    padding-top:77px;
+    padding-bottom: 20rem;
 }
 

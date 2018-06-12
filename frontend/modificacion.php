@@ -132,7 +132,7 @@
                 <div id="votacion" class="form-group">
                     <div class="pull-left">
                         <input type="radio" class="votaciones" id="neg" value="negativo" name="voto" required>
-                        <label for="neg"><h4><span class="label label-danger votos"><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span> No me gusta</span></h4></label>
+                        <label for="neg"><h4><span class="label label-danger votos"><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>Mejorable</span></h4></label>
                     </div>
                     <div class="pull-right">
                         <input type="radio" class="votaciones" id="pos" value="positivo" name="voto" required>

@@ -50,9 +50,7 @@
                             </div>
                         </div>
                     </div>
-                    <?php } ?>
-                    <hr>
-                
+                    <?php } ?>                
                 <center><span id="cargarUsr" class="label label-default cargar" onclick="cargarUsuarios(<?php echo $contador+5?>,<?php echo sizeof($busquedaUsuarios)?>)">Cargar Mas</span></center>  
             <?php } ?>
             </div>
@@ -96,7 +94,6 @@
                         </div>
                     </div>
                 <?php } ?>
-                <hr>
                 <center><span id="cargarArt" class="label label-default cargar" onclick="cargarArticulos(<?php echo $contador+5?>, <?php echo sizeof($busquedaArticulos)?>)">Cargar Mas</span></center>  
             <?php } ?>
             </div>
@@ -158,7 +155,6 @@
                         </div>
                     </div>
                 <?php } ?>
-                <hr>
                 <center><span id="cargarCreaciones" class="label label-default cargar" onclick="cargarCreaciones(<?php echo $contador+5?>, <?php echo sizeof($busquedaCreaciones)?>)">Cargar Mas</span></center>  
               
             <?php } ?>
@@ -221,7 +217,6 @@
                         </div>
                     </div>
                 <?php } ?>
-                <hr>
                 <center><span id="cargarModificaciones" class="label label-default cargar" onclick="cargarModificaciones(<?php echo $contador+5?>, <?php echo sizeof($busquedaModificaciones)?>)">Cargar Mas</span></center>  
             </div>   
             <?php } ?>

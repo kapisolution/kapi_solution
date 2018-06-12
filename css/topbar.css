@@ -24,11 +24,12 @@
 }
 #imgUsr {
     height: 2.7rem;
+    width: 3rem;
     margin-top: -3px;
 }
 .label.mylabel{
     background-color: #d9534f;
-    font-size: 115%;
+    font-family: 'Gravity';
     cursor:pointer;
 }
 .caret{

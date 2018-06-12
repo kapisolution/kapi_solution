@@ -27,10 +27,13 @@ label {
 h2,h3,h4{
     color: white;
 }
-#indexArticulos{
+#indexArticulos, #indexComunidad{
     background-color: #222;
     width: 100%;
     border-radius: 1rem;
+}
+#indexComunidad{
+    margin-bottom: 7rem;
 }
 #imgLogo{
     height: 250px;

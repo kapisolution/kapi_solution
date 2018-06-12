@@ -83,7 +83,7 @@ $puntos =0;
     </div>
     <br>
     <div class="row">
-      <div id="indexArticulos" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <div id="indexComunidad" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <h3>La comunidad es lo primero</h3><hr>
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
           <h4>Regístrate para disfrutar de toda la potencia de la aplicación</h4>
@@ -103,7 +103,7 @@ $puntos =0;
                     <div class="pull-left">
                       <span class="glyphicon glyphicon-thumbs-up"></span>
                     </div>
-                    <div id="cuerpoCajaRegistro" class="tituloBody pull-right">
+                    <div id="cuerpoCajaRegistro" class="pull-right">
                         <li>Crear nuevos artículos</li>
                         <li>Sugerir modificaciones</li>
                         <li>Realizar pruebas de nivel</li>

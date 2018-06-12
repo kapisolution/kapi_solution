@@ -25,7 +25,7 @@
      require 'backend/conexion.php';
      include 'frontend/topbar.php';
      include 'frontend/index.php';
-     include 'frontend/footer.php';
+     include 'frontend/footerIndex.php';
      include 'backend/desconexion.php';
     ?>
   </body>
