@@ -38,10 +38,13 @@
 ?>
 <div class="container containerArticulos">
     <div style="height:20px;background-color:<?php echo $color ?>;"></div>
-    <hr>
+        <ol class="breadcrumb">
+            <li><a href="/comunidad.php">Comunidad</a></li>
+            <li><a href="/modificaciones.php">modificaciones</a></li>
+            <li class="active"><?php echo $titulo ?></a></li>
+        </ol>
     <?php if($_SESSION['login']){ ?>
         <h1><center><?php echo $titulo?></center></h1>
-        <hr>
         <div class="row text-center">
             <span class="label label-primary"><?php echo $creador?></span>
             <span class="label label-warning">Nivel <?php echo $nivel?></span>
@@ -157,7 +160,7 @@
            else if($votaciones[0]['voto']=="negativo"){ ?>
             <div id="alert false" class="alert alert-danger" role="alert">No te ha gustado esta contribución</div>
         <?php }else{ ?>
-            <div id="alert false" class="alert alert-warning" role="alert">Para poder votar debes tener mismo rol y nivel superior a la misma.</div>
+            <div id="alert false" class="alert alert-warning" role="alert">Para poder votar debes tener mismo rol y nivel superior a la contribución.</div>
         <?php } } ?>
         <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
         <hr>

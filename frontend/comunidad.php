@@ -1,5 +1,7 @@
 <div class="container containerComunidad">
-    <h2>Comunidad</h2><hr>
+    <ol class="breadcrumb">
+            <li class="active">Comunidad</li>
+        </ol>
     <h4>Esta sección te permite consultar las propuestas de los usuarios sobre artículos nuevos a publicar, puedes ver las modificaciones 
     sugeridas por parte de nuestros usuarios, incluso tienes la opción de poder crear tu propio artículo.</h4><br>
     <div class="row">

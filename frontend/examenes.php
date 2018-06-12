@@ -1,6 +1,7 @@
 <div class="container containerExamenes">
-    <h2>Pruebas para subir de nivel</h2>
-    <hr>
+    <ol class="breadcrumb">
+        <li class="active">pruebas de nivel</a></li>
+    </ol>
     <?php 
     if($_SESSION['nivel']==9){?>
         <h4><span class="glyphicon glyphicon-star"></span><strong>  Enhorabuena. Has alcanzado el nivel máximo de KapiSolution  </strong><span class="glyphicon glyphicon-star"></span></h4><h4><a class="label label-primary" href="/">Volver</a></h4>

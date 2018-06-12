@@ -17,19 +17,21 @@
 ?>
 <div class="container containerArticulos">
     <div style="height:20px;background-color:<?php echo $color ?>;"></div>
-    <hr>
-    <h1><center><?php echo $titulo?></center></h1>
-    <hr>
-    <div class="row text-center">
-        <span class="label label-primary"><?php echo $creador?></span>
-        <span class="label label-warning">Nivel <?php echo $nivel?></span>
-        <span class="label label-danger"><?php echo $rol?></span>
-    </div>
-    <hr>
-    <?php
-        if(file_exists(__DIR__.'/../files/img/articulos/'.$articulo['id'])){
-            $total_imagenes = count(glob(__DIR__.'/../files/img/articulos/'.$articulo['id'].'/{*.jpg,*.gif,*.png}',GLOB_BRACE));
-    ?>
+        <ol class="breadcrumb">
+            <li><a href="/articulos.php">Artículos</a></li>
+            <li class="active"><?php echo $titulo ?></a></li>
+        </ol>
+        <h1><center><?php echo $titulo?></center></h1>
+        <div class="row text-center">
+            <span class="label label-primary"><?php echo $creador?></span>
+            <span class="label label-warning">Nivel <?php echo $nivel?></span>
+            <span class="label label-danger"><?php echo $rol?></span>
+        </div>
+        <?php
+            if(file_exists(__DIR__.'/../files/img/articulos/'.$articulo['id'])){
+                $total_imagenes = count(glob(__DIR__.'/../files/img/articulos/'.$articulo['id'].'/{*.jpg,*.gif,*.png}',GLOB_BRACE));
+        ?>
+        <hr>
         <div class="row">
             <div id="imagenesArticulo" class="carousel slide col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4 imgArticulo" data-ride="carousel">
                 <div class="carousel-inner">
@@ -101,7 +103,7 @@
     </div>
     <hr>
     <div class="row ultimaFila">
-        <div id="relacionados" class="caja col-xs-12 col-sm-5 col-md-5 col-lg-5">      
+        <div id="relacionados" class="caja col-xs-12 col-sm-5 col-md-5 col-lg-5 pull-right">      
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">Articulos relacionados</div>
             <br>
             <hr>
@@ -111,20 +113,6 @@
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <li><a href="articulo.php?id=<?php echo $relacionados[$i]['id']?>"><?php echo $relacionados[$i]['titulo']?></a></li>
                 </div>
-            </div>
-            <?php
-            }
-            ?>
-        </div>
-        <!--<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2"></div>-->
-        <div class="caja col-xs-12 col-sm-5 col-sm-offset-2 col-md-5 col-md-offset-2 col-lg-5 col-lg-offset-2">      
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">Examenes nivel <?php echo $nivel?></div>
-            <br>
-            <hr>
-            <?php
-            for($i=0;$i<2;$i++){?>
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">Examen <?php echo $i?></div>
             </div>
             <?php
             }

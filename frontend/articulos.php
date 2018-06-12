@@ -24,7 +24,9 @@
                 <?php $_SESSION['creacion'] =false;
             } 
             ?> 
-    <hr>
+        <ol class="breadcrumb">
+            <li class="active">Artículos</a></li>
+        </ol>
         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
             <div class="list-group">
                 <button id="last" type="button"  class="list-group-item disabled" onclick="ordenar('<?php echo $array ?>','fecha', <?php echo $nivel?>, '<?php echo $rol?>', 'last')";>

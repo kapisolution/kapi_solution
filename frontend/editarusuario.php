@@ -1,18 +1,20 @@
 <script src="../js/signin.js"></script>
 <div class="container">
+        <ol class="breadcrumb">
+            <li><a href="#">editar perfil</a></li>
+            <li class="active"><?php echo $_SESSION['nick'] ?></a></li>
+        </ol>
     <?php 
         if(isset($_GET['kom'])){?>
             <div class="alert alert-danger text-center" role="alert">Fallo en la edición del perfil. Recuerda introducir correctamente tu contraseña actual</div>
     <?php } 
         else if(isset($_GET['koem'])){?>
             <div class="alert alert-danger text-center" role="alert">Fallo en la edición del perfil. Email ya en uso</div>
-    <?php } ?>
-    <h4>Editar Perfil</h4>
+    <?php } 
+    else if(isset($_SESSION['login'])){ ?>
     <form action="backend/editarusuario.php" method="POST" enctype="multipart/form-data">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                <h4><strong><?php echo $_SESSION['nick'] ?></h4></strong>
-                <hr>
                 <div class="form-group has-success">
                     <label class="control-label" for="inputEmail">Modificar email</label>
                     <div class="input-group">
@@ -55,5 +57,10 @@
         </div>
         <button class="btn btn-lg btn-primary" type="submit">Guardar</button>
         <a class="volver" href="/usuario.php?id=<?php echo $_SESSION['nick']?>"><span class="label label-danger back">Volver</button></a></center>
-    </form> 
+    </form>
+    <?php
+    }else{
+        require 'accesoRestringido.php';   
+    }
+    ?>  
 </div>

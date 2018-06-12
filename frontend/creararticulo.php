@@ -10,7 +10,10 @@ session_start();
 <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
 <div class="container containerArticulos">
   <div style="height:20px;background-color:<?php echo $color ?>;"></div>
-  <hr>
+  <ol class="breadcrumb">
+    <li><a href="/comunidad.php">Comunidad</a></li>
+    <li class="active">crear contenido</a></li>
+  </ol>
 <?php
     if(isset($_SESSION['login'])){
   ?>

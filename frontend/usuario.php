@@ -9,8 +9,10 @@ $nivel = $usuario['nivel'];
 $email = $usuario['email'];
 ?>
 <div class="container containerUsuario">
-    
-    <br>
+    <ol class="breadcrumb">
+        <li><a href="#">usuario</a></li>
+        <li class="active"><?php echo $nick ?></a></li>
+    </ol>
     <div clas="row">
         <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
         <!-- Imagen, nombre, email, insignias-->

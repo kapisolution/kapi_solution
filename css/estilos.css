@@ -118,3 +118,9 @@ a.separador>span{
     height: 50%;
     width: 150%;
 }
+.breadcrumb {
+    padding-top: 2rem;
+    border-bottom: 1px solid #d8d8d8;
+    background-color: white;
+    border-radius: 0; 
+}

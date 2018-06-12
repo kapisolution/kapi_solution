@@ -16,7 +16,11 @@ $nivel=$articulo['nivel'];
 <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
 <div class="container containerArticulos">
   <div style="height:20px;background-color:<?php echo $color ?>;"></div>
-  <hr>
+    <ol class="breadcrumb">
+            <li><a href="/articulos.php">Artículos</a></li>
+            <li><a href="#">modificar</a></li>
+            <li class="active"><?php echo $titulo ?></a></li>
+        </ol>
 <?php
     if(isset($_SESSION['login']) && $_SESSION['nivel']>=$nivel){
   ?>

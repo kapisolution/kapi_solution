@@ -12,7 +12,10 @@
 ?>
 <div class="container">
     <div class="row">
-    <hr>
+        <ol class="breadcrumb">
+            <li><a href="/comunidad.php">Comunidad</a></li>
+            <li class="active">creaciones</a></li>
+        </ol>
         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
             <div class="list-group">
                 <button id="last" type="button"  class="list-group-item disabled" onclick="ordenar('<?php echo $array ?>','fecha', <?php echo $nivel?>, '<?php echo $rol?>', 'last')";>
