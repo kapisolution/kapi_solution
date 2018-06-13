@@ -1,115 +1,115 @@
 {
     "p1": {
-        "texto": "Como cifrar el correo",
+        "texto": "¿Como puedo cifrar el correo?",
         "correcta": "A",
-        "puntos": 2,
+        "puntos": 4,
         "respuestas": [
             {
-                "texto": "A) asdasdasd",
+                "texto": "A) a través de una extensión de Gmail (Secure Mail)",
                 "valor": "A"
             },
             {
-                "texto": "B) asdasd",
+                "texto": "B) No se puede cifrar el correo",
                 "valor": "B"
             },
             {
-                "texto": "C) asdasdasd",
+                "texto": "C) Mediante SSH",
                 "valor": "C"
             },
             {
-                "texto": "D) asdasdasd",
+                "texto": "D) Usando un algoritmo de encriptación como md5",
                 "valor": "D"
             }
         ]
     },
     "p2": {
-        "texto": "Montar una VPN",
+        "texto": "¿Qué es una VPN?",
         "correcta": "A",
-        "puntos": 2,
+        "puntos": 3,
         "respuestas": [
             {
-                "texto": "A) asdasdasd",
+                "texto": "A) Es un servicio que crea un túnel seguro para la comunicación entre usted y su proovedor de Internet",
                 "valor": "A"
             },
             {
-                "texto": "B) asdasd",
+                "texto": "B) Es un sistema de almacenamiento de archivos seguro",
                 "valor": "B"
             },
             {
-                "texto": "C) asdasdasd",
+                "texto": "C)  Es una visualización privada de la red",
                 "valor": "C"
             },
             {
-                "texto": "D) asdasdasd",
+                "texto": "D) Es un servicio que permite la navegación segura en internet a través de vídeo",
                 "valor": "D"
             }
         ]
     },
     "p3": {
-        "texto": "Conceptos acerca de Thor",
+        "texto": "¿Qué es Tor?",
         "correcta": "A",
         "puntos": 2,
         "respuestas": [
             {
-                "texto": "A) asdasdasd",
+                "texto": "A) Un sistema que modifica el tráfico de enrutándolo a través de diferentes capas de ordenadores",
                 "valor": "A"
             },
             {
-                "texto": "B) asdasd",
+                "texto": "B) Un personaje de MARVEL",
                 "valor": "B"
             },
             {
-                "texto": "C) asdasdasd",
+                "texto": "C) Un navegador web que te ofrece privacidad",
                 "valor": "C"
             },
             {
-                "texto": "D) asdasdasd",
+                "texto": "D) Ninguna de las anteriores",
                 "valor": "D"
             }
         ]
     },
     "p4": {
-        "texto": "Phishing",
+        "texto": "¿Qué es phishing?",
         "correcta": "A",
-        "puntos": 2,
+        "puntos": 0.5,
         "respuestas": [
             {
-                "texto": "A) asdasdasd",
+                "texto": "A) Phishing o suplantación de identidad es un que denomina un modelo de abuso informático y que se comete mediante el uso de un tipo de ingeniería social, caracterizado por intentar adquirir información confidencial de forma fraudulenta",
                 "valor": "A"
             },
             {
-                "texto": "B) asdasd",
+                "texto": "B) Consiste en navegar a través de internet usando el anonimato",
                 "valor": "B"
             },
             {
-                "texto": "C) asdasdasd",
+                "texto": "C) Ir de pesca",
                 "valor": "C"
             },
             {
-                "texto": "D) asdasdasd",
+                "texto": "D) Ninguna de las anteriores",
                 "valor": "D"
             }
         ]
     },
     "p5": {
-        "texto": "Deep Web",
+        "texto": "¿Cuál es el principio básico a seguir para la autodefensa digital? ",
         "correcta": "A",
-        "puntos": 2,
+        "puntos": 0.5,
         "respuestas": [
             {
-                "texto": "A) asdasdasd",
+                "texto": "A) Mantener el software de los dispositivos que utilizamos actualizado",
                 "valor": "A"
             },
             {
-                "texto": "B) asdasd",
+                "texto": "B) B) Introducir nuestros datos reales en una web ajena",
                 "valor": "B"
             },
             {
-                "texto": "C) asdasdasd",
+                "texto": "C) Utilizar dispositivos Apple",
                 "valor": "C"
             },
             {
-                "texto": "D) asdasdasd",
+                "texto": "D) Usar el sistema operativo Linux",
                 "valor": "D"
             }
         ]

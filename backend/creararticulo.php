@@ -6,6 +6,7 @@
             $id=0;
             require("recogeDatosArticulo.php");
             require("insertaArticulo.php");
+            $total = count($_FILES['imagen']['name']);
             require("subeImgArticulo.php");
         }
     }
@@ -13,3 +14,4 @@
     require("desconexion.php");
     header('Location:/');
  ?>
+ 

@@ -35,7 +35,8 @@
                 echo 'Error en la subida de ficheros';
             }
             $_SESSION["nick"] = $nombre;
-            $_SESSION["login"] = true;  
+            $_SESSION["login"] = true;
+            $_SESSION["rol"]=$rol;  
             header('Location: /');
         } else {
             echo("Error en la consulta");
