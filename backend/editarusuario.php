@@ -3,10 +3,10 @@ session_start();
 require 'conexion.php';
 
 $emailUso=false;
-$email=$_POST['email'];
-$passant=$_POST['passant']; 
-$pass=$_POST['pass'];
-$passrep=$_POST['pass-repeat'];
+$email=mysqli_real_escape_string($con,$_POST['email']);
+$passant=mysqli_real_escape_string($con,$_POST['passant']); 
+$pass=mysqli_real_escape_string($con,$_POST['pass']);
+$passrep=mysqli_real_escape_string($con,$_POST['pass-repeat']);
 $id=$_SESSION['nick'];
 
 $sql1 = 'SELECT password FROM Usuarios WHERE nick LIKE "'.$id.'";';

@@ -2,10 +2,10 @@
 session_start();
 
   if($_SESSION["rol"]=='informatico'){
-    $color='red';
+    $color='#008080';
   }else if($_SESSION["rol"]=='abogado'){
-    $color='black';
-  }else   $color='blue';
+    $color='#FF6347';
+  }else   $color='#FFA500';
 ?>
 <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
 <div class="container containerArticulos">

@@ -19,10 +19,13 @@
                 <div  class='alert alert-danger' role='alert'>No has conseguido aumentar tu nivel</div>
                 <?php $_SESSION['examen'] ='';
             }
-            else if($_SESSION['creacion']==true){?>
+            if($_SESSION['creacion']=='si'){?>
                 <div  class='alert alert-success' role='alert'>Artículo creado con éxito</div>
-                <?php $_SESSION['creacion'] =false;
-            } 
+                <?php $_SESSION['creacion']=false;
+            }else if($_SESSION['creacion']=='no'){?>
+                <div  class='alert alert-danger' role='alert'>No se ha podido insertar el artículo</div>
+                <?php $_SESSION['creacion']=false;
+            }
             ?> 
         <ol class="breadcrumb">
             <li class="active">Artículos</a></li>

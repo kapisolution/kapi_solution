@@ -31,10 +31,10 @@
     $imagen=1;
 
     if($rol=='informatico'){
-        $color='red';
+        $color='#008080';
     }else if($rol=='abogado'){
-        $color='black';
-    }else   $color='blue';
+        $color='#FF6347';
+    }else   $color='#FFA500';
 ?>
 <div class="container containerArticulos">
     <div style="height:20px;background-color:<?php echo $color ?>;"></div>
