@@ -1,0 +1,21 @@
+version: '2'
+services:
+  mariadb:
+    image: mariadb
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=kapi
+      - MYSQL_DATABASE=kapi
+      - MYSQL_USER=kapi
+      - MYSQL_PASSWORD=kapi
+      - ' MYSQL_ROOT_HOST=172.18.0.1'
+    ports:
+      - '3306:3306'
+    volumes:
+      - './doc/populate:/docker-entrypoint-initdb.d/'
+  php-apache-dev:
+    image: webdevops/php-apache-dev
+    ports:
+      - '80:80'
+    volumes:
+      - '.:/app'
