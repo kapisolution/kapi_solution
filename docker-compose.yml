@@ -8,7 +8,7 @@ services:
       - MYSQL_DATABASE=kapi
       - MYSQL_USER=kapi
       - MYSQL_PASSWORD=kapi
-      - ' MYSQL_ROOT_HOST=172.18.0.1'
+      - 'MYSQL_ROOT_HOST=172.18.0.1'
     ports:
       - '3306:3306'
     volumes:
@@ -17,5 +17,14 @@ services:
     image: webdevops/php-apache-dev
     ports:
       - '80:80'
+      - '443:443'
     volumes:
       - '.:/app'
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      - PMA_HOST=172.22.0.1
+      - PMA_USER=kapi
+      - PMA_PASSWORD=kapi
+    ports:
+      - '8080:80'
