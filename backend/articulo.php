@@ -6,7 +6,10 @@ if(isset($_GET["id"])&&$_GET["id"]!=""){
 
     return - $articulo
     */
-    $sql ="SELECT * FROM Articulos WHERE id = '".$_GET["id"]."';";
+    $id =$_GET["id"];
+    $id = stripcslashes($id);
+    $id = mysql_real_scape_string($id);
+    $sql ="SELECT * FROM Articulos WHERE id = '".$id."';";
     $consulta = mysqli_query($con, $sql) or die("Error en consulta sobre la tabla articulos");
     $articulo = mysqli_fetch_array($consulta);
 

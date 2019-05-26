@@ -13,7 +13,7 @@
                 mkdir($directorio, 0777, true);  //crea el directorio si no existe
             }
             if (move_uploaded_file($ficheroAsubir, $fichero_subido)) {
-                echo "El fichero es válido y se subió con éxito.\n";  
+                echo "El fichero es valido y se subio con exito.\n";  
                 $sql = "INSERT INTO Imagen_modificacion_articulo (id_mod, path) VALUES ('$id_mod', '$nombreImagen');";
                 $consulta = mysqli_query($con, $sql) or die("No se pudo insertar la imagen"); 
             } else {
