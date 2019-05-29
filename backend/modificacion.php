@@ -6,7 +6,10 @@ if(isset($_GET["id"])&&$_GET["id"]!=""){
 
     return - $creacionArticulo
     */
-    $sql ="SELECT * FROM Modificacion_articulo a, Modificaciones m WHERE a.id <> 0 AND a.id_mod = '".$_GET["id"] ."' AND a.id_mod = m.id_modificacion ORDER BY fecha DESC;";
+    $id =$_GET["id"];
+    $id = stripcslashes($id);
+    $id = mysql_real_scape_string($id);
+    $sql ="SELECT * FROM Modificacion_articulo a, Modificaciones m WHERE a.id <> 0 AND a.id_mod = '".$id ."' AND a.id_mod = m.id_modificacion ORDER BY fecha DESC;";
 	$consulta = mysqli_query($con, $sql) or die("Error en consulta sobre la tabla creaciones");
     $modificacionArticulo = mysqli_fetch_array($consulta);
 
